@@ -1,0 +1,306 @@
+﻿Links
+Olá 🙂
+
+
+Bem-vindo (a) ao nosso mini-curso do OpenClaw.
+
+
+Obrigado por confiar e adquirir meu produto.
+
+
+________________
+
+
+
+
+Link do Google drive com todos arquivos
+Curso OpenClaw (2026)
+
+
+Instale tudo automaticamente (speed run com seu agente) 
+Leia-me
+
+
+Link para contratar Hostinger
+https://www.hostg.xyz/SHIth
+Cupom: BRUNOOKAMOTO
+
+
+Link para baixar +20 use cases do Openclaw
+Openclaw 20 cases - Bruno Okamoto.pdf
+
+
+Link para o grupo do Whatsapp
+https://chat.whatsapp.com/HL7JKeOhRBaFS4qxnKrvFl
+
+
+Repositório do Github curado por mim (skills, templates, etc)
+https://github.com/okjpg/openclaw-BrunoOkamoto.git
+
+
+Diretório de Skills curado pela comunidade openclaw
+-> https://github.com/VoltAgent/awesome-openclaw-skills (skills curadas pela comunidade)
+-> https://clawhub.ai/ (repositório oficial de skills)
+
+
+Openclaw cheat sheet
+openclaw-cheatsheet-v3 (1) (1).pdf
+  
+
+
+
+Agora quer aprender a usar este super poder para empreender? 
+Conheça minha comunidade Micro-SaaS PRO - para empreendedores de SaaS.
+LINK:https://microsaas.com.br/?utm_source=openclaw&utm_medium=referral&utm_campaign=openclaw
+
+Cupom de Desconto (20%): https://lastlink.com/p/C099B9913?cp=openclaw1
+
+
+
+
+Avalie o curso e de seu feedback! 
+https://tally.so/r/obyy1V
+Speed run
+Como Treinar Seu OpenClaw com Todo Conteúdo do Curso Automaticamente
+
+
+> Para quem quer pular direto pro resultado sem assistir as aulas.
+> Tempo estimado: ~30 minutos (vs 3h35 do curso completo)
+
+
+---
+
+
+## Pré-requisitos
+
+
+Antes de começar, você precisa ter:
+
+
+- ✅ VPS rodando (Hostinger ou similar) — use o link com cupom do guia
+- ✅ OpenClaw instalado e funcionando (`openclaw status` retorna OK)
+- ✅ Canal conectado (Telegram, WhatsApp, Discord, etc.)
+- ✅ Baixado a pasta do Google Drive com todos os arquivos do curso
+
+
+---
+
+
+## Passo 1: Segurança Primeiro (5 min)
+
+
+Mande esta mensagem para seu agente **anexando o arquivo** `prds/security-hardening.md`:
+
+
+```
+Leia o PRD de security hardening anexado e execute TUDO automaticamente.
+Aplique todas as configurações de segurança: firewall (UFW), fail2ban,
+SSH hardening, e atualizações automáticas. Me mostre o resultado de cada etapa.
+```
+
+
+✅ **Resultado esperado:** Firewall ativo, fail2ban rodando, SSH protegido.
+
+
+---
+
+
+## Passo 2: Identidade e Personalidade (5 min)
+
+
+Mande esta mensagem **anexando os arquivos** `templates/SOUL-template.md`, `templates/IDENTITY-template.md` e `templates/USER-template.md`:
+
+
+```
+Estou te enviando 3 templates. Preciso que você:
+
+
+1. Leia os 3 templates
+2. Me faça 10 perguntas para me conhecer (quem sou, o que faço,
+   como quero que você se comporte, que tom usar, etc.)
+3. Com minhas respostas, preencha o SOUL.md, IDENTITY.md e USER.md
+4. Salve tudo no seu workspace
+
+
+Quero que você desenvolva uma personalidade única, não genérica.
+```
+
+
+✅ **Resultado esperado:** Seu agente tem nome, personalidade e te conhece.
+
+
+---
+
+
+## Passo 3: Sistema de Memória (5 min)
+
+
+Mande esta mensagem **anexando** `prds/memory-architecture.md` e `templates/MEMORY-template.md`:
+
+
+```
+Leia o PRD de memória e o template. Configure todo o sistema de memória:
+
+
+1. Crie o MEMORY.md baseado no template
+2. Crie a pasta memory/ com os arquivos: decisions.md, lessons.md,
+   pending.md, people.md, projects.md
+3. Configure o AGENTS.md para ler memórias automaticamente a cada sessão
+4. Crie o memory/YYYY-MM-DD.md de hoje como primeiro registro
+
+
+Me confirme cada arquivo criado.
+```
+
+
+✅ **Resultado esperado:** Sistema de memória completo e funcional.
+
+
+---
+
+
+## Passo 4: Integrações (10 min)
+
+
+Mande esta mensagem **anexando** `prds/integrations-setup.md` e `configs/cron-examples.md`:
+
+
+```
+Leia o PRD de integrações e os exemplos de cron. Me guie na configuração
+das integrações que fazem sentido pra mim. Quero configurar:
+
+
+- [ ] Google (Gmail + Calendar + Drive) via skill gog
+- [ ] 1Password para gerenciar credenciais
+- [ ] GitHub (se eu uso)
+- [ ] Crons para checagem automática de email e calendário
+
+
+Para cada integração: me diga o que preciso ter pronto (API keys, etc.)
+e depois configure.
+```
+
+
+> 💡 **Dica:** Você não precisa configurar tudo agora. Comece com Google + 1Password e adicione o resto depois.
+
+
+✅ **Resultado esperado:** Integrações ativas, crons rodando.
+
+
+---
+
+
+## Passo 5: Skills (3 min)
+
+
+Mande esta mensagem **anexando** `skills/skills-by-profile.md`:
+
+
+```
+Leia o guia de skills por perfil. Baseado no que você já sabe sobre mim
+(SOUL.md e USER.md), recomende as 5 skills mais úteis pro meu caso.
+Para cada uma, instale com clawhub install <skill>.
+```
+
+
+✅ **Resultado esperado:** Skills instaladas e prontas.
+
+
+---
+
+
+## Passo 6: Proatividade (3 min)
+
+
+Mande esta mensagem **anexando** `templates/HEARTBEAT-template.md`:
+
+
+```
+Configure o sistema de proatividade:
+
+
+1. Crie o HEARTBEAT.md baseado no template, adaptado pras minhas
+   integrações ativas
+2. Sugira um intervalo de heartbeat ideal pro meu perfil
+3. Configure crons de checagem automática (email, calendário, etc.)
+4. Me explique o que vai acontecer: quando você vai me procurar
+   proativamente e quando vai ficar quieto
+
+
+Quero que você seja útil sem ser chato.
+```
+
+
+✅ **Resultado esperado:** Agente proativo, te avisa do que importa.
+
+
+---
+
+
+## Passo 7: Sistema Imunológico (5 min)
+
+
+Mande esta mensagem **anexando** `prds/immune-system.md`:
+
+
+```
+Leia o PRD do sistema imunológico e implemente TODAS as camadas:
+
+
+1. Validação de outputs (não enviar mensagem sem revisar)
+2. Rate limiting (limites de ações por período)
+3. Rollback automático (desfazer se algo der errado)
+4. Logs de auditoria (registrar ações importantes)
+5. Regras no AGENTS.md (o que NUNCA fazer sem pedir)
+
+
+"Agents are 30% of the work. The other 70% is the immune system."
+```
+
+
+✅ **Resultado esperado:** Agente seguro, com guardrails definidos.
+
+
+---
+
+
+## 🎯 Passo Bônus: Validação Final
+
+
+Depois de tudo configurado, mande:
+
+
+```
+Faça uma auditoria completa de si mesmo:
+
+
+1. Leia seu SOUL.md, IDENTITY.md, USER.md, AGENTS.md, MEMORY.md
+2. Liste todas as integrações ativas
+3. Liste todas as skills instaladas
+4. Mostre os crons configurados
+5. Confirme que o sistema imunológico está ativo
+6. Me dê uma nota de 0-10 pra cada área e diga o que falta
+
+
+Seja honesto — prefiro saber o que falta do que achar que tá tudo perfeito.
+```
+
+
+---
+
+
+## ⚠️ Importante
+
+
+- Esse speed run configura, mas não ensina. Se algo der errado ou você quiser customizar, assista o módulo correspondente.
+- Cada prompt deve ser enviado separadamente — espere o agente terminar antes de mandar o próximo.
+- Anexe os arquivos indicados — sem eles, o agente não tem contexto suficiente.
+- Adapte às suas necessidades — nem todo mundo precisa de todas as integrações. Pule o que não faz sentido pra você.
+
+
+---
+
+
+> 💡 **Quer ir além?** Assista os módulos de Multi-Agentes (M8) e Mission Control (M10) no curso — esses são mais avançados e funcionam melhor com explicação guiada.
+Guia de materiais
+Como funciona a organização das pastas e o uso de cada arquivo.

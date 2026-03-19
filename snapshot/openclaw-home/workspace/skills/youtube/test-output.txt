@@ -1,0 +1,13 @@
+Access token obtained (truncated): ya29.c.c0AZ4bNpasN2JYZIDcD9O1it6PCQGFhJB...
+HTTP 200
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vEIIB8AX6b5gvXSmMAHIm1mm2t8",
+  "regionCode": "BR",
+  "pageInfo": {
+    "totalResults": 0,
+    "resultsPerPage": 0
+  },
+  "items": []
+}
+
