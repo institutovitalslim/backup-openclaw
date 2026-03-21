@@ -191,16 +191,11 @@ def main(argv: list[str]) -> int:
             "n": 1,
         }
         data = _post_json(url=url, api_key=api_key, payload=payload, timeout_s=args.timeout)
-        item = (data.get("data") or [{}])[0]
-        b64 = item.get("b64_json")
-        image_url = item.get("url")
-        if b64:
-            png = base64.b64decode(b64)
-        elif image_url:
-            with urllib.request.urlopen(image_url, timeout=args.timeout) as img_resp:
-                png = img_resp.read()
-        else:
+        b64 = (data.get("data") or [{}])[0].get("b64_json")
+        if not b64:
             raise SystemExit(f"unexpected response: {json.dumps(data, indent=2)[:1200]}")
+
+        png = base64.b64decode(b64)
         filename = f"{i:02d}-{_slug(prompt)}.png"
         path = os.path.join(out_dir, filename)
         with open(path, "wb") as f:
