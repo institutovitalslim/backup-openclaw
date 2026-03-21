@@ -1,3 +1,8 @@
+---
+name: youtube
+description: Read-only YouTube Data API checks using the saved service account.
+---
+
 # youtube skill
 
 Simple skill scaffold to call YouTube Data API using a Service Account. Place the service-account JSON in /root/.openclaw/youtube-sa.json (already saved from 1Password as "Youtube API Acesso Service").
