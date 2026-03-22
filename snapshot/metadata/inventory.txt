@@ -109,6 +109,10 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/1password-connect-compose.yml
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/connect-data
+/root/backup-openclaw/snapshot/openclaw-home/workspace/output
+/root/backup-openclaw/snapshot/openclaw-home/workspace/output/montage_before_after.jpg
+/root/backup-openclaw/snapshot/openclaw-home/workspace/output/montage_crop_align.jpg
+/root/backup-openclaw/snapshot/openclaw-home/workspace/output/montage_zoom_before_after.jpg
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/migrate_env_to_1password.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/show_zapi_fields.py
