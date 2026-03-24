@@ -1,30 +1,29 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.2",
-    "lastTouchedAt": "2026-03-19T17:03:09.232Z"
+    "lastTouchedAt": "2026-03-23T19:53:24.174Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-19T17:03:09.222Z",
+    "lastRunAt": "2026-03-23T19:53:24.167Z",
     "lastRunVersion": "2026.3.2",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "agents": {
     "defaults": {
+      "contextTokens": 160000,
+      "compaction": {
+        "mode": "default",
+        "reserveTokensFloor": 30000
+      },
       "model": {
-        "primary": "openai/gpt-5-mini"
+        "primary": "openai/gpt-5.1-codex"
       },
       "models": {
-        "openai/gpt-5-mini": {
+        "openai/gpt-5.1-codex": {
           "alias": "GPT"
         }
-      },
-      "workspace": "/root/.openclaw/workspace"
-    }
-  },
-  "tools": {
-    "exec": {
-      "security": "full"
+      }
     }
   },
   "commands": {
@@ -33,66 +32,23 @@
     "restart": true,
     "ownerDisplay": "raw"
   },
-  "session": {
-    "dmScope": "per-channel-peer"
-  },
-  "hooks": {
-    "internal": {
-      "enabled": true,
-      "entries": {
-        "boot-md": {
-          "enabled": true
-        },
-        "bootstrap-extra-files": {
-          "enabled": true
-        },
-        "command-logger": {
-          "enabled": true
-        },
-        "session-memory": {
-          "enabled": true
-        }
-      }
-    }
-  },
   "channels": {
     "telegram": {
       "enabled": true,
-      "dmPolicy": "allowlist",
-      "botToken": "8602727694:AAFr7C50fHVI67sh9IWcyfv8HdwjDxRt9LU",
-      "allowFrom": [
-        "971050173"
-      ],
+      "dmPolicy": "open",
       "groupPolicy": "open",
-      "streaming": "off",
+      "streaming": "partial",
       "groups": {
         "*": {
           "requireMention": false
         }
-      }
+      },
+      "allowFrom": [
+        "*"
+      ]
     }
   },
   "gateway": {
-    "port": 18789,
-    "mode": "local",
-    "bind": "loopback",
-    "auth": {
-      "mode": "token",
-      "token": "d2981e39705d16e028e004d85ce15d14ae9f915d88eb24ca"
-    },
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
-    },
-    "nodes": {
-      "denyCommands": [
-        "camera.snap",
-        "camera.clip",
-        "screen.record",
-        "calendar.add",
-        "contacts.add",
-        "reminders.add"
-      ]
-    }
+    "mode": "local"
   }
 }

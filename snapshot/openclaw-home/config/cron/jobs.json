@@ -1,4 +1,79 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "08bc8c07-f295-463c-868d-7b6eb4c18fef",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:971050173",
+      "name": "daily-memory-compaction",
+      "enabled": true,
+      "createdAtMs": 1774294637762,
+      "updatedAtMs": 1774299258239,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "America/Sao_Paulo"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
+      },
+      "state": {
+        "nextRunAtMs": 1774321200000,
+        "runningAtMs": 1774321200001
+      }
+    },
+    {
+      "id": "032fd036-6a69-4088-bae2-8db5a4a31f10",
+      "agentId": "main",
+      "name": "monthly-feedback-consolidation",
+      "enabled": true,
+      "createdAtMs": 1774297484506,
+      "updatedAtMs": 1774299198765,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 3 1 * *",
+        "tz": "America/Sao_Paulo"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Rotina mensal de feedback loops: determine o mes atual no fuso America/Sao_Paulo, rode `python3 /root/.openclaw/workspace/scripts/feedback_loops.py --root /root/.openclaw/workspace/memory/feedback_loops consolidate --month YYYY-MM` usando o mes atual, revise `/root/.openclaw/workspace/memory/feedback_loops/indexes/feedback_summary.md`, confirme se houve promocoes para lessons ou decisions e registre um resumo curto no arquivo diario em `/root/.openclaw/workspace/memory/sessions/<data>.md`. Se houver erro no script, registre o erro no mesmo arquivo de memoria diaria."
+      },
+      "state": {
+        "nextRunAtMs": 1775024100000
+      }
+    },
+    {
+      "id": "3dab666d-ed37-4675-8ddd-94614f5bbe9e",
+      "agentId": "main",
+      "name": "biweekly-memory-review",
+      "enabled": true,
+      "createdAtMs": 1774297657925,
+      "updatedAtMs": 1774299259555,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 1,16 * *",
+        "tz": "America/Sao_Paulo"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Revisao quinzenal de memoria: 1) primeiro gere um snapshot da memoria curada com `bash /root/.openclaw/workspace/scripts/snapshot_memory_state.sh /root/.openclaw/workspace` e registre o caminho gerado em `memory_backups/`. 2) Leia as notas diarias recentes em `memory/sessions/`. 3) Identifique licoes e decisoes que ainda nao foram consolidadas. 4) Atualize `memory/context/lessons.md`, `memory/context/decisions.md`, `memory/context/pending.md`, `memory/projects/*`, `memory/integrations/*` e `memory/MEMORY.md` com o que vale manter. 5) Revise `memory/feedback_loops/`. 6) Rode prune conservador em dry-run com `python3 /root/.openclaw/workspace/scripts/prune_memory_notes.py --memory-root /root/.openclaw/workspace/memory --days 30`; aplique apenas se houver candidatos explicitamente taticos. 7) Rode `openclaw memory index --force`. 8) Registre um resumo curto da revisao no arquivo diario correspondente em `memory/sessions/<data>.md`."
+      },
+      "state": {
+        "nextRunAtMs": 1775026800000,
+        "lastRunAtMs": 1774298516414,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 13206,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
 }

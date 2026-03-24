@@ -1,0 +1,1 @@
+{"date": "2026-03-23", "domain": "tasks", "context": "Validacao do atalho rapido", "decision": "approve", "reason": "Atalho rapido funcionando na VPS", "tags": ["feedback-loop", "cli"], "source": "manual", "applies_to": ["Tiaro", "OpenClaw"], "weight": 0.7}

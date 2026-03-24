@@ -64,3 +64,17 @@ _This file is yours to evolve. As you learn who you are, update it._
 - **WhatsApp pacientes:** antes de responder conversas do WhatsApp, consulte /root/.openclaw/workspace/WHATSAPP_CONTEXT.md.
 - **Uso de contexto:** se houver contexto consolidado para o telefone, use summary e last_10_messages antes de formular a resposta.
 - **Falha de contexto:** se found=false, responda normalmente sem inventar historico.
+
+## Feedback Loops
+
+- Antes de sugerir algo em content, tasks, recommendations ou digest, consulte nesta ordem: memory/feedback_loops/decisions, memory/feedback_loops/lessons, memory/feedback_loops/feedback.
+- Registre novo feedback apenas quando houver sinal claro do usuario, com motivo concreto e observavel.
+- Nao transforme ajuste pontual em regra permanente cedo demais.
+- Se houver conflito entre memorias, priorize memory/feedback_loops/decisions, depois memory/feedback_loops/lessons, depois memory/feedback_loops/feedback recente.
+
+## Semantic Memory
+
+- Na inicializacao da sessao, carregue apenas SOUL.md, USER.md, IDENTITY.md e a nota diaria memory/sessions/YYYY-MM-DD.md.
+- Para o restante, use busca semantica sob demanda antes de abrir arquivos inteiros.
+- Quando faltar contexto, priorize memory_search e depois leitura pontual do trecho relevante.
+- Trate notas em memory/sessions/ como memoria bruta; trate memory/MEMORY.md, memory/context/*, memory/projects/*, memory/content/*, memory/integrations/* e memory/feedback_loops/* como memoria curada.
