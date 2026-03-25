@@ -1,45 +1,51 @@
-# MEMORY.md - Memory Index
+# MEMORY.md - Mapa da Memoria
 
-## Structure
-- context/ - memoria relativamente estavel: decisoes, licoes, pessoas, negocio e pendencias.
-- projects/ - um arquivo por projeto ativo.
-- content/ - voz, ideias, rascunhos, campanhas e memoria editorial.
-- integrations/ - mapa de canais, credenciais, automacoes e acessos.
-- playbooks/ - SOPs, checklists e rotinas repetiveis.
-- research/ - benchmark, estudos e referencia duravel.
-- feedback_loops/ - aprendizado por feedback por dominio.
-- sessions/ - diario operacional bruto.
-- tactical/ - memoria temporaria e explicitamente expiravel.
+Regra de ouro:
+MEMORY.md e o mapa, nao o territorio.
+Ele aponta para onde cada coisa esta. Nao deve duplicar o conteudo dos arquivos especializados.
 
-## Core Files
-- context/decisions.md
-- context/lessons.md
-- context/people.md
-- context/business-context.md
-- context/pending.md
-- integrations/telegram-map.md
-- integrations/credentials-map.md
+## O que vai em cada lugar
+- context/decisions.md: decisoes irreversiveis e regras permanentes do agente.
+- context/lessons.md: erros, aprendizados e padroes; licoes estrategicas ficam, licoes taticas expiram.
+- context/people.md: equipe, parceiros, fornecedores e como interagir com cada pessoa.
+- context/business-context.md: contexto do negocio, operacao e prioridades duraveis.
+- context/pending.md: coisas esperando decisao, aprovacao ou retorno do Tiaro.
+- projects/<nome>.md: status individual de cada projeto ativo.
+- content/voice/<plataforma>.md: tom de voz por canal.
+- content/ideas/: ideias de conteudo ainda nao desenvolvidas.
+- content/drafts/: rascunhos de posts, newsletters, scripts e copys.
+- content/campaigns/: memoria de campanhas, lancamentos e narrativas temporais.
+- integrations/: mapa de ferramentas, acessos, grupos, topicos e credenciais.
+- feedback_loops/: feedback granular, lessons curadas e decisions permanentes por dominio.
+- sessions/YYYY-MM-DD.md: log bruto do dia ou do tema, sem curadoria.
+- tactical/: memoria temporaria com expiracao explicita.
+- playbooks/: SOPs, checklists e rotinas operacionais.
+- research/: benchmark, estudos e referencias que valem consulta futura.
 
-## Loading Rule
-- Inicializacao minima: SOUL.md, USER.md, IDENTITY.md, memory/sessions/YYYY-MM-DD.md
-- Sessao principal: ler tambem memory/MEMORY.md
-- O restante deve ser recuperado por busca semantica sob demanda
+## Criterio rapido para salvar
+- Se nao pode mudar sem conversa: context/decisions.md
+- Se e um erro, aprendizado ou padrao reaproveitavel: context/lessons.md
+- Se esta esperando o Tiaro: context/pending.md
+- Se e status ou historico de um projeto: projects/<nome>.md
+- Se e estilo de escrita por canal: content/voice/<plataforma>.md
+- Se e registro bruto do que aconteceu: sessions/YYYY-MM-DD.md
 
-## Retrieval Priority
-1. memory/sessions/ para contexto imediato
-2. memory/feedback_loops/ para preferencia e aprendizagem
-3. memory/context/ para regras e contexto estavel
-4. memory/projects/ para trabalho ativo
-5. memory/content/ e memory/integrations/ para contexto especializado
+## Session Initialization Rule
+Carregar apenas:
+- SOUL.md
+- USER.md
+- IDENTITY.md
+- memory/sessions/YYYY-MM-DD.md
+- memory/MEMORY.md
 
-## Expansion Space
-Pastas prontas para novos conhecimentos:
-- content/campaigns/
-- content/drafts/
-- content/ideas/
-- content/voice/
-- playbooks/
-- research/
-- projects/
-- integrations/
-- tactical/
+Usar busca semantica ou leitura pontual para o restante.
+
+## Expansao sem bagunca
+Quando surgir conhecimento novo, criar dentro da mesma logica:
+- novo projeto: memory/projects/<nome>.md
+- novo canal de conteudo: memory/content/voice/<plataforma>.md
+- nova integracao: memory/integrations/<ferramenta>.md
+- novo playbook: memory/playbooks/<tema>.md
+- nova pesquisa duravel: memory/research/<tema>.md
+
+MEMORY.md deve continuar curto e funcionar como indice.

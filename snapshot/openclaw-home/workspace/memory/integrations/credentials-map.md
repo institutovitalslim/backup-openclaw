@@ -1,4 +1,4 @@
-# credentials-map.md ??? Credentials Map
+# credentials-map.md - Credentials Map
 
 - OpenAI API Key -> 1Password / OpenAI API Key
 - Anthropic API Key -> 1Password / Anthropic API Key
@@ -8,3 +8,6 @@
 - Z-API Client Token -> 1Password / Z-API Client Token
 - Perplexity API Key -> 1Password / Key Perplexity OpenClaw
 - Gemini API Key -> 1Password / Gemini API Key
+- GOG account for bot sending -> medicalemagrecimento@gmail.com
+- GOG clinic operations account -> institutovitalslim@gmail.com
+- Contact mapping and role split -> integrations/google-accounts.md

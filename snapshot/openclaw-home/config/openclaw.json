@@ -35,17 +35,22 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "dmPolicy": "open",
+      "dmPolicy": "allowlist",
       "groupPolicy": "open",
       "streaming": "partial",
       "groups": {
         "*": {
-          "requireMention": false
+          "requireMention": false,
+          "allowFrom": [
+            "*"
+          ],
+          "groupPolicy": "open"
         }
       },
       "allowFrom": [
-        "*"
-      ]
+        "971050173"
+      ],
+      "mediaMaxMb": 19
     }
   },
   "gateway": {
