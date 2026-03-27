@@ -1,5 +1,8 @@
-# onepassword.md ??? 1Password
+# onepassword.md - 1Password
 
-- Segredos devem permanecer no 1Password
-- `.env.runtime` e regenerado via service account
-- Evitar manter segredos fixos em arquivos locais
+- O bot deve usar apenas `OP_SERVICE_ACCOUNT_TOKEN`.
+- O vault padrao para leituras por titulo e `openclaw`, salvo override em `OPENCLAW_1P_DEFAULT_VAULT`.
+- Nunca usar `op signin`, `op account add`, senha-mestra, Touch ID ou aprovacao manual.
+- Se `OP_SERVICE_ACCOUNT_TOKEN` nao estiver carregado, o bot deve reportar falta de ambiente e parar.
+- Para ler itens diretamente, preferir `/root/.openclaw/bin/op-safe-read.sh`.
+- Segredos continuam sendo injetados em `/root/.openclaw/.env.runtime` via `op inject`.

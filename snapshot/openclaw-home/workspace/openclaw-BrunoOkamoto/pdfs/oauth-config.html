@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula N-1 — Configurar Credenciais: API Key Anthropic + OpenAI | Curso OpenClaw</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --bg-elevated: #12121a;
+  --bg-card: #1a1a25;
+  --grape: #8b5cf6;
+  --grape-light: #a78bfa;
+  --grape-dim: rgba(139, 92, 246, 0.12);
+  --grape-border: rgba(139, 92, 246, 0.25);
+  --grape-glow: rgba(139, 92, 246, 0.08);
+  --emerald: #10b981;
+  --emerald-dim: rgba(16, 185, 129, 0.12);
+  --emerald-border: rgba(16, 185, 129, 0.25);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245, 158, 11, 0.12);
+  --amber-border: rgba(245, 158, 11, 0.25);
+  --rose: #f43f5e;
+  --rose-dim: rgba(244, 63, 94, 0.12);
+  --rose-border: rgba(244, 63, 94, 0.25);
+  --cyan: #22d3ee;
+  --cyan-dim: rgba(34, 211, 238, 0.12);
+  --text: #f1f1f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border: rgba(255,255,255,0.06);
+  --code-bg: #0d0d15;
+  --code-border: rgba(255,255,255,0.08);
+}
+
+@page { size: A4; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 24mm 28mm;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  background: var(--bg);
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -25%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(ellipse, var(--grape-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 297mm;
+  padding: 36mm 28mm;
+  position: relative;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--grape-dim);
+  border: 1px solid var(--grape-border);
+  border-radius: 100px;
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--grape-light);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cover-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: var(--rose-dim);
+  border: 1px solid var(--rose-border);
+  border-radius: 100px;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--rose);
+  margin-bottom: 16px;
+}
+
+.cover-title {
+  font-size: 38pt;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin-bottom: 18px;
+  max-width: 500px;
+}
+
+.cover-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--grape), var(--grape-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cover-subtitle {
+  font-size: 13pt;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 440px;
+  margin-bottom: 44px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.cover-meta-label { font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 500; }
+.cover-meta-value { font-size: 12pt; font-weight: 600; color: var(--text); }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header-left { font-size: 9pt; color: var(--grape-light); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.page-header-right { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--text-muted); }
+
+.page-footer {
+  position: absolute;
+  bottom: 12mm;
+  left: 24mm; right: 24mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.page-footer-left { font-size: 8pt; color: var(--text-muted); }
+.page-footer-right { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--text-muted); }
+
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 9pt; font-weight: 600; color: var(--grape); padding: 4px 10px; background: var(--grape-dim); border-radius: 6px; }
+.section-title { font-size: 22pt; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
+.section-subtitle { font-size: 11pt; color: var(--text-secondary); margin-top: -12px; margin-bottom: 22px; font-weight: 300; }
+
+h3 { font-size: 13pt; font-weight: 600; color: var(--grape-light); margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
+h4 { font-size: 11pt; font-weight: 600; color: var(--text); margin: 16px 0 8px; }
+p { margin-bottom: 10px; color: var(--text-secondary); font-size: 10.5pt; }
+strong { color: var(--text); }
+ul, ol { margin: 8px 0 12px 18px; }
+li { margin-bottom: 3px; font-size: 10pt; color: var(--text-secondary); }
+
+.code-block {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 12px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  position: relative;
+  white-space: pre;
+}
+.code-block::before { content: attr(data-lang); position: absolute; top: 8px; right: 12px; font-size: 7.5pt; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+code { background: var(--grape-dim); color: var(--grape-light); padding: 2px 7px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 9pt; }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+thead th { background: var(--bg-card); padding: 10px 14px; text-align: left; font-size: 9pt; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+tbody td { padding: 9px 14px; font-size: 10pt; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+tbody tr:last-child td { border-bottom: none; }
+tbody td:first-child { font-weight: 500; color: var(--text); }
+
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
+.card.grape { border-color: var(--grape-border); background: linear-gradient(135deg, rgba(139,92,246,0.06), var(--bg-card)); }
+.card.emerald { border-color: var(--emerald-border); background: linear-gradient(135deg, rgba(16,185,129,0.06), var(--bg-card)); }
+.card.amber { border-color: var(--amber-border); background: linear-gradient(135deg, rgba(245,158,11,0.06), var(--bg-card)); }
+.card.rose { border-color: var(--rose-border); background: linear-gradient(135deg, rgba(244,63,94,0.06), var(--bg-card)); }
+.card-title { font-size: 12pt; font-weight: 600; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.card-desc { font-size: 10pt; color: var(--text-secondary); line-height: 1.5; }
+
+.step { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px 16px 56px; margin: 12px 0; position: relative; }
+.step-num { position: absolute; left: 16px; top: 16px; width: 28px; height: 28px; background: var(--grape-dim); border: 1px solid var(--grape-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12pt; font-weight: 700; color: var(--grape-light); }
+.step-title { font-size: 12pt; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.step-time { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--emerald); padding: 2px 8px; background: var(--emerald-dim); border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+
+.callout { border-radius: 10px; padding: 14px 16px; margin: 14px 0; display: flex; gap: 10px; align-items: flex-start; }
+.callout-icon { font-size: 16pt; flex-shrink: 0; line-height: 1; }
+.callout-content { flex: 1; }
+.callout-content strong { display: block; margin-bottom: 3px; color: var(--text); }
+.callout-content p { margin-bottom: 4px; }
+.callout.tip { background: var(--emerald-dim); border: 1px solid var(--emerald-border); }
+.callout.warning { background: var(--amber-dim); border: 1px solid var(--amber-border); }
+.callout.danger { background: var(--rose-dim); border: 1px solid var(--rose-border); }
+.callout.info { background: var(--grape-dim); border: 1px solid var(--grape-border); }
+
+.checklist { background: var(--bg-card); border: 1px solid var(--emerald-border); border-radius: 12px; padding: 18px 20px; margin: 18px 0; }
+.checklist-title { font-size: 13pt; font-weight: 700; color: var(--emerald); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.checklist-item { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 10pt; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+.checklist-item:last-child { border-bottom: none; }
+.check-box { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 5px; flex-shrink: 0; }
+
+.troubleshoot { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin: 8px 0; }
+.troubleshoot-problem { font-weight: 600; color: var(--rose); font-size: 10pt; margin-bottom: 4px; }
+.troubleshoot-solution { font-size: 9.5pt; color: var(--text-secondary); }
+
+.next-module { background: var(--bg-card); border: 1px solid var(--grape-border); border-radius: 12px; padding: 16px 18px; margin-top: 20px; display: flex; align-items: center; gap: 12px; }
+.next-module .next-icon { font-size: 20pt; }
+.next-module .next-text { flex: 1; }
+.next-module .next-label { font-size: 8.5pt; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.next-module .next-title { font-size: 12pt; font-weight: 600; color: var(--text); }
+
+.inviolable { background: linear-gradient(135deg, rgba(244,63,94,0.15), rgba(244,63,94,0.05)); border: 2px solid var(--rose); border-radius: 12px; padding: 18px 20px; margin: 18px 0; }
+.inviolable h3 { color: var(--rose); margin: 0 0 8px; }
+.inviolable p { color: var(--text-secondary); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="page cover">
+  <div class="cover-badge">🍇 Curso OpenClaw — Aula N-1</div>
+  <div class="cover-star">🚨 OAuth Bloqueado — Leia Antes de Começar</div>
+  <div class="cover-title">Configurar<br><em>Credenciais</em><br>API Key</div>
+  <div class="cover-subtitle">Como configurar corretamente API Keys da Anthropic e OpenAI no OpenClaw — e por que o fluxo OAuth não funciona mais para a maioria dos alunos.</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Duração</div>
+      <div class="cover-meta-value">15–20 min</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Nível</div>
+      <div class="cover-meta-value">Iniciante</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Pré-req</div>
+      <div class="cover-meta-value">OpenClaw instalado</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: AVISO + POR QUE OAUTH QUEBROU -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">Aula N-1 — Configurar Credenciais</div>
+    <div class="page-header-right">openclaw.ai/curso</div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-title">⚠️ Leia Antes de Começar</div>
+  </div>
+
+  <div class="inviolable">
+    <h3>🚨 A Anthropic bloqueou OAuth para planos Pro</h3>
+    <p>Se você tem assinatura Claude Pro ($20/mês), o fluxo <code>setup-token</code> / <code>openclaw setup-token</code> <strong>NÃO FUNCIONA MAIS para você</strong>. Isso afeta a maioria dos alunos e é a dúvida #1 do curso (~20 ocorrências nos fóruns).</p>
+    <p style="margin-top:8px;"><strong>Sintoma:</strong> Você tenta rodar o fluxo OAuth, parece funcionar, mas na primeira mensagem aparece erro "OAuth flow not supported for Pro plans" ou "Unauthorized".</p>
+    <p style="margin-top:8px;"><strong>Solução:</strong> Ignorar completamente o fluxo OAuth e usar uma <strong>API Key direta</strong> — que é o que vamos aprender aqui.</p>
+  </div>
+
+  <div class="section-header" style="margin-top: 24px;">
+    <div class="section-number">02</div>
+    <div class="section-title">Por Que o OAuth Quebrou</div>
+  </div>
+
+  <p>Em 2026, a Anthropic decidiu que o fluxo OAuth só funciona para planos API (pay-per-use). Para planos Pro ($20/mês) — que é o que a maioria tem — eles bloquearam. Separação clara: "assinatura para usar no chat" vs "acesso programático via API".</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Situação</th>
+        <th>Funciona?</th>
+        <th>O que fazer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Plano Pro ($20/mês) + OAuth</td>
+        <td>❌ Bloqueado</td>
+        <td>Criar API Key separada</td>
+      </tr>
+      <tr>
+        <td>Plano gratuito + OAuth</td>
+        <td>❌ Bloqueado</td>
+        <td>Criar API Key com billing</td>
+      </tr>
+      <tr>
+        <td>API Key direta (qualquer plano)</td>
+        <td>✅ Funciona</td>
+        <td><strong>O que vamos fazer</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card amber" style="margin-top: 16px;">
+    <div class="card-title">💳 Tenho Claude Pro — preciso pagar a mais?</div>
+    <div class="card-desc">Sim, infelizmente. Sua assinatura Pro dá acesso ao <strong>claude.ai</strong> (interface web), não à API. Para o OpenClaw, você precisa de billing separado no <strong>console.anthropic.com</strong>. A boa notícia: com modelos econômicos (Haiku para tasks simples), o gasto real costuma ser <strong>$5-15/mês</strong> — menos que o Pro.</div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <strong>Dica: migrar do Pro para API-only</strong>
+      <p>Você pode cancelar o Pro e usar só a API. Perde o acesso ao claude.ai (a interface web), mas o OpenClaw substitui isso com muito mais poder.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-left">© Curso OpenClaw</div>
+    <div class="page-footer-right">pág. 2</div>
+  </div>
+</div>
+
+<!-- PAGE 3: GERANDO API KEYS -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">Aula N-1 — Configurar Credenciais</div>
+    <div class="page-header-right">openclaw.ai/curso</div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-title">Gerando API Keys</div>
+  </div>
+
+  <!-- ANTHROPIC -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">🤖 API Key — Anthropic</div>
+    <span class="step-time">~5 min</span>
+    <ol>
+      <li>Acesse <strong>console.anthropic.com</strong> — atenção: é o <em>console</em>, não o claude.ai</li>
+      <li>Faça login ou crie uma conta</li>
+      <li>No menu lateral: <strong>Settings → API Keys</strong></li>
+      <li>Clique em <strong>"Create Key"</strong></li>
+      <li>Dê um nome descritivo: <code>openclaw-pessoal</code></li>
+      <li>Copie a chave — começa com <code>sk-ant-api03-</code></li>
+      <li>Verifique billing: <strong>Settings → Billing</strong> — cartão cadastrado ✅</li>
+    </ol>
+    <div class="callout danger">
+      <div class="callout-icon">🚨</div>
+      <div class="callout-content">
+        <strong>COPIE AGORA — Única chance!</strong>
+        <p>A Anthropic só exibe a chave completa UMA VEZ. Após fechar o modal, não é possível visualizá-la novamente. Salve num gerenciador de senhas (1Password, Bitwarden).</p>
+      </div>
+    </div>
+    <div class="callout warning">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-content">
+        <strong>Sem billing = erro 402 em toda chamada</strong>
+        <p>Verifique se tem cartão cadastrado ou créditos. Sem billing ativo, a chave funciona mas toda chamada retorna HTTP 402 Payment Required.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPENAI -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">🌐 API Key — OpenAI</div>
+    <span class="step-time">~3 min</span>
+    <ol>
+      <li>Acesse <strong>platform.openai.com/api-keys</strong></li>
+      <li>Clique em <strong>"Create new secret key"</strong></li>
+      <li>Dê um nome: <code>openclaw</code></li>
+      <li>Copie a chave — começa com <code>sk-proj-</code> ou <code>sk-</code></li>
+      <li>Verifique crédito em <strong>Billing → Usage</strong></li>
+    </ol>
+    <div class="callout info">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-content">
+        <strong>OpenAI é opcional</strong>
+        <p>Configure apenas se pretende usar a OpenAI. Para o curso, recomendamos pelo menos a Anthropic (Claude).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-left">© Curso OpenClaw</div>
+    <div class="page-footer-right">pág. 3</div>
+  </div>
+</div>
+
+<!-- PAGE 4: CONFIGURANDO + TESTANDO -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">Aula N-1 — Configurar Credenciais</div>
+    <div class="page-header-right">openclaw.ai/curso</div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div class="section-title">Configurar e Verificar</div>
+  </div>
+
+  <!-- STEP 3: openclaw config -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">⚙️ Configurar com <code>openclaw config</code></div>
+    <span class="step-time">~2 min</span>
+    <div class="code-block" data-lang="bash">
+openclaw config</div>
+    <p>Isso abre o assistente interativo. Selecione Anthropic, cole sua API Key quando pedir. Depois selecione OpenAI (se configurado) e cole a chave.</p>
+    <div class="callout danger">
+      <div class="callout-icon">🚫</div>
+      <div class="callout-content">
+        <strong>Se aparecer opção "OAuth" ou "Setup Token" para Anthropic — IGNORE</strong>
+        <p>Escolha sempre "API Key". O wizard ainda mostra essa opção por compatibilidade com contas antigas, mas <strong>não funciona mais para a maioria das contas</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: openclaw status -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-title">✅ Verificar com <code>openclaw status</code></div>
+    <span class="step-time">~1 min</span>
+    <div class="code-block" data-lang="bash">
+openclaw status</div>
+    <p>Saída esperada quando tudo está correto:</p>
+    <div class="code-block" data-lang="output">
+<span style="color: var(--emerald)">✅ OpenClaw Status</span>
+─────────────────────────────
+Provider: Anthropic (Claude)
+Model:    claude-sonnet-4-5
+API Key:  sk-ant-...api03 (valid)
+Status:   <span style="color: var(--emerald)">Connected</span>
+
+Provider: OpenAI
+Model:    gpt-4o
+API Key:  sk-proj-...XxXx (valid)
+Status:   <span style="color: var(--emerald)">Connected</span>
+─────────────────────────────
+All providers configured ✓</div>
+  </div>
+
+  <h3>📁 Onde as credenciais são armazenadas</h3>
+  <table>
+    <thead>
+      <tr><th>Sistema</th><th>Caminho</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Linux / macOS</td>
+        <td><code>~/.openclaw/config.json</code></td>
+      </tr>
+      <tr>
+        <td>Windows</td>
+        <td><code>C:\Users\&lt;Nome&gt;\.openclaw\config.json</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout warning">
+    <div class="callout-icon">🔒</div>
+    <div class="callout-content">
+      <strong>Nunca commite config.json no git!</strong>
+      <p>O arquivo tem permissões restritas (modo 600 no Linux/Mac). Verifique que está no <code>.gitignore</code>.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-left">© Curso OpenClaw</div>
+    <div class="page-footer-right">pág. 4</div>
+  </div>
+</div>
+
+<!-- PAGE 5: ERROS COMUNS + CHECKLIST -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">Aula N-1 — Configurar Credenciais</div>
+    <div class="page-header-right">openclaw.ai/curso</div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div class="section-title">Erros Comuns</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">⭐ TOP 1 — "OAuth flow not supported" / "setup-token only"</div>
+    <div class="troubleshoot-solution"><strong>Causa:</strong> Usou fluxo OAuth com plano Pro. <strong>Solução:</strong> Rode <code>openclaw config</code> de novo, escolha "API Key" (não OAuth), cole sua chave do console.anthropic.com.</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">"Invalid API Key" / HTTP 401 Unauthorized</div>
+    <div class="troubleshoot-solution">Chave errada, expirada ou revogada. Crie uma nova no console e reconfigure com <code>openclaw config</code>.</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">HTTP 402 — Payment Required</div>
+    <div class="troubleshoot-solution">Sem billing ativo. Anthropic: <code>console.anthropic.com → Billing → adicionar cartão</code>. OpenAI: <code>platform.openai.com → Billing → adicionar crédito</code>.</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">HTTP 429 — Too Many Requests</div>
+    <div class="troubleshoot-solution"><strong>Rate limit — diferente de credencial inválida!</strong> É temporário. Espere 1-5 minutos. Considere upgrade de plano se recorrente.</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">"API Key not configured"</div>
+    <div class="troubleshoot-solution">Nunca rodou <code>openclaw config</code>. Rode agora.</div>
+  </div>
+
+  <div class="troubleshoot">
+    <div class="troubleshoot-problem">Chave funciona mas agente não responde</div>
+    <div class="troubleshoot-solution">tools.profile no modo messaging (v2026.3.2). Execute: <code>openclaw config set tools.profile full</code></div>
+  </div>
+
+  <div class="checklist" style="margin-top: 20px;">
+    <div class="checklist-title">✅ Checklist Final</div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div>Conta acessada em <strong>console.anthropic.com</strong> (não claude.ai)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div>API Key da Anthropic gerada e salva com segurança</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div>Billing ativo na Anthropic (cartão ou créditos)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div>(Opcional) API Key da OpenAI gerada e crédito verificado</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div><code>openclaw config</code> executado com "API Key" (não OAuth)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div><code>openclaw status</code> mostrando "Connected" ✅</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box"></div>
+      <div><code>~/.openclaw/config.json</code> no .gitignore</div>
+    </div>
+  </div>
+
+  <div class="next-module">
+    <div class="next-icon">➡️</div>
+    <div class="next-text">
+      <div class="next-label">Próxima Aula</div>
+      <div class="next-title">N-2 — Bot Sem Shell: Primeiro Agente no Telegram</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-left">© Curso OpenClaw</div>
+    <div class="page-footer-right">pág. 5</div>
+  </div>
+</div>
+
+</body>
+</html>

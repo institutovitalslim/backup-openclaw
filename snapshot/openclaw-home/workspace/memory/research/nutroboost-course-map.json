@@ -1,0 +1,1465 @@
+{
+  "course": {
+    "id": 451978,
+    "name": "NUTROBOOST - PATRICIA FABRINI",
+    "instructor_name": "Patricia Fabrini",
+    "dominant_access_type": "full_access",
+    "progress": 0,
+    "course_path": "nutroboostpatriciafabrini",
+    "base_url": "https://fabrini-patricia.systeme.io"
+  },
+  "modules": [
+    {
+      "lectures": [
+        {
+          "id": 7140342,
+          "name": "Alopecia Areata",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Alopecia Areata",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7153452,
+          "name": "SPA Capilar",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "SPA Capilar",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7155123,
+          "name": "Dermatite seborreica",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Dermatite seborreica",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7163498,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 12/07/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 12/07/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7216522,
+          "name": "Alopecia Frontal Fibrosante",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Alopecia Frontal Fibrosante",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7228749,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 19/07/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 19/07/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7271296,
+          "name": "Transplante capilar",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Transplante capilar",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7285331,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 26/07/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 26/07/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7349062,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 02/08/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 02/08/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7423409,
+          "name": "Precifica\u00e7\u00e3o",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Precifica\u00e7\u00e3o",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7423505,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 09/08/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 09/08/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7449103,
+          "name": " Ativos a serem usados topicamente ",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Ativos a serem usados topicamente",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7456343,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 16/08/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 16/08/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7505302,
+          "name": "Mentalidade e Planos de acompanhamento",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentalidade e Planos de acompanhamento",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7520462,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 23/08/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 23/08/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7567844,
+          "name": "Sete passos da venda",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Sete passos da venda",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7578972,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 30/08/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 30/08/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7645230,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 06/09/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 06/09/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7698116,
+          "name": "Implante Sil\u00e1stico: Quando Usar LED",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Implante Sil\u00e1stico: Quando Usar LED",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7698407,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 13/09/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Tricoscopia e Discuss\u00e3o de Casos Cl\u00ednicos \u2013 13/09/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7767192,
+          "name": "Melasma e Hiperpigmenta\u00e7\u00e3o p\u00f3s inflamat\u00f3ria",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Melasma e Hiperpigmenta\u00e7\u00e3o p\u00f3s inflamat\u00f3ria",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7827378,
+          "name": "Mentoria Nutriboost 25/09/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 25/09/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7827374,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 27/09/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 27/09/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7879740,
+          "name": "Reuni\u00e3o mentoria Nutroboost e discuss\u00e3o de casos cl\u00ednicos\u00a0",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Reuni\u00e3o Mentoria Nutroboost e discuss\u00e3o de casos cl\u00ednicos",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 7995279,
+          "name": "Mentoria Nutroboost - 09/10/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 09/10/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8000084,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos e Erup\u00e7\u00e3o\u00a0\u00a0Acneiforme p\u00f3s uso Testosterona\u00a0",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos e Erup\u00e7\u00e3o\u00a0Acneiforme p\u00f3s uso Testosterona",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8008360,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 18/10/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos 18/10/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8073759,
+          "name": "Mentalidade. Autorresponsabilidade. Efl\u00favio Tel\u00f3geno",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentalidade. Autorresponsabilidade. Efl\u00favio Tel\u00f3geno",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8204391,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 09/11/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 08/11/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8204413,
+          "name": "Reuni\u00e3o de Alinhamento",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Reuni\u00e3o de Alinhamamento - 08/11/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8355531,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 22/11/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos 22/11/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8478682,
+          "name": "Tecnologias - 06/12/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Tecnologias - 06/12/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8542693,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 13/12/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos 13/12/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8542742,
+          "name": "Tecnologia do Campo Eletromagn\u00e9tico 13/12/2025",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Tecnologia do Campo Eletromagn\u00e9tico 13/12/2025",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8591222,
+          "name": "Campo eletromagn\u00e9tico - Fisiologista e prof de Medicina do Esporte Bianca Ramallo",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Campo eletromagn\u00e9tico - Fisiologista e prof de Medicina do Esporte Bianca Ramallo",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8604928,
+          "name": "FELIZ RE NOVO ANO!",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "FELIZ RE NOVO ANO!",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8770376,
+          "name": "Mentoria Nutroboost - 10/01/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 10/01/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8828515,
+          "name": "Alopecia Frontal Fibrosante - 15/01/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Alopecia Frontal Fibrosante - 15/01/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 8971832,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos 31/01/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 31/01/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9025978,
+          "name": "Alopecias cicatriciais - 05/02/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Alopecias cicatriciais - 05/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9041451,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos. Ao fio e Epila\u00e7\u00e3o permanente de p\u00ealos\u00a0",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos. Ao fio e Epila\u00e7\u00e3o permanente de p\u00ealos\u00a0- 07/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9200076,
+          "name": "Campo eletromagn\u00e9tico - 19/02/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Campo eletromagn\u00e9tico - 19/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9212601,
+          "name": "Mentoria Nutroboost - 21/02/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 21/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9272892,
+          "name": "Novidades do Congresso Internacional de Tricologia ",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Novidades do Congresso Internacional de Tricologia  - 26/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9299784,
+          "name": "Mentoria Nutroboost - 28/02/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 28/02/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9371220,
+          "name": "Mentoria Nutroboost - 05/03/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 05/03/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9413845,
+          "name": "Mentoria Nutroboost - 12/03/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 12/03/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9437226,
+          "name": "Mentoria Nutroboost - 14/03/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 14/03/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9497653,
+          "name": " Mentoria Nutroboost - 19/03/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Mentoria Nutroboost - 19/03/2026",
+      "salesPage": null
+    },
+    {
+      "lectures": [
+        {
+          "id": 9497712,
+          "name": "Discuss\u00e3o de casos cl\u00ednicos - 21/03/2026",
+          "available": true,
+          "completed": false,
+          "unavailabilityReason": null,
+          "assignment": null
+        }
+      ],
+      "available": true,
+      "quiz": null,
+      "name": "Discuss\u00e3o de casos cl\u00ednicos - 21/03/2026",
+      "salesPage": null
+    }
+  ],
+  "lectures": [
+    {
+      "module_name": "Alopecia Areata",
+      "lecture_id": 7140342,
+      "lecture_name": "Alopecia Areata",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7140342",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/686ee077284e3_AlopeciaAreata.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "SPA Capilar",
+      "lecture_id": 7153452,
+      "lecture_name": "SPA Capilar",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7153452",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68711772144b5_SPACAPILAR.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Dermatite seborreica",
+      "lecture_id": 7155123,
+      "lecture_name": "Dermatite seborreica",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7155123",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68713cd5ea838_DermatiteSeborreica.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 12/07/2025",
+      "lecture_id": 7163498,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 12/07/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7163498",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6872cbeb0e1bb_Discuss\u00e3odecasoscl\u00ednicos.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Alopecia Frontal Fibrosante",
+      "lecture_id": 7216522,
+      "lecture_name": "Alopecia Frontal Fibrosante",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7216522",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/687ac53eaa282_AlopeciaFrontalFibrosante.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 19/07/2025",
+      "lecture_id": 7228749,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 19/07/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7228749",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/687d5b62a6272_Discuss\u00e3odecasoscl\u00ednicos19.07.2025.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Transplante capilar",
+      "lecture_id": 7271296,
+      "lecture_name": "Transplante capilar",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7271296",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6883c05891330_Transplantecapilar.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 26/07/2025",
+      "lecture_id": 7285331,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 26/07/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7285331",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6886922debc3a_Discuss\u00e3odecasoscl\u00ednicos26.07.2025.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 02/08/2025",
+      "lecture_id": 7349062,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 02/08/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7349062",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/688fa39c302ad_Discuss\u00e3odecasoscl\u00ednicos02.08.25.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Precifica\u00e7\u00e3o",
+      "lecture_id": 7423409,
+      "lecture_name": "Precifica\u00e7\u00e3o",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7423409",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/689b1324335ef_Precifica\u00e7\u00e3oaulaquintafeira.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 09/08/2025",
+      "lecture_id": 7423505,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 09/08/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7423505",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/689b164f85e73_CasosClinicosS\u00e1bado09-08-2025.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Ativos a serem usados topicamente",
+      "lecture_id": 7449103,
+      "lecture_name": " Ativos a serem usados topicamente ",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7449103",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/689f3ec148736_GMT20250814-220538_Recording_1920x1140.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 16/08/2025",
+      "lecture_id": 7456343,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 16/08/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7456343",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68a0b1dcb8da9_GMT20250816-110134_Recording_1920x1440.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentalidade e Planos de acompanhamento",
+      "lecture_id": 7505302,
+      "lecture_name": "Mentalidade e Planos de acompanhamento",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7505302",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68a84da6b3755_GMT20250822-000522_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 23/08/2025",
+      "lecture_id": 7520462,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 23/08/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7520462",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68ab20677fe92_GMT20250823-111355_Recording_1920x1140.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Sete passos da venda",
+      "lecture_id": 7567844,
+      "lecture_name": "Sete passos da venda",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7567844",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68b19b9a3892b_GMT20250829-013441_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 30/08/2025",
+      "lecture_id": 7578972,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 30/08/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7578972",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68b39e7fd782a_GMT20250830-110541_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 06/09/2025",
+      "lecture_id": 7645230,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 06/09/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7645230",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68bea8556eb64_GMT20250906-111244_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Implante Sil\u00e1stico: Quando Usar LED",
+      "lecture_id": 7698116,
+      "lecture_name": "Implante Sil\u00e1stico: Quando Usar LED",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7698116",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68c570298201c_GMT20250912-002239_Recording_1920x1140.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Tricoscopia e Discuss\u00e3o de Casos Cl\u00ednicos \u2013 13/09/2025",
+      "lecture_id": 7698407,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 13/09/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7698407",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68c577832f7c6_GMT20250913-111902_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Melasma e Hiperpigmenta\u00e7\u00e3o p\u00f3s inflamat\u00f3ria",
+      "lecture_id": 7767192,
+      "lecture_name": "Melasma e Hiperpigmenta\u00e7\u00e3o p\u00f3s inflamat\u00f3ria",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7767192",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68cfe58720cb1_GMT20250920-122015_Recording_1920x1140.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 25/09/2025",
+      "lecture_id": 7827378,
+      "lecture_name": "Mentoria Nutriboost 25/09/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7827378",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68d836fa5db66_GMT20250926-000329_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 27/09/2025",
+      "lecture_id": 7827374,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 27/09/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7827374",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68d83902aa8f8_GMT20250927-112126_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Reuni\u00e3o Mentoria Nutroboost e discuss\u00e3o de casos cl\u00ednicos",
+      "lecture_id": 7879740,
+      "lecture_name": "Reuni\u00e3o mentoria Nutroboost e discuss\u00e3o de casos cl\u00ednicos\u00a0",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7879740",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68dfbb8a95062_GMT20251003-001002_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 09/10/2025",
+      "lecture_id": 7995279,
+      "lecture_name": "Mentoria Nutroboost - 09/10/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7995279",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68f14f5ea81e2_GMT20251010-000537_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos e Erup\u00e7\u00e3o\u00a0Acneiforme p\u00f3s uso Testosterona",
+      "lecture_id": 8000084,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos e Erup\u00e7\u00e3o\u00a0\u00a0Acneiforme p\u00f3s uso Testosterona\u00a0",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8000084",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68f251242e0fe_GMT20251017-000311_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos 18/10/2025",
+      "lecture_id": 8008360,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 18/10/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8008360",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68f3e15f526d9_GMT20251018-112448_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentalidade. Autorresponsabilidade. Efl\u00favio Tel\u00f3geno",
+      "lecture_id": 8073759,
+      "lecture_name": "Mentalidade. Autorresponsabilidade. Efl\u00favio Tel\u00f3geno",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8073759",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/68fe9d515a46b_Mentalidade.Autorresponsabilidade.Efl\u00favioTel\u00f3geno.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 08/11/2025",
+      "lecture_id": 8204391,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 09/11/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8204391",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69107dc4c33c6_GMT20251108-121430_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Reuni\u00e3o de Alinhamamento - 08/11/2025",
+      "lecture_id": 8204413,
+      "lecture_name": "Reuni\u00e3o de Alinhamento",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8204413",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6910805db4ddb_GMT20251108-110812_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos 22/11/2025",
+      "lecture_id": 8355531,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 22/11/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8355531",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69242f0499f0a_GMT20251122-111248_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Tecnologias - 06/12/2025",
+      "lecture_id": 8478682,
+      "lecture_name": "Tecnologias - 06/12/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8478682",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69348259d1299_GMT20251206-110458_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos 13/12/2025",
+      "lecture_id": 8542693,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 13/12/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8542693",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/693dc13e206a1_GMT20251213-111320_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Tecnologia do Campo Eletromagn\u00e9tico 13/12/2025",
+      "lecture_id": 8542742,
+      "lecture_name": "Tecnologia do Campo Eletromagn\u00e9tico 13/12/2025",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8542742",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/693dc48e3fcca_GMT20251213-122031_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Campo eletromagn\u00e9tico - Fisiologista e prof de Medicina do Esporte Bianca Ramallo",
+      "lecture_id": 8591222,
+      "lecture_name": "Campo eletromagn\u00e9tico - Fisiologista e prof de Medicina do Esporte Bianca Ramallo",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8591222",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/694532cfb669d_GMT20251219-001109_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "FELIZ RE NOVO ANO!",
+      "lecture_id": 8604928,
+      "lecture_name": "FELIZ RE NOVO ANO!",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8604928",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69481290a3ea8_GMT20251220-111009_Recording_1920x1140.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 10/01/2026",
+      "lecture_id": 8770376,
+      "lecture_name": "Mentoria Nutroboost - 10/01/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8770376",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6963a35272b17_GMT20260110-110221_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Alopecia Frontal Fibrosante - 15/01/2026",
+      "lecture_id": 8828515,
+      "lecture_name": "Alopecia Frontal Fibrosante - 15/01/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8828515",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/696b74da091ff_GMT20260116-002637_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 31/01/2026",
+      "lecture_id": 8971832,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos 31/01/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8971832",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/697e6e5e2ab87_GMT20260131-114321_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Alopecias cicatriciais - 05/02/2026",
+      "lecture_id": 9025978,
+      "lecture_name": "Alopecias cicatriciais - 05/02/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9025978",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6985bdfd3abcc_GMT20260206-004418_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos. Ao fio e Epila\u00e7\u00e3o permanente de p\u00ealos\u00a0- 07/02/2026",
+      "lecture_id": 9041451,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos. Ao fio e Epila\u00e7\u00e3o permanente de p\u00ealos\u00a0",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9041451",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6987b365818b3_GMT20260207-111024_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Campo eletromagn\u00e9tico - 19/02/2026",
+      "lecture_id": 9200076,
+      "lecture_name": "Campo eletromagn\u00e9tico - 19/02/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9200076",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69985459602b3_GMT20260220-002424_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 21/02/2026",
+      "lecture_id": 9212601,
+      "lecture_name": "Mentoria Nutroboost - 21/02/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9212601",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/6999f964da0cf_GMT20260221-130600_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Novidades do Congresso Internacional de Tricologia  - 26/02/2026",
+      "lecture_id": 9272892,
+      "lecture_name": "Novidades do Congresso Internacional de Tricologia ",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9272892",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69a17bc514cdf_GMT20260227-001330_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 28/02/2026",
+      "lecture_id": 9299784,
+      "lecture_name": "Mentoria Nutroboost - 28/02/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9299784",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69a562a0041b6_GMT20260228-110808_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 05/03/2026",
+      "lecture_id": 9371220,
+      "lecture_name": "Mentoria Nutroboost - 05/03/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9371220",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69aeea4fce769_GMT20260306-001608_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 12/03/2026",
+      "lecture_id": 9413845,
+      "lecture_name": "Mentoria Nutroboost - 12/03/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9413845",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69b3ff2db81ed1.48024588_GMT20260313-000626_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 14/03/2026",
+      "lecture_id": 9437226,
+      "lecture_name": "Mentoria Nutroboost - 14/03/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9437226",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69b9359be79de4.25699509_GMT20260314-111514_Recording_640x360.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Mentoria Nutroboost - 19/03/2026",
+      "lecture_id": 9497653,
+      "lecture_name": " Mentoria Nutroboost - 19/03/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9497653",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69c080e6c072b2.97627716_GMT20260320-001144_Recording_1686x768.mp4"
+      ],
+      "resource_urls": []
+    },
+    {
+      "module_name": "Discuss\u00e3o de casos cl\u00ednicos - 21/03/2026",
+      "lecture_id": 9497712,
+      "lecture_name": "Discuss\u00e3o de casos cl\u00ednicos - 21/03/2026",
+      "lecture_url": "https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9497712",
+      "available": true,
+      "completed": false,
+      "page_title": null,
+      "video_urls": [
+        "https://d1yei2z3i6k35z.cloudfront.net/13339008/69c08bfeae8076.88803827_GMT20260321-112302_Recording_1920x1200.mp4"
+      ],
+      "resource_urls": []
+    }
+  ]
+}

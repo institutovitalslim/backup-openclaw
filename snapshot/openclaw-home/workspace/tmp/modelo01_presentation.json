@@ -1,0 +1,106 @@
+{
+  "job": {
+    "id": "5180f196-8315-4f49-96c2-03454bc85cd7",
+    "status": "success",
+    "result": {
+      "generated_designs": [
+        {
+          "candidate_id": "dg-44804ece-0153-4873-9bb0-2812ae87d797",
+          "url": "https://www.canva.com/d/Z2Bec83gwydeeU4",
+          "thumbnails": [
+            {
+              "url": "https://design.canva.ai/juBxHYXBJ7BdfXl"
+            },
+            {
+              "url": "https://design.canva.ai/Kr88T_r-Zq2nHd4"
+            },
+            {
+              "url": "https://design.canva.ai/LUjriQKPebFTY2G"
+            },
+            {
+              "url": "https://design.canva.ai/CpUNa36Hd1Iqe2O"
+            },
+            {
+              "url": "https://design.canva.ai/r2kGpoRgmAZb5EC"
+            },
+            {
+              "url": "https://design.canva.ai/l4nSEJ8rUlUIRQq"
+            }
+          ]
+        },
+        {
+          "candidate_id": "dg-d5040fd5-0c9d-4617-8020-729bc677e4d1",
+          "url": "https://www.canva.com/d/v_Va4dEBg52ooPe",
+          "thumbnails": [
+            {
+              "url": "https://design.canva.ai/Lxp67tTJhStDLRu"
+            },
+            {
+              "url": "https://design.canva.ai/0KKAPbLYmgUjjw5"
+            },
+            {
+              "url": "https://design.canva.ai/eK9ABcj3daHifh1"
+            },
+            {
+              "url": "https://design.canva.ai/2aKbj8jPFEfzX9E"
+            },
+            {
+              "url": "https://design.canva.ai/OCDPvDCPI2SJcES"
+            },
+            {
+              "url": "https://design.canva.ai/kNapnHTe3F5vi7R"
+            }
+          ]
+        },
+        {
+          "candidate_id": "dg-70fc515f-5dcb-4327-a0de-4000ee5fdc92",
+          "url": "https://www.canva.com/d/OUoOtQ3DrtBzQIo",
+          "thumbnails": [
+            {
+              "url": "https://design.canva.ai/vsDe2E5JysuaSAz"
+            },
+            {
+              "url": "https://design.canva.ai/eKNvTTo0GghuPH9"
+            },
+            {
+              "url": "https://design.canva.ai/f9O0RiigHL9nmOO"
+            },
+            {
+              "url": "https://design.canva.ai/hsX6saJjNDetWnZ"
+            },
+            {
+              "url": "https://design.canva.ai/cm0p7GioaxxBhb5"
+            },
+            {
+              "url": "https://design.canva.ai/Rr_6WqbgmhyduZI"
+            }
+          ]
+        },
+        {
+          "candidate_id": "dg-72268ef2-d620-4d11-af9d-8ff2bf73a2cc",
+          "url": "https://www.canva.com/d/1f62NHje4oWfqQI",
+          "thumbnails": [
+            {
+              "url": "https://design.canva.ai/HKZ8kr5kr_cCFh3"
+            },
+            {
+              "url": "https://design.canva.ai/FLh-qR0k280VMUT"
+            },
+            {
+              "url": "https://design.canva.ai/e4ZnHt-bbHTRnUK"
+            },
+            {
+              "url": "https://design.canva.ai/lG7R83vl1aTLeDn"
+            },
+            {
+              "url": "https://design.canva.ai/r6hDZu7N-8AcZVG"
+            },
+            {
+              "url": "https://design.canva.ai/bUd_WyyqlxFy1ll"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

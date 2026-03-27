@@ -20,7 +20,7 @@ Ele aponta para onde cada coisa esta. Nao deve duplicar o conteudo dos arquivos 
 - sessions/YYYY-MM-DD.md: log bruto do dia ou do tema, sem curadoria.
 - tactical/: memoria temporaria com expiracao explicita.
 - playbooks/: SOPs, checklists e rotinas operacionais.
-- research/: benchmark, estudos e referencias que valem consulta futura.
+- research/: benchmark, estudos e referencias que valem consulta futura. Exemplos: eGFR/testosterona em centenarias → research/eGFR-testosterone-centenarians.md; implante subdérmico de oxandrolona pós-LCA → research/implante-oxandrolona-lca.md; paradoxo metabólico da menopausa → research/menopausa-paradoxo-metabolico.md; protocolo EV + duplas IM → research/protocolo-ev-03-soros-10-duplas.md; protocolo Recompilar 10/10 → research/protocolo-duplas-recompilar-10-10.md; CP e testosterona baixa → research/prostate-cancer-low-testosterone-mortality.md; triplo agonismo antiobesidade → research/triplo-agonismo-obesidade.md; fórmula Recompilar homem → research/formula-homem-recompilar-2cs-2025.md; tirzepatida Recompilar → research/tirze-recompilar-3meses-2025.md; targeting FSH aging → research/targeting-fsh-aging.md; estresse reducionista → research/estresse-reducionista-supernutricao.md; hipótese hormonal da avó → research/hipotese-hormonal-avo.md; comparação Glaser vs demais → research/testosterona-rebecca-glaser-comparativo.md; semaglutida e gestação → research/semaglutida-gestacao-2026.md; GH baixa dose → research/gh-baixa-dose-composicao-corporal.md; cabelo CS 2025 → research/cabelo-cs-2025.md; GLP-1 e Botox → research/glp1-botox-migranea-2026.md; duplas premium 2 meses → research/protocolo-duplas-premium-2meses-2025.md; fórmula retenção hídrica → research/formula-retencao-hidrica.md; hepteto fantástico → research/hepteto-fantastico.md; informativo líquidos biomeds → research/informativo-liquidos-biomeds.md; alopecia areata (Nutroboost) → research/alopecia-areata-blueprint.md. estudos Sinclair (longevidade) → research/sinclair-longevity-core-findings.md.
 
 ## Criterio rapido para salvar
 - Se nao pode mudar sem conversa: context/decisions.md
@@ -49,3 +49,32 @@ Quando surgir conhecimento novo, criar dentro da mesma logica:
 - nova pesquisa duravel: memory/research/<tema>.md
 
 MEMORY.md deve continuar curto e funcionar como indice.
+
+## Integracoes Criticas
+- memory/integrations/onepassword.md
+- memory/playbooks/1password-access.md
+- memory/integrations/canva.md
+- memory/playbooks/canva-mcp-access.md
+
+- memory/playbooks/canva-marketing-workflow.md
+- memory/content/campaigns/canva-marketing-brief-template.md
+- memory/playbooks/marketing-production-routine.md
+
+## Endogin Catalogo De Plataforma
+- integrations/endogin.md: status do acesso e mapa base da plataforma.
+- playbooks/endogin-course-catalog.md: ordem correta de consulta para modulos e videos.
+- projects/endogin-platform.md: inventario estrutural da plataforma Endogin.
+- projects/endogin-vendas.md: trilhas comerciais, SND, agendamento e prospeccao.
+- projects/endogin-obesidade.md: trilhas de obesidade, tirzepatida, sarcopenia e emagrecimento.
+- projects/endogin-trh.md: trilhas de TRH, menopausa, pellets e hormonios.
+- projects/endogin-casos-clinicos.md: encontros, niveis e grupos de casos clinicos.
+- projects/endogin-start.md: trilhas Start, SCALE, Caio Pires, Twoany, Regina e Surgical.
+- projects/omie-study.md: estado atual do estudo do Omie na VPS.
+- research/endogin-catalog-deep-index.md: indice tematico profundo para busca semantica.
+- ../snapshot/endogin/course-structure.md: lista textual completa de modulos/produtos/aulas.
+- ../snapshot/endogin/course-structure.json: fonte estrutural completa para filtros e automacao.
+
+## Quarkclinic API
+- integrations/quarkclinic-api.md: skill da API Quarkclinic na VPS, cliente seguro e estado atual do acesso.
+- ../skills/quarkclinic-api/SKILL.md: instrucoes de uso da skill.
+- ../skills/quarkclinic-api/references/api-docs.md: mapa enxuto de endpoints e autenticacao.

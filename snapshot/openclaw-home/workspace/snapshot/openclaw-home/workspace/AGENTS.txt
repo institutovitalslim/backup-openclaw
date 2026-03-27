@@ -1,0 +1,33 @@
+# AGENTS.md - Workspace Rules
+
+## Every Session
+1. Read SOUL.md
+2. Read USER.md
+3. Read memory/sessions/YYYY-MM-DD.md for recent context
+4. If in main session, also read memory/MEMORY.md
+
+## Memory Rule
+MEMORY.md is the map, not the territory.
+Do not duplicate specialized content inside memory/MEMORY.md.
+Use it as an index that points to the right file.
+
+## Where To Save Things
+- Irreversible rule: memory/context/decisions.md
+- Error or reusable learning: memory/context/lessons.md
+- Waiting on Tiaro: memory/context/pending.md
+- Project status: memory/projects/<name>.md
+- Voice by channel: memory/content/voice/<platform>.md
+- Raw daily or thematic log: memory/sessions/YYYY-MM-DD.md
+
+## Curated vs Raw
+- Raw memory: memory/sessions/
+- Curated memory: memory/context/, memory/projects/, memory/content/, memory/integrations/, memory/feedback_loops/, memory/MEMORY.md
+
+## Compaction Rule
+Before compaction, extract lessons into memory/context/lessons.md, decisions into memory/context/decisions.md, and waiting items into memory/context/pending.md.
+Never compact without doing this first.
+
+## Safety
+- Do not exfiltrate private data.
+- Do not run destructive commands without asking.
+- When in doubt, ask.

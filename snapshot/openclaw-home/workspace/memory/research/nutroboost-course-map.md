@@ -1,0 +1,309 @@
+# NUTROBOOST - PATRICIA FABRINI
+
+- Instructor: Patricia Fabrini
+- Access: full_access
+- Progress: 0
+- Modules: 50
+- Lectures: 50
+
+## Modules
+
+### Alopecia Areata
+
+- Lecture: Alopecia Areata
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7140342
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/686ee077284e3_AlopeciaAreata.mp4
+
+### SPA Capilar
+
+- Lecture: SPA Capilar
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7153452
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68711772144b5_SPACAPILAR.mp4
+
+### Dermatite seborreica
+
+- Lecture: Dermatite seborreica
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7155123
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68713cd5ea838_DermatiteSeborreica.mp4
+
+### Discussão de casos clínicos - 12/07/2025
+
+- Lecture: Discussão de casos clínicos 12/07/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7163498
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6872cbeb0e1bb_Discussãodecasosclínicos.mp4
+
+### Alopecia Frontal Fibrosante
+
+- Lecture: Alopecia Frontal Fibrosante
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7216522
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/687ac53eaa282_AlopeciaFrontalFibrosante.mp4
+
+### Discussão de casos clínicos - 19/07/2025
+
+- Lecture: Discussão de casos clínicos 19/07/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7228749
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/687d5b62a6272_Discussãodecasosclínicos19.07.2025.mp4
+
+### Transplante capilar
+
+- Lecture: Transplante capilar
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7271296
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6883c05891330_Transplantecapilar.mp4
+
+### Discussão de casos clínicos - 26/07/2025
+
+- Lecture: Discussão de casos clínicos 26/07/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7285331
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6886922debc3a_Discussãodecasosclínicos26.07.2025.mp4
+
+### Discussão de casos clínicos - 02/08/2025
+
+- Lecture: Discussão de casos clínicos 02/08/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7349062
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/688fa39c302ad_Discussãodecasosclínicos02.08.25.mp4
+
+### Precificação
+
+- Lecture: Precificação
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7423409
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/689b1324335ef_Precificaçãoaulaquintafeira.mp4
+
+### Discussão de casos clínicos - 09/08/2025
+
+- Lecture: Discussão de casos clínicos 09/08/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7423505
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/689b164f85e73_CasosClinicosSábado09-08-2025.mp4
+
+### Ativos a serem usados topicamente
+
+- Lecture:  Ativos a serem usados topicamente 
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7449103
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/689f3ec148736_GMT20250814-220538_Recording_1920x1140.mp4
+
+### Discussão de casos clínicos - 16/08/2025
+
+- Lecture: Discussão de casos clínicos 16/08/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7456343
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68a0b1dcb8da9_GMT20250816-110134_Recording_1920x1440.mp4
+
+### Mentalidade e Planos de acompanhamento
+
+- Lecture: Mentalidade e Planos de acompanhamento
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7505302
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68a84da6b3755_GMT20250822-000522_Recording_640x360.mp4
+
+### Discussão de casos clínicos - 23/08/2025
+
+- Lecture: Discussão de casos clínicos 23/08/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7520462
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68ab20677fe92_GMT20250823-111355_Recording_1920x1140.mp4
+
+### Sete passos da venda
+
+- Lecture: Sete passos da venda
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7567844
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68b19b9a3892b_GMT20250829-013441_Recording_640x360.mp4
+
+### Discussão de casos clínicos - 30/08/2025
+
+- Lecture: Discussão de casos clínicos 30/08/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7578972
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68b39e7fd782a_GMT20250830-110541_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos - 06/09/2025
+
+- Lecture: Discussão de casos clínicos 06/09/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7645230
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68bea8556eb64_GMT20250906-111244_Recording_1920x1200.mp4
+
+### Implante Silástico: Quando Usar LED
+
+- Lecture: Implante Silástico: Quando Usar LED
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7698116
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68c570298201c_GMT20250912-002239_Recording_1920x1140.mp4
+
+### Tricoscopia e Discussão de Casos Clínicos – 13/09/2025
+
+- Lecture: Discussão de casos clínicos 13/09/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7698407
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68c577832f7c6_GMT20250913-111902_Recording_1920x1200.mp4
+
+### Melasma e Hiperpigmentação pós inflamatória
+
+- Lecture: Melasma e Hiperpigmentação pós inflamatória
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7767192
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68cfe58720cb1_GMT20250920-122015_Recording_1920x1140.mp4
+
+### Mentoria Nutroboost - 25/09/2025
+
+- Lecture: Mentoria Nutriboost 25/09/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7827378
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68d836fa5db66_GMT20250926-000329_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos - 27/09/2025
+
+- Lecture: Discussão de casos clínicos 27/09/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7827374
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68d83902aa8f8_GMT20250927-112126_Recording_1920x1200.mp4
+
+### Reunião Mentoria Nutroboost e discussão de casos clínicos
+
+- Lecture: Reunião mentoria Nutroboost e discussão de casos clínicos 
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7879740
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68dfbb8a95062_GMT20251003-001002_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 09/10/2025
+
+- Lecture: Mentoria Nutroboost - 09/10/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/7995279
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68f14f5ea81e2_GMT20251010-000537_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos e Erupção Acneiforme pós uso Testosterona
+
+- Lecture: Discussão de casos clínicos e Erupção  Acneiforme pós uso Testosterona 
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8000084
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68f251242e0fe_GMT20251017-000311_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos 18/10/2025
+
+- Lecture: Discussão de casos clínicos 18/10/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8008360
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68f3e15f526d9_GMT20251018-112448_Recording_1920x1200.mp4
+
+### Mentalidade. Autorresponsabilidade. Eflúvio Telógeno
+
+- Lecture: Mentalidade. Autorresponsabilidade. Eflúvio Telógeno
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8073759
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/68fe9d515a46b_Mentalidade.Autorresponsabilidade.EflúvioTelógeno.mp4
+
+### Discussão de casos clínicos - 08/11/2025
+
+- Lecture: Discussão de casos clínicos 09/11/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8204391
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69107dc4c33c6_GMT20251108-121430_Recording_1920x1200.mp4
+
+### Reunião de Alinhamamento - 08/11/2025
+
+- Lecture: Reunião de Alinhamento
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8204413
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6910805db4ddb_GMT20251108-110812_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos 22/11/2025
+
+- Lecture: Discussão de casos clínicos 22/11/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8355531
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69242f0499f0a_GMT20251122-111248_Recording_1920x1200.mp4
+
+### Tecnologias - 06/12/2025
+
+- Lecture: Tecnologias - 06/12/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8478682
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69348259d1299_GMT20251206-110458_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos 13/12/2025
+
+- Lecture: Discussão de casos clínicos 13/12/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8542693
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/693dc13e206a1_GMT20251213-111320_Recording_1920x1200.mp4
+
+### Tecnologia do Campo Eletromagnético 13/12/2025
+
+- Lecture: Tecnologia do Campo Eletromagnético 13/12/2025
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8542742
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/693dc48e3fcca_GMT20251213-122031_Recording_1920x1200.mp4
+
+### Campo eletromagnético - Fisiologista e prof de Medicina do Esporte Bianca Ramallo
+
+- Lecture: Campo eletromagnético - Fisiologista e prof de Medicina do Esporte Bianca Ramallo
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8591222
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/694532cfb669d_GMT20251219-001109_Recording_640x360.mp4
+
+### FELIZ RE NOVO ANO!
+
+- Lecture: FELIZ RE NOVO ANO!
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8604928
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69481290a3ea8_GMT20251220-111009_Recording_1920x1140.mp4
+
+### Mentoria Nutroboost - 10/01/2026
+
+- Lecture: Mentoria Nutroboost - 10/01/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8770376
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6963a35272b17_GMT20260110-110221_Recording_640x360.mp4
+
+### Alopecia Frontal Fibrosante - 15/01/2026
+
+- Lecture: Alopecia Frontal Fibrosante - 15/01/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8828515
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/696b74da091ff_GMT20260116-002637_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos - 31/01/2026
+
+- Lecture: Discussão de casos clínicos 31/01/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/8971832
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/697e6e5e2ab87_GMT20260131-114321_Recording_1920x1200.mp4
+
+### Alopecias cicatriciais - 05/02/2026
+
+- Lecture: Alopecias cicatriciais - 05/02/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9025978
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6985bdfd3abcc_GMT20260206-004418_Recording_1920x1200.mp4
+
+### Discussão de casos clínicos. Ao fio e Epilação permanente de pêlos - 07/02/2026
+
+- Lecture: Discussão de casos clínicos. Ao fio e Epilação permanente de pêlos 
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9041451
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6987b365818b3_GMT20260207-111024_Recording_1920x1200.mp4
+
+### Campo eletromagnético - 19/02/2026
+
+- Lecture: Campo eletromagnético - 19/02/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9200076
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69985459602b3_GMT20260220-002424_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 21/02/2026
+
+- Lecture: Mentoria Nutroboost - 21/02/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9212601
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/6999f964da0cf_GMT20260221-130600_Recording_640x360.mp4
+
+### Novidades do Congresso Internacional de Tricologia  - 26/02/2026
+
+- Lecture: Novidades do Congresso Internacional de Tricologia 
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9272892
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69a17bc514cdf_GMT20260227-001330_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 28/02/2026
+
+- Lecture: Mentoria Nutroboost - 28/02/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9299784
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69a562a0041b6_GMT20260228-110808_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 05/03/2026
+
+- Lecture: Mentoria Nutroboost - 05/03/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9371220
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69aeea4fce769_GMT20260306-001608_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 12/03/2026
+
+- Lecture: Mentoria Nutroboost - 12/03/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9413845
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69b3ff2db81ed1.48024588_GMT20260313-000626_Recording_1920x1200.mp4
+
+### Mentoria Nutroboost - 14/03/2026
+
+- Lecture: Mentoria Nutroboost - 14/03/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9437226
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69b9359be79de4.25699509_GMT20260314-111514_Recording_640x360.mp4
+
+### Mentoria Nutroboost - 19/03/2026
+
+- Lecture:  Mentoria Nutroboost - 19/03/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9497653
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69c080e6c072b2.97627716_GMT20260320-001144_Recording_1686x768.mp4
+
+### Discussão de casos clínicos - 21/03/2026
+
+- Lecture: Discussão de casos clínicos - 21/03/2026
+  URL: https://fabrini-patricia.systeme.io/school/course/nutroboostpatriciafabrini/lecture/9497712
+  Video: https://d1yei2z3i6k35z.cloudfront.net/13339008/69c08bfeae8076.88803827_GMT20260321-112302_Recording_1920x1200.mp4

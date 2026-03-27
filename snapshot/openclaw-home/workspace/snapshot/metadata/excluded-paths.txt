@@ -1,0 +1,11 @@
+workspace/.git/
+workspace/.openclaw/
+workspace/**/node_modules/
+workspace/**/venv/
+workspace/**/__pycache__/
+workspace/**/.pytest_cache/
+workspace/**/.mypy_cache/
+workspace/**/.next/
+workspace/**/dist/
+workspace/**/build/
+workspace/**/*.pyc

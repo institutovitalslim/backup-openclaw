@@ -674,8 +674,8 @@ findtime = 600</div>
 
 <span class="cmd">sudo apt update</span> && <span class="cmd">sudo apt install 1password-cli -y</span>
 
-<span class="comment"># Fazer login</span>
-<span class="cmd">op signin</span></div>
+<span class="comment"># Service account only no servidor</span>
+<span class="cmd">/root/.openclaw/bin/op-safe-read.sh</span> <span class="arg">item get</span> <span class="str">"Nome do Item"</span> <span class="flag">--vault</span> <span class="str">openclaw</span> <span class="flag">--field</span> <span class="str">credential</span> <span class="flag">--reveal</span></div>
 
   <p>No código, em vez de:</p>
 

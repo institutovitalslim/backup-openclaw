@@ -18,3 +18,8 @@ Devem ser revistas e podem expirar em cerca de 30 dias quando perderem valor.
 
 ## Licoes Ativas
 - Nenhuma licao curada registrada neste formato ainda.
+- Capacidades novas como integracoes e workflows devem ser registradas em memory/integrations/ e memory/playbooks/, enquanto memory/MEMORY.md deve permanecer apenas como indice curto, sem incorporar o conteudo completo desses arquivos. (2026-03-25)
+- Para tarefas no Canva, o agente pode cair no erro de tentar browser remoto e bater no Cloudflare. Se canva via MCP estiver autenticado, esse deve ser o caminho padrao; browser/manual so entra como fallback real. (2026-03-25)
+- Em tarefas longas de Canva/carrossel, manter `agents.defaults.timeoutSeconds` em 600s no servidor principal.
+- Manter `ripgrep` instalado na VPS para evitar desperdicio de tempo em buscas basicas do agente.
+- Preservar compatibilidade do diario em `/root/.openclaw/workspace/memory/sessions/YYYY-MM-DD.md` quando o agente esperar esse caminho.
