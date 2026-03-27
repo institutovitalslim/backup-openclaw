@@ -27,7 +27,8 @@
         "lastStatus": "ok",
         "lastDurationMs": 4408,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1774580400001
       }
     },
     {
