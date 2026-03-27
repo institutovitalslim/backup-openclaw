@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "skills": {
+    "gmail": {
+      "version": "1.0.6",
+      "installedAt": 1772050898499
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1772051946977
+    },
+    "nano-pdf": {
+      "version": "1.0.0",
+      "installedAt": 1772054126719
+    },
+    "google-ads-api": {
+      "version": "1.0.5",
+      "installedAt": 1772286289657
+    },
+    "claw-google-ads": {
+      "version": "1.0.0",
+      "installedAt": 1772287807055
+    },
+    "sonoscli": {
+      "version": "1.0.0",
+      "installedAt": 1772657680112
+    },
+    "excalidraw": {
+      "version": "1.0.0",
+      "installedAt": 1772659647797
+    },
+    "perplexity": {
+      "version": "1.0.0",
+      "installedAt": 1772659654871
+    },
+    "video-frames": {
+      "version": "1.0.0",
+      "installedAt": 1772659670597
+    },
+    "openai-image-gen": {
+      "version": "1.0.1",
+      "installedAt": 1772659679310
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1772659687306
+    },
+    "tmux": {
+      "version": "1.0.0",
+      "installedAt": 1772659702702
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1772659952946
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1772660701973
+    }
+  }
+}

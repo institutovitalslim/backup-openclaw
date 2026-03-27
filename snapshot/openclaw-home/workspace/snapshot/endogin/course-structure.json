@@ -1,0 +1,4515 @@
+{
+  "source": "Endogin",
+  "loginUrl": "https://membros.mentoriaendogin.com.br/auth/login?redirect=%2F",
+  "capturedAt": "2026-03-26T14:02:02.953Z",
+  "moduleCount": 37,
+  "lessonCount": 415,
+  "catalog": [
+    {
+      "title": "Mentoria Endogin - VENDAS",
+      "products": [
+        {
+          "href": "/area/produto/504477?row=1&column=1&img=instancia_6094%2Fimage%2FGRJTXplIzMSEKyxLfS2pTxFS8RoVPx2PykyF8HsY.jpg"
+        },
+        {
+          "href": "/area/produto/504483?row=1&column=2&img=instancia_6094%2Fimage%2FIQUx3qWhd0JMGNqrj16NuPIS46qztKafeoAVdLRv.jpg"
+        },
+        {
+          "href": "/area/produto/504484?row=1&column=3&img=instancia_6094%2Fimage%2F9K5aXoG07Rj2YECPaXMZrkRlnze9StA6lzJ2Rig2.jpg"
+        },
+        {
+          "href": "/area/produto/504485?row=1&column=4&img=instancia_6094%2Fimage%2FhmXQWSViQtXoNi1IDMZBfuXZniIz9r4vmRQUczXC.jpg"
+        },
+        {
+          "href": "/area/produto/504486?row=1&column=5&img=instancia_6094%2Fimage%2FqdG4OmkCYqrkH9Ynj5jflO1b5LX080gtvGimDQBT.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - Aulas Gerais",
+      "products": [
+        {
+          "href": "/area/produto/504479?row=2&column=1&img=instancia_6094%2Fimage%2F7mWUe07MzrQE9ERTBfT540W8jRXnFG1kaSKWO5sl.jpg"
+        },
+        {
+          "href": "/area/produto/504478?row=2&column=2&img=instancia_6094%2Fimage%2F3XGZSUpbcNMDsWYLb8pAjzfYmG2K8qYEauVZpAnT.jpg"
+        },
+        {
+          "href": "/area/produto/529232?row=2&column=3&img=instancia_6094%2Fimage%2FGgAiA27EaHFMc4RxhoDtTVU5JEk2ZxpD6NwgaRFK.jpg"
+        },
+        {
+          "href": "/area/produto/504480?row=2&column=4&img=instancia_6094%2Fimage%2F8nYy6Z8mRJjoVkubji36yk1YI4PauqlFjwPqR3NE.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - ENCONTROS",
+      "products": [
+        {
+          "href": "/area/produto/504487?row=3&column=1&img=instancia_6094%2Fimage%2FfpcfYrqAI1WTF2MLUGdetw3h4NYfbt4ANxpRq0Ku.jpg"
+        },
+        {
+          "href": "/area/produto/504488?row=3&column=2&img=instancia_6094%2Fimage%2FJUWscA61NsfdVoI9Dyj3l82fB5S5Ax30nW23kA0R.jpg"
+        },
+        {
+          "href": "/area/produto/504489?row=3&column=3&img=instancia_6094%2Fimage%2FmM33NzTn23lULdJsfsiKM920CBlucUvSDjzSyzam.jpg"
+        },
+        {
+          "href": "/area/produto/504490?row=3&column=4&img=instancia_6094%2Fimage%2F7q8Mj6laaRfSPK3zFaeoLKeae2TzeLv0aKahKMAB.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Curso Endogin",
+      "products": [
+        {
+          "href": "/area/produto/504461?row=4&column=1&img=instancia_6094%2Fimage%2FjFv2qbXL7si3EBv2stPX8cOJREVgDsIGfNnowN7i.jpg"
+        },
+        {
+          "href": "/area/produto/504475?row=4&column=2&img=instancia_6094%2Fimage%2FUJvaMQt04rbjlXtICWT3Fq7IzYiDnyGmjiUL1X7p.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin",
+      "products": [
+        {
+          "href": "/area/produto/518240?row=5&column=0&img=instancia_6094%2Fimage%2FNxvNCwHOU06pGtmYbXJfLAbwYN3tkEjYtaFNV5bC.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Eventos MLS - Growth Circle",
+      "products": [
+        {
+          "href": "/area/produto/504450?row=6&column=0&img=instancia_6094%2Fimage%2Ff2oE4yjT3vz5MBohjasKVHsRbAcXlzBlYcwkKddn.png"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE",
+      "products": [
+        {
+          "href": "/area/produto/542782?row=7&column=1&img=instancia_6094%2Fimage%2F6atyfDaPNrKQGhcVUZifkmJ7bAXDftZLFkIJITOT.jpg"
+        },
+        {
+          "href": "/area/produto/542783?row=7&column=2&img=instancia_6094%2Fimage%2F1kgDFWufMJXGzBUpcnyNlT4I2G1gVUywLMW3OHP3.jpg"
+        },
+        {
+          "href": "/area/produto/542784?row=7&column=3&img=instancia_6094%2Fimage%2FSldZO0Y7tsgrVrFdtDZpkmvpgAgCAF0r595001uo.jpg"
+        },
+        {
+          "href": "/area/produto/542785?row=7&column=4&img=instancia_6094%2Fimage%2FZNBzHjkIL5FucHPBQz8IebN0dissGiHwg38sjTh1.jpg"
+        },
+        {
+          "href": "/area/produto/542786?row=7&column=5&img=instancia_6094%2Fimage%2FD6ENeWEWfN4G1e9xeCK67bbrxGhRnSnSfYnbe8YG.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Caio Pires",
+      "products": [
+        {
+          "href": "/area/produto/504524?row=8&column=1&img=instancia_6094%2Fimage%2FVJJ7luRctWAFJs5VxcZVMNd6UTpXyULVuJpO15re.png"
+        },
+        {
+          "href": "/area/produto/504523?row=8&column=2&img=instancia_6094%2Fimage%2FbTLEn8o9KAYQKseVloaouYdrUi7zR3Bn2qtZISt7.png"
+        },
+        {
+          "href": "/area/produto/504522?row=8&column=3&img=instancia_6094%2Fimage%2FiSAsjuW9oJK7u0fe7IMasNmVtpnUjEx8lnTmIUhH.png"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes",
+      "products": [
+        {
+          "href": "/area/produto/504516?row=9&column=1&img=instancia_6094%2Fimage%2Febrv8wtBS39ltb0j7rPRHmcepcSaEZ1NWJVRZNnB.jpg"
+        },
+        {
+          "href": "/area/produto/504517?row=9&column=2&img=instancia_6094%2Fimage%2FHVuAshRrbzRhFiKk9cvLZRL44eAUB2UU2SCtqfIN.jpg"
+        },
+        {
+          "href": "/area/produto/504518?row=9&column=3&img=instancia_6094%2Fimage%2FvmmBrvRtOpHlJUD73z4liWWyAm9yfvwb2Zu6VeyF.png"
+        },
+        {
+          "href": "/area/produto/512614?row=9&column=4&img=instancia_6094%2Fimage%2FJlVOgNmvraZ0PXHmpLklc1Z2ex8y92qe64v9XTJ2.png"
+        },
+        {
+          "href": "/area/produto/548661?row=9&column=5&img=instancia_6094%2Fimage%2FjXFRgEqzKuGH5v3l7u5ZxbYeyrXG68d8uewFudvz.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Regina Rabello",
+      "products": [
+        {
+          "href": "/area/produto/512629?row=10&column=1&img=instancia_6094%2Fimage%2Ff1lJuAMUl9Q4q6gjsdvKKCF6QyR1QtjWUY3a2lgh.jpg"
+        },
+        {
+          "href": "/area/produto/512630?row=10&column=2&img=instancia_6094%2Fimage%2FNvjpCJcg2iaEUDWTh4dFwGj3tOjjxtgJ2BSMwVy1.png"
+        },
+        {
+          "href": "/area/produto/512632?row=10&column=3&img=instancia_6094%2Fimage%2FKjzoqu8FJNVu3aOjr6A4RGXtgwiqeA2KIeOXb1gA.jpg"
+        },
+        {
+          "href": "/area/produto/512633?row=10&column=4&img=instancia_6094%2Fimage%2FjnK51eWap2xVLhWoj65DB79ZnslP2jU1KG43HoVz.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SURGICAL",
+      "products": [
+        {
+          "href": "/area/produto/577914?row=11&column=1&img=instancia_6094%2Fimage%2F8dEZdl6IB8isZLV79Ts43O1AO26iIbQ5tc1eCHrY.jpg"
+        },
+        {
+          "href": "/area/produto/548889?row=11&column=2&img=instancia_6094%2Fimage%2FVNy3fLjPwtcKKjoNZmFbYRw24abWTh5EmuckK5P7.jpg"
+        },
+        {
+          "href": "/area/produto/548890?row=11&column=3&img=instancia_6094%2Fimage%2F9G2QGOYWRU268wZNGrwsiI6BI5CfFEdYBFa9uamX.jpg"
+        }
+      ]
+    }
+  ],
+  "productCount": 37,
+  "modules": [
+    {
+      "title": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "lessons": [
+        {
+          "title": "Onboarding 1 - Agendamento 2.0 e 7 passos da venda!",
+          "href": "/area/produto/item/7320280"
+        },
+        {
+          "title": "Onboarding 2",
+          "href": null
+        },
+        {
+          "title": "Onboarding 3 - SND! Os três pilares da venda! 16.09.25",
+          "href": null
+        },
+        {
+          "title": "Onboarding 4 - A Entrega dos programas de acompanhamento! 23.09.25",
+          "href": null
+        },
+        {
+          "title": "Onboarding 5 - Os três modelos prósperos de entrega! 30.10.25",
+          "href": null
+        },
+        {
+          "title": "Onboarding 6 - Gestão de Clínicas!.mp4",
+          "href": null
+        },
+        {
+          "title": "Onboarding 7 - Discussão de casos clínicos!",
+          "href": null
+        },
+        {
+          "title": "Onboarding 8 - Apanhado Geral!!!",
+          "href": null
+        },
+        {
+          "title": "Onboarding 9 - Orientações Endogin",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆",
+          "href": "/area/produto/item/7320401"
+        },
+        {
+          "title": "Aula Ouro 🏆 - Aula de Wilson 2.0! 21 OUTUBRO 25",
+          "href": null
+        },
+        {
+          "title": "Aula 00 - Os 7 Passos da Venda - SND e Tira dúvidas!",
+          "href": null
+        },
+        {
+          "title": "Aula 01 - Os 3 Pilares da Venda - A Venda é um processo de LIDERANÇA 🏆 + APRESENTAÇÃO 29.01.25",
+          "href": null
+        },
+        {
+          "title": "Aula 02 - Os 7 Passos da Venda - CONEXÃO",
+          "href": null
+        },
+        {
+          "title": "Aula 03 - Os 7 Passos da Venda - Apresentação do Projeto (PASSO 3) 25.02.25",
+          "href": null
+        },
+        {
+          "title": "Aula 04 - Os 7 Passos da Venda - Oportunidade (DI) e Contorno de Objeções 18.02",
+          "href": null
+        },
+        {
+          "title": "Aula 05 - Os 7 Passos da Venda - Fechamento Financeiro 11.03",
+          "href": null
+        },
+        {
+          "title": "Aula 06 - Os 7 Passos da Venda - PEGAR Referidos 18.03",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula Ouro 🏆 A Jornada Do Paciente - Do Agendamento Aos 07 Passos de Venda 22 JULHO 2025",
+          "href": null
+        },
+        {
+          "title": "Aulas Conceitos",
+          "href": "/area/produto/504483"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25",
+          "href": "/area/produto/item/7320432"
+        },
+        {
+          "title": "Q&A PROGRAMAS DE ACOMPANHAMENTO - 01.04.25",
+          "href": null
+        },
+        {
+          "title": "Reunião de Venda Agendamento 2.0 22 de Abril 2025",
+          "href": null
+        },
+        {
+          "title": "Reunião de Vendas 07.05.25 Programas de Acompanhamento 1",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula 1 - Reunião de Vendas 27.05 - Programas de Acompanhamento 1",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula 2 - Agendamento 03.06.25 (Manhã) - Programas de acompanhamento 2",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula 3 - Reunião de Vendas 10.06.25 - Programas de Acompanhamento 3",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula 4 - Reunião de Vendas 17.06.25 Programas de Acompanhamento 4",
+          "href": null
+        },
+        {
+          "title": "Terça - Aula 5 - Reunião de Vendas 24.06.25 Programas de Acompanhamento 5",
+          "href": null
+        },
+        {
+          "title": "Aulas Ouro 🏆 Terça - Reunião de Venda 01.07.25 - Lúcio e Marcela x",
+          "href": null
+        },
+        {
+          "title": "Terça - Reunião de Vendas 08 de JULHO 2025 - Programas de Acompanhamento On-line - Caio Saraiva",
+          "href": null
+        },
+        {
+          "title": "Terça Reunião Vendas - Dúvidas Onboarding 29.07.25",
+          "href": null
+        },
+        {
+          "title": "Reunião de VENDAS - Como contratar profissional médico 05 AGOSTO 2025",
+          "href": null
+        },
+        {
+          "title": "Programa de Acompanhamento OBSTETRICIA + Tecnicas de Vendas - 11 DEZEMBRO 2024",
+          "href": null
+        },
+        {
+          "title": "VENDAS - Programas de Acompanhamento 24 SETEMBRO 2024",
+          "href": null
+        },
+        {
+          "title": "PROGRAMA DE ACOMPANHAMENTO ESTENDIDO",
+          "href": null
+        },
+        {
+          "title": "GERAL DE PROGRAMAS DE ACOMPANHAMENTO 02.09.25",
+          "href": null
+        },
+        {
+          "title": "🏆 Aula Ouro! - Quebrando Objeções na Venda! 16.09.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Terça - Tecnica de Conexão, Perfis Comportamentais de Venda 04.NOV 2025",
+          "href": null
+        },
+        {
+          "title": "O poder da reunião semanal! 30.09.25",
+          "href": null
+        },
+        {
+          "title": "Autorresponsabilidade! 🏆Aula Ouro! 14.10.25",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro! 🏆Estratégia de Prospecção de Pacientes e Agendamento!.mp4",
+          "href": null
+        },
+        {
+          "title": "Os Princípios Milenares Honra, Servir, Repreensão e Perdão 28.10.25",
+          "href": null
+        },
+        {
+          "title": "O S do SND como você nunca viu! Se não está disposto a perder e não se atreva tentar ganhar! 23.12.25.mp4",
+          "href": null
+        },
+        {
+          "title": "O N e o D do SND como você nunca viu! Se não esta disposto a perder e não atreva tentar ganhar! 30.12.25",
+          "href": null
+        },
+        {
+          "title": "Kick-off 2026! Vamos com tudo!!l 🚀🚀🚀 06.01.26",
+          "href": null
+        },
+        {
+          "title": "Os passos 2, 3 e 4 como vocês nunca viram! Aula IMPERDÍVEL! 13.01.26",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25",
+          "href": "/area/produto/item/7320454"
+        },
+        {
+          "title": "Aula Ouro 🏆 - A mentalidade de um vendedor de alta Performance! 12.08.25",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆 GRATIDÃO 🙏🏼 ! - O real motivo de ser Grato - 23.09.25",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆 - Mentalidade de Vendas 29.04",
+          "href": null
+        },
+        {
+          "title": "Aula OURO 🏆 - Joel Jota - Ritos, Rotina e Rituais SET 2025",
+          "href": null
+        },
+        {
+          "title": "Power House - Matriz de Decisão 2024 - Flávio Augusto",
+          "href": null
+        },
+        {
+          "title": "Power House - Modelo de Negócios 2025 - Flávio Augusto",
+          "href": null
+        },
+        {
+          "title": "O Médico Mentor - 05 principais características 15.07.25",
+          "href": null
+        },
+        {
+          "title": "Terça - Mentalidade Baseada No Propósito 07.10.2025",
+          "href": null
+        },
+        {
+          "title": "Paz e Gratidão, o caminho para Prosperidade! 11.11.2025",
+          "href": null
+        },
+        {
+          "title": "Como encerrar o ano no GIRO! 25.11.2025",
+          "href": null
+        },
+        {
+          "title": "Terça - De Olho em 2026! Como fugir do Ponto Cego, do Ego e das Interferências 16 DEZ 2025",
+          "href": null
+        },
+        {
+          "title": "Você realmente está pronto para dar frutos? 20.01.26",
+          "href": null
+        },
+        {
+          "title": "Um marco na história da ENDOGIN - Vendas e Mentalidade 27.01.2026",
+          "href": null
+        },
+        {
+          "title": "Ajustando a mentalidade para alcançar voos ainda maiores 03.02.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Vendas e Mentalidade- 10.02.2026",
+          "href": null
+        },
+        {
+          "title": "Quer que um projeto grande dê certo em sua mão? 24.02.2026",
+          "href": null
+        },
+        {
+          "title": "O que pode estar contribuindo ou boicotando o seu crescimento? 03.03.2026",
+          "href": null
+        },
+        {
+          "title": "Vendas e Mentalidade - 10.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Vendas e Mentalidade - 12.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Mentalidade - 17.03.2026",
+          "href": null
+        },
+        {
+          "title": "Vendas e Mentalidade - 24.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aulas de Mentalidade",
+          "href": "/area/produto/504485"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - VENDAS / Q&A SND VENDAS! - Área de Membros",
+      "lessons": [
+        {
+          "title": "Q&A SND VENDAS!",
+          "href": "/area/produto/item/7320456"
+        },
+        {
+          "title": "Q&A com Davison Carvalho 🏆 - 14 MAIO 2025",
+          "href": null
+        },
+        {
+          "title": "Reunião extraordinária: Estratégia dos mentorandos Endogin para aumento de faturamento em clínicas 🧠💡",
+          "href": null
+        },
+        {
+          "title": "Aula Vendas e Mentalidade - 12.03.2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Módulo 1 - Obesidade, Sarcopenia e Emagrecimento 9 aulas",
+          "href": "/area/produto/item/7320326"
+        },
+        {
+          "title": "Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025",
+          "href": "/area/produto/item/7320326"
+        },
+        {
+          "title": "Aula Ouro 🏆 Obesidade Reprogramação Metabólica e Manutenção do Peso. 24.09.25",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: Método Endogin de Emagrecimento 26.03.25",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆 Tirzepatide & Ajuste Hormonal Como usar na prática + Casos Clinicos AGOSTO 2025",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: Método Endogin – Uso do GH na Prática Clínica – 30 ABR 2025",
+          "href": null
+        },
+        {
+          "title": "Aula ABGREF – Obesidade Sarcopenia – Dr. Caio e Dr. Vinicius",
+          "href": null
+        },
+        {
+          "title": "Aula Extra ENDOGIN – Dra. Adriana Pereira | Neuro Obesidade: A Mente por Trás do Peso – 2025",
+          "href": null
+        },
+        {
+          "title": "Obesidade Sarcopênica",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆 - MasterClass Reprogramação Metabólica NOV 2025",
+          "href": null
+        },
+        {
+          "title": "Módulo 2 - TRH e Uso de Testosterona na Prática 7 aulas",
+          "href": "/area/produto/item/7320333"
+        },
+        {
+          "title": "Aula Ouro 🏆: Transição Menopausal - Como Avaliar e Tratar NA PRATICA 2025 🏆 08.01.25",
+          "href": "/area/produto/item/7320333"
+        },
+        {
+          "title": "Aula Ouro 🏆: Manejo hormonal feminino- da adolescência à senectude",
+          "href": null
+        },
+        {
+          "title": "Aula OURO 🏆 2026 Implantes de Oxandrolona na Prática Clínica - Como Utilizar Essa Ferramenta na Obesidade/Sarcopenia Parte 01",
+          "href": null
+        },
+        {
+          "title": "Aula OURO 🏆 2026 Implantes de Oxandrolona na Prática Clínica - Parte 02 - CASOS CLINICOS NA PRÁTICA",
+          "href": null
+        },
+        {
+          "title": "Testosterona em Mulheres – 06 SET 2024",
+          "href": null
+        },
+        {
+          "title": "Oxandrolona e Testosterona no Manejo da Sarcopenia – 09 OUT 2024",
+          "href": null
+        },
+        {
+          "title": "Uso Prático da Testosterona no Homem + Encontro ENDOGIN – 30 OUT 2024",
+          "href": null
+        },
+        {
+          "title": "Módulo 3 - Implantes Hormonais e Protocolos Práticos 5 aulas",
+          "href": "/area/produto/item/7320337"
+        },
+        {
+          "title": "🏆 Aula Ouro - Implantes Silásticos 06.08.2025",
+          "href": "/area/produto/item/7320337"
+        },
+        {
+          "title": "Aula Nestorone + 1º Encontro ENDOGIN 08.08.2024",
+          "href": null
+        },
+        {
+          "title": "Implantes Silástico + Caso Clínico TDPM com Bloqueio – 11 DEZ 2024",
+          "href": null
+        },
+        {
+          "title": "Implantes Silásticos - Tira dúvidas! 07.08.25",
+          "href": null
+        },
+        {
+          "title": "Manejo do Sangramento Uterino Anormal 20.08.25",
+          "href": null
+        },
+        {
+          "title": "Módulo 4 - Terapias Injetáveis 2 aulas",
+          "href": "/area/produto/item/7320341"
+        },
+        {
+          "title": "Aula injetáveis na Obesidade Dra Raila",
+          "href": "/area/produto/item/7320341"
+        },
+        {
+          "title": "Aula Injetáveis Dra. Maria Claudia Rosenbaum",
+          "href": null
+        },
+        {
+          "title": "Módulo 5 - Aulas Gerais e Temas Diversos 8 aulas",
+          "href": "/area/produto/item/7671635"
+        },
+        {
+          "title": "Aula OURO 🏆: Manejo Hormonal na Mulher da Adolescência a Senectude 15 JAN 26 - Parte 01",
+          "href": "/area/produto/item/7671635"
+        },
+        {
+          "title": "Aula OURO 🏆: Manejo Hormonal na Mulher da Adolescência a Senectude 15 JAN 26 - Parte 02",
+          "href": null
+        },
+        {
+          "title": "Aula OURO 🏆: Aula de Peptídeos na Prática com Dr. Felipe Castro 18.02.2026",
+          "href": null
+        },
+        {
+          "title": "Noções Básicas de Fisiologia Masculina - 4.03.2026",
+          "href": null
+        },
+        {
+          "title": "Andrologia Dr. Edgar e Dr. Henrique - Testosterona e Fertilidade - 4.03.2026",
+          "href": null
+        },
+        {
+          "title": "Andrologia Dr. Edgar e Dr. Henrique - Testosterona e Câncer de Próstata - 4.03.2026",
+          "href": null
+        },
+        {
+          "title": "Do Menacme à Senectude SEM Implantes – 21 OUT 2024",
+          "href": null
+        },
+        {
+          "title": "Aula SOP 2025 - Quarta 09.07.25",
+          "href": null
+        },
+        {
+          "title": "Módulo 6 - Encontros geral 5 aulas",
+          "href": "/area/produto/item/7320349"
+        },
+        {
+          "title": "Aula Ouro! 🏆: Manejo dos Pellets de Estradiol! 05.11.2025",
+          "href": "/area/produto/item/7320349"
+        },
+        {
+          "title": "Aula Geral Q&A Dúvidas Gerais, Casos Clinicos, Pellets de Estradiol 🤯 08.10.2025",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Geral - Manejo da Paciente Slow Burn 25.06.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Geral - Manejo de Pellets e Silásticos 23.07.25",
+          "href": null
+        },
+        {
+          "title": "Reunião estratégica: implantes, tirzepatide e injetáveis - 18.03.2026",
+          "href": null
+        },
+        {
+          "title": "Módulo 7 - Aulas Extras 4 aulas",
+          "href": "/area/produto/item/7320350"
+        },
+        {
+          "title": "Dra. Palova – Equiparação Hospitalar e Resolução da ANVISA",
+          "href": "/area/produto/item/7320350"
+        },
+        {
+          "title": "Medicina Endocanabinoide - Aula Dr. Igor Alves",
+          "href": null
+        },
+        {
+          "title": "Planejamento e reforma tributária 19.11.2025",
+          "href": null
+        },
+        {
+          "title": "Disbiose Intestinal Dra Renata Gabrielly 20.11.2025",
+          "href": null
+        },
+        {
+          "title": "Módulo 8 - Método Endogin Lipedema 3 aulas",
+          "href": "/area/produto/item/7963995"
+        },
+        {
+          "title": "Aula OURO 🏆 - MasterClass Método ENDOGIN–LIPEDEMA FEV 2026",
+          "href": "/area/produto/item/7963995"
+        },
+        {
+          "title": "Método Endogin Lipedema - Aula Ouro! 03.12.25",
+          "href": null
+        },
+        {
+          "title": "Método Endogin Lipedema - Tira Dúvidas! 04.11.25",
+          "href": null
+        },
+        {
+          "title": "Aulas Endogin",
+          "href": "/area/produto/504479"
+        },
+        {
+          "title": "Aula 2 Obesidade BIOMEDS Oficial 20 MAIO 2025 - Estratégias no Manejo da Tirzepatide.pdf 17.3 MB",
+          "href": "https://cdn.areademembros.com/file/download/c3FjLmhNODQ4SjNCeDRKaVA0WWQ1dEtKMGw3SUFEdXVWMEVLVktIM0poUjEvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533645&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+2+Obesidade+BIOMEDS+Oficial+20+MAIO+2025+-+Estrate%CC%81gias+no+Manejo+da+Tirzepatide&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF"
+        },
+        {
+          "title": "Aula 02 - Obesidade BIOMEDS Oficial 20 MAIO 2025 - Resumo ACO e Tirze.pdf 2.8 MB",
+          "href": "https://cdn.areademembros.com/file/download/c3FjLklnbmdVY3E0a1Q5SmxMQWNXdEFjYTFreHdDMVN4QmptOTRPMVpkaXAvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533645&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+02+-+Obesidade+BIOMEDS+Oficial+20+MAIO+2025+-+Resumo+ACO+e+Tirze&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Módulo 1 - Conteúdo Pílula 16 aulas",
+          "href": "/area/produto/item/7489376"
+        },
+        {
+          "title": "Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025",
+          "href": "/area/produto/item/7489376"
+        },
+        {
+          "title": "Testosterona e Obesidade Masculina",
+          "href": null
+        },
+        {
+          "title": "Implante de Oxandrolona x Gestrinona X Testosterona",
+          "href": null
+        },
+        {
+          "title": "Testosterona no Homem - IM x Gel x Implantes - Manejando as Diferentes Vias",
+          "href": null
+        },
+        {
+          "title": "Gestrinona Pellet x Gestrinona Silastico: Pulos do gato Avançados 2025",
+          "href": null
+        },
+        {
+          "title": "Armadilhas da Transição Menopausal Analise de Exames",
+          "href": null
+        },
+        {
+          "title": "Particularidades em TH 2024",
+          "href": null
+        },
+        {
+          "title": "Como iniciar dose de bloqueio da Gestrinona",
+          "href": null
+        },
+        {
+          "title": "CagriSema Redefine 2 - 10 MARÇO 2025",
+          "href": null
+        },
+        {
+          "title": "TH em pacientes com alto risco cardiovascular",
+          "href": null
+        },
+        {
+          "title": "Conteúdo Pílula - TRH e Tromboembolismo Venoso - Revisão Sistemática",
+          "href": null
+        },
+        {
+          "title": "Conteúdo Pílula - Taquifilaxia e Down Regulation do receptor de Estradiol - Como manejar? 16.06.25",
+          "href": null
+        },
+        {
+          "title": "Manejo da Menopausa e Perimenopausa Guideline da Sociedade Europeia de Endocrinologia 20.10.25",
+          "href": null
+        },
+        {
+          "title": "TRH em pacientes com passado de CA de mama, quais as evidências atuais.",
+          "href": null
+        },
+        {
+          "title": "Ajuste da dose do estradiol para maximizar os benefícios e minimizar os riscos 19.02.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: Método Endogin RECOMPILAR Masculino - 19 FEV 2026",
+          "href": null
+        },
+        {
+          "title": "Módulo 2 - Casos Clínicos 3 aulas",
+          "href": "/area/produto/item/7320309"
+        },
+        {
+          "title": "Oxandrolona e Tirzepatide na Obesidade Feminina OUT 2024 - Casos Clínicos",
+          "href": "/area/produto/item/7320309"
+        },
+        {
+          "title": "Medicina Do Esporte Homem Ectomorfo e Baixa Massa Muscular - Casos Clínicos",
+          "href": null
+        },
+        {
+          "title": "TRH Hipoestrogesimo (Do gel para o Implante) FEV 2025 - Casos Clínicos",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "lessons": [
+        {
+          "title": "Como fazer a transição da TRH transdérmica para os Pellets?",
+          "href": "/area/produto/item/7661827"
+        },
+        {
+          "title": "Início da TRH em paciente sem comorbidades - Caso de Dra Islany - 08.01.26",
+          "href": null
+        },
+        {
+          "title": "Tratamento de Endometriose pós-cirurgia - Caso de Dra Marcia - 08.01.26",
+          "href": null
+        },
+        {
+          "title": "Simplificando a Reposição Hormonal e o Emagrecimento da Mulher na Menopausa – 09.01.26",
+          "href": null
+        },
+        {
+          "title": "Quando Usar a Reposição de Estradiol via Oral - 13.01.26",
+          "href": null
+        },
+        {
+          "title": "Modelo Clube - Como manter o paciente após o programa de acompanhamento!",
+          "href": null
+        },
+        {
+          "title": "Em pacientes com Implanon, quando utilizar gestrinona ou drospirenona?",
+          "href": null
+        },
+        {
+          "title": "Fase 3 da transição menopausal em portadoras de adenomiose e acima do peso 21.01.2026",
+          "href": null
+        },
+        {
+          "title": "Quando utilizar ou não os implantes de Oxandrolona no Homem - 02.02.2026",
+          "href": null
+        },
+        {
+          "title": "Como escolher entre a metenolona intramuscular, a oxandrolona oral e o GH, considerando que o objetivo principal é o ganho seco",
+          "href": null
+        },
+        {
+          "title": "Como utilizar a drospirenona de 50 pra amenizar efeitos colaterais",
+          "href": null
+        },
+        {
+          "title": "Como iniciar a terapia de reposição hormonal acima dos 65 anos?",
+          "href": null
+        },
+        {
+          "title": "Reposição hormonal em pacientes com alto risco trombótico",
+          "href": null
+        },
+        {
+          "title": "Implantes de drospirenona de 100 miligramas e libido",
+          "href": null
+        },
+        {
+          "title": "Paciente com endometriose necessitando ir para a emergência",
+          "href": null
+        },
+        {
+          "title": "Como prescrever a TRT em pacientes com testosterona acima de 500?",
+          "href": null
+        },
+        {
+          "title": "Como evitar colaterais na combinação de gestrinona com outros hormonios?",
+          "href": null
+        },
+        {
+          "title": "Paciente na fase 3, como funciona o manejo?",
+          "href": null
+        },
+        {
+          "title": "Como Usar o Genryzon na Clinica, Oferecendo um Resultado Melhor Para o Paciente e Aumentar o Faturamento da Clinica",
+          "href": null
+        },
+        {
+          "title": "Quando Bloquear e Quando Não Bloquear na Fase Três?",
+          "href": null
+        },
+        {
+          "title": "Ajuste da Dose da Gestrinona na Transição da Menopausa",
+          "href": null
+        },
+        {
+          "title": "Transição do Underground Para as Quatro Linhas TRT",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "lessons": [
+        {
+          "title": "Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva",
+          "href": "/area/produto/item/7320358"
+        },
+        {
+          "title": "Aula 1.2 Caso Clinico - Transição Menopausal ( Deficiencia de Progesterona) - Dr. Caio Saraiva",
+          "href": null
+        },
+        {
+          "title": "Aula 1.3 Caso Clinico - Transição Menopausal (Hipoestrogenismo Franco) - Dr. Caio Saraiva",
+          "href": null
+        },
+        {
+          "title": "TRH por todas as vias - Dr. Vinicius Carruego",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: TRH por todas as vias - Como eu faço? - Dr. Vinicius Carruego",
+          "href": null
+        },
+        {
+          "title": "Aula 01 - Caso Clínico - Paciente 80 anos - Múltiplas Comorbidades - Dr. Vinicius Carruego",
+          "href": null
+        },
+        {
+          "title": "Aula 02 - Caso Clinico - Homem sarcopênico com deficiência de Testosterona - Dr. Caio Saraiva",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: Uso Prático da Gestrinona - Dr. Caio Saraiva",
+          "href": null
+        },
+        {
+          "title": "Aula Ouro 🏆: Uso de implantes de oxandrolona - Dr. Caio, Dr. Vinicius e GA",
+          "href": null
+        },
+        {
+          "title": "AULA - Sangramento Menstrual Pós Implante - Como Controlar - Dr. Vinicius e GA",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "lessons": [
+        {
+          "title": "Módulo 1 21 aulas",
+          "href": "/area/produto/item/7320477"
+        },
+        {
+          "title": "Encontro Nível 1 22.01.25 (Noite)",
+          "href": "/area/produto/item/7320477"
+        },
+        {
+          "title": "Encontro Nível 1 12.02.25 (Noite)",
+          "href": null
+        },
+        {
+          "title": "Encontro Nível 1 19.02.25",
+          "href": null
+        },
+        {
+          "title": "Reunião QUARTA Nível 1 e 2 - 16 de Abril 2025",
+          "href": null
+        },
+        {
+          "title": "Reunião Nível 1 07.05.25",
+          "href": null
+        },
+        {
+          "title": "Reunião QUARTA Nível 1 e 2 - 21 de MAIO 2025",
+          "href": null
+        },
+        {
+          "title": "6º Encontro ENDOGIN (REPOSIÇÃO POR TODAS AS VIAS NA MULHER) 11 SETEMBRO 24",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 e 2 - 16.07.25 (Noite)",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nivel 1 e 2 - 30.07.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 e 2 - 03.09.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 e 2 - 17.09.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 e 2 - 01.10.2025",
+          "href": null
+        },
+        {
+          "title": "Reuniao Quarta Nivel 1 e 2 12.11.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 e 2 - 26.11.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 17.12.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 1 07.01.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Grupo Nível 1 21.01.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo nível 1- 04.02.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo Nível 1 - 11.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Grupo Nível 1 e 2 25.03.2026",
+          "href": null
+        },
+        {
+          "title": "Módulo 2 - Casos Clínicos 2 aulas",
+          "href": "/area/produto/item/7320487"
+        },
+        {
+          "title": "5º ENCONTRO + Caso Menopausa e Endometriose // Uso correto da Gestrinona",
+          "href": "/area/produto/item/7320487"
+        },
+        {
+          "title": "Grupo Nível 1 - 25.02.2026",
+          "href": null
+        },
+        {
+          "title": "Encontros Nível 1",
+          "href": "/area/produto/504487"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Reunião Nível 2 07.05.25",
+          "href": "/area/produto/item/7320504"
+        },
+        {
+          "title": "Reunião QUARTA Nível 1 e 2 - 16 de Abril 2025",
+          "href": null
+        },
+        {
+          "title": "Reunião QUARTA Nível 1 e 2 - 21 de MAIO 2025",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 2 - 04.06.25 (Noite)",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 2 - 18.06.25 (Noite)",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 2 - 03.07.25 (Noite)",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 2 - 17.12.25",
+          "href": null
+        },
+        {
+          "title": "Reunião Quarta Nível 2 07.01.2026",
+          "href": null
+        },
+        {
+          "title": "Aulas Grupo Nível 2. 21.01.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo Nível 2 - 25.02.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo Nível 2 - 11.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Grupo Nível 1 e 2 25.03.2026",
+          "href": null
+        },
+        {
+          "title": "Encontros Nível 2",
+          "href": "/area/produto/504488"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Módulo 1 19 aulas",
+          "href": "/area/produto/item/7320526"
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25",
+          "href": "/area/produto/item/7320526"
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 22.01.25 (Manhã)",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 05.02.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 19.02.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 19.03.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 07.05.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 04.06.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 02.07.2025",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 16.07.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria Endogin - Grupo Avançado 17.09.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 01.10.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria Endogin - Grupo Avançado 12.11.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria Endogin - Grupo Avançado 26.11.25",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 17.12.2025",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 07.01.26",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 21.01.2026",
+          "href": null
+        },
+        {
+          "title": "Nível Avançado 04.02.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo Avançado - 11.03.2026",
+          "href": null
+        },
+        {
+          "title": "Grupo Avançado - 25.0.2026",
+          "href": null
+        },
+        {
+          "title": "Módulo 2 - Casos Clínicos 2 aulas",
+          "href": "/area/produto/item/7320522"
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 21.05.25 - Casos Clínicos Medicina do Esporte",
+          "href": "/area/produto/item/7320522"
+        },
+        {
+          "title": "Grupo Avançado - 25.02.2026",
+          "href": null
+        },
+        {
+          "title": "Encontros Avançados",
+          "href": "/area/produto/504489"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Encontro 1 Obesidade - 03.04.25",
+          "href": "/area/produto/item/7320559"
+        },
+        {
+          "title": "Encontro 2 Obesidade - 10.04",
+          "href": null
+        },
+        {
+          "title": "Encontro 3 Obesidade - 01.05",
+          "href": null
+        },
+        {
+          "title": "Encontro 4 Obesidade - 15.05.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 5 Obesidade - 22.05.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 6 Obesidade - 29.05.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 7 Obesidade - 05.06.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 8 Obesidade - 12.06.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 9 Obesidade + avançado - 18.06.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 10 Obesidade 03.07.25",
+          "href": null
+        },
+        {
+          "title": "Encontro 11 Obesidade 17.07.25",
+          "href": null
+        },
+        {
+          "title": "🏆 Encontro Obesidade Tema LIPEDEMA 24 JULHO 2025",
+          "href": null
+        },
+        {
+          "title": "Mentoria ENDOGIN - Grupo AVANÇADO 03.09.25",
+          "href": null
+        },
+        {
+          "title": "ENCONTRO OBESIDADE 04.09.25",
+          "href": null
+        },
+        {
+          "title": "ENCONTRO OBESIDADE 02.10.25",
+          "href": null
+        },
+        {
+          "title": "Encontro Obesidade 16.10.25",
+          "href": null
+        },
+        {
+          "title": "Encontro Obesidade - 06.11.25",
+          "href": null
+        },
+        {
+          "title": "Discussão obesidade 13.11.25",
+          "href": null
+        },
+        {
+          "title": "Encontro de Obesidade 27.11.25",
+          "href": null
+        },
+        {
+          "title": "Encontro Obesidade 08.01.2026",
+          "href": null
+        },
+        {
+          "title": "Obesidade 22.01.206",
+          "href": null
+        },
+        {
+          "title": "Aula Obesidade - 05.02.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Obesidade - 12.02.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Obesidade - 26.02.2026",
+          "href": null
+        },
+        {
+          "title": "Aula Obesidade - 05.03.2026",
+          "href": null
+        },
+        {
+          "title": "Encontros de Obesidade",
+          "href": "/area/produto/504490"
+        }
+      ]
+    },
+    {
+      "title": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Sexta-feira 7 aulas",
+          "href": "/area/produto/item/7319805"
+        },
+        {
+          "title": "SEXTA 01 - Obesidade 01-020",
+          "href": "/area/produto/item/7319805"
+        },
+        {
+          "title": "SEXTA 02 - Willian Saback-006",
+          "href": null
+        },
+        {
+          "title": "SEXTA 03 - Obesidade 02-017",
+          "href": null
+        },
+        {
+          "title": "SEXTA 04 - Izabelle-007",
+          "href": null
+        },
+        {
+          "title": "SEXTA 05 - Menopausa-012",
+          "href": null
+        },
+        {
+          "title": "SEXTA 06 - Emagrecimento-009",
+          "href": null
+        },
+        {
+          "title": "SEXTA 07 - Nestorone-003",
+          "href": null
+        },
+        {
+          "title": "Sábado 16 aulas",
+          "href": "/area/produto/item/7319848"
+        },
+        {
+          "title": "SABADO 01 - Oxandrolona-016",
+          "href": "/area/produto/item/7319848"
+        },
+        {
+          "title": "SABADO 02 - Tamaris Marques-014",
+          "href": null
+        },
+        {
+          "title": "SABADO 03 - Testosterona Pelleets-005",
+          "href": null
+        },
+        {
+          "title": "SABADO 04 - Larissa - Idosa C Comorbidade",
+          "href": null
+        },
+        {
+          "title": "SABADO 05 - Felipe Carvalho",
+          "href": null
+        },
+        {
+          "title": "SABADO 06 - Priscila Caul",
+          "href": null
+        },
+        {
+          "title": "SABADO 07 - Mauricio-008",
+          "href": null
+        },
+        {
+          "title": "SABADO 08 - Amanda Arruda-018",
+          "href": null
+        },
+        {
+          "title": "SABADO 09 - Melissa Parente-011",
+          "href": null
+        },
+        {
+          "title": "SABADO 10 - Milene Buzzato pt 01-022",
+          "href": null
+        },
+        {
+          "title": "SABADO 11 - Milene Buzzato pt 02",
+          "href": null
+        },
+        {
+          "title": "SABADO 12 - Mariana-023",
+          "href": null
+        },
+        {
+          "title": "SABADO 13 - Maria Clara",
+          "href": null
+        },
+        {
+          "title": "SABADO 14 - Alex Barros-004",
+          "href": null
+        },
+        {
+          "title": "SABADO 15 - Fernanda-021",
+          "href": null
+        },
+        {
+          "title": "SABADO 16 - Caso Mãe Vinicius",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "Módulo 1 4 aulas",
+          "href": "/area/produto/item/7320212"
+        },
+        {
+          "title": "Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25",
+          "href": "/area/produto/item/7320212"
+        },
+        {
+          "title": "Obesidade - Aula Preparatória On-line Parte 2 - 26.08.25",
+          "href": null
+        },
+        {
+          "title": "TRH Feminina - Aula Preparatória On-line - 27.08.25",
+          "href": null
+        },
+        {
+          "title": "Método Endogin Uso do GH na prática Clinica ABRIL 2025 30.04.25",
+          "href": null
+        },
+        {
+          "title": "DIA 1 10 aulas",
+          "href": "/area/produto/item/7320231"
+        },
+        {
+          "title": "1º Dia - Abertura do Curso ENDOGIN 2 - Sexta",
+          "href": "/area/produto/item/7320231"
+        },
+        {
+          "title": "1º Dia - Manhã - Aula Obesidade - Método ENDOGIN EMAGRECIMENTO 🏆 Parte 1",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Manhã - Aula Obesidade - Método ENDOGIN EMAGRECIMENTO 🏆 Parte 2 - Aplicando na Prática",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Manhã - Boas Práticas com Pellets Hormonais - BIOMEDS - Dra. Izabelle",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Aula Obesidade Sarcopênica e Sarcopenia - Parte 1 - INTRODUÇÃO",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Aula Obesidade Sarcopênica e Sarcopenia - Parte 2 - Implantes de OXANDROLONA",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Depoimentos de Alhender e Nauale 🙏🏼",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Aula ELMECO - Implantes Silástico - Segurança e Uso",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Implantes de Gestrinona e Nestorone - Parte 1",
+          "href": null
+        },
+        {
+          "title": "1º Dia - Tarde - Implantes de Gestrinona e Nestorone - Parte 2",
+          "href": null
+        },
+        {
+          "title": "DIA 2 14 aulas",
+          "href": "/area/produto/item/7320254"
+        },
+        {
+          "title": "2º Dia - Abertura do Curso ENDOGIN 2 - Sábado",
+          "href": "/area/produto/item/7320254"
+        },
+        {
+          "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Introdução 🏆",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Casos Clínicos na Prática - Parte 1 🏆",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Casos Clínicos na Prática - Parte 2 (COMO EU FAÇO) 🏆",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Manhã - TRT Masculina Por Todas As Vias 🏆",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Caso Clínico 1 - Sarita Rodrigues - Lipedema",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Caso Clínico 2 - Maria Claudia - Terapia Injetavel na Obesidade",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Caso Clínico 3 - José Pedro - Endometriose // Caso Clínico 4 - Vitoria Sacchetto - Sangramento Uterino Anormal",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Caso Clínico 5 - Catharine Coelho - Obesidade + Lipedema + Autismo",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Caso Clínico 6 - Livia Trevisan - SOP",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Casos Clínico 7 - Suzana Lessa - Lipedema 2",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Casos Clínico 8 - Fernanda Abi - Reganho De Peso Pós-Bariátrica + Menopausa)",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Tarde - Casos Clínico 9 - Wanessa Rezende - Mulher em Transição Menopausal e ENDOMETRIOSE",
+          "href": null
+        },
+        {
+          "title": "2º Dia - Noite - ENCERRAMENTO ENDOGIN 2 🙏🏼",
+          "href": null
+        },
+        {
+          "title": "Aula Obesidade ENDOGIN 02 Pre-curso ONLINE Dr. Caio Parte 1 AGOSTO 2025.pdf 17.5 MB",
+          "href": "https://cdn.areademembros.com/file/download/c3FjLnpJb1NaRGdWVGJLVDJ2NUtFZnhBeGhMUHZEbDZkb2pZcEYxOEtVMGgvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533667&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+Obesidade+ENDOGIN+02+Pre-curso+ONLINE+Dr.+Caio+Parte+1+AGOSTO+2025&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "lessons": [
+        {
+          "title": "Endogin - Abertura: Os 5 Baldes",
+          "href": "/area/produto/item/7521315"
+        },
+        {
+          "title": "Endogin - Yuri Barbosa",
+          "href": null
+        },
+        {
+          "title": "Endogin - Davison Carvalho",
+          "href": null
+        },
+        {
+          "title": "Endogin - Abertura Tarde",
+          "href": null
+        },
+        {
+          "title": "Endogin - Abertura Hotseat",
+          "href": null
+        },
+        {
+          "title": "Endogin - Tiago Brunet",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Eventos MLS - Growth Circle / Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos - Área de Membros",
+      "lessons": [
+        {
+          "title": "Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos",
+          "href": "/area/produto/item/7318895"
+        },
+        {
+          "title": "Palestra 02 - Como definir metas estratégicas e sustentáveis para 2025 - Renata Pontes",
+          "href": null
+        },
+        {
+          "title": "Palestra 03 - Criação de uma cultura orientada a resultados - Whill Silva",
+          "href": null
+        },
+        {
+          "title": "Palestra 04 - A mentalidade que fará você voar em 2025 - Everton Pieri",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE / Onboarding 4 - Spin Selling - Área de Membros",
+      "lessons": [
+        {
+          "title": "Onboarding 4 - Spin Selling",
+          "href": "/area/produto/item/7947794"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE / 12.02.2026 - Como nao ter um 2026 dramático - Aula Start - Área de Membros",
+      "lessons": [
+        {
+          "title": "12.02.2026 - Como nao ter um 2026 dramático - Aula Start",
+          "href": "/area/produto/item/7947804"
+        },
+        {
+          "title": "04.03.2026 - Hot Seat Vendas de Programas e Esteira de Produtos",
+          "href": null
+        },
+        {
+          "title": "11.03.2026 - O Doutor Vendedor - Comunicação e Vendas na Medicina .mp4",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE / 04.12.2025 - Hot Seat Planejamento Estratégico para 2026. - Área de Membros",
+      "lessons": [
+        {
+          "title": "04.12.2025 - Hot Seat Planejamento Estratégico para 2026.",
+          "href": "/area/produto/item/7947808"
+        },
+        {
+          "title": "08.01.2026 Gestão - Metas e Rituais",
+          "href": null
+        },
+        {
+          "title": "24.02.2026 - Gestão de Pessoas (Pedro Drummond)",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE / 27.11.2025 - Jornada do Paciente. - Área de Membros",
+      "lessons": [
+        {
+          "title": "27.11.2025 - Jornada do Paciente.",
+          "href": "/area/produto/item/7947826"
+        },
+        {
+          "title": "20.01.2026 - Como Estruturar Processos em Clinicas Médicas.",
+          "href": null
+        },
+        {
+          "title": "18.02.2026 - Controle de Estoque e Doses de Tirzepatida.",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SCALE / 22.01.2026 - Aula Protocolo Injetáveis Casa Paes - Área de Membros",
+      "lessons": [
+        {
+          "title": "22.01.2026 - Aula Protocolo Injetáveis Casa Paes",
+          "href": "/area/produto/item/7947846"
+        },
+        {
+          "title": "26.02.2026 - TERAPIA DE REPOSIÇÃO HORMONAL FEMININA",
+          "href": null
+        },
+        {
+          "title": "Aulas Conceitos",
+          "href": "/area/produto/542786"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "lessons": [
+        {
+          "title": "AULA 1 - CANCER DE MAMA E TRH",
+          "href": "/area/produto/item/7374675"
+        },
+        {
+          "title": "AULA 2 - ENDOMETRIOSE",
+          "href": null
+        },
+        {
+          "title": "AULA 3 - CASOS CLINICOS ENDOMETRIOSE",
+          "href": null
+        },
+        {
+          "title": "AULA 4 - TDPM SPM",
+          "href": null
+        },
+        {
+          "title": "Start - Aulas Teóricas",
+          "href": "/area/produto/504524"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "lessons": [
+        {
+          "title": "AULA 1 - 7 PASSOS DA VENDA",
+          "href": "/area/produto/item/7374673"
+        },
+        {
+          "title": "AULA 2 - AGENDAMENTO 2.0",
+          "href": null
+        },
+        {
+          "title": "AULA 3A - PLANO DE ACOMPANHAMENTO",
+          "href": null
+        },
+        {
+          "title": "AULA 3B - PLANO DE ACOMPANHAMENTO.",
+          "href": null
+        },
+        {
+          "title": "Aulas de Vendas e Mentalidade",
+          "href": "/area/produto/504523"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "1 - DISCUSSÃO CASOS 30.10.25",
+          "href": "/area/produto/item/7374672"
+        },
+        {
+          "title": "2 - DISCUSSÃO CASOS 06.11.25",
+          "href": null
+        },
+        {
+          "title": "3 - DISCUSSÃO CASOS 18.12.25",
+          "href": null
+        },
+        {
+          "title": "4 - DISCUSSÃO CASOS 22.12.25",
+          "href": null
+        },
+        {
+          "title": "5 - DISCUSSÃO CASOS 05.02.26",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "7 PASSOS DA VENDA 06.11.2025",
+          "href": "/area/produto/item/7320713"
+        },
+        {
+          "title": "Programa De Acompanhamento 13.11.2025",
+          "href": null
+        },
+        {
+          "title": "PROSPECÇÃO ATIVA 20.11.2025",
+          "href": null
+        },
+        {
+          "title": "AGENDAMENTO 2.0 NA PRÁTICA 27.11.2025",
+          "href": null
+        },
+        {
+          "title": "SIMULAÇÃO DE VENDA 21.03.2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes / OBESIDADE 12.12.2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "OBESIDADE 12.12.2025",
+          "href": "/area/produto/item/7683960"
+        },
+        {
+          "title": "MÉTODO ENDOGIN DE EMAGRECIMENTO 19.12.2025",
+          "href": null
+        },
+        {
+          "title": "OBESIDADE SARCOPÊNICA E SARCOPENIA 08.01.2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes / OXANDROLONA 08.01.2026 - Área de Membros",
+      "lessons": [
+        {
+          "title": "OXANDROLONA 08.01.2026",
+          "href": "/area/produto/item/7682424"
+        },
+        {
+          "title": "CICLO MENSTRUAL E TRANSIÇÃO MENOPAUSAL 05.02.2026",
+          "href": null
+        },
+        {
+          "title": "TERAPIA DE REPOSIÇÃO HORMONAL FEMININA - TRH - 26.02.26",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes / DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026 - Área de Membros",
+      "lessons": [
+        {
+          "title": "DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026",
+          "href": "/area/produto/item/7978896"
+        },
+        {
+          "title": "DISCUSSÃO DE CASOS CLÍNICOS EMAGRECIMENTO 29.01.2026",
+          "href": null
+        },
+        {
+          "title": "DISCUSSÃO DE CASOS CLÍNICOS TRH 05.03.2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025",
+          "href": "/area/produto/item/7978635"
+        },
+        {
+          "title": "AULA INTRODUÇÃO TERAPIAS INJETÁVEIS 22.01.2026",
+          "href": null
+        },
+        {
+          "title": "AULA INTRODUTÓRIA DE GESTÃO - 12.02.2026",
+          "href": null
+        },
+        {
+          "title": "AULA MODULAÇÃO INTESTINAL 12.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aulas Convidados",
+          "href": "/area/produto/548661"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "M1 - TERAPIA HORMONAL 2 aulas",
+          "href": "/area/produto/item/7995404"
+        },
+        {
+          "title": "TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025",
+          "href": "/area/produto/item/7995404"
+        },
+        {
+          "title": "OXANDROLONA E GH NA PRÁTICA 05.02.2026",
+          "href": null
+        },
+        {
+          "title": "M2 - OBESIDADE 1 aula",
+          "href": "/area/produto/item/7995407"
+        },
+        {
+          "title": "MÉTODO ENDOGIN OBESIDADE 11.12.2025",
+          "href": "/area/produto/item/7995407"
+        },
+        {
+          "title": "M3 - OUTROS 2 aulas",
+          "href": "/area/produto/item/7684143"
+        },
+        {
+          "title": "ENDOMETRIOSE 13.01.2026",
+          "href": "/area/produto/item/7684143"
+        },
+        {
+          "title": "AULA MODULAÇÃO INTESTINAL 12.03.2026",
+          "href": null
+        },
+        {
+          "title": "Aulas Conceito",
+          "href": "/area/produto/512629"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "lessons": [
+        {
+          "title": "CASOS CLÍNICOS 04.12.2025",
+          "href": "/area/produto/item/7683704"
+        },
+        {
+          "title": "CASOS CLÍNICOS 22.01.2026",
+          "href": null
+        },
+        {
+          "title": "CASOS CLÍNICOS 29.01.2026",
+          "href": null
+        },
+        {
+          "title": "CASOS CLÍNICOS 10.02.2026",
+          "href": null
+        },
+        {
+          "title": "CASOS CLÍNICOS METABOLOMICA 05.03.2026",
+          "href": null
+        },
+        {
+          "title": "CASOS CLINICOS 19/03/2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Regina Rabello / MENTALIDADE E VENDAS - AULA 1 - Área de Membros",
+      "lessons": [
+        {
+          "title": "MENTALIDADE E VENDAS - AULA 1",
+          "href": "/area/produto/item/7995415"
+        },
+        {
+          "title": "7 PASSOS DA VENDA/ PLANO 5 SEMANAS 08.01.2026",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL FEMININA DRA TWOANY 26.02.2026 - Área de Membros",
+      "lessons": [
+        {
+          "title": "TERAPIA HORMONAL FEMININA DRA TWOANY 26.02.2026",
+          "href": "/area/produto/item/7995418"
+        },
+        {
+          "title": "Aulas Convidados",
+          "href": "/area/produto/512633"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SURGICAL / 1 - AULA GESTÃO Q&A 05.03.26 - Área de Membros",
+      "lessons": [
+        {
+          "title": "1 - AULA GESTÃO Q&A 05.03.26",
+          "href": "/area/produto/item/8199767"
+        },
+        {
+          "title": "2 - AULA GESTÃO - JORNADA DO PACIENTE 12.03.26",
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SURGICAL / 1 - BASICO HORMONIOS 24.01.26 - Área de Membros",
+      "lessons": [
+        {
+          "title": "1 - BASICO HORMONIOS 24.01.26",
+          "href": "/area/produto/item/7962258"
+        },
+        {
+          "title": "2 - OBESIDADE SARCOPENICA 19.03.26",
+          "href": null
+        },
+        {
+          "title": "Aulas Teóricas",
+          "href": "/area/produto/548889"
+        }
+      ]
+    },
+    {
+      "title": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "lessons": [
+        {
+          "title": "1 - CASO CLINICO 18.12.25",
+          "href": "/area/produto/item/7962260"
+        },
+        {
+          "title": "2 - CASO CLÍNICO 22.12.25",
+          "href": null
+        },
+        {
+          "title": "3 - CASO CLÍNICO 29.12.25",
+          "href": null
+        },
+        {
+          "title": "4 - CASO CLÍNICO 08.01.26",
+          "href": null
+        },
+        {
+          "title": "5 - ONBOARDING",
+          "href": null
+        },
+        {
+          "title": "6 -CASO CLÍNICO START+SURGICAL 05.02.26",
+          "href": null
+        },
+        {
+          "title": "7 -PRE O POS OP - SURGICAL 12.02.26",
+          "href": null
+        },
+        {
+          "title": "8 - Q&A Venda 26.02.26",
+          "href": null
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 1 - Agendamento 2.0 e 7 passos da venda!",
+      "href": "/area/produto/item/7320280",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 2",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 3 - SND! Os três pilares da venda! 16.09.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 4 - A Entrega dos programas de acompanhamento! 23.09.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 5 - Os três modelos prósperos de entrega! 30.10.25",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 6 - Gestão de Clínicas!.mp4",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 7 - Discussão de casos clínicos!",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 8 - Apanhado Geral!!!",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Onboarding 1 - Agendamento 2.0 e 7 passos da venda! - Área de Membros",
+      "title": "Onboarding 9 - Orientações Endogin",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆",
+      "href": "/area/produto/item/7320401",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula Ouro 🏆 - Aula de Wilson 2.0! 21 OUTUBRO 25",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 00 - Os 7 Passos da Venda - SND e Tira dúvidas!",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 01 - Os 3 Pilares da Venda - A Venda é um processo de LIDERANÇA 🏆 + APRESENTAÇÃO 29.01.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 02 - Os 7 Passos da Venda - CONEXÃO",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 03 - Os 7 Passos da Venda - Apresentação do Projeto (PASSO 3) 25.02.25",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 04 - Os 7 Passos da Venda - Oportunidade (DI) e Contorno de Objeções 18.02",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 05 - Os 7 Passos da Venda - Fechamento Financeiro 11.03",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aula 06 - Os 7 Passos da Venda - PEGAR Referidos 18.03",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Terça - Aula Ouro 🏆 A Jornada Do Paciente - Do Agendamento Aos 07 Passos de Venda 22 JULHO 2025",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Dr. Wilson - Programas de Acompanhamento na Prática - 08 ABRIL 2025 - Aula Ouro 🏆 - Área de Membros",
+      "title": "Aulas Conceitos",
+      "href": "/area/produto/504483",
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25",
+      "href": "/area/produto/item/7320432",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Q&A PROGRAMAS DE ACOMPANHAMENTO - 01.04.25",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Reunião de Venda Agendamento 2.0 22 de Abril 2025",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Reunião de Vendas 07.05.25 Programas de Acompanhamento 1",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Aula 1 - Reunião de Vendas 27.05 - Programas de Acompanhamento 1",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Aula 2 - Agendamento 03.06.25 (Manhã) - Programas de acompanhamento 2",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Aula 3 - Reunião de Vendas 10.06.25 - Programas de Acompanhamento 3",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Aula 4 - Reunião de Vendas 17.06.25 Programas de Acompanhamento 4",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Aula 5 - Reunião de Vendas 24.06.25 Programas de Acompanhamento 5",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Aulas Ouro 🏆 Terça - Reunião de Venda 01.07.25 - Lúcio e Marcela x",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça - Reunião de Vendas 08 de JULHO 2025 - Programas de Acompanhamento On-line - Caio Saraiva",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Terça Reunião Vendas - Dúvidas Onboarding 29.07.25",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Reunião de VENDAS - Como contratar profissional médico 05 AGOSTO 2025",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Programa de Acompanhamento OBSTETRICIA + Tecnicas de Vendas - 11 DEZEMBRO 2024",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "VENDAS - Programas de Acompanhamento 24 SETEMBRO 2024",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "PROGRAMA DE ACOMPANHAMENTO ESTENDIDO",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "GERAL DE PROGRAMAS DE ACOMPANHAMENTO 02.09.25",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "🏆 Aula Ouro! - Quebrando Objeções na Venda! 16.09.25",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Reunião Terça - Tecnica de Conexão, Perfis Comportamentais de Venda 04.NOV 2025",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "O poder da reunião semanal! 30.09.25",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Autorresponsabilidade! 🏆Aula Ouro! 14.10.25",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Aula Ouro! 🏆Estratégia de Prospecção de Pacientes e Agendamento!.mp4",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Os Princípios Milenares Honra, Servir, Repreensão e Perdão 28.10.25",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "O S do SND como você nunca viu! Se não está disposto a perder e não se atreva tentar ganhar! 23.12.25.mp4",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "O N e o D do SND como você nunca viu! Se não esta disposto a perder e não atreva tentar ganhar! 30.12.25",
+      "href": null,
+      "order": 25
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Kick-off 2026! Vamos com tudo!!l 🚀🚀🚀 06.01.26",
+      "href": null,
+      "order": 26
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / 🏆 Aula Ouro! SND os Três Pilares da Venda! Decidir Vale mais que Acreditar! 26.08.25 - Área de Membros",
+      "title": "Os passos 2, 3 e 4 como vocês nunca viram! Aula IMPERDÍVEL! 13.01.26",
+      "href": null,
+      "order": 27
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25",
+      "href": "/area/produto/item/7320454",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Ouro 🏆 - A mentalidade de um vendedor de alta Performance! 12.08.25",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Ouro 🏆 GRATIDÃO 🙏🏼 ! - O real motivo de ser Grato - 23.09.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Ouro 🏆 - Mentalidade de Vendas 29.04",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula OURO 🏆 - Joel Jota - Ritos, Rotina e Rituais SET 2025",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Power House - Matriz de Decisão 2024 - Flávio Augusto",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Power House - Modelo de Negócios 2025 - Flávio Augusto",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "O Médico Mentor - 05 principais características 15.07.25",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Terça - Mentalidade Baseada No Propósito 07.10.2025",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Paz e Gratidão, o caminho para Prosperidade! 11.11.2025",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Como encerrar o ano no GIRO! 25.11.2025",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Terça - De Olho em 2026! Como fugir do Ponto Cego, do Ego e das Interferências 16 DEZ 2025",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Você realmente está pronto para dar frutos? 20.01.26",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Um marco na história da ENDOGIN - Vendas e Mentalidade 27.01.2026",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Ajustando a mentalidade para alcançar voos ainda maiores 03.02.2026",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Vendas e Mentalidade- 10.02.2026",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Quer que um projeto grande dê certo em sua mão? 24.02.2026",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "O que pode estar contribuindo ou boicotando o seu crescimento? 03.03.2026",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Vendas e Mentalidade - 10.03.2026",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Vendas e Mentalidade - 12.03.2026",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aula Mentalidade - 17.03.2026",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Vendas e Mentalidade - 24.03.2026",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Aula Ouro 🏆 - Aula Prospecção ATIVA - Natália Queiroz 10.05.25 - Área de Membros",
+      "title": "Aulas de Mentalidade",
+      "href": "/area/produto/504485",
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Q&A SND VENDAS! - Área de Membros",
+      "title": "Q&A SND VENDAS!",
+      "href": "/area/produto/item/7320456",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Q&A SND VENDAS! - Área de Membros",
+      "title": "Q&A com Davison Carvalho 🏆 - 14 MAIO 2025",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Q&A SND VENDAS! - Área de Membros",
+      "title": "Reunião extraordinária: Estratégia dos mentorandos Endogin para aumento de faturamento em clínicas 🧠💡",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - VENDAS / Q&A SND VENDAS! - Área de Membros",
+      "title": "Aula Vendas e Mentalidade - 12.03.2026",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 1 - Obesidade, Sarcopenia e Emagrecimento 9 aulas",
+      "href": "/area/produto/item/7320326",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025",
+      "href": "/area/produto/item/7320326",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆 Obesidade Reprogramação Metabólica e Manutenção do Peso. 24.09.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Método Endogin de Emagrecimento 26.03.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆 Tirzepatide & Ajuste Hormonal Como usar na prática + Casos Clinicos AGOSTO 2025",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Método Endogin – Uso do GH na Prática Clínica – 30 ABR 2025",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula ABGREF – Obesidade Sarcopenia – Dr. Caio e Dr. Vinicius",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Extra ENDOGIN – Dra. Adriana Pereira | Neuro Obesidade: A Mente por Trás do Peso – 2025",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Obesidade Sarcopênica",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆 - MasterClass Reprogramação Metabólica NOV 2025",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 2 - TRH e Uso de Testosterona na Prática 7 aulas",
+      "href": "/area/produto/item/7320333",
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Transição Menopausal - Como Avaliar e Tratar NA PRATICA 2025 🏆 08.01.25",
+      "href": "/area/produto/item/7320333",
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Manejo hormonal feminino- da adolescência à senectude",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆 2026 Implantes de Oxandrolona na Prática Clínica - Como Utilizar Essa Ferramenta na Obesidade/Sarcopenia Parte 01",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆 2026 Implantes de Oxandrolona na Prática Clínica - Parte 02 - CASOS CLINICOS NA PRÁTICA",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Testosterona em Mulheres – 06 SET 2024",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Oxandrolona e Testosterona no Manejo da Sarcopenia – 09 OUT 2024",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Uso Prático da Testosterona no Homem + Encontro ENDOGIN – 30 OUT 2024",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 3 - Implantes Hormonais e Protocolos Práticos 5 aulas",
+      "href": "/area/produto/item/7320337",
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "🏆 Aula Ouro - Implantes Silásticos 06.08.2025",
+      "href": "/area/produto/item/7320337",
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Nestorone + 1º Encontro ENDOGIN 08.08.2024",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Implantes Silástico + Caso Clínico TDPM com Bloqueio – 11 DEZ 2024",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Implantes Silásticos - Tira dúvidas! 07.08.25",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Manejo do Sangramento Uterino Anormal 20.08.25",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 4 - Terapias Injetáveis 2 aulas",
+      "href": "/area/produto/item/7320341",
+      "order": 25
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula injetáveis na Obesidade Dra Raila",
+      "href": "/area/produto/item/7320341",
+      "order": 26
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Injetáveis Dra. Maria Claudia Rosenbaum",
+      "href": null,
+      "order": 27
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 5 - Aulas Gerais e Temas Diversos 8 aulas",
+      "href": "/area/produto/item/7671635",
+      "order": 28
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆: Manejo Hormonal na Mulher da Adolescência a Senectude 15 JAN 26 - Parte 01",
+      "href": "/area/produto/item/7671635",
+      "order": 29
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆: Manejo Hormonal na Mulher da Adolescência a Senectude 15 JAN 26 - Parte 02",
+      "href": null,
+      "order": 30
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆: Aula de Peptídeos na Prática com Dr. Felipe Castro 18.02.2026",
+      "href": null,
+      "order": 31
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Noções Básicas de Fisiologia Masculina - 4.03.2026",
+      "href": null,
+      "order": 32
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Andrologia Dr. Edgar e Dr. Henrique - Testosterona e Fertilidade - 4.03.2026",
+      "href": null,
+      "order": 33
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Andrologia Dr. Edgar e Dr. Henrique - Testosterona e Câncer de Próstata - 4.03.2026",
+      "href": null,
+      "order": 34
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Do Menacme à Senectude SEM Implantes – 21 OUT 2024",
+      "href": null,
+      "order": 35
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula SOP 2025 - Quarta 09.07.25",
+      "href": null,
+      "order": 36
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 6 - Encontros geral 5 aulas",
+      "href": "/area/produto/item/7320349",
+      "order": 37
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Ouro! 🏆: Manejo dos Pellets de Estradiol! 05.11.2025",
+      "href": "/area/produto/item/7320349",
+      "order": 38
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula Geral Q&A Dúvidas Gerais, Casos Clinicos, Pellets de Estradiol 🤯 08.10.2025",
+      "href": null,
+      "order": 39
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Reunião Quarta Geral - Manejo da Paciente Slow Burn 25.06.25",
+      "href": null,
+      "order": 40
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Reunião Quarta Geral - Manejo de Pellets e Silásticos 23.07.25",
+      "href": null,
+      "order": 41
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Reunião estratégica: implantes, tirzepatide e injetáveis - 18.03.2026",
+      "href": null,
+      "order": 42
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 7 - Aulas Extras 4 aulas",
+      "href": "/area/produto/item/7320350",
+      "order": 43
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Dra. Palova – Equiparação Hospitalar e Resolução da ANVISA",
+      "href": "/area/produto/item/7320350",
+      "order": 44
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Medicina Endocanabinoide - Aula Dr. Igor Alves",
+      "href": null,
+      "order": 45
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Planejamento e reforma tributária 19.11.2025",
+      "href": null,
+      "order": 46
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Disbiose Intestinal Dra Renata Gabrielly 20.11.2025",
+      "href": null,
+      "order": 47
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Módulo 8 - Método Endogin Lipedema 3 aulas",
+      "href": "/area/produto/item/7963995",
+      "order": 48
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula OURO 🏆 - MasterClass Método ENDOGIN–LIPEDEMA FEV 2026",
+      "href": "/area/produto/item/7963995",
+      "order": 49
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Método Endogin Lipedema - Aula Ouro! 03.12.25",
+      "href": null,
+      "order": 50
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Método Endogin Lipedema - Tira Dúvidas! 04.11.25",
+      "href": null,
+      "order": 51
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aulas Endogin",
+      "href": "/area/produto/504479",
+      "order": 52
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula 2 Obesidade BIOMEDS Oficial 20 MAIO 2025 - Estratégias no Manejo da Tirzepatide.pdf 17.3 MB",
+      "href": "https://cdn.areademembros.com/file/download/c3FjLmhNODQ4SjNCeDRKaVA0WWQ1dEtKMGw3SUFEdXVWMEVLVktIM0poUjEvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533645&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+2+Obesidade+BIOMEDS+Oficial+20+MAIO+2025+-+Estrate%CC%81gias+no+Manejo+da+Tirzepatide&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF",
+      "order": 53
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula Ouro 🏆: Uso da Tirzepatide na Obesidade Parte 2 - Aula BIOMEDS MAIO 2025 - Área de Membros",
+      "title": "Aula 02 - Obesidade BIOMEDS Oficial 20 MAIO 2025 - Resumo ACO e Tirze.pdf 2.8 MB",
+      "href": "https://cdn.areademembros.com/file/download/c3FjLklnbmdVY3E0a1Q5SmxMQWNXdEFjYTFreHdDMVN4QmptOTRPMVpkaXAvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533645&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+02+-+Obesidade+BIOMEDS+Oficial+20+MAIO+2025+-+Resumo+ACO+e+Tirze&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF",
+      "order": 54
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Módulo 1 - Conteúdo Pílula 16 aulas",
+      "href": "/area/produto/item/7489376",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025",
+      "href": "/area/produto/item/7489376",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Testosterona e Obesidade Masculina",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Implante de Oxandrolona x Gestrinona X Testosterona",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Testosterona no Homem - IM x Gel x Implantes - Manejando as Diferentes Vias",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Gestrinona Pellet x Gestrinona Silastico: Pulos do gato Avançados 2025",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Armadilhas da Transição Menopausal Analise de Exames",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Particularidades em TH 2024",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Como iniciar dose de bloqueio da Gestrinona",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "CagriSema Redefine 2 - 10 MARÇO 2025",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "TH em pacientes com alto risco cardiovascular",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Conteúdo Pílula - TRH e Tromboembolismo Venoso - Revisão Sistemática",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Conteúdo Pílula - Taquifilaxia e Down Regulation do receptor de Estradiol - Como manejar? 16.06.25",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Manejo da Menopausa e Perimenopausa Guideline da Sociedade Europeia de Endocrinologia 20.10.25",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "TRH em pacientes com passado de CA de mama, quais as evidências atuais.",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Ajuste da dose do estradiol para maximizar os benefícios e minimizar os riscos 19.02.2026",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Aula Ouro 🏆: Método Endogin RECOMPILAR Masculino - 19 FEV 2026",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Módulo 2 - Casos Clínicos 3 aulas",
+      "href": "/area/produto/item/7320309",
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Oxandrolona e Tirzepatide na Obesidade Feminina OUT 2024 - Casos Clínicos",
+      "href": "/area/produto/item/7320309",
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "Medicina Do Esporte Homem Ectomorfo e Baixa Massa Muscular - Casos Clínicos",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Conteudo Pílula OURO 🏆 Estudo CLARA + Uso Prático dos Pellets de Estradiol 17 DEZ 2025 - Área de Membros",
+      "title": "TRH Hipoestrogesimo (Do gel para o Implante) FEV 2025 - Casos Clínicos",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como fazer a transição da TRH transdérmica para os Pellets?",
+      "href": "/area/produto/item/7661827",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Início da TRH em paciente sem comorbidades - Caso de Dra Islany - 08.01.26",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Tratamento de Endometriose pós-cirurgia - Caso de Dra Marcia - 08.01.26",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Simplificando a Reposição Hormonal e o Emagrecimento da Mulher na Menopausa – 09.01.26",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Quando Usar a Reposição de Estradiol via Oral - 13.01.26",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Modelo Clube - Como manter o paciente após o programa de acompanhamento!",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Em pacientes com Implanon, quando utilizar gestrinona ou drospirenona?",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Fase 3 da transição menopausal em portadoras de adenomiose e acima do peso 21.01.2026",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Quando utilizar ou não os implantes de Oxandrolona no Homem - 02.02.2026",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como escolher entre a metenolona intramuscular, a oxandrolona oral e o GH, considerando que o objetivo principal é o ganho seco",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como utilizar a drospirenona de 50 pra amenizar efeitos colaterais",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como iniciar a terapia de reposição hormonal acima dos 65 anos?",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Reposição hormonal em pacientes com alto risco trombótico",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Implantes de drospirenona de 100 miligramas e libido",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Paciente com endometriose necessitando ir para a emergência",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como prescrever a TRT em pacientes com testosterona acima de 500?",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como evitar colaterais na combinação de gestrinona com outros hormonios?",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Paciente na fase 3, como funciona o manejo?",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Como Usar o Genryzon na Clinica, Oferecendo um Resultado Melhor Para o Paciente e Aumentar o Faturamento da Clinica",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Quando Bloquear e Quando Não Bloquear na Fase Três?",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Ajuste da Dose da Gestrinona na Transição da Menopausa",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Como fazer a transição da TRH transdérmica para os Pellets? - Área de Membros",
+      "title": "Transição do Underground Para as Quatro Linhas TRT",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva",
+      "href": "/area/produto/item/7320358",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula 1.2 Caso Clinico - Transição Menopausal ( Deficiencia de Progesterona) - Dr. Caio Saraiva",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula 1.3 Caso Clinico - Transição Menopausal (Hipoestrogenismo Franco) - Dr. Caio Saraiva",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "TRH por todas as vias - Dr. Vinicius Carruego",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula Ouro 🏆: TRH por todas as vias - Como eu faço? - Dr. Vinicius Carruego",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula 01 - Caso Clínico - Paciente 80 anos - Múltiplas Comorbidades - Dr. Vinicius Carruego",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula 02 - Caso Clinico - Homem sarcopênico com deficiência de Testosterona - Dr. Caio Saraiva",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula Ouro 🏆: Uso Prático da Gestrinona - Dr. Caio Saraiva",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "Aula Ouro 🏆: Uso de implantes de oxandrolona - Dr. Caio, Dr. Vinicius e GA",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - Aulas Gerais / Aula 1.1 Caso Clinico - Transição Menopausal ( Deficiência de Testosterona) - Dr. Caio Saraiva - Área de Membros",
+      "title": "AULA - Sangramento Menstrual Pós Implante - Como Controlar - Dr. Vinicius e GA",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Módulo 1 21 aulas",
+      "href": "/area/produto/item/7320477",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Encontro Nível 1 22.01.25 (Noite)",
+      "href": "/area/produto/item/7320477",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Encontro Nível 1 12.02.25 (Noite)",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Encontro Nível 1 19.02.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião QUARTA Nível 1 e 2 - 16 de Abril 2025",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Nível 1 07.05.25",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião QUARTA Nível 1 e 2 - 21 de MAIO 2025",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "6º Encontro ENDOGIN (REPOSIÇÃO POR TODAS AS VIAS NA MULHER) 11 SETEMBRO 24",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 e 2 - 16.07.25 (Noite)",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nivel 1 e 2 - 30.07.25",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 e 2 - 03.09.25",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 e 2 - 17.09.25",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 e 2 - 01.10.2025",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reuniao Quarta Nivel 1 e 2 12.11.25",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 e 2 - 26.11.25",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 17.12.25",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Reunião Quarta Nível 1 07.01.2026",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Aula Grupo Nível 1 21.01.2026",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Grupo nível 1- 04.02.2026",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Grupo Nível 1 - 11.03.2026",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Aula Grupo Nível 1 e 2 25.03.2026",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Módulo 2 - Casos Clínicos 2 aulas",
+      "href": "/area/produto/item/7320487",
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "5º ENCONTRO + Caso Menopausa e Endometriose // Uso correto da Gestrinona",
+      "href": "/area/produto/item/7320487",
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Grupo Nível 1 - 25.02.2026",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro Nível 1 22.01.25 (Noite) - Área de Membros",
+      "title": "Encontros Nível 1",
+      "href": "/area/produto/504487",
+      "order": 25
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Nível 2 07.05.25",
+      "href": "/area/produto/item/7320504",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião QUARTA Nível 1 e 2 - 16 de Abril 2025",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião QUARTA Nível 1 e 2 - 21 de MAIO 2025",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Quarta Nível 2 - 04.06.25 (Noite)",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Quarta Nível 2 - 18.06.25 (Noite)",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Quarta Nível 2 - 03.07.25 (Noite)",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Quarta Nível 2 - 17.12.25",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Reunião Quarta Nível 2 07.01.2026",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Aulas Grupo Nível 2. 21.01.2026",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Grupo Nível 2 - 25.02.2026",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Grupo Nível 2 - 11.03.2026",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Aula Grupo Nível 1 e 2 25.03.2026",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Reunião Nível 2 07.05.25 - Área de Membros",
+      "title": "Encontros Nível 2",
+      "href": "/area/produto/504488",
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Módulo 1 19 aulas",
+      "href": "/area/produto/item/7320526",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25",
+      "href": "/area/produto/item/7320526",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 22.01.25 (Manhã)",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 05.02.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 19.02.25",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 19.03.25",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 07.05.25",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 04.06.25",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 02.07.2025",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 16.07.25",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria Endogin - Grupo Avançado 17.09.25",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 01.10.25",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria Endogin - Grupo Avançado 12.11.25",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria Endogin - Grupo Avançado 26.11.25",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 17.12.2025",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 07.01.26",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 21.01.2026",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Nível Avançado 04.02.2026",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Grupo Avançado - 11.03.2026",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Grupo Avançado - 25.0.2026",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Módulo 2 - Casos Clínicos 2 aulas",
+      "href": "/area/produto/item/7320522",
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 21.05.25 - Casos Clínicos Medicina do Esporte",
+      "href": "/area/produto/item/7320522",
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Grupo Avançado - 25.02.2026",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Mentoria ENDOGIN - Grupo AVANÇADO 08.01.25 - Área de Membros",
+      "title": "Encontros Avançados",
+      "href": "/area/produto/504489",
+      "order": 24
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 1 Obesidade - 03.04.25",
+      "href": "/area/produto/item/7320559",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 2 Obesidade - 10.04",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 3 Obesidade - 01.05",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 4 Obesidade - 15.05.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 5 Obesidade - 22.05.25",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 6 Obesidade - 29.05.25",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 7 Obesidade - 05.06.25",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 8 Obesidade - 12.06.25",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 9 Obesidade + avançado - 18.06.25",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 10 Obesidade 03.07.25",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro 11 Obesidade 17.07.25",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "🏆 Encontro Obesidade Tema LIPEDEMA 24 JULHO 2025",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Mentoria ENDOGIN - Grupo AVANÇADO 03.09.25",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "ENCONTRO OBESIDADE 04.09.25",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "ENCONTRO OBESIDADE 02.10.25",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro Obesidade 16.10.25",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro Obesidade - 06.11.25",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Discussão obesidade 13.11.25",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro de Obesidade 27.11.25",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontro Obesidade 08.01.2026",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Obesidade 22.01.206",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Aula Obesidade - 05.02.2026",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Aula Obesidade - 12.02.2026",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Aula Obesidade - 26.02.2026",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Aula Obesidade - 05.03.2026",
+      "href": null,
+      "order": 25
+    },
+    {
+      "module": "Mentoria Endogin - ENCONTROS / Encontro 1 Obesidade - 03.04.25 - Área de Membros",
+      "title": "Encontros de Obesidade",
+      "href": "/area/produto/504490",
+      "order": 26
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "Sexta-feira 7 aulas",
+      "href": "/area/produto/item/7319805",
+      "order": 1
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 01 - Obesidade 01-020",
+      "href": "/area/produto/item/7319805",
+      "order": 2
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 02 - Willian Saback-006",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 03 - Obesidade 02-017",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 04 - Izabelle-007",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 05 - Menopausa-012",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 06 - Emagrecimento-009",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SEXTA 07 - Nestorone-003",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "Sábado 16 aulas",
+      "href": "/area/produto/item/7319848",
+      "order": 9
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 01 - Oxandrolona-016",
+      "href": "/area/produto/item/7319848",
+      "order": 10
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 02 - Tamaris Marques-014",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 03 - Testosterona Pelleets-005",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 04 - Larissa - Idosa C Comorbidade",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 05 - Felipe Carvalho",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 06 - Priscila Caul",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 07 - Mauricio-008",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 08 - Amanda Arruda-018",
+      "href": null,
+      "order": 17
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 09 - Melissa Parente-011",
+      "href": null,
+      "order": 18
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 10 - Milene Buzzato pt 01-022",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 11 - Milene Buzzato pt 02",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 12 - Mariana-023",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 13 - Maria Clara",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 14 - Alex Barros-004",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 15 - Fernanda-021",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Curso Endogin / SEXTA 01 - Obesidade 01-020 - Área de Membros",
+      "title": "SABADO 16 - Caso Mãe Vinicius",
+      "href": null,
+      "order": 25
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "Módulo 1 4 aulas",
+      "href": "/area/produto/item/7320212",
+      "order": 1
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25",
+      "href": "/area/produto/item/7320212",
+      "order": 2
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "Obesidade - Aula Preparatória On-line Parte 2 - 26.08.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "TRH Feminina - Aula Preparatória On-line - 27.08.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "Método Endogin Uso do GH na prática Clinica ABRIL 2025 30.04.25",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "DIA 1 10 aulas",
+      "href": "/area/produto/item/7320231",
+      "order": 6
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Abertura do Curso ENDOGIN 2 - Sexta",
+      "href": "/area/produto/item/7320231",
+      "order": 7
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Manhã - Aula Obesidade - Método ENDOGIN EMAGRECIMENTO 🏆 Parte 1",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Manhã - Aula Obesidade - Método ENDOGIN EMAGRECIMENTO 🏆 Parte 2 - Aplicando na Prática",
+      "href": null,
+      "order": 9
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Manhã - Boas Práticas com Pellets Hormonais - BIOMEDS - Dra. Izabelle",
+      "href": null,
+      "order": 10
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Aula Obesidade Sarcopênica e Sarcopenia - Parte 1 - INTRODUÇÃO",
+      "href": null,
+      "order": 11
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Aula Obesidade Sarcopênica e Sarcopenia - Parte 2 - Implantes de OXANDROLONA",
+      "href": null,
+      "order": 12
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Depoimentos de Alhender e Nauale 🙏🏼",
+      "href": null,
+      "order": 13
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Aula ELMECO - Implantes Silástico - Segurança e Uso",
+      "href": null,
+      "order": 14
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Implantes de Gestrinona e Nestorone - Parte 1",
+      "href": null,
+      "order": 15
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "1º Dia - Tarde - Implantes de Gestrinona e Nestorone - Parte 2",
+      "href": null,
+      "order": 16
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "DIA 2 14 aulas",
+      "href": "/area/produto/item/7320254",
+      "order": 17
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Abertura do Curso ENDOGIN 2 - Sábado",
+      "href": "/area/produto/item/7320254",
+      "order": 18
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Introdução 🏆",
+      "href": null,
+      "order": 19
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Casos Clínicos na Prática - Parte 1 🏆",
+      "href": null,
+      "order": 20
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Manhã - Transição Menopausal e Suas Fases - Casos Clínicos na Prática - Parte 2 (COMO EU FAÇO) 🏆",
+      "href": null,
+      "order": 21
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Manhã - TRT Masculina Por Todas As Vias 🏆",
+      "href": null,
+      "order": 22
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Caso Clínico 1 - Sarita Rodrigues - Lipedema",
+      "href": null,
+      "order": 23
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Caso Clínico 2 - Maria Claudia - Terapia Injetavel na Obesidade",
+      "href": null,
+      "order": 24
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Caso Clínico 3 - José Pedro - Endometriose // Caso Clínico 4 - Vitoria Sacchetto - Sangramento Uterino Anormal",
+      "href": null,
+      "order": 25
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Caso Clínico 5 - Catharine Coelho - Obesidade + Lipedema + Autismo",
+      "href": null,
+      "order": 26
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Caso Clínico 6 - Livia Trevisan - SOP",
+      "href": null,
+      "order": 27
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Casos Clínico 7 - Suzana Lessa - Lipedema 2",
+      "href": null,
+      "order": 28
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Casos Clínico 8 - Fernanda Abi - Reganho De Peso Pós-Bariátrica + Menopausa)",
+      "href": null,
+      "order": 29
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Tarde - Casos Clínico 9 - Wanessa Rezende - Mulher em Transição Menopausal e ENDOMETRIOSE",
+      "href": null,
+      "order": 30
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "2º Dia - Noite - ENCERRAMENTO ENDOGIN 2 🙏🏼",
+      "href": null,
+      "order": 31
+    },
+    {
+      "module": "Curso Endogin / Obesidade - Aula Preparatória On-line Parte 1 - 26.08.25 - Área de Membros",
+      "title": "Aula Obesidade ENDOGIN 02 Pre-curso ONLINE Dr. Caio Parte 1 AGOSTO 2025.pdf 17.5 MB",
+      "href": "https://cdn.areademembros.com/file/download/c3FjLnpJb1NaRGdWVGJLVDJ2NUtFZnhBeGhMUHZEbDZkb2pZcEYxOEtVMGgvZWJndnFyLzQ5MDZfbnZwYW5nZmF2Lw%3D%3D?test=1&ts=1774533667&uptkn=41f19e86378424facb4d6a6d667e1435&name=Aula+Obesidade+ENDOGIN+02+Pre-curso+ONLINE+Dr.+Caio+Parte+1+AGOSTO+2025&drm=MTItNjQyLjk1My43NTA6OiBmbmd2cmVTIGZyaXlOIGx5cnZhblE%253D&position=bottom&opacity=1&text_color=%23FF0000&background_color=%23FFFFFF",
+      "order": 32
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Abertura: Os 5 Baldes",
+      "href": "/area/produto/item/7521315",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Yuri Barbosa",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Davison Carvalho",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Abertura Tarde",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Abertura Hotseat",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin / Endogin - Abertura: Os 5 Baldes - Área de Membros",
+      "title": "Endogin - Tiago Brunet",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Eventos MLS - Growth Circle / Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos - Área de Membros",
+      "title": "Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos",
+      "href": "/area/produto/item/7318895",
+      "order": 1
+    },
+    {
+      "module": "Eventos MLS - Growth Circle / Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos - Área de Membros",
+      "title": "Palestra 02 - Como definir metas estratégicas e sustentáveis para 2025 - Renata Pontes",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Eventos MLS - Growth Circle / Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos - Área de Membros",
+      "title": "Palestra 03 - Criação de uma cultura orientada a resultados - Whill Silva",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Eventos MLS - Growth Circle / Palestra 01 - Estratégias de escala e mentalidade vencedora 2025 - Joel Jota e Raphael Mattos - Área de Membros",
+      "title": "Palestra 04 - A mentalidade que fará você voar em 2025 - Everton Pieri",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / Onboarding 4 - Spin Selling - Área de Membros",
+      "title": "Onboarding 4 - Spin Selling",
+      "href": "/area/produto/item/7947794",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 12.02.2026 - Como nao ter um 2026 dramático - Aula Start - Área de Membros",
+      "title": "12.02.2026 - Como nao ter um 2026 dramático - Aula Start",
+      "href": "/area/produto/item/7947804",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 12.02.2026 - Como nao ter um 2026 dramático - Aula Start - Área de Membros",
+      "title": "04.03.2026 - Hot Seat Vendas de Programas e Esteira de Produtos",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 12.02.2026 - Como nao ter um 2026 dramático - Aula Start - Área de Membros",
+      "title": "11.03.2026 - O Doutor Vendedor - Comunicação e Vendas na Medicina .mp4",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 04.12.2025 - Hot Seat Planejamento Estratégico para 2026. - Área de Membros",
+      "title": "04.12.2025 - Hot Seat Planejamento Estratégico para 2026.",
+      "href": "/area/produto/item/7947808",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 04.12.2025 - Hot Seat Planejamento Estratégico para 2026. - Área de Membros",
+      "title": "08.01.2026 Gestão - Metas e Rituais",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 04.12.2025 - Hot Seat Planejamento Estratégico para 2026. - Área de Membros",
+      "title": "24.02.2026 - Gestão de Pessoas (Pedro Drummond)",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 27.11.2025 - Jornada do Paciente. - Área de Membros",
+      "title": "27.11.2025 - Jornada do Paciente.",
+      "href": "/area/produto/item/7947826",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 27.11.2025 - Jornada do Paciente. - Área de Membros",
+      "title": "20.01.2026 - Como Estruturar Processos em Clinicas Médicas.",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 27.11.2025 - Jornada do Paciente. - Área de Membros",
+      "title": "18.02.2026 - Controle de Estoque e Doses de Tirzepatida.",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 22.01.2026 - Aula Protocolo Injetáveis Casa Paes - Área de Membros",
+      "title": "22.01.2026 - Aula Protocolo Injetáveis Casa Paes",
+      "href": "/area/produto/item/7947846",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 22.01.2026 - Aula Protocolo Injetáveis Casa Paes - Área de Membros",
+      "title": "26.02.2026 - TERAPIA DE REPOSIÇÃO HORMONAL FEMININA",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SCALE / 22.01.2026 - Aula Protocolo Injetáveis Casa Paes - Área de Membros",
+      "title": "Aulas Conceitos",
+      "href": "/area/produto/542786",
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "title": "AULA 1 - CANCER DE MAMA E TRH",
+      "href": "/area/produto/item/7374675",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "title": "AULA 2 - ENDOMETRIOSE",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "title": "AULA 3 - CASOS CLINICOS ENDOMETRIOSE",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "title": "AULA 4 - TDPM SPM",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - CANCER DE MAMA E TRH - Área de Membros",
+      "title": "Start - Aulas Teóricas",
+      "href": "/area/produto/504524",
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "title": "AULA 1 - 7 PASSOS DA VENDA",
+      "href": "/area/produto/item/7374673",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "title": "AULA 2 - AGENDAMENTO 2.0",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "title": "AULA 3A - PLANO DE ACOMPANHAMENTO",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "title": "AULA 3B - PLANO DE ACOMPANHAMENTO.",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / AULA 1 - 7 PASSOS DA VENDA - Área de Membros",
+      "title": "Aulas de Vendas e Mentalidade",
+      "href": "/area/produto/504523",
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "title": "1 - DISCUSSÃO CASOS 30.10.25",
+      "href": "/area/produto/item/7374672",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "title": "2 - DISCUSSÃO CASOS 06.11.25",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "title": "3 - DISCUSSÃO CASOS 18.12.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "title": "4 - DISCUSSÃO CASOS 22.12.25",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Caio Pires / 1 - DISCUSSÃO CASOS 30.10.25 - Área de Membros",
+      "title": "5 - DISCUSSÃO CASOS 05.02.26",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "title": "7 PASSOS DA VENDA 06.11.2025",
+      "href": "/area/produto/item/7320713",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "title": "Programa De Acompanhamento 13.11.2025",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "title": "PROSPECÇÃO ATIVA 20.11.2025",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "title": "AGENDAMENTO 2.0 NA PRÁTICA 27.11.2025",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / 7 PASSOS DA VENDA 06.11.2025 - Área de Membros",
+      "title": "SIMULAÇÃO DE VENDA 21.03.2026",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OBESIDADE 12.12.2025 - Área de Membros",
+      "title": "OBESIDADE 12.12.2025",
+      "href": "/area/produto/item/7683960",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OBESIDADE 12.12.2025 - Área de Membros",
+      "title": "MÉTODO ENDOGIN DE EMAGRECIMENTO 19.12.2025",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OBESIDADE 12.12.2025 - Área de Membros",
+      "title": "OBESIDADE SARCOPÊNICA E SARCOPENIA 08.01.2026",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OXANDROLONA 08.01.2026 - Área de Membros",
+      "title": "OXANDROLONA 08.01.2026",
+      "href": "/area/produto/item/7682424",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OXANDROLONA 08.01.2026 - Área de Membros",
+      "title": "CICLO MENSTRUAL E TRANSIÇÃO MENOPAUSAL 05.02.2026",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / OXANDROLONA 08.01.2026 - Área de Membros",
+      "title": "TERAPIA DE REPOSIÇÃO HORMONAL FEMININA - TRH - 26.02.26",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026 - Área de Membros",
+      "title": "DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026",
+      "href": "/area/produto/item/7978896",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026 - Área de Membros",
+      "title": "DISCUSSÃO DE CASOS CLÍNICOS EMAGRECIMENTO 29.01.2026",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / DISCUSSÃO DE CASOS CLÍNICOS OBESIDADE SARCOPÊNICA 15.01.2026 - Área de Membros",
+      "title": "DISCUSSÃO DE CASOS CLÍNICOS TRH 05.03.2026",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "title": "AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025",
+      "href": "/area/produto/item/7978635",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "title": "AULA INTRODUÇÃO TERAPIAS INJETÁVEIS 22.01.2026",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "title": "AULA INTRODUTÓRIA DE GESTÃO - 12.02.2026",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "title": "AULA MODULAÇÃO INTESTINAL 12.03.2026",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Twoany Gomes / AULA DE TRIBUTAÇÃO - CONTABILIDADE 02.12.2025 - Área de Membros",
+      "title": "Aulas Convidados",
+      "href": "/area/produto/548661",
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "M1 - TERAPIA HORMONAL 2 aulas",
+      "href": "/area/produto/item/7995404",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025",
+      "href": "/area/produto/item/7995404",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "OXANDROLONA E GH NA PRÁTICA 05.02.2026",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "M2 - OBESIDADE 1 aula",
+      "href": "/area/produto/item/7995407",
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "MÉTODO ENDOGIN OBESIDADE 11.12.2025",
+      "href": "/area/produto/item/7995407",
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "M3 - OUTROS 2 aulas",
+      "href": "/area/produto/item/7684143",
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "ENDOMETRIOSE 13.01.2026",
+      "href": "/area/produto/item/7684143",
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "AULA MODULAÇÃO INTESTINAL 12.03.2026",
+      "href": null,
+      "order": 8
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL TRANSIÇǍO MENOPAUSAL 27.11.2025 - Área de Membros",
+      "title": "Aulas Conceito",
+      "href": "/area/produto/512629",
+      "order": 9
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLÍNICOS 04.12.2025",
+      "href": "/area/produto/item/7683704",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLÍNICOS 22.01.2026",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLÍNICOS 29.01.2026",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLÍNICOS 10.02.2026",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLÍNICOS METABOLOMICA 05.03.2026",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / CASOS CLÍNICOS 04.12.2025 - Área de Membros",
+      "title": "CASOS CLINICOS 19/03/2026",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / MENTALIDADE E VENDAS - AULA 1 - Área de Membros",
+      "title": "MENTALIDADE E VENDAS - AULA 1",
+      "href": "/area/produto/item/7995415",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / MENTALIDADE E VENDAS - AULA 1 - Área de Membros",
+      "title": "7 PASSOS DA VENDA/ PLANO 5 SEMANAS 08.01.2026",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL FEMININA DRA TWOANY 26.02.2026 - Área de Membros",
+      "title": "TERAPIA HORMONAL FEMININA DRA TWOANY 26.02.2026",
+      "href": "/area/produto/item/7995418",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - Regina Rabello / TERAPIA HORMONAL FEMININA DRA TWOANY 26.02.2026 - Área de Membros",
+      "title": "Aulas Convidados",
+      "href": "/area/produto/512633",
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - AULA GESTÃO Q&A 05.03.26 - Área de Membros",
+      "title": "1 - AULA GESTÃO Q&A 05.03.26",
+      "href": "/area/produto/item/8199767",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - AULA GESTÃO Q&A 05.03.26 - Área de Membros",
+      "title": "2 - AULA GESTÃO - JORNADA DO PACIENTE 12.03.26",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - BASICO HORMONIOS 24.01.26 - Área de Membros",
+      "title": "1 - BASICO HORMONIOS 24.01.26",
+      "href": "/area/produto/item/7962258",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - BASICO HORMONIOS 24.01.26 - Área de Membros",
+      "title": "2 - OBESIDADE SARCOPENICA 19.03.26",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - BASICO HORMONIOS 24.01.26 - Área de Membros",
+      "title": "Aulas Teóricas",
+      "href": "/area/produto/548889",
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "1 - CASO CLINICO 18.12.25",
+      "href": "/area/produto/item/7962260",
+      "order": 1
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "2 - CASO CLÍNICO 22.12.25",
+      "href": null,
+      "order": 2
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "3 - CASO CLÍNICO 29.12.25",
+      "href": null,
+      "order": 3
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "4 - CASO CLÍNICO 08.01.26",
+      "href": null,
+      "order": 4
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "5 - ONBOARDING",
+      "href": null,
+      "order": 5
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "6 -CASO CLÍNICO START+SURGICAL 05.02.26",
+      "href": null,
+      "order": 6
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "7 -PRE O POS OP - SURGICAL 12.02.26",
+      "href": null,
+      "order": 7
+    },
+    {
+      "module": "Mentoria Endogin Start - SURGICAL / 1 - CASO CLINICO 18.12.25 - Área de Membros",
+      "title": "8 - Q&A Venda 26.02.26",
+      "href": null,
+      "order": 8
+    }
+  ]
+}

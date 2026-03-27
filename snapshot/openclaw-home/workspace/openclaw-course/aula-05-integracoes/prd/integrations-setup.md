@@ -44,7 +44,7 @@ gog drive ls --client=drive-client --account=SEU_EMAIL
 # Ver: https://developer.1password.com/docs/cli/get-started/
 
 # Uso
-op item get "Nome do Item" --field credential --reveal
+/root/.openclaw/bin/op-safe-read.sh item get "Nome do Item" --vault openclaw --field credential --reveal
 ```
 - TODA credencial deve viver no 1Password
 - Nunca hardcodar API keys em arquivos

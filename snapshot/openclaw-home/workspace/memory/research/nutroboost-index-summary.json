@@ -1,0 +1,10 @@
+{
+  "lecture_count": 50,
+  "type_buckets": {
+    "aulas_tecnicas": 21,
+    "discussoes_de_casos": 19,
+    "mentorias": 10
+  },
+  "dated_entries": 30,
+  "keyword_entries": 59
+}

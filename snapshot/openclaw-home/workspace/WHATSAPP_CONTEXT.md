@@ -1,5 +1,11 @@
 # WhatsApp Patient Context
 
+Importante:
+- Este arquivo serve para consultar historico e contexto de conversas do WhatsApp.
+- Ele nao prova que existe um canal de envio de WhatsApp configurado no gateway.
+- Nao usar numeros encontrados aqui como destino do tool `message` sem uma rota outbound de WhatsApp explicitamente documentada e validada.
+- Se o usuario pedir para "mandar um WhatsApp" e nao houver rota outbound validada, responder com a limitacao e oferecer o texto do lembrete ou outro canal.
+
 Antes de responder pacientes vindos do WhatsApp, consulte o contexto consolidado no Apps Script.
 
 ## Endpoint base

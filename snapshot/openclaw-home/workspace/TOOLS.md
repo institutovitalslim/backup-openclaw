@@ -38,3 +38,18 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## OpenClaw VPS Notes
+
+- Workspace root: `/root/.openclaw/workspace`
+- For `read`/`edit`/`write`, use absolute paths under that root.
+- Relative paths like `memory/...` may break a run on this VPS.
+- For memory lookups, prefer `memory_search` and `memory_get` before raw `read`.
+
+## Messaging Notes
+
+- Configured live outbound chat channel on this VPS: Telegram.
+- `WHATSAPP_CONTEXT.md` and the Apps Script endpoint are for reading/searching WhatsApp conversation context only.
+- There is no documented working outbound WhatsApp channel mapping in this workspace yet.
+- Do not send via `message` to raw phone numbers unless a dedicated WhatsApp route is explicitly documented and tested.
+- A Telegram id like `971050173` or a WhatsApp number like `557186968887` must not be guessed into another channel.
