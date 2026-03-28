@@ -78,3 +78,10 @@ MEMORY.md deve continuar curto e funcionar como indice.
 - integrations/quarkclinic-api.md: skill da API Quarkclinic na VPS, cliente seguro e estado atual do acesso.
 - ../skills/quarkclinic-api/SKILL.md: instrucoes de uso da skill.
 - ../skills/quarkclinic-api/references/api-docs.md: mapa enxuto de endpoints e autenticacao.
+
+## Quarkclinic Plataforma
+- integrations/quarkclinic.md: fluxos operacionais (atendimento, pacientes, financeiro, caixas e CRM) para uso completo do sistema pelo time de recepcao.
+
+## Omie
+- integrations/omie.md: panorama inicial dos módulos oficiais do ERP Omie (finanças, notas fiscais, estoque, vendas/CRM, serviços, IA, Omie.Hub, Omie.Cash, PDV, WhatsApp, prospecção) e próximos passos do estudo.
+- projects/omie-study.md: status e roadmap do treinamento/curadoria do Omie.

@@ -36,6 +36,7 @@ rsync -a --delete \
   --exclude='**/dist/' \
   --exclude='**/build/' \
   --exclude='**/*.pyc' \
+  --exclude='client_secret_gog_desktop.json' \
   "$OPENCLAW_HOME/workspace/" "$WORKSPACE_ROOT/"
 
 find "$SNAPSHOT_ROOT" -mindepth 1 | LC_ALL=C sort > "$METADATA_ROOT/inventory.txt"
