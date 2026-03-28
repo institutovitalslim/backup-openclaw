@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>const DOMAIN_SWITCH_STATUS=-302,DEFAULT_TIMEOUT=3e4,DEFAULT_CONTENT_TYPE="application/json",ESTIMATED_API_SAVINGS=200;(function(){"use strict";window._prefetch||(window._prefetch={res:{}});function p(t){try{if(typeof URL<"u"&&URL)return new URL(t).pathname}catch{}try{const r=t.replace(/^https?:\/\/[^/]+/,"").split("?")[0].split("#")[0];return r&&r.charAt(0)!=="/"?"/"+r:r||t}catch{return t}}function S(t){return new Promise(function(e,r){try{if(typeof t=="function"){const o=t();o&&typeof o.then=="function"?o.then(e).catch(r):e(o||{})}else e(t&&typeof t=="object"?t:{})}catch(o){r(o)}})}function E(){try{const t=localStorage.getItem("plaud_user_api_domain");if(t)return JSON.parse(t).domain||null}catch{}return null}function O(t,e){if(!t)return;const r={domain:t,region:e,timestamp:Date.now()};try{localStorage.setItem("plaud_user_api_domain",JSON.stringify(r))}catch(o){console.error("[ApiPrefetch] Failed to save user API domain:",o)}}function U(t){if(!t)return!1;try{if(t.indexOf("http://")!==0&&t.indexOf("https://")!==0)return!0;const r=new URL(t).hostname.toLowerCase();return r.indexOf(".plaud.ai")!==-1||r==="plaud.ai"}catch{return!0}}function g(t,e){try{const r=new URL(t),o=new URL(e);return r.protocol=o.protocol,r.host=o.host,r.toString()}catch{return t}}function I(t,e){return S(e).then(function(r){const o=E();let d=t;o&&U(t)&&(d=g(t,o));const c={method:"GET",headers:{"Content-Type":DEFAULT_CONTENT_TYPE}};if(r){for(const n in r)if(r.hasOwnProperty(n))if(n==="headers"&&c.headers)for(const a in r.headers)r.headers.hasOwnProperty(a)&&(c.headers[a]=r.headers[a]);else c[n]=r[n]}return fetch(d,c).then(function(n){return n.ok?n:n.json().then(function(a){if(a.status===-302&&a.data&&a.data.domains&&a.data.domains.api){const m=a.data.domains.api,f=a.data.region;O(m,f);const h=g(t,m);return fetch(h,c)}throw new Error("HTTP "+n.status+": "+n.statusText)}).catch(function(){throw new Error("HTTP "+n.status+": "+n.statusText)})})})}function y(t,e){e=e||{};const r=e.timeout||3e4,o=e.onProgress||function(){},d=e.onError||function(){};if(!Array.isArray(t))return Promise.reject(new Error("apiList\u5FC5\u987B\u662F\u6570\u7EC4"));const c=Date.now(),n={},a={total:t.length,startTime:c,errors:[],timings:n},m=t.map(function(f,h){if(!f||typeof f.url!="string")return d(new Error("\u65E0\u6548\u7684API\u914D\u7F6E"),f?f.url:"unknown",h),Promise.resolve(null);const s=f.url,_=f.config||{},l=Date.now(),P=new Promise(function(u,w){setTimeout(function(){w(new Error("\u8BF7\u6C42\u8D85\u65F6 ("+r+"ms)"))},r)}),i=p(s);if(window._prefetch.res[i])return o(h+1,a.total,"reused",s),window._prefetch.res[i];n[i]={url:s,startTime:l,status:"started"},window._prefetch._timings[i]=n[i];const N=I(s,_).then(function(u){if(!u.ok)throw new Error("HTTP "+u.status+": "+u.statusText);return u.json()}).then(function(u){const w=Date.now(),T=w-l;return n[i].endTime=w,n[i].duration=T,n[i].status="completed",window._prefetch._timings[i]=n[i],o(h+1,a.total,"success",s),u}).catch(function(u){const w=Date.now(),T=w-l;throw n[i].endTime=w,n[i].duration=T,n[i].status="failed",n[i].error=u.message,window._prefetch._timings[i]=n[i],o(h+1,a.total,"error",s),d(u,s,h),a.errors.push({url:s,error:u.message,index:h,duration:T}),u}),D=Promise.race([N,P]);return window._prefetch.res[i]=D,o(h+1,a.total,"start",s),D.catch(function(){return null})});return Promise.all(m).then(function(){const f=Date.now(),h=f-c;a.endTime=f,a.totalDuration=h;let s=0,_=0,l=0;for(const P in n){const i=n[P];i.status==="completed"?(s++,l+=i.duration):i.status==="failed"&&(_++,i.duration&&(l+=i.duration))}return a.completed=s,a.failed=_,a.avgApiDuration=s>0?Math.round(l/s):0,a})}function j(t){const e=p(t);return window._prefetch.res[e]?window._prefetch.res[e]:Promise.reject(new Error("\u8DEF\u5F84 "+e+" \u672A\u627E\u5230\u9884\u52A0\u8F7D\u6570\u636E"))}function L(t){if(t){const e=p(t);delete window._prefetch.res[e]}else window._prefetch.res={}}function K(t){const e=p(t);return window._prefetch.res.hasOwnProperty(e)}function A(){const t=[];for(const e in window._prefetch.res)window._prefetch.res.hasOwnProperty(e)&&t.push(e);return t}function M(){const t=A();let e=0,r=0,o=0;return t.forEach(function(d){try{const c=window._prefetch.res[d];if(c&&typeof c.then=="function"){const n=c._state||c.state||"pending";n==="fulfilled"||n==="resolved"?(e++,o+=200):r++}}catch{}}),{total:t.length,ready:e,pending:r,readyRate:t.length>0?Math.round(e/t.length*100):0,estimatedSavings:o,avgSavingsPerApi:e>0?Math.round(o/e):0,paths:t,timestamp:new Date().toISOString()}}function C(t,e,r){if(!Array.isArray(t))return Promise.reject(new Error("urls\u5FC5\u987B\u662F\u6570\u7EC4"));const o=t.map(function(d){return{url:d,config:e||{}}});return y(o,r)}window._prefetch.apiPrefetch=y,window._prefetch.getPrefetchedData=j,window._prefetch.clearPrefetchedData=L,window._prefetch.isPrefetched=K,window._prefetch.getPrefetchedUrls=A,window._prefetch.getPrefetchStats=M,window._prefetch.preloadApiUrls=C,window._prefetch.urlToPathKey=p,window._prefetch._timings={}})();
+</script>
+    <script>(function(){"use strict";var f=["/applink","/audiouploadintro","/buydetail","/common","/cookie-policy","/download","/privacy","/shortlink","/templatelink","/transdetail","/user-agreement","/userdetail","/appfaq","/share","/launch-desktop","/login","/zapier-doc","/zapier-auth"];function l(){for(var e=window.location.pathname,t=e.replace(/^\/web\d+/,""),r=0;r<f.length;r++){var n=f[r];if(t===n||t.indexOf(n+"/")===0)return!0}return!1}function o(){return"https://api.plaud.ai"}function p(){var e=localStorage.getItem("tokenstr");return{method:"GET",headers:{Authorization:e,"edit-from":"web","app-platform":"web","Content-Type":"application/json"}}}function g(){return localStorage.getItem("sort_by")||"start_time"}var h={fileList:function(){var e=o(),t=g();return e+"/file/simple/web?skip=0&limit=20&is_trash=2&sort_by="+t+"&is_desc=true"},fileTag:function(){return o()+"/filetag/"},userMe:function(){return o()+"/user/me"},userSettings:function(){return o()+"/user/me/settings"},configInit:function(){return o()+"/config/init?platform=web&version=1.1.1"}},u=[{name:"fileList",pattern:function(e){var t=/^\/(?:web\d+\/?)?(?:file-list\/?)?$/,r=/^\/(?:web\d+\/?)?(?:new\/?)?(?:file-list\/?)?$/;return t.test(e)||r.test(e)},apis:["fileList","aiStatus","fileTag","userMe","userSettings","configInit"]},{name:"index",pattern:function(e){var t=/^\/(?:web\d+\/?)?$/;return t.test(e)},apis:["aiStatus","fileTag","userMe","userSettings","configInit"]},{name:"fileDetail",pattern:function(e){var t=/^\/(?:web\d+\/)?file\/[^/]+\/?$/;return t.test(e)},apis:["userMe","userSettings","fileTag","configInit"]}];function d(e){for(var t=0;t<u.length;t++){var r=u[t],n=r.pattern;if(typeof n=="function"&&n(e))return r}return null}function v(e){for(var t=[],r=p(),n=0;n<e.length;n++){var i=e[n],s=h[i];if(typeof s=="function")try{var a=s();a&&t.push({url:a,config:r})}catch(c){console.error("[ApiPrefetch] \u6784\u5EFAAPI\u5931\u8D25:",i,c.message||c)}else console.warn("[ApiPrefetch] \u672A\u627E\u5230API\u6784\u5EFA\u5668:",i)}return t}function m(){if(!l()){var e=localStorage.getItem("tokenstr");if(e&&!(!window._prefetch||typeof window._prefetch.apiPrefetch!="function"))try{var t=window.location.pathname,r=d(t);if(!r)return;var n=v(r.apis||[]);if(n.length===0)return;window._prefetch.apiPrefetch(n,{timeout:1e4,onError:function(i,s){var a=i.message||String(i);a.includes("401")||a.includes("Unauthorized")?console.warn("[ApiPrefetch] \u9884\u52A0\u8F7D\u8DF3\u8FC7\uFF08\u672A\u767B\u5F55\uFF09:",s):console.warn("[ApiPrefetch] \u9884\u52A0\u8F7D\u5931\u8D25:",s,a)}}).catch(function(i){console.error("[ApiPrefetch] \u9884\u52A0\u8F7D\u5F02\u5E38:",i.message||i)})}catch(i){console.error("[ApiPrefetch] \u9884\u52A0\u8F7D\u521D\u59CB\u5316\u5931\u8D25:",i.message||i)}}}m()})();
+</script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta name="keywords" content="plaud, audio, transcript" />
+    <meta
+      name="description"
+      content="Plaud, the world's No.1 AI note taker to capture, extract, and utilize intelligence from what you say, hear, see, and think."
+    />
+    <link rel="icon" href="https://web-static.plaud.ai/web3/favicon-light.png" sizes="any" />
+    <link rel="preconnect" href="https://resource.plaud.ai" />
+    <link rel="preconnect" href="https://api.plaud.ai" />
+    <link
+      rel="preload"
+      href="https://resource.plaud.ai/web/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>Plaud Web</title>
+    <script type="module" crossorigin src="https://web-static.plaud.ai/web3/js/index.C1bybNHP.js"></script>
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue~shared~3~5~19-node.BKHEYFSZ.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue~reactivity~3~5~19-node.oDi_Mgn2.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue~runtime-core~3~5~19-node.Cz1inWwV.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue~runtime-dom~3~5~19-node.DgN0RSYk.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~base64-js.1da7ELQG.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~clipboard.C1dzS-pg.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-clipboard3.0VlDqDmX.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-resize.BGVnkxhM.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-observe-visibility.EslkOjhp.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~mitt.DefwIxds.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-virtual-scroller.COynDlyn.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~dayjs.BF59n1LK.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~lodash-es.By6O8WuA.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vueuse~shared~9~13~0_vue~3~5~19_typescript~5~8~3_-node.CSLI22ab.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~element-plus~icons-vue~2~3~2_vue~3~5~19_typescript~5~8~3_-node.dJoJIn1_.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~ctrl~tinycolor~3~6~1-node.BuyEbX8F.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vueuse~core~9~13~0_vue~3~5~19_typescript~5~8~3_-node.73ivxN-o.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~sxzz~popperjs-es~2~11~7-node.DB1lLFnh.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~element-plus.DoNtajop.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~pinia.DRBven6J.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~orderedmap.C4TimWWB.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-model.DpFfMANL.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-transform.DzXNCgb9.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-state.2dqar5cJ.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-view.sD1kOcL5.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~w3c-keyname.DEtA-KhA.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-keymap.BqqKIetK.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~intlify~shared~11~1~11-node.x072t19A.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~intlify~message-compiler~11~1~11-node.DtfeT2T2.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~intlify~core-base~11~1~11-node.Dp6Ojc7I.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-i18n.vmi15eGG.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-commands.vh4K6EBH.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-async~prosemirror-schema-list.DDWJS4yD.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~axios.DjpKLQTL.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~uuid.BKrj-4V8.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/app-async-common.CxpletTE.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~util~1~13~0-node.DLpoTH48.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~component~0~7~0-node.Cym4j1yw.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~logger~0~5~0-node.B-Pe5wmc.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~idb.BXWtuYvb.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~app~0~14~1-node.vvywVJTU.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~installations~0~6~19_~firebase~app~0~14~1-node.D-U95V3O.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase~analytics~0~10~18_~firebase~app~0~14~1-node.qXKxGqXc.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~firebase.B03mMYs6.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~js-cookie.Cz0CWeBA.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~datadog~browser-core~6~26~0-node.NCRwUr_P.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~datadog~browser-logs~6~26~0_~datadog~browser-rum~6~26~0-node.CiMiM5Mb.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~apmplus~web~2~10~1-node.B2lcuGB8.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~sentry~core~10~5~0-node.CC7FpPFK.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vue-router.CQQQUI0W.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~swiper.j2MCumke.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~fernet.BC3GhOsO.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~datadog~browser-rum-core~6~26~0-node.BkIPwOLQ.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~datadog~browser-rum~6~26~0_~datadog~browser-logs~6~26~0-node.DQgJ_G0r.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~posthog-js.EO0kXHfZ.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~qrcode~vue.DQCRp6L2.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~es-toolkit.Cuq8_e0D.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~es-errors.CxTyLFAO.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~object-inspect.CAXZAqb2.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~side-channel-list.BtZYcbJb.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~es-object-atoms.BR76m4z7.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~math-intrinsics.DP1tGiab.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~gopd.C1lCZ5Qs.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~es-define-property.D_7cP-M3.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~has-symbols.BaUvM3gb.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~function-bind.CHqF18-c.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~call-bind-apply-helpers.4POUnz7Z.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~dunder-proto.BbWt42FG.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~get-proto.D0VHBiF6.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~hasown.B8hEpGT5.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~get-intrinsic.BjzjpR3e.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~call-bound.DOfLe8Wd.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~side-channel-map.WZq16nUi.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~side-channel-weakmap.CMc2_cr4.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~side-channel.BU-WM3gY.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~qs.WFz1DYHo.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~fft~js.CwTh1xct.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~marked.abvlgVt2.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~vueuse~shared~10~11~1_vue~3~5~19_typescript~5~8~3_-node.DlzmBq08.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~ffmpeg~ffmpeg~0~12~15-node.DUB_LZWp.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~ffmpeg~util~0~12~2-node.EsSh9Sz-.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~floating-ui~utils~0~2~10-node.B8BadUt9.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~floating-ui~core~1~7~3-node.BwqOYmtC.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~floating-ui~dom~1~7~4-node.Cct6TRhm.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~floating-ui~vue~1~1~9_vue~3~5~19_typescript~5~8~3_-node.9-mboDty.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~radix-vue.Bp3_Dl-f.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~jwt-decode.VWaDGczM.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/app-initial-common.B3a6wHKj.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~sentry-internal~browser-utils~10~5~0-node.CzRfw1aD.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~sentry~browser~10~5~0-node.DAPDifI5.chunk.js">
+    <link rel="modulepreload" crossorigin href="https://web-static.plaud.ai/web3/js/vendors-initial~sentry~vue~10~5~0_pinia~2~3~1_typescript~5~8~3_vue~3~5~19_typescript~5~8~3___vue~3~5~19_typescript~5~8~3_-node.bszcF1ww.chunk.js">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/vendors-initial~vue-virtual-scroller.DzxWjvLM.css">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/vendors-initial~element-plus.Kl6LsG_9.css">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/vendors-initial~swiper.BiEk7v8n.css">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/app-initial-common.DaW3Zfjm.css">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/index.Bvx3JSvx.css">
+    <link rel="stylesheet" crossorigin href="https://web-static.plaud.ai/web3/css/vendors-initial~vue3-perfect-scrollbar.CafzNkOD.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5N1K2J3M5R"></script>
+                        <script>
+                        window._core__WEBPACK_IMPORTED_MODULE_0__ = {}
+                        window.dataLayer = window.dataLayer || []
+                        function gtag(){dataLayer.push(arguments)}
+                        gtag('js', new Date())
+                        gtag('config', 'G-5N1K2J3M5R')
+                        </script></head>
+  <body class="root">
+    <div id="app" class="app"></div>
+    <script>
+      window.onload = function () {
+        const script = document.createElement('script');
+        script.src = 'https://js.stripe.com/v3/';
+        script.defer = true;
+        document.body.appendChild(script);
+      };
+    </script>
+  </body>
+</html>

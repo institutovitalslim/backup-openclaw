@@ -8,7 +8,7 @@
       "name": "daily-memory-compaction",
       "enabled": true,
       "createdAtMs": 1774294637762,
-      "updatedAtMs": 1774494004423,
+      "updatedAtMs": 1774666810534,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -21,14 +21,13 @@
         "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
       },
       "state": {
-        "nextRunAtMs": 1774580400000,
-        "lastRunAtMs": 1774494000015,
+        "lastRunAtMs": 1774666800014,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4408,
+        "lastDurationMs": 10520,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "runningAtMs": 1774580400001
+        "nextRunAtMs": 1774753200000
       }
     },
     {
