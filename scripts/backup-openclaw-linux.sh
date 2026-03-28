@@ -27,6 +27,7 @@ fi
 rsync -a --delete \
   --exclude='.git/' \
   --exclude='.openclaw/' \
+  --exclude='tmp/' \
   --exclude='**/node_modules/' \
   --exclude='**/venv/' \
   --exclude='**/__pycache__/' \
@@ -41,7 +42,7 @@ rsync -a --delete \
 
 find "$SNAPSHOT_ROOT" -mindepth 1 | LC_ALL=C sort > "$METADATA_ROOT/inventory.txt"
 
-python3 - "$OPENCLAW_HOME" "$SNAPSHOT_ROOT" "$METADATA_ROOT/summary.json" <<'PY'
+python3 - "$OPENCLAW_HOME" "$SNAPSHOT_ROOT" "$METADATA_ROOT/summary.json" <<'INNER'
 import json
 import sys
 from datetime import datetime, timezone
@@ -60,11 +61,12 @@ summary = {
 }
 with open(summary_path, "w", encoding="utf-8") as fh:
     json.dump(summary, fh, indent=2)
-PY
+INNER
 
-cat > "$METADATA_ROOT/excluded-paths.txt" <<'EOF'
+cat > "$METADATA_ROOT/excluded-paths.txt" <<'INNER'
 workspace/.git/
 workspace/.openclaw/
+workspace/tmp/
 workspace/**/node_modules/
 workspace/**/venv/
 workspace/**/__pycache__/
@@ -74,6 +76,7 @@ workspace/**/.next/
 workspace/**/dist/
 workspace/**/build/
 workspace/**/*.pyc
-EOF
+workspace/**/client_secret_gog_desktop.json
+INNER
 
 echo "Backup concluido em $SNAPSHOT_ROOT"
