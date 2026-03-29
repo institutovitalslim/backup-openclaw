@@ -1,0 +1,37 @@
+[
+  {
+    "file": "01-editorial-photo-of-two-functional-medicine-doctors-reviewing.png",
+    "prompt": "editorial photo of two functional medicine doctors reviewing lab results on a sleek office desk, warm daylight, premium clinic, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  {
+    "file": "02-athletic-man-and-woman-training-strength-on-a-rooftop-gym-at.png",
+    "prompt": "athletic man and woman training strength on a rooftop gym at sunset, cinematic, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  {
+    "file": "03-fit-woman-on-stationary-bike-and-trainer-coaching-interval-c.png",
+    "prompt": "fit woman on stationary bike and trainer coaching interval cardio on rooftop deck, skyline background, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  {
+    "file": "04-smiling-couple-inside-a-cedar-infrared-sauna-relaxing-cinema.png",
+    "prompt": "smiling couple inside a cedar infrared sauna relaxing, cinematic light, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  {
+    "file": "05-happy-longevity-coach-couple-embracing-on-rooftop-wellness-s.png",
+    "prompt": "happy longevity coach couple embracing on rooftop wellness studio, city skyline, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  }
+]

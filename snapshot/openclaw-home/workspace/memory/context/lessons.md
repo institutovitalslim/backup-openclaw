@@ -23,3 +23,4 @@ Devem ser revistas e podem expirar em cerca de 30 dias quando perderem valor.
 - Em tarefas longas de Canva/carrossel, manter `agents.defaults.timeoutSeconds` em 600s no servidor principal.
 - Manter `ripgrep` instalado na VPS para evitar desperdicio de tempo em buscas basicas do agente.
 - Preservar compatibilidade do diario em `/root/.openclaw/workspace/memory/sessions/YYYY-MM-DD.md` quando o agente esperar esse caminho.
+- Para `medicalemagrecimento@gmail.com`, nao tentar login web no Gmail em browser headless da VPS: o Google pode bloquear com This browser or app may not be secure. Usar `gog` OAuth para leitura/busca no Gmail e pedir ao Tiaro apenas o codigo TOTP quando o login do Omie exigir 2FA. (2026-03-28)

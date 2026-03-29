@@ -55,16 +55,18 @@ MEMORY.md deve continuar curto e funcionar como indice.
 - memory/playbooks/1password-access.md
 - memory/integrations/canva.md
 - memory/playbooks/canva-mcp-access.md
+- memory/integrations/telegram-map.md: IDs dos grupos e topicos do Telegram, incluindo `Evolucao do Openclaw`.
 
 - memory/playbooks/canva-marketing-workflow.md
 - memory/content/campaigns/canva-marketing-brief-template.md
 - memory/playbooks/marketing-production-routine.md
+- memory/playbooks/carrossel-modelo-01.md: padrao editorial e visual do `Modelo 01` para carrosseis da Clara.
 
 ## Endogin Catalogo De Plataforma
 - integrations/endogin.md: status do acesso e mapa base da plataforma.
 - playbooks/endogin-course-catalog.md: ordem correta de consulta para modulos e videos.
 - projects/endogin-platform.md: inventario estrutural da plataforma Endogin.
-- projects/endogin-vendas.md: trilhas comerciais, SND, agendamento e prospeccao.
+- projects/endogin-vendas.md: trilhas comerciais, SND, agendamento e prospeccao, com regra de entrega em formato de aula ensinavel e reporte no topico `Evolucao do Openclaw` (`thread 768`).
 - projects/endogin-obesidade.md: trilhas de obesidade, tirzepatida, sarcopenia e emagrecimento.
 - projects/endogin-trh.md: trilhas de TRH, menopausa, pellets e hormonios.
 - projects/endogin-casos-clinicos.md: encontros, niveis e grupos de casos clinicos.
@@ -85,3 +87,5 @@ MEMORY.md deve continuar curto e funcionar como indice.
 ## Omie
 - integrations/omie.md: panorama inicial dos módulos oficiais do ERP Omie (finanças, notas fiscais, estoque, vendas/CRM, serviços, IA, Omie.Hub, Omie.Cash, PDV, WhatsApp, prospecção) e próximos passos do estudo.
 - projects/omie-study.md: status e roadmap do treinamento/curadoria do Omie.
+
+- Skill Endogin Transcription: `/root/.openclaw/workspace/skills/endogin-transcription/SKILL.md`

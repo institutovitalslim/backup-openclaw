@@ -1,0 +1,16 @@
+[
+  {
+    "file": "01-data-driven-composition-showing-body-composition-scan-silhou.png",
+    "prompt": "data-driven composition showing body composition scan silhouettes with neon orange metrics, premium medical aesthetic, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  },
+  {
+    "file": "02-luxury-medical-consultation-scene-inside-a-premium-clinic-mo.png",
+    "prompt": "luxury medical consultation scene inside a premium clinic, moody lighting, patient and physician reviewing labs on tablet, no text",
+    "model": "gpt-image-1.5",
+    "size": "1024x1024",
+    "quality": "high"
+  }
+]
