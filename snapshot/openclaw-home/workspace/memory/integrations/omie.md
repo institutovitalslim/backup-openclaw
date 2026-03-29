@@ -53,3 +53,28 @@
 2. Mapear telas críticas: Financeiro, CRM, Estoque, Serviços, PDV, Omie.Cash e Omie.Hub.
 3. Documentar fluxos equivalentes aos do QuarkClinic (cadastro, faturamento, repasse, relatórios).
 4. Avaliar integrações com ferramentas já usadas (QuarkClinic, Google Workspace, contabilidade) e APIs disponíveis.
+
+## Acesso Operacional Validado em 2026-03-28
+- Login principal validado em `https://app.omie.com.br/login/`.
+- Portal correto de treinamentos validado em `https://portal.omie.com.br/treinamentos`.
+- O portal `academy.omie.com.br` pode abrir, mas automacoes no `POST` podem receber `403 Just a moment...` do Cloudflare; nao tratar esse caminho como fluxo principal automatizado.
+- O `gog` da VPS foi reparado para a conta `medicalemagrecimento@gmail.com` e voltou a ler os e-mails de seguranca da Omie.
+- O TOTP foi configurado com sucesso no Google Authenticator.
+
+## Playbook da Clara
+1. Abrir `https://app.omie.com.br/login/`.
+2. Informar o e-mail operacional da conta.
+3. Clicar em `Continuar`.
+4. Informar a senha atual a partir de fonte segura.
+5. Clicar em `Entrar`.
+6. Se a Omie pedir codigo por e-mail, usar sempre o mais recente.
+7. Se a Omie pedir token do autenticador, usar o codigo atual de 6 digitos do Google Authenticator/Authy.
+8. Depois do login, abrir `https://portal.omie.com.br/treinamentos`.
+
+## Erros Ja Mapeados
+- Codigo de e-mail invalido: normalmente existe um codigo mais novo; sempre usar o ultimo emitido.
+- Token TOTP invalido: verificar `data e hora automaticas` e `fuso horario automatico` no celular e usar o codigo novo no inicio da janela de 30 segundos.
+- Se o codigo de 6 digitos do 2FA nao estiver disponivel para o agente, a Clara deve pedir explicitamente ao Tiaro que envie o codigo atual antes de insistir no login.
+
+## Area de Treinamentos Confirmada
+- Categorias visiveis em `Treinamentos gravados`: `Primeiros Passos`, `CRM`, `Vendas e NF-e`, `Servicos e NFS-e`, `Compras e Estoque`, `Producao`, `Financas`, `Express`, `Omie.Cash`.

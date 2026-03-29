@@ -14,3 +14,4 @@
 - Nao iniciar `op signin`.
 - Nao solicitar aprovacao no app desktop.
 - Nao sugerir Touch ID em servidor.
+- Service account atual do OpenClaw: `OpenClaw Connect - IVS`; nao voltar para `openclaw-gateway-sa`.

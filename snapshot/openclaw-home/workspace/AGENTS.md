@@ -95,6 +95,14 @@ Never compact sessions without doing this first.
 - Preferir sessao HTTP e mapa salvo para busca de aulas, links e videos; usar browser apenas quando a interacao exigir UI renderizada.
 - Se a estrutura do curso mudar materialmente, regenerar o mapa em memory/research/.
 
+## Omie Training Rule
+
+- Para pedidos sobre acesso ao Omie, login, MFA, Google Authenticator, TOTP ou treinamentos, seguir primeiro o playbook salvo em `memory/integrations/omie.md`.
+- Fluxo padrao validado: autenticar em `https://app.omie.com.br/login/` e, com a sessao aberta, acessar `https://portal.omie.com.br/treinamentos`.
+- Se a Omie pedir codigo por e-mail, usar sempre o codigo mais recente.
+- Se a Omie pedir o token do autenticador e o codigo de 6 digitos nao estiver disponivel para o agente, pedir explicitamente ao Tiaro que envie o codigo atual antes de insistir no login.
+- Nao priorizar `academy.omie.com.br` como fluxo principal automatizado, porque o `POST` pode ser bloqueado por Cloudflare.
+
 ## Canva Marketing Rule
 
 
@@ -104,3 +112,20 @@ Never compact sessions without doing this first.
 - Para pedidos de criacao de pecas no Canva, consultar primeiro memory/playbooks/canva-marketing-workflow.md.
 - Antes de gerar uma peca, ler o tom de voz da plataforma em memory/content/voice/<plataforma>.md quando existir.
 - Para validacao rapida, preferir fluxo: buscar design existente -> gerar candidatos -> criar design -> exportar.
+
+
+## Endogin Transcription Rule
+
+- Para pedidos sobre Endogin com foco em videos, aulas, transcricao, Dr. Wilson, Q&A SND VENDAS ou SPIN Selling, usar primeiro a skill `/root/.openclaw/workspace/skills/endogin-transcription`.
+- Prioridade atual: trilha `Dr. Wilson - Programas de Acompanhamento na Pratica`.
+- Dentro de Dr. Wilson, priorizar aprendizado de `SPIN Selling`, sequencia de perguntas, conexao com o paciente, objecoes e fechamento consultivo.
+- Se a plataforma bloquear extracao direta por DRM, usar o caminho assistido validado pela skill em vez de insistir no stream protegido.
+- Nunca abrir `player.vdocipher.com` diretamente com `otp/playbackInfo` como se fosse a aula; esse caminho pode gerar `Error 2014` por verificacao de dominio e nao valida o acesso real ao conteudo.
+- Salvar aprendizados em `memory/projects/endogin-vendas.md` e, quando houver pesquisa mais profunda, em `memory/research/`.
+
+## Modelo 01 Carousel Rule
+
+- Quando Tiaro pedir um carrossel no `Modelo 01`, seguir primeiro `memory/playbooks/carrossel-modelo-01.md`.
+- O `Modelo 01` nao e um carrossel generico: ele exige capa forte, 3 slides de prova, slide `Minha pratica` e slide final com CTA.
+- Se Tiaro enviar imagens de referencia, essas imagens vencem qualquer interpretacao generica.
+- Gemini esta liberado na VPS como apoio de ideacao e copy, mas nao deve ser usado como justificativa para fugir do modelo visual pedido.

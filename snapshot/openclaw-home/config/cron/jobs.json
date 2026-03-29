@@ -27,7 +27,8 @@
         "lastDurationMs": 10520,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774753200000
+        "nextRunAtMs": 1774753200000,
+        "runningAtMs": 1774753200002
       }
     },
     {
@@ -78,6 +79,29 @@
         "lastDurationMs": 13206,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "76926327-93e3-456f-a118-ba54b6aa9ee6",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003803476669:topic:848",
+      "name": "oracoes-reels-silvio",
+      "enabled": true,
+      "createdAtMs": 1774730983678,
+      "updatedAtMs": 1774730983678,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 6 * * *",
+        "tz": "America/Sao_Paulo"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
+      },
+      "state": {
+        "nextRunAtMs": 1774776600000
       }
     }
   ]

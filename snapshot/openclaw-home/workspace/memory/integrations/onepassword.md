@@ -6,3 +6,4 @@
 - Se `OP_SERVICE_ACCOUNT_TOKEN` nao estiver carregado, o bot deve reportar falta de ambiente e parar.
 - Para ler itens diretamente, preferir `/root/.openclaw/bin/op-safe-read.sh`.
 - Segredos continuam sendo injetados em `/root/.openclaw/.env.runtime` via `op inject`.
+- Service account atual do OpenClaw: `OpenClaw Connect - IVS`; nao voltar para `openclaw-gateway-sa`.
