@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Run • Pitch Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070d1f;
+      --card: rgba(255,255,255,0.07);
+      --primary: #7bf1c6;
+      --accent: #ffb347;
+      --text: #f4f7fb;
+      --muted: rgba(244,247,251,0.65);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, rgba(123,241,198,0.15), transparent 45%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+    .hero {
+      padding: 4rem 8vw 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 0.6rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 820px;
+    }
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 0 8vw 3rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+      transition: opacity 0.3s ease;
+    }
+    .card:hover::after { opacity: 1; }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 0 8vw 3rem;
+      align-items: center;
+    }
+    .split img {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      background: rgba(123,241,198,0.15);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .pricing {
+      padding: 0 8vw 3rem;
+    }
+    .pricing-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .price-card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 10px 40px rgba(123,241,198,0.15);
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0.6rem 0 0.2rem;
+      color: var(--primary);
+    }
+    .chart-section {
+      padding: 0 8vw 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .funnel-row {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .bar {
+      height: 12px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), #48b7ff);
+    }
+    .timeline {
+      padding: 0 8vw 3rem;
+    }
+    .timeline ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0.4rem;
+      top: 0.35rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      background: var(--bg);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 8vw 4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    a.cta {
+      display: inline-flex;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--primary), #48b7ff);
+      color: #041222;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      box-shadow: 0 10px 40px rgba(72,183,255,0.25);
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 3.5rem 6vw 2.5rem; }
+      .grid, .split, .pricing, .chart-section, .timeline { padding: 0 6vw 2.5rem; }
+      .funnel-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="tagline">Vital Slim × Simple Run</div>
+    <h1>Simple Run Club</h1>
+    <p>Clube de corrida premium em Lauro de Freitas para atrair, engajar e converter o público Vital Slim por meio de experiências esportivas, conteúdo médico e patrocínios recorrentes.</p>
+    <a class="cta" href="#roadmap">Próximo passo: go live em 90 dias</a>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Visão</h3>
+      <p>Ser o clube oficial patrocinado pela Vital Slim, conectando estilo de vida ativo e acompanhamento médico personalizado.</p>
+    </div>
+    <div class="card">
+      <h3>Por que agora?</h3>
+      <p>Lauro de Freitas concentra o público AB jovem com ticket médio alto e poucas experiências esportivas premium regulares.</p>
+    </div>
+    <div class="card">
+      <h3>Receitas</h3>
+      <ul>
+        <li>Mensalidades recorrentes</li>
+        <li>Patrocínios (co-branding, eventos)</li>
+        <li>Upsell para programas médicos Vital Slim</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Métricas a perseguir</h3>
+      <ul>
+        <li>400 sócios em 12 meses</li>
+        <li>Taxa de conversão p/ clínica ≥ 18%</li>
+        <li>Ticket médio ≥ R$ 320</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="split">
+    <div>
+      <div class="pill">Proposta de valor</div>
+      <h2>Experiência completa: esporte + saúde + comunidade</h2>
+      <ul>
+        <li>Assessoria de corrida com treinos diários, planilhas e acompanhamento em tempo real.</li>
+        <li>Integração com a Vital Slim: bioimpedância, Q&A médico e condições exclusivas.</li>
+        <li>Programa de parcerias locais (sportwear, nutrição, fisioterapia) para ampliar margem.</li>
+      </ul>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=900&q=60" alt="Pessoas correndo" />
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="pill">Oferta</div>
+    <h2>Planos propostos</h2>
+    <div class="pricing-table">
+      <div class="price-card">
+        <h3>Starter</h3>
+        <p class="price">R$ 219</p>
+        <p>3 treinos/semana, grupo exclusivo e welcome kit.</p>
+        <ul>
+          <li>Planilha atualizada quinzenalmente</li>
+          <li>Locker básico</li>
+          <li>Desconto Vital Slim light</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <h3>Performance</h3>
+        <p class="price">R$ 329</p>
+        <p>Plano principal com experiência premium.</p>
+        <ul>
+          <li>5 treinos presenciais</li>
+          <li>Avaliações trimestrais (bio + limiar)</li>
+          <li>Meet médico Vital Slim / quarter</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Pro / Corporate</h3>
+        <p class="price">R$ 499+</p>
+        <p>Squads fechados, consultoria nutricional e kit avançado.</p>
+        <ul>
+          <li>Coach 1:10 + suporte remoto</li>
+          <li>Integração wearables</li>
+          <li>Eventos privados patrocinados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <div class="chart-card">
+      <h3>TAM em Lauro de Freitas</h3>
+      <p>Estimativa construída a partir da população IBGE 2025 (219.564 hab.), renda per capita (R$ 35,7k) e hábitos esportivos da PNAD.</p>
+      <div class="funnel">
+        <div class="funnel-row">
+          <strong>Adultos (20-64)</strong>
+          <div class="bar"><span style="width:80%"></span></div>
+          <span>142 mil</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Classe AB urbana</strong>
+          <div class="bar"><span style="width:40%"></span></div>
+          <span>≈ 33 mil</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Ativos fisicamente</strong>
+          <div class="bar"><span style="width:25%"></span></div>
+          <span>12 a 14 mil</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Interessados em corrida</strong>
+          <div class="bar"><span style="width:15%"></span></div>
+          <span>3,6 a 4,2 mil</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Público premium (pagante)</strong>
+          <div class="bar"><span style="width:10%"></span></div>
+          <span>1,3 a 1,9 mil</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Potencial financeiro</h3>
+      <p>Receita recorrente estimada em três cenários de penetração.</p>
+      <div class="funnel">
+        <div class="funnel-row">
+          <strong>Conservador · 25%</strong>
+          <div class="bar"><span style="width:35%; background: linear-gradient(90deg,#ffb347,#ff6c6c);"></span></div>
+          <span>R$ 320 mil/mês</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Base · 35%</strong>
+          <div class="bar"><span style="width:55%; background: linear-gradient(90deg,#7bf1c6,#48b7ff);"></span></div>
+          <span>R$ 455 mil/mês</span>
+        </div>
+        <div class="funnel-row">
+          <strong>Ambicioso · 50%</strong>
+          <div class="bar"><span style="width:80%; background: linear-gradient(90deg,#c084fc,#8ec5ff);"></span></div>
+          <span>R$ 650 mil/mês</span>
+        </div>
+      </div>
+      <small>Considerando ticket médio de R$ 320 + patrocínios de R$ 30k/mês.</small>
+    </div>
+  </section>
+
+  <section class="timeline" id="roadmap">
+    <div class="pill">Roadmap 90 dias</div>
+    <h2>Do conceito ao lançamento</h2>
+    <ul>
+      <li><strong>Semanas 1-2:</strong> Naming final, identidade visual, reserva de domínios e registro de marca.</li>
+      <li><strong>Semanas 3-4:</strong> Estrutura mínima operando (coach líder, coordenador de comunidade, set-up jurídico).</li>
+      <li><strong>Semanas 5-8:</strong> Pré-venda com lista de espera, parcerias (sportwear, fisioterapia, cafés locais), calendário de treinos aberto.</li>
+      <li><strong>Semanas 9-10:</strong> Entrega dos kits, integração CRM com Vital Slim, treinamento Melinda/recepção.</li>
+      <li><strong>Semana 12:</strong> Longão inaugural + coletiva com patrocinadores e mídia local.</li>
+    </ul>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>KPIs compartilhados com a clínica</h3>
+      <ul>
+        <li>Leads gerados/mês → Vital Slim</li>
+        <li>Conversão para consultas (meta ≥18%)</li>
+        <li>Lifetime value do sócio (mín. 11 meses)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Próximos passos imediatos</h3>
+      <ol>
+        <li>Validar orçamento inicial (CAPEX + OPEX).</li>
+        <li>Formar advisory board com 2 patrocinadores âncora.</li>
+        <li>Rodar focus group com 10 pacientes Vital Slim.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    Simple Run Club • Projeto apresentado por Tiaro e Vital Slim • Março/2026
+  </footer>
+</body>
+</html>
