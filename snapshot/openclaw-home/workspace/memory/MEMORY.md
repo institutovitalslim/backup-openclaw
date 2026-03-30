@@ -61,6 +61,7 @@ MEMORY.md deve continuar curto e funcionar como indice.
 - memory/content/campaigns/canva-marketing-brief-template.md
 - memory/playbooks/marketing-production-routine.md
 - memory/playbooks/carrossel-modelo-01.md: padrao editorial e visual do `Modelo 01` para carrosseis da Clara.
+- memory/projects/dra-daniely-instagram.md: lote padrao de fotos reais da Dra Daniely e fluxo operacional para carrosseis no `Modelo 01`.
 
 ## Endogin Catalogo De Plataforma
 - integrations/endogin.md: status do acesso e mapa base da plataforma.

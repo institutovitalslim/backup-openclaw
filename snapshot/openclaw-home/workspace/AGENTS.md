@@ -129,3 +129,14 @@ Never compact sessions without doing this first.
 - O `Modelo 01` nao e um carrossel generico: ele exige capa forte, 3 slides de prova, slide `Minha pratica` e slide final com CTA.
 - Se Tiaro enviar imagens de referencia, essas imagens vencem qualquer interpretacao generica.
 - Gemini esta liberado na VPS como apoio de ideacao e copy, mas nao deve ser usado como justificativa para fugir do modelo visual pedido.
+
+## Dra Daniely Carousel Rule
+
+- Para pedidos envolvendo `Dra Daniely` + `Modelo 01` + `Canva`, seguir primeiro `memory/projects/dra-daniely-instagram.md` e `memory/playbooks/carrossel-modelo-01.md`.
+- Nao pedir ao Tiaro o nome da skill, caminho da skill ou confirmacao do `Modelo 01`; esse contexto ja esta configurado no workspace.
+- Se Tiaro disser `use as fotos que enviei`, assumir automaticamente o lote mais recente e contiguo de imagens do pedido atual em `/root/.openclaw/media/inbound/`, salvo override explicito.
+- Para o lote da Dra Daniely recebido em `2026-03-28 18:37`, usar por padrao: `file_186`, `file_187`, `file_188`, `file_189`, `file_190`, `file_191`.
+- So pedir confirmacao de fotos se houver dois lotes concorrentes no mesmo pedido ou se o usuario disser que quer um subconjunto especifico.
+- O fluxo padrao e: selecionar as fotos -> montar o carrossel diretamente no Canva MCP -> devolver link editavel.
+- Gemini pode ajudar em copy e variacoes textuais, mas nao pode ser usado como desculpa para fugir do layout `Modelo 01`.
+

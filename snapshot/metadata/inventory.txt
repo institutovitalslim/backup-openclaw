@@ -2599,6 +2599,8 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/05-happy-longevity-coach-couple-embracing-on-rooftop-wellness-s.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/index.html
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/simple-run-pitch.html
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/simple-run-pitch.tar.gz
 /root/backup-openclaw/snapshot/openclaw-home/workspace/docs
 /root/backup-openclaw/snapshot/openclaw-home/workspace/docs/pellets_testosterona_oxandrolona.pdf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/dr_wilson_programas_acompanhamento.pdf
@@ -2616,6 +2618,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-03-26.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-03-27.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-03-28.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-03-29.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/MEMORY.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/README.md
@@ -2688,6 +2691,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/playbooks/systeme-course-access.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects/README.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects/dra-daniely-instagram.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects/endogin-casos-clinicos.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects/endogin-obesidade.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/projects/endogin-plano-carreira-medicos.md

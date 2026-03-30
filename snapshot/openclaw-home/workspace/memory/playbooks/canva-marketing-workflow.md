@@ -36,3 +36,11 @@ Crie uma peca para {plataforma} com tom {tom}. Objetivo: {objetivo}. Publico: {p
 - Sempre preencher user_intent nas calls do Canva.
 - Se o usuario mencionar template, primeiro buscar design/template compativel antes de gerar do zero.
 - Quando houver mais de um candidato, resumir as diferencas de angulo visual antes de escolher.
+
+## Modelo 01 Com Fotos Reais
+- Quando Tiaro pedir `Modelo 01` com fotos reais, usar `memory/playbooks/carrossel-modelo-01.md` como padrao visual principal.
+- Nao pedir nome/caminho de skill ao usuario para esse caso.
+- Se existir arquivo de projeto da pessoa em `memory/projects/`, usar esse arquivo como fonte primaria para lote de fotos e contexto.
+- Se o usuario disser `use as fotos que enviei`, assumir o lote mais recente e contiguo da conversa atual em `/root/.openclaw/media/inbound/`.
+- Entrega padrao: criar direto no Canva e devolver link editavel.
+
