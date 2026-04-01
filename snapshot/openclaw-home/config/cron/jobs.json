@@ -8,7 +8,7 @@
       "name": "daily-memory-compaction",
       "enabled": true,
       "createdAtMs": 1774294637762,
-      "updatedAtMs": 1774839605839,
+      "updatedAtMs": 1774926005703,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -21,14 +21,14 @@
         "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
       },
       "state": {
-        "lastRunAtMs": 1774839600005,
+        "lastRunAtMs": 1774926000008,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 5834,
+        "lastDurationMs": 5695,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1774926000000,
-        "runningAtMs": 1774926000002
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1775012400000,
+        "runningAtMs": 1775012400000
       }
     },
     {
@@ -88,7 +88,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1774863004704,
+      "updatedAtMs": 1774949404639,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -101,13 +101,13 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1774949400000,
-        "lastRunAtMs": 1774863000004,
+        "nextRunAtMs": 1775035800000,
+        "lastRunAtMs": 1774949400007,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 4700,
+        "lastDurationMs": 4632,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
+        "consecutiveErrors": 2,
         "lastError": "Outbound not configured for channel: telegram"
       }
     }

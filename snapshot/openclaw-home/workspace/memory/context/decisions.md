@@ -26,3 +26,4 @@ Use para regras permanentes do agente, da operacao e da seguranca.
 ## 2026-03-26 - WhatsApp outbound rule
 - Neste servidor, contexto de WhatsApp nao implica canal de envio ativo. Se o usuario pedir para mandar WhatsApp e nao houver rota outbound documentada/validada, responder com a limitacao e oferecer o texto do lembrete ou outro canal; nunca converter numero de WhatsApp em destino Telegram.
 - A conta `medicalemagrecimento@gmail.com` deve ser acessada na VPS por `gog` OAuth para Gmail. Nao usar senha/local file/browser login no Gmail como caminho padrao, porque o Google bloqueia esse fluxo no ambiente headless. (2026-03-28)
+- Objetivo operacional aprovado pelo Tiaro: migrar a Clara no OpenClaw para Claude como modelo principal e preservar a API da OpenAI como fallback manual no servidor. (2026-03-31)

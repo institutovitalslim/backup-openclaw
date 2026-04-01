@@ -14,4 +14,4 @@ Nao use para conhecimento permanente e nao use para log diario.
 - Revisar o onboarding do produto.
 
 ## Pendencias Atuais
-- Nenhuma pendencia registrada no momento.
+- Concluir a migracao da Clara para Claude no OpenClaw, mantendo OpenAI como fallback: inserir `ANTHROPIC_API_KEY` em `/root/.openclaw/secrets.env`, ajustar `agent-config.yaml` para um modelo `anthropic/...` e reiniciar o gateway quando o Tiaro quiser efetivar a troca. (2026-03-31)
