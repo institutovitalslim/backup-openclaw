@@ -42,3 +42,26 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 ### Regra operacional
 - Este pedido deve ser tratado como `estoque a caminho`.
 - Não somar ao estoque atual até a chegada física e conferência.
+
+---
+
+## Pedido 02 — Stin
+- Fornecedor: Stin
+- Tipo: pedido/orçamento de injetáveis pendente de chegada
+- Data do registro: 2026-04-02
+- Previsão de chegada informada por Tiaro: 2026-04-03 *("amanhã" em relação à mensagem de 2026-04-02)*
+- Status: aguardando chegada
+- Arquivo origem: `/root/.openclaw/media/inbound/image_2026-04-02_13-50-41---2993ae9e-e9c7-49fa-aa14-616c268d64ce.png`
+
+### Itens do pedido
+- AMP Vit C (Ácido Ascórbico) 20% 1 g 5 mL — 20 unidades — R$ 4,90/un — total R$ 98,00
+- AMP Lidocaína s/vaso 2% 2 mL — 20 unidades — R$ 3,61/un — total R$ 72,20
+- AMP Coenzima Q10 50 mg/mL (100 mg) 2 mL — 20 unidades — R$ 25,50/un — total R$ 510,00
+- FR Vit C (Ácido Ascórbico) 20% 10 g 50 mL — 10 unidades — R$ 29,80/un — total R$ 298,00
+
+### Total financeiro estimado
+- Total dos itens visíveis: R$ 978,20
+
+### Regra operacional
+- Este pedido deve ser tratado como `estoque a caminho`.
+- Não somar ao estoque atual até a chegada física e conferência.
