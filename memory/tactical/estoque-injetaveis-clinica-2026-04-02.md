@@ -4,7 +4,11 @@ Fonte: mensagem direta do Tiaro em 2026-04-02.
 Status: registro bruto do estoque total informado (em uso + estoque).
 
 ## Observação importante
-Os itens abaixo foram salvos exatamente como enviados. Existem algumas entradas potencialmente duplicadas com quantidades diferentes (ex.: `L-Fenilalanina`, `Cloreto de Cromo`, `Pool de Minerais`). Não consolidei automaticamente para evitar distorção do inventário.
+Os itens duplicados informados como soma de medicação em uso + estoque atual foram consolidados conforme orientação posterior do Tiaro.
+Consolidações aplicadas:
+- `L-Fenilalanina`: 10 + 12 = 22
+- `Cloreto de Cromo`: 10 + 20 = 30
+- `Pool de Minerais`: 10 + 5 = 15
 
 ## Biomeds
 - ADEK — 19
@@ -16,11 +20,11 @@ Os itens abaixo foram salvos exatamente como enviados. Existem algumas entradas 
 - Morusil Booster c/Teacrina — 24
 - Morusil Puro — 19 *(pouco utilizado)*
 - Pill Food — 20
-- Pool de Minerais — 10
+- Pool de Minerais — 15
 - PQQ — 13
 - SAME — 4
-- L-Fenilalanina — 10
-- Cloreto de Cromo — 10
+- L-Fenilalanina — 22
+- Cloreto de Cromo — 30
 - Dutasterida — 20
 - Beta Alanina — 10
 - Complexo B/B1 — 10
@@ -45,12 +49,9 @@ Os itens abaixo foram salvos exatamente como enviados. Existem algumas entradas 
 - L-Lisina — 4
 - L-Taurina — 8
 - L-Arginina — 9
-- L-Fenilalanina — 12
-- Cloreto de Cromo — 20
 - Vitamina C 444mg — 4
 - ALA — 1
 - Sulfato de Zinco — 9
-- Pool de Minerais — 5
 
 ## Victa
 - Curcumina — 30
