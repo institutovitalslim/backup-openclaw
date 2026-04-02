@@ -30,11 +30,11 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 - SAME / S-Adenosil-L-Metionina (10%) 200 mg/2 mL `CX 5 amp` — 2 caixas
 - Theanina (2,5%) 50 mg/2 mL `CX 5 amp` — 2 caixas
 - Vitamina B6 (Piridoxina Cloridrato) (2%) 100 mg/5 mL `CX 5 amp` — 2 caixas
-- Vitamina C (Ácido Ascórbico) (20%) 1 g/5 mL `CX 5 amp` — 2 caixas
 
 ### Correção registrada
-- Tiaro informou em 2026-04-02 que **Vitamina C 444mg não foi solicitada** neste pedido da Biomeds.
-- O item armazenado neste pedido permanece **Vitamina C (Ácido Ascórbico) 20% 1 g/5 mL**, conforme leitura do documento.
+- Tiaro esclareceu em 2026-04-02 que **não houve solicitação de Vitamina C neste pedido da Biomeds**.
+- Como `ácido ascórbico` = `vitamina C`, o item de vitamina C foi removido deste registro.
+- Os totais financeiros abaixo permanecem como os valores visíveis no documento original e podem precisar de revisão caso a exclusão não tenha sido refletida na imagem.
 
 ### Totais financeiros do pedido
 - Valor total bruto: R$ 2.264,20
