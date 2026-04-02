@@ -40,8 +40,7 @@ Receber eventos da Z-API, armazenar historico por paciente e gerar contexto legi
 - revisar estrategia de contexto por paciente
 
 ## Proximos Passos
-1. restaurar os segredos reais da Z-API no host (o 1Password local ainda devolve apenas referencias `op://...`)
-2. preencher `ops/zapi_bridge/zapi_bridge.env` com credenciais reais e token do gateway
-3. habilitar o servico `zapi-clara-bridge.service` em systemd user-level
-4. apontar o webhook da Z-API para a bridge mantendo fan-out para o Apps Script
-5. executar teste controlado ponta a ponta por numero de homologacao
+1. expor a bridge com endpoint publico/HTTPS para a Z-API conseguir entregar webhooks externos
+2. apontar o webhook da Z-API para a bridge mantendo fan-out para o Apps Script
+3. executar teste controlado ponta a ponta por numero de homologacao
+4. restaurar de forma definitiva a cadeia de segredos no 1Password para nao depender de recuperacao por logs locais
