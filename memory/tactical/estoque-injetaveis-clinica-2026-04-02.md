@@ -10,6 +10,11 @@ Consolidações aplicadas:
 - `Cloreto de Cromo`: 10 + 20 = 30
 - `Pool de Minerais`: 10 + 5 = 15
 
+### Entrada posterior registrada
+- Pedido da **Health Tech** recebido em `2026-04-02` e lançado no estoque.
+- Para controle consolidado por ativo: `ALA` = `Ácido Lipóico`.
+- Total atual consolidado de `ALA / Ácido Lipóico` = `41` *(1 Biomeds + 40 Health Tech)*.
+
 ## Fornecedor: Biomeds
 - ADEK — 19
 - HMB — 29
@@ -68,3 +73,6 @@ Consolidações aplicadas:
 - NADH IM — 10
 - Chronic — 23
 - L-Glutamina — 8
+
+## Fornecedor: Health Tech
+- Ácido Lipóico 300 mg/10 mL — 40 *(entrada lançada em 2026-04-02)*
