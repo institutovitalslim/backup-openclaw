@@ -20,4 +20,3 @@ Use esta nota para evitar confundir a conta de envio do bot com a conta operacio
 - Conta de envio e conta de gestao nao devem ser tratadas como a mesma coisa.
 - Ao enviar e-mail em nome do bot, priorizar medicalemagrecimento@gmail.com.
 - Ao consultar recursos da clinica, priorizar institutovitalslim@gmail.com quando o contexto for operacional.
-- Na VPS principal, o `gog` CLI foi colocado em uso para a conta `institutovitalslim@gmail.com`; para Gmail, Drive e Calendar, priorizar esse acesso OAuth em vez de login manual por browser quando a tarefa for operacional. (consolidado em 2026-04-01 a partir das notas de 2026-03-05/06)

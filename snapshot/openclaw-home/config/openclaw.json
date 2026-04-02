@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-31T19:25:03.371Z"
+    "lastTouchedAt": "2026-04-01T21:08:01.170Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-31T19:25:03.363Z",
@@ -28,6 +28,9 @@
         },
         "openai/gpt-5.4": {
           "alias": "GPT"
+        },
+        "google/gemini-3.1-flash-lite-preview": {
+          "alias": "NanoBanana2"
         }
       },
       "contextTokens": 160000,
@@ -49,18 +52,18 @@
       "enabled": true,
       "dmPolicy": "allowlist",
       "groups": {
-        "*": {
+        "-1003803476669": {
           "requireMention": false,
-          "groupPolicy": "open",
+          "groupPolicy": "allowlist",
           "allowFrom": [
-            "*"
+            "971050173"
           ]
         }
       },
       "allowFrom": [
         "971050173"
       ],
-      "groupPolicy": "open",
+      "groupPolicy": "allowlist",
       "streaming": "partial",
       "mediaMaxMb": 19
     }

@@ -83,9 +83,6 @@ MEMORY.md deve continuar curto e funcionar como indice.
 - ../skills/quarkclinic-api/SKILL.md: instrucoes de uso da skill.
 - ../skills/quarkclinic-api/references/api-docs.md: mapa enxuto de endpoints e autenticacao.
 
-## Perplexity
-- integrations/perplexity.md: estado validado da integracao/skill Perplexity na VPS, local da credencial no 1Password e endpoints uteis.
-
 ## Quarkclinic Plataforma
 - integrations/quarkclinic.md: fluxos operacionais (atendimento, pacientes, financeiro, caixas e CRM) para uso completo do sistema pelo time de recepcao.
 
