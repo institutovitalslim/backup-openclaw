@@ -32,6 +32,10 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 - Vitamina B6 (Piridoxina Cloridrato) (2%) 100 mg/5 mL `CX 5 amp` — 2 caixas
 - Vitamina C (Ácido Ascórbico) (20%) 1 g/5 mL `CX 5 amp` — 2 caixas
 
+### Correção registrada
+- Tiaro informou em 2026-04-02 que **Vitamina C 444mg não foi solicitada** neste pedido da Biomeds.
+- O item armazenado neste pedido permanece **Vitamina C (Ácido Ascórbico) 20% 1 g/5 mL**, conforme leitura do documento.
+
 ### Totais financeiros do pedido
 - Valor total bruto: R$ 2.264,20
 - Desconto: 15% = R$ 339,63
