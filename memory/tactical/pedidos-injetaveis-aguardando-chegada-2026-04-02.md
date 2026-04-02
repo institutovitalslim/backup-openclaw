@@ -79,7 +79,7 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 - Data do pedido: 2026-03-25
 - Código do portal: 000056103
 - Previsão de chegada: não informada no documento enviado
-- Status: aguardando chegada *(assumido pelo contexto da conversa; confirmar recebimento quando entrar no estoque físico)*
+- Status: recebido em 2026-04-02
 - Arquivo origem: `/root/.openclaw/media/inbound/image_2026-04-02_13-52-18---997cd75e-864d-4f74-b790-b8879595f957.png`
 - Cliente: Instituto Vital Slim — 40.289.526/0001-58
 - Tipo de entrega: Entregar
@@ -99,5 +99,5 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 - Valor total: R$ 846,64
 
 ### Regra operacional
-- Este pedido deve ser tratado como `estoque a caminho` até confirmação de recebimento.
-- Não somar ao estoque atual até a chegada física e conferência.
+- Pedido recebido em `2026-04-02`.
+- Entrada no estoque autorizada e registrada no controle de estoque da clínica.
