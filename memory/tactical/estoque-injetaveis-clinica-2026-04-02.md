@@ -10,7 +10,7 @@ Consolidações aplicadas:
 - `Cloreto de Cromo`: 10 + 20 = 30
 - `Pool de Minerais`: 10 + 5 = 15
 
-## Biomeds
+## Fornecedor: Biomeds
 - ADEK — 19
 - HMB — 29
 - L-Glicina — 20
@@ -53,18 +53,18 @@ Consolidações aplicadas:
 - ALA — 1
 - Sulfato de Zinco — 9
 
-## Victa
+## Fornecedor: Victa
 - Curcumina — 30
 - L-Glutationa — 25
 - NADH — 29
 - Complexo B c/B1 — 24
 - Morusil c/Cafeína — 10
 
-## Stin
+## Fornecedor: Stin
 - Pool de Aminoácidos — 12
 - L-Glicina — 10
 
-## Central
+## Fornecedor: Central
 - NADH IM — 10
 - Chronic — 23
 - L-Glutamina — 8
