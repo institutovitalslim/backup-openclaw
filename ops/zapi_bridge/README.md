@@ -26,6 +26,8 @@ Isso parecia “prompt contaminado”, mas a causa raiz era **fallback automáti
 ## Arquivos
 
 - `zapi_clara_bridge.py` — serviço HTTP simples em Python stdlib
+- `zapi_bridge.env.example` — template de variáveis de ambiente
+- `~/.config/systemd/user/zapi-clara-bridge.service` — unit file user-level
 
 ## Variáveis de ambiente
 
@@ -91,9 +93,21 @@ curl -X POST http://127.0.0.1:8787/webhook \
 - respeita `NO_REPLY`
 - responde com sessão estável por telefone (`bridge:zapi:<telefone>`)
 
+## Subida via systemd user-level
+
+```bash
+cp /root/.openclaw/workspace/ops/zapi_bridge/zapi_bridge.env.example \
+   /root/.openclaw/workspace/ops/zapi_bridge/zapi_bridge.env
+
+# editar os valores reais
+systemctl --user daemon-reload
+systemctl --user enable --now zapi-clara-bridge.service
+systemctl --user status zapi-clara-bridge.service
+```
+
 ## Próximo passo recomendado
 
-Transformar isso em serviço systemd user-level com envs injetadas corretamente e apontar o webhook da Z-API para:
+Apontar o webhook da Z-API para:
 
 - `https://<host-ou-proxy>/webhook`
 
