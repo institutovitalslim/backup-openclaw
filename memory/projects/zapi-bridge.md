@@ -40,6 +40,8 @@ Receber eventos da Z-API, armazenar historico por paciente e gerar contexto legi
 - revisar estrategia de contexto por paciente
 
 ## Proximos Passos
-1. localizar implementacao ativa e confirmar caminho atual
-2. documentar dependencias e pontos de falha
-3. alinhar com a estrategia da Melinda quando aplicavel
+1. restaurar os segredos reais da Z-API no host (o 1Password local ainda devolve apenas referencias `op://...`)
+2. preencher `ops/zapi_bridge/zapi_bridge.env` com credenciais reais e token do gateway
+3. habilitar o servico `zapi-clara-bridge.service` em systemd user-level
+4. apontar o webhook da Z-API para a bridge mantendo fan-out para o Apps Script
+5. executar teste controlado ponta a ponta por numero de homologacao
