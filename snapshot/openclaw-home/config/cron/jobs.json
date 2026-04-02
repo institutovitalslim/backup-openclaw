@@ -8,7 +8,7 @@
       "name": "daily-memory-compaction",
       "enabled": true,
       "createdAtMs": 1774294637762,
-      "updatedAtMs": 1774926005703,
+      "updatedAtMs": 1775012406811,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -21,14 +21,14 @@
         "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
       },
       "state": {
-        "lastRunAtMs": 1774926000008,
+        "lastRunAtMs": 1775012400006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 5695,
+        "lastDurationMs": 6805,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 2,
-        "nextRunAtMs": 1775012400000,
-        "runningAtMs": 1775012400000
+        "consecutiveErrors": 3,
+        "nextRunAtMs": 1775098800000,
+        "runningAtMs": 1775098800002
       }
     },
     {
@@ -37,7 +37,7 @@
       "name": "monthly-feedback-consolidation",
       "enabled": true,
       "createdAtMs": 1774297484506,
-      "updatedAtMs": 1774299198765,
+      "updatedAtMs": 1775024107689,
       "schedule": {
         "kind": "cron",
         "expr": "15 3 1 * *",
@@ -50,7 +50,14 @@
         "text": "Rotina mensal de feedback loops: determine o mes atual no fuso America/Sao_Paulo, rode `python3 /root/.openclaw/workspace/scripts/feedback_loops.py --root /root/.openclaw/workspace/memory/feedback_loops consolidate --month YYYY-MM` usando o mes atual, revise `/root/.openclaw/workspace/memory/feedback_loops/indexes/feedback_summary.md`, confirme se houve promocoes para lessons ou decisions e registre um resumo curto no arquivo diario em `/root/.openclaw/workspace/memory/sessions/<data>.md`. Se houver erro no script, registre o erro no mesmo arquivo de memoria diaria."
       },
       "state": {
-        "nextRunAtMs": 1775024100000
+        "nextRunAtMs": 1777616100000,
+        "lastRunAtMs": 1775024100004,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 7685,
+        "lastError": "Outbound not configured for channel: telegram",
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1
       }
     },
     {
@@ -59,7 +66,7 @@
       "name": "biweekly-memory-review",
       "enabled": true,
       "createdAtMs": 1774297657925,
-      "updatedAtMs": 1774299259555,
+      "updatedAtMs": 1775026805893,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 1,16 * *",
@@ -72,13 +79,14 @@
         "text": "Revisao quinzenal de memoria: 1) primeiro gere um snapshot da memoria curada com `bash /root/.openclaw/workspace/scripts/snapshot_memory_state.sh /root/.openclaw/workspace` e registre o caminho gerado em `memory_backups/`. 2) Leia as notas diarias recentes em `memory/sessions/`. 3) Identifique licoes e decisoes que ainda nao foram consolidadas. 4) Atualize `memory/context/lessons.md`, `memory/context/decisions.md`, `memory/context/pending.md`, `memory/projects/*`, `memory/integrations/*` e `memory/MEMORY.md` com o que vale manter. 5) Revise `memory/feedback_loops/`. 6) Rode prune conservador em dry-run com `python3 /root/.openclaw/workspace/scripts/prune_memory_notes.py --memory-root /root/.openclaw/workspace/memory --days 30`; aplique apenas se houver candidatos explicitamente taticos. 7) Rode `openclaw memory index --force`. 8) Registre um resumo curto da revisao no arquivo diario correspondente em `memory/sessions/<data>.md`."
       },
       "state": {
-        "nextRunAtMs": 1775026800000,
-        "lastRunAtMs": 1774298516414,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 13206,
+        "nextRunAtMs": 1776322800000,
+        "lastRunAtMs": 1775026800003,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5890,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "Outbound not configured for channel: telegram"
       }
     },
     {
@@ -88,7 +96,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1774949404639,
+      "updatedAtMs": 1775035806243,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -101,14 +109,37 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775035800000,
-        "lastRunAtMs": 1774949400007,
+        "nextRunAtMs": 1775122200000,
+        "lastRunAtMs": 1775035800003,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 4632,
+        "lastDurationMs": 6240,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 3,
         "lastError": "Outbound not configured for channel: telegram"
+      }
+    },
+    {
+      "id": "7f3835ec-e53c-40bb-93cb-13839cb8f953",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003803476669:topic:1",
+      "name": "Lembrete diário de oração financeira - 06:00",
+      "enabled": true,
+      "createdAtMs": 1775071009787,
+      "updatedAtMs": 1775071009787,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/Sao_Paulo"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
+      },
+      "state": {
+        "nextRunAtMs": 1775120400000
       }
     }
   ]

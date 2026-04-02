@@ -38,11 +38,3 @@ Organizar a memoria do OpenClaw com estrutura curada, busca semantica, feedback 
 1. continuar limpeza de referencias legadas
 2. transformar playbooks em SOPs reais
 3. semear research com benchmark e referencias uteis
-
-## Revisao Quinzenal - 2026-04-01
-- Snapshot gerado em `memory_backups/20260401T204328Z`.
-- Revisadas notas recentes em `memory/sessions/` e consolidado o estado validado da integracao Perplexity em `memory/integrations/perplexity.md`.
-- `memory/context/lessons.md` atualizado com a licao de retestar Perplexity antes de declarar indisponibilidade.
-- `memory/feedback_loops/indexes/feedback_summary.md` revisado: ha promocao registrada para `feedback_loops/lessons/content.md`; nao houve promocao nova para decisions nesta revisao.
-- Prune conservador em dry-run retornou `candidates=0`.
-- Reindexacao executada com `openclaw memory index --force`.

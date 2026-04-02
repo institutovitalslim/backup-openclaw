@@ -26,4 +26,3 @@ Devem ser revistas e podem expirar em cerca de 30 dias quando perderem valor.
 - Para `medicalemagrecimento@gmail.com`, nao tentar login web no Gmail em browser headless da VPS: o Google pode bloquear com This browser or app may not be secure. Usar `gog` OAuth para leitura/busca no Gmail e pedir ao Tiaro apenas o codigo TOTP quando o login do Omie exigir 2FA. (2026-03-28)
 - No OpenClaw, a integracao com Claude/Anthropic deve ser feita por `ANTHROPIC_API_KEY` no `secrets.env`; nao contar com OAuth da Anthropic no gateway. (2026-03-31)
 - No Windows do Tiaro, o Claude Desktop so libera `local sessions` sem erros depois que o Git for Windows (Git Bash) e o CLI `@anthropic-ai/claude-code` estiverem instalados e reconhecidos no PATH. (2026-03-31)
-- A skill/integracao Perplexity esta funcional na VPS com `PERPLEXITY_API_KEY` vindo do 1Password; antes de dizer que ela esta indisponivel, retestar no host e nao repetir o diagnostico antigo de indisponibilidade. (2026-04-01)
