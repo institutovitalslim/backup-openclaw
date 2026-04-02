@@ -69,3 +69,34 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 ### Regra operacional
 - Este pedido deve ser tratado como `estoque a caminho`.
 - Não somar ao estoque atual até a chegada física e conferência.
+
+---
+
+## Pedido 03 — Health Tech
+- Fornecedor: Health Tech
+- Tipo: pedido de injetáveis
+- Data do pedido: 2026-03-25
+- Código do portal: 000056103
+- Previsão de chegada: não informada no documento enviado
+- Status: aguardando chegada *(assumido pelo contexto da conversa; confirmar recebimento quando entrar no estoque físico)*
+- Arquivo origem: `/root/.openclaw/media/inbound/image_2026-04-02_13-52-18---997cd75e-864d-4f74-b790-b8879595f957.png`
+- Cliente: Instituto Vital Slim — 40.289.526/0001-58
+- Tipo de entrega: Entregar
+- Frete: R$ 50,64 — Correios
+- Criado em: 2026-03-25 15:38:11
+- Criado por: Amanda Cristina Costa Gomes (Portal Médico Web)
+
+### Itens do pedido
+- Ácido Lipóico 300 mg–10 mL — 40 ampolas — R$ 19,90/un — total R$ 796,00
+  - Paciente: Daniely Alves Freitas
+  - Lote: 05782-0920
+  - Validade do lote: 2027-03-03
+
+### Totais financeiros do pedido
+- Total dos itens: R$ 796,00
+- Frete: R$ 50,64
+- Valor total: R$ 846,64
+
+### Regra operacional
+- Este pedido deve ser tratado como `estoque a caminho` até confirmação de recebimento.
+- Não somar ao estoque atual até a chegada física e conferência.
