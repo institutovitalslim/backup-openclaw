@@ -24,3 +24,34 @@ Verify how to target WhatsApp contacts via the message tool (correct channel id,
 - See Also: _none_
 
 ---
+
+## [ERR-20260402-001] gateway_config_patch
+
+**Logged**: 2026-04-02T16:28:00Z
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+`gateway config.patch` rejected an object-style patch and returned `raw required`.
+
+### Error
+```
+raw required
+```
+
+### Context
+- Operation attempted: `gateway.config.patch`
+- Intended change: switch `agents.defaults.memorySearch.provider` from OpenAI to Gemini and remove OpenAI fallback for memory search.
+- First attempt used the `patch` object field directly.
+- Gateway rejected the request because this tool instance expects the patch payload in `raw` format.
+
+### Suggested Fix
+When using `gateway config.patch` in this workspace, pass the patch as serialized JSON in `raw` instead of relying on the structured `patch` field.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/openclaw.json
+- See Also: _none_
+
+---

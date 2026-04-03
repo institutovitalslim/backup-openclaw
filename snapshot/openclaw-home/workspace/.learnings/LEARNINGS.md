@@ -20,3 +20,26 @@ When asked to replicate a post exactly in Canva, state current limitation clearl
 - Tags: canva, replication, honesty, gemini, nanobanana
 
 ---
+
+## [LRN-20260402-001] correction
+
+**Logged**: 2026-04-02T16:52:00Z
+**Priority**: medium
+**Status**: pending
+**Area**: docs
+
+### Summary
+When a user says an item was not requested, do not argue based on synonym distinctions if the active ingredient is the same substance.
+
+### Details
+The user corrected the Biomeds order by saying Vitamina C 444mg was not requested. I responded that the stored item was Ácido Ascórbico/Vitamina C 20% 1g/5mL and implied this was a meaningful distinction. The user correctly pointed out that ácido ascórbico is vitamina C. In this context, the right action is to treat the correction as applying to the vitamin C item in the order, acknowledge the mistake, and update the stored record accordingly instead of defending a wording difference.
+
+### Suggested Action
+When users correct medicine names that are synonyms or equivalent active ingredients, assume they refer to the same substance unless dosage/formulation clearly matters. Acknowledge the correction, remove or update the stored line item, and then clarify formulation only if still needed.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/memory/tactical/pedidos-injetaveis-aguardando-chegada-2026-04-02.md
+- Tags: correction, inventory, medication-names, synonyms, vitamin-c
+
+---

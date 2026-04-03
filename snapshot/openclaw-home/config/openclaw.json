@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-01T21:08:01.170Z"
+    "lastTouchedAt": "2026-04-02T22:00:05.482Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-31T19:25:03.363Z",
@@ -18,9 +18,7 @@
     "defaults": {
       "model": {
         "primary": "anthropic/claude-sonnet-4-6",
-        "fallbacks": [
-          "openai/gpt-5.4"
-        ]
+        "fallbacks": []
       },
       "models": {
         "anthropic/claude-sonnet-4-6": {
@@ -34,6 +32,10 @@
         }
       },
       "contextTokens": 160000,
+      "memorySearch": {
+        "provider": "gemini",
+        "fallback": "none"
+      },
       "compaction": {
         "mode": "default",
         "reserveTokensFloor": 30000
@@ -48,6 +50,22 @@
     "ownerDisplay": "raw"
   },
   "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "accounts": {
+        "clinic": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "debounceMs": 0,
+          "name": "Clinic WhatsApp"
+        }
+      },
+      "mediaMaxMb": 50
+    },
     "telegram": {
       "enabled": true,
       "dmPolicy": "allowlist",
@@ -73,6 +91,28 @@
     "auth": {
       "mode": "token",
       "token": "fbbc21de6206a8ecf9c2096eb76f1bf6d764673e3c63a557"
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        },
+        "responses": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": [
+        "/usr/lib/node_modules/openclaw/dist/extensions/whatsapp"
+      ]
+    },
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
     }
   }
 }
