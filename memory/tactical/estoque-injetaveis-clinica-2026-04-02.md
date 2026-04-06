@@ -68,6 +68,10 @@ Consolidações aplicadas:
 ## Fornecedor: Stin
 - Pool de Aminoácidos — 12
 - L-Glicina — 10
+- Vitamina C (Ácido Ascórbico) 20% 1g/5mL — 20 *(entrada lançada em 2026-04-06)*
+- Vitamina C (Ácido Ascórbico) 20% 10g/50mL (frasco) — 10 *(entrada lançada em 2026-04-06)*
+- Lidocaína s/vaso 2% 2mL — 20 *(entrada lançada em 2026-04-06)*
+- Coenzima Q10 100mg/2mL — 20 *(entrada lançada em 2026-04-06)*
 
 ## Fornecedor: Central
 - NADH IM — 10

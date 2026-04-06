@@ -55,7 +55,7 @@ Arquivo origem: `/root/.openclaw/media/inbound/WhatsApp_Image_2026-04-02_at_13.4
 - Tipo: pedido/orçamento de injetáveis pendente de chegada
 - Data do registro: 2026-04-02
 - Previsão de chegada informada por Tiaro: 2026-04-03 *("amanhã" em relação à mensagem de 2026-04-02)*
-- Status: aguardando chegada
+- Status: recebido em 2026-04-06
 - Arquivo origem: `/root/.openclaw/media/inbound/image_2026-04-02_13-50-41---2993ae9e-e9c7-49fa-aa14-616c268d64ce.png`
 
 ### Itens do pedido
