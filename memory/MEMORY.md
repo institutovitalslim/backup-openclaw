@@ -88,6 +88,9 @@ MEMORY.md deve continuar curto e funcionar como indice.
 ## Perplexity
 - integrations/perplexity.md: estado validado da integracao/skill Perplexity na VPS, local da credencial no 1Password e endpoints uteis.
 
+## Vital Slim — Marketing de Conteúdo
+- research/insights-ebook-digital-experience.md: guia completo de marketing de conteúdo para a Vital Slim / Dra. Daniely Freitas. Inclui: funil de conteúdo, fórmulas de storytelling (AIDA, PAS, 4Ps, Antes/Depois/Ponte, Jornada do Herói), gatilhos mentais para saúde e emagrecimento, estratégias de carrossel, ganchos de scroll-stop, plano de postagem semanal, exemplos de copy prontos. Fonte: ebook "Digital Immersion Experience" (Eduardo Gaurink).
+
 ## Quarkclinic Plataforma
 - integrations/quarkclinic.md: fluxos operacionais (atendimento, pacientes, financeiro, caixas e CRM) para uso completo do sistema pelo time de recepcao.
 
