@@ -63,6 +63,8 @@ MEMORY.md deve continuar curto e funcionar como indice.
 - memory/playbooks/marketing-production-routine.md
 - memory/playbooks/carrossel-modelo-01.md: padrao editorial e visual do `Modelo 01` para carrosseis da Clara.
 - memory/projects/dra-daniely-instagram.md: lote padrao de fotos reais da Dra Daniely e fluxo operacional para carrosseis no `Modelo 01`.
+- memory/content/hooks-reels-carrosseis.md: framework dos 8 tipos de hook para reels e carrosseis; tabela de aplicacao por objetivo de post.
+- memory/content/conselho-ivs-instagram-framework.md: veredicto do Conselho LLM sobre estrategia de conteudo Instagram do IVS; consensos, divergencias, pontos cegos (compliance CFM + presenca de camera), sistema integrado validado (Pilares → Hook → Storytelling) e proporcao semanal 4-2-1.
 
 ## Endogin Catalogo De Plataforma
 - integrations/endogin.md: status do acesso e mapa base da plataforma.
