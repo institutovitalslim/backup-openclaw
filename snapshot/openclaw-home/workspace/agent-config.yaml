@@ -1,6 +1,6 @@
 agents:
   - id: Clara
-    model: openai/gpt-5-mini
+    model: anthropic/claude-sonnet-4-6
     workspaceDir: /root/.openclaw/workspace
     activation:
       surfaces:

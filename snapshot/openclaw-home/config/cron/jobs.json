@@ -28,7 +28,7 @@
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 4,
         "nextRunAtMs": 1775530800000,
-        "lastError": "Outbound not configured for channel: telegram"
+        "runningAtMs": 1775530800001
       }
     },
     {
@@ -96,7 +96,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1775381400454,
+      "updatedAtMs": 1775467800725,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -109,13 +109,13 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775467800000,
-        "lastRunAtMs": 1775381400003,
+        "nextRunAtMs": 1775554200000,
+        "lastRunAtMs": 1775467800003,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 451,
+        "lastDurationMs": 722,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastError": "Outbound not configured for channel: telegram"
       }
     },
@@ -126,7 +126,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1775379600837,
+      "updatedAtMs": 1775466001011,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -139,13 +139,13 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775466000000,
-        "lastRunAtMs": 1775379600007,
+        "nextRunAtMs": 1775552400000,
+        "lastRunAtMs": 1775466000006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 830,
+        "lastDurationMs": 1005,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastError": "Outbound not configured for channel: telegram"
       }
     }
