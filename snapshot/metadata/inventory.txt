@@ -3606,6 +3606,21 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/carrossel-emagrecimento-cabelos/slide03-desejo.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/carrossel-emagrecimento-cabelos/slide04-prova.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/carrossel-emagrecimento-cabelos/slide05-acao.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_01.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_03.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_04.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_05.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_06.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_07.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_08.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_01.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_02.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_03.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_04.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_05.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_06.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/emagrecer-sem-perder-cabelo
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/emagrecer-sem-perder-cabelo/emagrecer-carrossel.tar.gz
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/emagrecer-sem-perder-cabelo/slide_1.png
@@ -3726,6 +3741,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/docs/pellets_testosterona_oxandrolona.pdf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/dr_wilson_programas_acompanhamento.pdf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/dr_wilson_programas_acompanhamento.txt
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ebook_digital_experience.txt
 /root/backup-openclaw/snapshot/openclaw-home/workspace/great_leads.txt
 /root/backup-openclaw/snapshot/openclaw-home/workspace/great_leads_part1.pdf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/growth_circle_vendas_2025.txt
@@ -3744,6 +3760,8 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-03-31.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-01.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-02.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-06.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-07.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/MEMORY.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/README.md
@@ -3754,8 +3772,10 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/campaigns/2026-03-26-carrossel-modelo-01-emagrecer-sem-perder-cabelo.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/campaigns/README.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/campaigns/canva-marketing-brief-template.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/conselho-ivs-instagram-framework.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/drafts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/drafts/README.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/hooks-reels-carrosseis.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/ideas
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/ideas/README.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/voice
@@ -3766,6 +3786,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/content/voice/youtube.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/README.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/avatares-vital-slim.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/business-context.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/decisions.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/lessons.md
@@ -3850,6 +3871,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/informativo-liquidos-biomeds.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/injetaveis-biomeds.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/injetaveis-essentia.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/insights-ebook-digital-experience.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/menopausa-paradoxo-metabolico.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/nutroboost-by-date.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/research/nutroboost-by-keyword.md
@@ -3877,6 +3899,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/sessions/2026-03-23.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/sessions/2026-03-26.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/sessions/2026-04-01.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/sessions/2026-04-06.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/sessions/README.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/tactical
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/tactical/README.md
@@ -4478,6 +4501,8 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/gog/.clawhub/origin.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/gog/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/gog/_meta.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf/.clawhub
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf/.clawhub/origin.json
@@ -4733,6 +4758,14 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tmux/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tmux/scripts/find-sessions.sh
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tmux/scripts/wait-for-text.sh
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/DejaVuSans-Bold.ttf
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/DejaVuSans.ttf
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_tweet_slides.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/tweet-carrossel.skill
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/video-frames
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/video-frames/.clawhub
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/video-frames/.clawhub/origin.json
