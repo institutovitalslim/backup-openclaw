@@ -187,6 +187,8 @@ When authoring a concierge from scratch, prefer creating these files:
 - pre-production plan
 - control-state files/scripts if automation is involved
 
+If you want a ready-to-clone structure, read `references/concierge-starter-template.md`.
+
 ## Tone guidance
 Optimize for:
 - elegance
