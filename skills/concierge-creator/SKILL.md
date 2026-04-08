@@ -228,5 +228,9 @@ Optional parameters:
 - `--role`
 - `--goal`
 - `--target-action`
+- `--brief /path/to/briefing.json`
 
 This generates a fillable starter set from `references/starter-files/` and replaces the core identity placeholders automatically.
+
+If you use `--brief`, the script also fills any matching `{{PLACEHOLDER}}` found in the templates.
+Use `references/starter-files/briefing-example.json` as a model.
