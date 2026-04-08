@@ -2,6 +2,8 @@
 
 Use this starter when creating a new concierge from zero.
 
+If you want fillable starter files, use everything under `references/starter-files/`.
+
 ## Files to create
 - `concierge_system_prompt.md`
 - `concierge_brain.md`
