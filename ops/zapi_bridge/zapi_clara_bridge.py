@@ -38,6 +38,8 @@ DEDUP_TTL_SECONDS = int(os.getenv("DEDUP_TTL_SECONDS", "600"))
 HTTP_TIMEOUT_SECONDS = int(os.getenv("HTTP_TIMEOUT_SECONDS", "90"))
 CLARA_CONTROL_FILE = os.getenv("CLARA_CONTROL_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_control_state.json")
 CLARA_SYSTEM_PROMPT_FILE = os.getenv("CLARA_SYSTEM_PROMPT_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_system_prompt.md")
+CLARA_LEADS_FILE = os.getenv("CLARA_LEADS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_leads_state.json")
+ACTIVATION_PHRASE = os.getenv("CLARA_ACTIVATION_PHRASE", "Gostaria de saber mais informações sobre o Instituto Vital Slim")
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
 
@@ -243,6 +245,59 @@ def should_pause_clara(phone: str) -> Tuple[bool, Optional[str]]:
     return is_manual_override_active(phone)
 
 
+def load_leads_state() -> Dict[str, Any]:
+    path = Path(CLARA_LEADS_FILE)
+    if not path.exists():
+        return {"leads": {}, "updated_at": None}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return {"leads": {}, "updated_at": None}
+        leads = data.get("leads")
+        if not isinstance(leads, dict):
+            leads = {}
+        return {"leads": leads, "updated_at": data.get("updated_at")}
+    except Exception as err:
+        log(f"leads state read failed: {err}")
+        return {"leads": {}, "updated_at": None}
+
+
+def save_leads_state(state: Dict[str, Any]) -> None:
+    state["updated_at"] = int(time.time())
+    path = Path(CLARA_LEADS_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def has_activation_phrase(text: str) -> bool:
+    return ACTIVATION_PHRASE.strip().lower() in text.strip().lower()
+
+
+def is_known_lead(phone: str) -> bool:
+    state = load_leads_state()
+    return phone in (state.get("leads") or {})
+
+
+def mark_lead_active(phone: str, source: str) -> None:
+    state = load_leads_state()
+    leads = state.setdefault("leads", {})
+    entry = leads.get(phone) if isinstance(leads.get(phone), dict) else {}
+    entry.update({"active": True, "source": source, "updated_at": int(time.time())})
+    leads[phone] = entry
+    save_leads_state(state)
+
+
+def should_respond_to_lead(phone: str, text: str) -> Tuple[bool, str]:
+    if has_activation_phrase(text):
+        mark_lead_active(phone, "activation_phrase")
+        return True, "activation_phrase"
+    if is_known_lead(phone):
+        mark_lead_active(phone, "existing_lead")
+        return True, "existing_lead"
+    mark_lead_active(phone, "new_contact")
+    return True, "new_contact"
+
+
 def fanout_to_apps_script(payload: Dict[str, Any]) -> None:
     if not APPS_SCRIPT_FANOUT_URL:
         return
@@ -408,6 +463,11 @@ class Handler(BaseHTTPRequestHandler):
                 if is_existing_patient(phone):
                     log(f"blocked phone={phone} reason=existing_patient")
                     return
+                should_reply, reason = should_respond_to_lead(phone, text)
+                if not should_reply:
+                    log(f"blocked phone={phone} reason={reason}")
+                    return
+                log(f"lead_allowed phone={phone} reason={reason}")
                 reply = call_clara(phone, text, sender_name=sender_name)
                 if reply.strip() == "NO_REPLY":
                     log(f"reply=NO_REPLY phone={phone}")
