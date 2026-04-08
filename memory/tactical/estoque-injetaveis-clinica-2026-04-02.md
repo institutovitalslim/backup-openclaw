@@ -25,7 +25,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 22 (Biomeds)
 - L-Glicina — 30 (Biomeds, Stin)
 - L-Glutamina — 25 (Victa)
-- L-Glutationa — 7 (Biomeds)
+- L-Glutationa — 5 (Biomeds)
 - L-Lisina — 4 (Biomeds)
 - L-Metionina — 2 (Biomeds)
 - L-Ornitina — 10 (Biomeds)
@@ -70,7 +70,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina C 444mg — 4 (Biomeds) → ⚠️ sem reposição prevista
 - D-Ribose — 5 (Biomeds) → reposto pelo pedido Biomeds
 - Resveratrol — 5 (Biomeds) → reposto pelo pedido Biomeds
-- L-Glutationa — 7 (Biomeds) → sem reposição prevista
+- L-Glutationa — 5 (Biomeds) → ⚠️ sem reposição prevista
 
 ## Pedidos a Caminho
 - **Biomeds** — previsão 04/05/2026 (repõe NAC, Ácido Lipóico, Complexo B s/B1, D-Ribose, L-Lisina, L-Metionina, Lidocaína, Metilcobalamina, Resveratrol, SAME, Teanina, Vitamina B6, Vitamina C 1g)
