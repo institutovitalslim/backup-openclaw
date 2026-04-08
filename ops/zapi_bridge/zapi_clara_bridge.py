@@ -6,13 +6,19 @@ import time
 from collections import OrderedDict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Optional, Tuple
+from pathlib import Path
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 
 BRIDGE_HOST = os.getenv("BRIDGE_HOST", "127.0.0.1")
 BRIDGE_PORT = int(os.getenv("BRIDGE_PORT", "8787"))
 OPENCLAW_GATEWAY_URL = os.getenv("OPENCLAW_GATEWAY_URL", "http://127.0.0.1:18789/v1/responses")
+
+# QuarckClinic — verificação de pacientes
+QUARKCLINIC_AUTH_TOKEN = os.getenv("QUARKCLINIC_AUTH_TOKEN", "")
+QUARKCLINIC_BASE_URL = os.getenv("QUARKCLINIC_BASE_URL", "https://api.quark.tec.br/clinic/ext").rstrip("/")
 OPENCLAW_GATEWAY_TOKEN = os.getenv("OPENCLAW_GATEWAY_TOKEN", "")
 OPENCLAW_AGENT_REF = os.getenv("OPENCLAW_AGENT_REF", "openclaw/main")
 OPENCLAW_MODEL_OVERRIDE = os.getenv("OPENCLAW_MODEL_OVERRIDE", "openai/gpt-5.4")
@@ -25,9 +31,12 @@ ZAPI_BASE_URL = os.getenv("ZAPI_BASE_URL", "").strip() or (
     f"https://api.z-api.io/instances/{ZAPI_INSTANCE_ID}/token/{ZAPI_TOKEN}" if ZAPI_INSTANCE_ID and ZAPI_TOKEN else ""
 )
 ZAPI_SEND_TEXT_PATH = os.getenv("ZAPI_SEND_TEXT_PATH", "/send-text")
+CLARA_NOTIFY_PHONE = os.getenv("CLARA_NOTIFY_PHONE", "5571986968887")  # Tiaro
 BRIDGE_SHARED_SECRET = os.getenv("BRIDGE_SHARED_SECRET", "")
+WEBHOOK_PATH_TOKEN = os.getenv("WEBHOOK_PATH_TOKEN", "")
 DEDUP_TTL_SECONDS = int(os.getenv("DEDUP_TTL_SECONDS", "600"))
 HTTP_TIMEOUT_SECONDS = int(os.getenv("HTTP_TIMEOUT_SECONDS", "90"))
+CLARA_CONTROL_FILE = os.getenv("CLARA_CONTROL_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_control_state.json")
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
 
@@ -148,6 +157,27 @@ def is_from_me(payload: Dict[str, Any]) -> bool:
     return any(value is True for value in values)
 
 
+def is_existing_patient(phone: str) -> bool:
+    """Consulta QuarckClinic — retorna True se o telefone pertence a um paciente cadastrado."""
+    if not QUARKCLINIC_AUTH_TOKEN:
+        return False
+    # Normalizar: remover DDI 55 para busca (API aceita só DDD+número)
+    digits = "".join(ch for ch in phone if ch.isdigit())
+    if digits.startswith("55") and len(digits) > 11:
+        digits = digits[2:]  # remove DDI
+    try:
+        from urllib.request import Request as _Req, urlopen as _urlopen
+        url = f"{QUARKCLINIC_BASE_URL}/v1/pacientes?telefone={digits}&limite=1"
+        req = _Req(url, headers={"Auth-token": QUARKCLINIC_AUTH_TOKEN})
+        with _urlopen(req, timeout=8) as resp:
+            data = json.loads(resp.read().decode())
+            patients = data.get("response", {}).get("response", []) if isinstance(data.get("response"), dict) else data.get("response", [])
+            return bool(patients)
+    except Exception as err:
+        log(f"quarkclinic check failed (allowing through): {err}")
+        return False  # em caso de erro, deixa passar para não bloquear leads
+
+
 def post_json(url: str, payload: Dict[str, Any], headers: Optional[Dict[str, str]] = None, timeout: int = HTTP_TIMEOUT_SECONDS) -> Tuple[int, str]:
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = Request(url, data=body, headers={"Content-Type": "application/json", **(headers or {})}, method="POST")
@@ -158,6 +188,58 @@ def post_json(url: str, payload: Dict[str, Any], headers: Optional[Dict[str, str
         return err.code, err.read().decode("utf-8", errors="replace")
     except URLError as err:
         raise RuntimeError(f"network error calling {url}: {err}") from err
+
+
+def default_control_state() -> Dict[str, Any]:
+    return {
+        "paused": False,
+        "manual_overrides": {},
+        "updated_at": None,
+    }
+
+
+def load_control_state() -> Dict[str, Any]:
+    path = Path(CLARA_CONTROL_FILE)
+    if not path.exists():
+        return default_control_state()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return default_control_state()
+        state = default_control_state()
+        state.update(data)
+        if not isinstance(state.get("manual_overrides"), dict):
+            state["manual_overrides"] = {}
+        return state
+    except Exception as err:
+        log(f"control state read failed: {err}")
+        return default_control_state()
+
+
+def is_manual_override_active(phone: str) -> Tuple[bool, Optional[str]]:
+    state = load_control_state()
+    overrides = state.get("manual_overrides") or {}
+    entry = overrides.get(phone)
+    if not isinstance(entry, dict):
+        return False, None
+    until = entry.get("until")
+    note = entry.get("note")
+    now = time.time()
+    if until is None:
+        return True, note or "manual_override"
+    try:
+        if float(until) > now:
+            return True, note or "manual_override_until"
+    except Exception:
+        return True, note or "manual_override_invalid_until"
+    return False, None
+
+
+def should_pause_clara(phone: str) -> Tuple[bool, Optional[str]]:
+    state = load_control_state()
+    if state.get("paused") is True:
+        return True, "global_pause"
+    return is_manual_override_active(phone)
 
 
 def fanout_to_apps_script(payload: Dict[str, Any]) -> None:
@@ -174,17 +256,94 @@ def build_session_key(phone: str) -> str:
     return f"{OPENCLAW_SESSION_PREFIX}:{phone}"
 
 
+CLARA_SYSTEM_PROMPT = """Você é Clara, consultora de saúde do Instituto Vital Slim. Você é acolhedora, empática e genuinamente se importa com cada pessoa. Nunca mencione que é IA ou robô.
+
+MISSÃO: Você é uma SDR. Acolher leads, qualificar com SPIN Selling, apresentar o IVS, coletar dados e agendar a consulta.
+
+TOM: Use "vc" (informal mas respeitoso). Mensagens curtas — 1 assunto por mensagem. Emojis com moderação. Nunca seja genérica.
+
+FLUXO DE ATENDIMENTO:
+
+1. ABERTURA — primeira mensagem do lead:
+"Olá! Seja muito bem-vindo(a) ao Instituto Vital Slim! 😊
+Aqui em nossa clínica temos um atendimento exclusivo, voltado especificamente para atender as suas necessidades. Por este motivo, eu gostaria de lhe fazer algumas perguntas para entender o seu momento e saber como conseguimos lhe ajudar, pode ser?"
+
+2. QUALIFICAÇÃO (SPIN Selling):
+Pergunta de objetivo: "Qual é o objetivo do seu atendimento? Vc está buscando Emagrecimento, Reposição Hormonal, Longevidade ou Saúde de uma forma geral?"
+
+Conforme a resposta:
+- Emagrecimento → "Me conta, quantos quilos vc pretende eliminar?"
+- Hormonal → perguntar sobre sintomas (cansaço, libido, humor, sono)
+- Longevidade/Saúde → perguntar sobre o que mais incomoda hoje
+
+Aprofundar: "Há quanto tempo vc convive com isso?" / "Já tentou outros tratamentos antes?" / "Como isso tem afetado o seu dia a dia?"
+
+3. APRESENTAÇÃO DO IVS (após entender a dor):
+"Tenho certeza de q podemos te ajudar. Deixe eu te mostrar uma coisa..."
+
+"Aqui em nossa clínica temos a Dra Daniely Freitas (@dradaniely.freitas) que é Médica Clínica, Farmacêutica, professora Mestre de Medicina e tem um atendimento especializado em Emagrecimento Avançado, Reposição Hormonal, Longevidade e Saúde baseado em Medicina Preventiva."
+
+"Deixe eu te contar como será o seu atendimento conosco... O seu atendimento será composto de uma consulta médica com cerca de 60-90 minutos de duração. Vc passará também por uma avaliação de enfermagem completa, além de realizar um exame de bioimpedância de última geração para entendermos a composição do seu corpo e a sua saúde celular."
+
+Adapte o programa ao objetivo:
+- Emagrecimento: "Após a sua avaliação médica, será prescrito um Programa de Acompanhamento de Emagrecimento Avançado feito sob medida para vc, q pode ter duração de 3, 6 ou 12 meses. Este é um programa exclusivo desenvolvido especificamente para vc que irá te acompanhar de forma intensiva até q vc atinja o seu objetivo de emagrecimento."
+- Hormonal: "Após a sua avaliação médica, será prescrito um Programa de Acompanhamento de Reposição Hormonal, com duração de 6 ou 12 meses, feito sob medida para vc."
+- Longevidade: "Após a sua avaliação médica, será prescrito um Programa de Acompanhamento de Longevidade e Saúde, incluindo reposição hormonal se for o seu caso, com duração de 3, 6 ou 12 meses, feito sob medida para vc."
+
+Diferencial: "Vc terá o acompanhamento de toda a nossa equipe — Médica, Nutricionista, Preparador Físico e Enfermeira — 24h por dia 7 dias por semana, além de acesso a todos os nossos tratamentos na clínica como terapias nutricionais injetáveis, soroterapia e até a Tirzepatida (Mounjaro). É um atendimento completo feito em um só lugar lhe garantindo toda a comodidade e exclusividade q vc merece."
+
+Bônus: "Neste mês, estamos bonificando os pacientes com o Exame de Bioimpedância e ainda por cima um Planejamento Alimentar feito por uma de nossas Nutricionistas especialmente para vc, sem nenhum custo adicional 🎁"
+
+4. VALOR E AGENDAMENTO:
+"O investimento da consulta é de apenas R$ 1.000,00 e pode ser parcelado em até 2x sem juros no cartão de crédito."
+
+"Nós atendemos de segunda à sábado. Quais seriam os melhores dias da semana para vc para q eu possa verificar as disponibilidades de agenda?"
+
+5. COLETA DE DADOS:
+"Por gentileza, me informe os seguintes dados para concluirmos o seu agendamento:
+- Nome completo:
+- Data de nascimento:
+- Endereço completo com CEP:
+- E-mail:
+- CPF:
+- WhatsApp:"
+
+6. CONFIRMAÇÃO (após agendar no sistema):
+"Pronto, [NOME] então está marcado no dia [DATA] às [HORA] em ponto. Ok?"
+"Neste dia, venha com uma roupa confortável, preferencialmente de academia se possível, e com tempo disponível para que a sua consulta dure o tempo que precisar 😊"
+Endereço: "O nosso endereço é Rua Priscila B. Dutra, 389, Estação Villas Shopping - sala 305 (3º andar) - Buraquinho, Lauro de Freitas - BA, 42709-200\nhttps://maps.app.goo.gl/ADT3m3rqTKM7Q3oV6\nSe vc buscar no Waze ou no Uber por Instituto Vital Slim achará a nossa clínica para fazer a sua rota"
+Formulário: "Para que possamos oferecer um atendimento ainda mais personalizado e eficiente, convidamos você a preencher o formulário a seguir:\nhttps://forms.gle/iNZKozoBmZS9m3LS9\nO preenchimento deste questionário é muito importante para podermos lhe oferecer o melhor atendimento possível 🙏"
+"Parabéns por escolher o Instituto Vital Slim! Estamos ansiosos para começar essa jornada com você. Se precisar de algo mais, estamos sempre aqui! 💙"
+
+INFORMAÇÕES IMPORTANTES:
+- Localização: Lauro de Freitas-BA (presencial) + telemedicina para todo o Brasil
+- Não atende convênio diretamente. Bradesco, Amil e Sulamerica aceitam reembolso — a clínica ajuda a dar entrada (15-30 dias)
+- Reserva de R$300 via link de pagamento (abatido na consulta) — o link é enviado pela equipe
+- Atendimento multidisciplinar: Médica + Nutricionista + Preparador Físico + Enfermeira
+- Não atende apenas com nutricionista
+
+OBJEÇÕES:
+- "É caro": "Entendo! Na verdade, vc está buscando um atendimento mais rápido que lhe entregue apenas uma prescrição médica, ou está buscando um atendimento mais completo que lhe entregue tudo o q vc precisa em um só lugar, através de um Programa de Acompanhamento Totalmente Individualizado com foco na entrega dos resultados q vc está buscando?"
+- "Tem convênio?": "Por termos um atendimento completamente exclusivo e limitado a uma quantidade máxima de pacientes por turno, com foco total no seu acolhimento e na entrega de seus resultados, não atendemos convênio. Caso o seu plano seja Bradesco, Amil ou Sulamerica e aceite reembolso, nós calculamos o valor exato que vc irá receber e damos entrada no pedido de reembolso junto com vc."
+- "Deixa eu pensar": "Claro, sem pressão! O que te deixa em dúvida? Às vezes consigo uma informação que ajuda a decidir com mais tranquilidade 😊"
+- "Atende só em Salvador?": "Estamos localizados em Lauro de Freitas-BA, mas a boa notícia é que atendemos todo o Brasil via telemedicina. Onde quer que você esteja, estamos aqui para você!"
+
+REGRAS ABSOLUTAS:
+- NUNCA prometa resultados específicos
+- NUNCA mencione que é IA
+- Se não souber, diga: "Essa é uma ótima pergunta para a Dra. Daniely responder na consulta!"
+- Responda APENAS em português
+- Responda SOMENTE com o texto da mensagem — sem markdown, sem asteriscos, sem cabeçalhos
+- Uma ideia por mensagem — não envie tudo de uma vez"""
+
+
 def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
     if not OPENCLAW_GATEWAY_TOKEN:
         raise RuntimeError("OPENCLAW_GATEWAY_TOKEN is empty")
-    instructions = (
-        "This turn came from a WhatsApp bridge for Instituto Vital Slim. "
-        "Treat the contact bound to this session key as the WhatsApp user. "
-        "Reply with message text only. Do not mention internal routing, Telegram, headers, JSON, bridge internals, or session keys. "
-        "If no reply should be sent, respond with exactly NO_REPLY."
-    )
+    instructions = CLARA_SYSTEM_PROMPT
     if sender_name:
-        instructions += f" Known display name: {sender_name}."
+        instructions += f"\n\nNome do contato nesta conversa: {sender_name}."
+    instructions += "\n\nResponda apenas com o texto da mensagem. Se não houver resposta adequada, responda exatamente NO_REPLY."
     payload = {
         "model": OPENCLAW_AGENT_REF,
         "input": text,
@@ -224,6 +383,13 @@ def send_zapi_text(phone: str, message: str) -> Tuple[int, str]:
     return post_json(url, payload, headers=headers, timeout=30)
 
 
+def allowed_webhook_paths() -> set[str]:
+    base_paths = {"/webhook", "/zapi/webhook"}
+    if WEBHOOK_PATH_TOKEN:
+        return {f"/webhook/{WEBHOOK_PATH_TOKEN}", f"/zapi/webhook/{WEBHOOK_PATH_TOKEN}"}
+    return base_paths
+
+
 def extract_sender_name(payload: Dict[str, Any]) -> Optional[str]:
     return first_nonempty(
         deep_get(payload, "sender", "name"),
@@ -255,7 +421,9 @@ class Handler(BaseHTTPRequestHandler):
         self._send_json(404, {"ok": False, "error": "not found"})
 
     def do_POST(self) -> None:
-        if self.path.rstrip("/") not in ("/webhook", "/zapi/webhook"):
+        parsed = urlparse(self.path)
+        path = parsed.path.rstrip("/") or "/"
+        if path not in allowed_webhook_paths():
             self._send_json(404, {"ok": False, "error": "not found"})
             return
         if BRIDGE_SHARED_SECRET:
@@ -295,24 +463,30 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(200, {"ok": True, "ignored": "duplicate", "messageId": message_id})
             return
 
-        log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
-        try:
-            reply = call_clara(phone, text, sender_name=sender_name)
-            if reply.strip() == "NO_REPLY":
-                self._send_json(200, {"ok": True, "reply": "NO_REPLY", "sent": False})
-                return
-            status, body = send_zapi_text(phone, reply)
-            self._send_json(200, {
-                "ok": True,
-                "phone": phone,
-                "sent": 200 <= status < 300,
-                "zapiStatus": status,
-                "replyPreview": reply[:500],
-                "zapiBody": body[:600],
-            })
-        except Exception as err:
-            log(f"bridge error phone={phone}: {err}")
-            self._send_json(500, {"ok": False, "error": str(err)})
+        # Respond immediately to avoid webhook timeout, then process async
+        self._send_json(200, {"ok": True, "queued": True, "phone": phone})
+
+        import threading
+        def process_async():
+            log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
+            try:
+                paused, reason = should_pause_clara(phone)
+                if paused:
+                    log(f"blocked phone={phone} reason={reason}")
+                    return
+                if is_existing_patient(phone):
+                    log(f"blocked phone={phone} reason=existing_patient")
+                    return
+                reply = call_clara(phone, text, sender_name=sender_name)
+                if reply.strip() == "NO_REPLY":
+                    log(f"reply=NO_REPLY phone={phone}")
+                    return
+                status, body = send_zapi_text(phone, reply)
+                log(f"sent phone={phone} zapiStatus={status} replyPreview={reply[:120]!r} zapiBody={body[:200]}")
+            except Exception as err:
+                log(f"bridge error phone={phone}: {err}")
+
+        threading.Thread(target=process_async, daemon=True).start()
 
 
 def main() -> int:
@@ -326,7 +500,8 @@ def main() -> int:
     if missing:
         log("warning: missing required env vars: " + ", ".join(missing))
     server = ThreadingHTTPServer((BRIDGE_HOST, BRIDGE_PORT), Handler)
-    log(f"listening on http://{BRIDGE_HOST}:{BRIDGE_PORT} webhook=/webhook health=/healthz")
+    webhook_suffix = f"/webhook/{WEBHOOK_PATH_TOKEN}" if WEBHOOK_PATH_TOKEN else "/webhook"
+    log(f"listening on http://{BRIDGE_HOST}:{BRIDGE_PORT} webhook={webhook_suffix} health=/healthz")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
