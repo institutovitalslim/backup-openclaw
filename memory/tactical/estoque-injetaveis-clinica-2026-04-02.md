@@ -1,82 +1,73 @@
-# Estoque de Injetáveis da Clínica — 2026-04-02
+# Estoque de Injetáveis da Clínica
 
-Fonte: mensagem direta do Tiaro em 2026-04-02.
-Status: registro bruto do estoque total informado (em uso + estoque).
+Última atualização: 2026-04-08
+Formato: ordem alfabética, fornecedor(es) entre parênteses.
+Pedido Biomeds a caminho: previsão 04/05/2026.
 
-## Observação importante
-Os itens duplicados informados como soma de medicação em uso + estoque atual foram consolidados conforme orientação posterior do Tiaro.
-Consolidações aplicadas:
-- `L-Fenilalanina`: 10 + 12 = 22
-- `Cloreto de Cromo`: 10 + 20 = 30
-- `Pool de Minerais`: 10 + 5 = 15
+## Estoque Atual
 
-### Entrada posterior registrada
-- Pedido da **Health Tech** recebido em `2026-04-02` e lançado no estoque.
-- Para controle consolidado por ativo: `ALA` = `Ácido Lipóico`.
-- Total atual consolidado de `ALA / Ácido Lipóico` = `41` *(1 Biomeds + 40 Health Tech)*.
+- ADEK — 19 (Biomeds)
+- ALA / Ácido Lipóico — 41 (Biomeds, Health Tech)
+- Beta Alanina — 10 (Biomeds)
+- Chronic — 23 (Central)
+- Cloreto de Cromo — 30 (Biomeds)
+- Coenzima Q10 100mg/2mL — 20 (Stin)
+- Complexo B c/B1 — 24 (Victa)
+- Complexo B s/B1 — 4 (Biomeds)
+- Complexo B/B1 — 10 (Biomeds)
+- Curcumina — 30 (Victa)
+- D-Ribose — 6 (Biomeds)
+- Dutasterida — 20 (Biomeds)
+- HMB — 29 (Biomeds)
+- Inositol + L-Taurina — 8 (Biomeds)
+- L-Arginina — 9 (Biomeds)
+- L-Carnitina — 8 (Biomeds)
+- L-Fenilalanina — 22 (Biomeds)
+- L-Glicina — 30 (Biomeds, Stin)
+- L-Glutamina — 8 (Central)
+- L-Glutationa — 25 (Victa)
+- L-Lisina — 4 (Biomeds)
+- L-Metionina — 2 (Biomeds)
+- L-Ornitina — 10 (Biomeds)
+- L-Prolina — 9 (Biomeds)
+- L-Taurina — 8 (Biomeds)
+- L-Teanina — 9 (Biomeds)
+- L-Triptofano — 10 (Biomeds)
+- Lidocaína s/vaso 2% 2mL — 20 (Stin)
+- Minoxidil — 20 (Biomeds)
+- Morusil Booster c/Teacrina — 24 (Biomeds)
+- Morusil c/Cafeína — 10 (Victa)
+- Morusil Puro — 19 (Biomeds)
+- NAC — 1 (Biomeds)
+- NADH — 29 (Victa)
+- NADH IM — 10 (Central)
+- Pill Food — 20 (Biomeds)
+- Pool de Aminoácidos — 12 (Stin)
+- Pool de Minerais — 15 (Biomeds)
+- PQQ — 13 (Biomeds)
+- Resveratrol — 6 (Biomeds)
+- SAME — 4 (Biomeds)
+- Sulfato de Magnésio — 8 (Biomeds)
+- Sulfato de Zinco — 9 (Biomeds)
+- Vitamina B12 — 6 (Biomeds)
+- Vitamina B2 — 29 (Biomeds)
+- Vitamina B3 — 18 (Biomeds)
+- Vitamina B5 — 19 (Biomeds)
+- Vitamina B6 — 6 (Biomeds)
+- Vitamina B7 — 23 (Biomeds)
+- Vitamina B9 — 13 (Biomeds)
+- Vitamina C 20% 1g/5mL — 20 (Stin)
+- Vitamina C 20% 10g/50mL frasco — 10 (Stin)
+- Vitamina C 444mg — 4 (Biomeds)
+- Vitamina D — 31 (Biomeds)
 
-## Fornecedor: Biomeds
-- ADEK — 19
-- HMB — 29
-- L-Glicina — 20
-- L-Ornitina — 10 *(pouco utilizado)*
-- L-Triptofano — 10 *(pouco utilizado)*
-- Minoxidil — 20
-- Morusil Booster c/Teacrina — 24
-- Morusil Puro — 19 *(pouco utilizado)*
-- Pill Food — 20
-- Pool de Minerais — 15
-- PQQ — 13
-- SAME — 4
-- L-Fenilalanina — 22
-- Cloreto de Cromo — 30
-- Dutasterida — 20
-- Beta Alanina — 10
-- Complexo B/B1 — 10
-- Vitamina B12 — 6
-- Vitamina B2 — 29
-- Vitamina B3 — 18
-- Vitamina B5 — 19
-- Vitamina B6 — 6
-- Vitamina B7 — 23
-- Vitamina B9 — 13
-- Vitamina D — 31
-- Resveratrol — 6
-- Sulfato de Magnésio — 8
-- D-Ribose — 6
-- NAC — 1
-- L-Carnitina — 8
-- Inositol + L-Taurina — 8
-- L-Metionina — 2
-- Complexo B s/B1 — 4
-- L-Prolina — 9 *(pouco utilizado)*
-- L-Teanina — 9
-- L-Lisina — 4
-- L-Taurina — 8
-- L-Arginina — 9
-- Vitamina C 444mg — 4
-- ALA — 1
-- Sulfato de Zinco — 9
+## Itens Críticos (≤ 5)
+- NAC — 1 (Biomeds) → reposto pelo pedido Biomeds
+- L-Metionina — 2 (Biomeds) → reposto pelo pedido Biomeds
+- SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
+- Complexo B s/B1 — 4 (Biomeds) → reposto pelo pedido Biomeds
+- L-Lisina — 4 (Biomeds) → reposto pelo pedido Biomeds
+- Vitamina C 444mg — 4 (Biomeds) → ⚠️ sem reposição prevista
 
-## Fornecedor: Victa
-- Curcumina — 30
-- L-Glutationa — 25
-- NADH — 29
-- Complexo B c/B1 — 24
-- Morusil c/Cafeína — 10
-
-## Fornecedor: Stin
-- Pool de Aminoácidos — 12
-- L-Glicina — 10
-- Vitamina C (Ácido Ascórbico) 20% 1g/5mL — 20 *(entrada lançada em 2026-04-06)*
-- Vitamina C (Ácido Ascórbico) 20% 10g/50mL (frasco) — 10 *(entrada lançada em 2026-04-06)*
-- Lidocaína s/vaso 2% 2mL — 20 *(entrada lançada em 2026-04-06)*
-- Coenzima Q10 100mg/2mL — 20 *(entrada lançada em 2026-04-06)*
-
-## Fornecedor: Central
-- NADH IM — 10
-- Chronic — 23
-- L-Glutamina — 8
-
-## Fornecedor: Health Tech
-- Ácido Lipóico 300 mg/10 mL — 40 *(entrada lançada em 2026-04-02)*
+## Pedidos a Caminho
+- **Biomeds** — previsão 04/05/2026 (repõe NAC, Ácido Lipóico, Complexo B s/B1, D-Ribose, L-Lisina, L-Metionina, Lidocaína, Metilcobalamina, Resveratrol, SAME, Teanina, Vitamina B6, Vitamina C 1g)
