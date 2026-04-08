@@ -3614,6 +3614,15 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_06.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_07.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-cardiaco/slide_08.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_01.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_02.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_03.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_04.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_05.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_06.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_07.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-ferritina/slide_08.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_01.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-magnesio/slide_02.png
@@ -3788,6 +3797,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/README.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/avatares-vital-slim.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/business-context.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/conselho-ferritina-tireoide.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/decisions.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/lessons.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/context/pending.md
@@ -4446,6 +4456,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/plaud_index.js
 /root/backup-openclaw/snapshot/openclaw-home/workspace/plaud_nshare.html
 /root/backup-openclaw/snapshot/openclaw-home/workspace/protocolos_ev_im.txt
+/root/backup-openclaw/snapshot/openclaw-home/workspace/research
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/backup-codex-windows.ps1
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/backup-openclaw-linux.sh
@@ -4468,6 +4479,9 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/yt_hype.sh
 /root/backup-openclaw/snapshot/openclaw-home/workspace/sinclair_transcript.html
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/deep-research
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/deep-research/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/deep-research/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/endogin-transcription
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/endogin-transcription/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/endogin-transcription/assets
@@ -4508,6 +4522,15 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf/.clawhub/origin.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/nano-pdf/_meta.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-api
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-api/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-api/references
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-api/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-api/scripts/omie_api.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/scripts/omie_boletos.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/openai-image-gen
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/openai-image-gen/.clawhub
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/openai-image-gen/.clawhub/origin.json
@@ -4588,7 +4611,10 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.opencode/INSTALL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.opencode/plugins
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.opencode/plugins/superpowers.js
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.version-bump.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/AGENTS.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/CHANGELOG.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/CLAUDE.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/CODE_OF_CONDUCT.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/GEMINI.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/LICENSE
@@ -4629,6 +4655,8 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/hooks/run-hook.cmd
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/hooks/session-start
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/package.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/scripts/bump-version.sh
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/brainstorming
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/brainstorming/SKILL.md
@@ -4677,6 +4705,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/using-superpowers/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/using-superpowers/references
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/using-superpowers/references/codex-tools.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/using-superpowers/references/copilot-tools.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/using-superpowers/references/gemini-tools.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/verification-before-completion
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/skills/verification-before-completion/SKILL.md

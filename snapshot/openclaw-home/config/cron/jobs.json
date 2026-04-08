@@ -8,7 +8,7 @@
       "name": "daily-memory-compaction",
       "enabled": true,
       "createdAtMs": 1774294637762,
-      "updatedAtMs": 1775444401217,
+      "updatedAtMs": 1775531038264,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -21,14 +21,14 @@
         "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
       },
       "state": {
-        "lastRunAtMs": 1775444400005,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 1212,
+        "lastRunAtMs": 1775530800007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 238257,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 4,
-        "nextRunAtMs": 1775530800000,
-        "runningAtMs": 1775530800001
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1775617200000,
+        "runningAtMs": 1775617200002
       }
     },
     {
@@ -96,7 +96,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1775467800725,
+      "updatedAtMs": 1775554320233,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -109,14 +109,13 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775554200000,
-        "lastRunAtMs": 1775467800003,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 722,
+        "nextRunAtMs": 1775640600000,
+        "lastRunAtMs": 1775554200006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 120227,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 4,
-        "lastError": "Outbound not configured for channel: telegram"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -126,7 +125,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1775466001011,
+      "updatedAtMs": 1775552794335,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -139,14 +138,13 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775552400000,
-        "lastRunAtMs": 1775466000006,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 1005,
+        "nextRunAtMs": 1775638800000,
+        "lastRunAtMs": 1775552400010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 394325,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 4,
-        "lastError": "Outbound not configured for channel: telegram"
+        "consecutiveErrors": 0
       }
     }
   ]
