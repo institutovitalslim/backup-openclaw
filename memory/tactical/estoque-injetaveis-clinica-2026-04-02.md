@@ -7,16 +7,16 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Estoque Atual
 
 - ADEK — 19 (Biomeds)
-- ALA / Ácido Lipóico — 41 (Biomeds, Health Tech)
+- ALA / Ácido Lipóico — 39 (Biomeds, Health Tech)
 - Beta Alanina — 10 (Biomeds)
 - Chronic — 23 (Central)
 - Cloreto de Cromo — 30 (Biomeds)
-- Coenzima Q10 100mg/2mL — 20 (Stin)
+- Coenzima Q10 100mg/2mL — 19 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 4 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 30 (Victa)
-- D-Ribose — 6 (Biomeds)
+- D-Ribose — 5 (Biomeds)
 - Dutasterida — 20 (Biomeds)
 - HMB — 29 (Biomeds)
 - Inositol + L-Taurina — 8 (Biomeds)
@@ -33,9 +33,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Taurina — 8 (Biomeds)
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
-- Lidocaína s/vaso 2% 2mL — 20 (Stin)
+- Lidocaína s/vaso 2% 2mL — 19 (Stin)
 - Minoxidil — 20 (Biomeds)
-- Morusil Booster c/Teacrina — 24 (Biomeds)
+- Morusil Booster c/Teacrina — 22 (Biomeds)
 - Morusil c/Cafeína — 10 (Victa)
 - Morusil Puro — 19 (Biomeds)
 - NAC — 1 (Biomeds)
@@ -45,9 +45,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 15 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 6 (Biomeds)
+- Resveratrol — 5 (Biomeds)
 - SAME — 4 (Biomeds)
-- Sulfato de Magnésio — 8 (Biomeds)
+- Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 9 (Biomeds)
 - Vitamina B12 — 6 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
@@ -68,6 +68,17 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Complexo B s/B1 — 4 (Biomeds) → reposto pelo pedido Biomeds
 - L-Lisina — 4 (Biomeds) → reposto pelo pedido Biomeds
 - Vitamina C 444mg — 4 (Biomeds) → ⚠️ sem reposição prevista
+- D-Ribose — 5 (Biomeds) → reposto pelo pedido Biomeds
+- Resveratrol — 5 (Biomeds) → reposto pelo pedido Biomeds
 
 ## Pedidos a Caminho
 - **Biomeds** — previsão 04/05/2026 (repõe NAC, Ácido Lipóico, Complexo B s/B1, D-Ribose, L-Lisina, L-Metionina, Lidocaína, Metilcobalamina, Resveratrol, SAME, Teanina, Vitamina B6, Vitamina C 1g)
+
+## Log de Movimentações
+
+### 07/04/2026
+- Marize de Jesus Carvalho → ALA 2 amp (EV)
+- Francisco de Assis de Lima → D-Ribose 1 amp + Sulfato de Magnésio 1 amp + Lidocaína 1 amp (IM)
+- Felipe Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM)
+- Silvana Modesto Rodrigues → Coenzima Q10 1 amp + Resveratrol 1 amp (IM)
+- Ligia Lima Fontanari Jacinto → Morusil Booster c/Teacrina 1 amp (IM)
