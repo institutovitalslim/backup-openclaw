@@ -31,6 +31,10 @@ Collect and distill the minimum information needed to operate well:
 
 Prefer real artifacts over abstract descriptions.
 
+If you need field guidance while extracting source material, read:
+- `references/discovery-checklist.md` for what to gather
+- `references/source-priority.md` for how to rank evidence quality
+
 ### 2. Define the concierge role clearly
 Do not start from “assistant”. Define:
 - who the concierge is
@@ -126,6 +130,8 @@ For each scenario, check:
 - respects boundaries?
 - advances the objective?
 
+If you need a reusable structure, read `references/qa-battery-template.md`.
+
 ### 7. Run advisory review before calling it “final”
 Pressure-test the concierge from multiple angles:
 - commercial / conversion
@@ -163,6 +169,11 @@ After conversations finish, record:
 - update needed in brain
 
 Refine from repeated patterns, not one-off feelings.
+
+If you need reusable operating templates, read:
+- `references/brain-template.md`
+- `references/learning-log-template.md`
+- `references/preproduction-template.md`
 
 ## Output set to create
 When authoring a concierge from scratch, prefer creating these files:
