@@ -148,6 +148,8 @@ Look especially for:
 - too many questions in a row
 - hidden clinical overreach
 
+If you want a reusable review framework, read `references/council.md`.
+
 ### 8. Launch as pre-production assisted, not “finished”
 Never treat version 1 as done.
 Use pre-production assisted mode:
