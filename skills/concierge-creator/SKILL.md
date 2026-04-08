@@ -216,3 +216,17 @@ A concierge is ready for pre-production when:
 - a learning loop exists
 
 If any of those are missing, the concierge is not production-ready yet.
+
+## Starter generation
+If you want to generate a new concierge starter set quickly, run:
+
+```bash
+python3 scripts/new_concierge.py "NomeDaConcierge" --out /path/to/output
+```
+
+Optional parameters:
+- `--role`
+- `--goal`
+- `--target-action`
+
+This generates a fillable starter set from `references/starter-files/` and replaces the core identity placeholders automatically.
