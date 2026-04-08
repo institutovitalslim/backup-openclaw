@@ -126,3 +126,15 @@ When building a bridge like this, prefer these files:
 ## Practical recommendation
 For a small/medium operation, a Python bridge + systemd + nginx + Let's Encrypt + JSON state is often enough.
 Scale complexity only when the operation truly needs it.
+
+## Starter generation
+If you want a starter pack for a new bridge quickly, run:
+
+```bash
+python3 scripts/new_bridge.py "nome-da-bridge" --out /path/to/output
+```
+
+Optional:
+- `--brief /path/to/briefing.json`
+
+This generates starter files for bridge logic, env example, prompt file, control state, lead state, and deployment checklist.
