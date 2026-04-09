@@ -1,5 +1,6 @@
 workspace/.git/
 workspace/.openclaw/
+workspace/tmp/
 workspace/**/node_modules/
 workspace/**/venv/
 workspace/**/__pycache__/
@@ -9,3 +10,4 @@ workspace/**/.next/
 workspace/**/dist/
 workspace/**/build/
 workspace/**/*.pyc
+workspace/**/client_secret_gog_desktop.json

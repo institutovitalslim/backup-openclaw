@@ -28,10 +28,8 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-sonnet-4-6",
-        "fallbacks": [
-          "openai/gpt-4.1"
-        ]
+        "primary": "openai-codex/gpt-5.4",
+        "fallbacks": []
       },
       "models": {
         "anthropic/claude-sonnet-4-6": {
@@ -40,10 +38,12 @@
         "google/gemini-3.1-flash-lite-preview": {
           "alias": "NanoBanana2"
         },
-        "openai/gpt-4.1": {
+        "openai-codex/gpt-5.4": {
           "alias": "GPT"
         },
-        "openai-codex/gpt-5.4": {}
+        "openai/gpt-5.4": {
+          "alias": "GPT"
+        }
       },
       "workspace": "cerebro-vital-slim",
       "contextTokens": 160000,

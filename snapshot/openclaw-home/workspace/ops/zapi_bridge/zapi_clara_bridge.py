@@ -6,6 +6,7 @@ import time
 from collections import OrderedDict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Optional, Tuple
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
@@ -14,6 +15,10 @@ from urllib.request import Request, urlopen
 BRIDGE_HOST = os.getenv("BRIDGE_HOST", "127.0.0.1")
 BRIDGE_PORT = int(os.getenv("BRIDGE_PORT", "8787"))
 OPENCLAW_GATEWAY_URL = os.getenv("OPENCLAW_GATEWAY_URL", "http://127.0.0.1:18789/v1/responses")
+
+# QuarckClinic — verificação de pacientes
+QUARKCLINIC_AUTH_TOKEN = os.getenv("QUARKCLINIC_AUTH_TOKEN", "")
+QUARKCLINIC_BASE_URL = os.getenv("QUARKCLINIC_BASE_URL", "https://api.quark.tec.br/clinic/ext").rstrip("/")
 OPENCLAW_GATEWAY_TOKEN = os.getenv("OPENCLAW_GATEWAY_TOKEN", "")
 OPENCLAW_AGENT_REF = os.getenv("OPENCLAW_AGENT_REF", "openclaw/main")
 OPENCLAW_MODEL_OVERRIDE = os.getenv("OPENCLAW_MODEL_OVERRIDE", "openai/gpt-5.4")
@@ -26,10 +31,16 @@ ZAPI_BASE_URL = os.getenv("ZAPI_BASE_URL", "").strip() or (
     f"https://api.z-api.io/instances/{ZAPI_INSTANCE_ID}/token/{ZAPI_TOKEN}" if ZAPI_INSTANCE_ID and ZAPI_TOKEN else ""
 )
 ZAPI_SEND_TEXT_PATH = os.getenv("ZAPI_SEND_TEXT_PATH", "/send-text")
+CLARA_NOTIFY_PHONE = os.getenv("CLARA_NOTIFY_PHONE", "5571986968887")  # Tiaro
 BRIDGE_SHARED_SECRET = os.getenv("BRIDGE_SHARED_SECRET", "")
 WEBHOOK_PATH_TOKEN = os.getenv("WEBHOOK_PATH_TOKEN", "")
 DEDUP_TTL_SECONDS = int(os.getenv("DEDUP_TTL_SECONDS", "600"))
 HTTP_TIMEOUT_SECONDS = int(os.getenv("HTTP_TIMEOUT_SECONDS", "90"))
+CLARA_CONTROL_FILE = os.getenv("CLARA_CONTROL_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_control_state.json")
+CLARA_SYSTEM_PROMPT_FILE = os.getenv("CLARA_SYSTEM_PROMPT_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_system_prompt.md")
+CLARA_LEADS_FILE = os.getenv("CLARA_LEADS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_leads_state.json")
+CLARA_MANUAL_INBOX_FILE = os.getenv("CLARA_MANUAL_INBOX_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_manual_inbox.json")
+ACTIVATION_PHRASE = os.getenv("CLARA_ACTIVATION_PHRASE", "Gostaria de saber mais informações sobre o Instituto Vital Slim")
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
 
@@ -150,6 +161,27 @@ def is_from_me(payload: Dict[str, Any]) -> bool:
     return any(value is True for value in values)
 
 
+def is_existing_patient(phone: str) -> bool:
+    """Consulta QuarckClinic — retorna True se o telefone pertence a um paciente cadastrado."""
+    if not QUARKCLINIC_AUTH_TOKEN:
+        return False
+    # Normalizar: remover DDI 55 para busca (API aceita só DDD+número)
+    digits = "".join(ch for ch in phone if ch.isdigit())
+    if digits.startswith("55") and len(digits) > 11:
+        digits = digits[2:]  # remove DDI
+    try:
+        from urllib.request import Request as _Req, urlopen as _urlopen
+        url = f"{QUARKCLINIC_BASE_URL}/v1/pacientes?telefone={digits}&limite=1"
+        req = _Req(url, headers={"Auth-token": QUARKCLINIC_AUTH_TOKEN})
+        with _urlopen(req, timeout=8) as resp:
+            data = json.loads(resp.read().decode())
+            patients = data.get("response", {}).get("response", []) if isinstance(data.get("response"), dict) else data.get("response", [])
+            return bool(patients)
+    except Exception as err:
+        log(f"quarkclinic check failed (allowing through): {err}")
+        return False  # em caso de erro, deixa passar para não bloquear leads
+
+
 def post_json(url: str, payload: Dict[str, Any], headers: Optional[Dict[str, str]] = None, timeout: int = HTTP_TIMEOUT_SECONDS) -> Tuple[int, str]:
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = Request(url, data=body, headers={"Content-Type": "application/json", **(headers or {})}, method="POST")
@@ -160,6 +192,149 @@ def post_json(url: str, payload: Dict[str, Any], headers: Optional[Dict[str, str
         return err.code, err.read().decode("utf-8", errors="replace")
     except URLError as err:
         raise RuntimeError(f"network error calling {url}: {err}") from err
+
+
+def default_control_state() -> Dict[str, Any]:
+    return {
+        "paused": False,
+        "manual_overrides": {},
+        "updated_at": None,
+    }
+
+
+def load_control_state() -> Dict[str, Any]:
+    path = Path(CLARA_CONTROL_FILE)
+    if not path.exists():
+        return default_control_state()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return default_control_state()
+        state = default_control_state()
+        state.update(data)
+        if not isinstance(state.get("manual_overrides"), dict):
+            state["manual_overrides"] = {}
+        return state
+    except Exception as err:
+        log(f"control state read failed: {err}")
+        return default_control_state()
+
+
+def is_manual_override_active(phone: str) -> Tuple[bool, Optional[str]]:
+    state = load_control_state()
+    overrides = state.get("manual_overrides") or {}
+    entry = overrides.get(phone)
+    if not isinstance(entry, dict):
+        return False, None
+    until = entry.get("until")
+    note = entry.get("note")
+    now = time.time()
+    if until is None:
+        return True, note or "manual_override"
+    try:
+        if float(until) > now:
+            return True, note or "manual_override_until"
+    except Exception:
+        return True, note or "manual_override_invalid_until"
+    return False, None
+
+
+def should_pause_clara(phone: str) -> Tuple[bool, Optional[str]]:
+    state = load_control_state()
+    if state.get("paused") is True:
+        return True, "global_pause"
+    return is_manual_override_active(phone)
+
+
+def load_manual_inbox() -> Dict[str, Any]:
+    path = Path(CLARA_MANUAL_INBOX_FILE)
+    if not path.exists():
+        return {"messages": [], "updated_at": None}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return {"messages": [], "updated_at": None}
+        messages = data.get("messages")
+        if not isinstance(messages, list):
+            messages = []
+        return {"messages": messages, "updated_at": data.get("updated_at")}
+    except Exception as err:
+        log(f"manual inbox read failed: {err}")
+        return {"messages": [], "updated_at": None}
+
+
+def save_manual_inbox(state: Dict[str, Any]) -> None:
+    state["updated_at"] = int(time.time())
+    path = Path(CLARA_MANUAL_INBOX_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def record_manual_inbound(phone: str, text: str, message_id: str, sender_name: Optional[str] = None) -> None:
+    state = load_manual_inbox()
+    messages = state.setdefault("messages", [])
+    messages.append({
+        "phone": phone,
+        "sender_name": sender_name,
+        "text": text,
+        "message_id": message_id,
+        "received_at": int(time.time()),
+    })
+    state["messages"] = messages[-500:]
+    save_manual_inbox(state)
+
+
+def load_leads_state() -> Dict[str, Any]:
+    path = Path(CLARA_LEADS_FILE)
+    if not path.exists():
+        return {"leads": {}, "updated_at": None}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return {"leads": {}, "updated_at": None}
+        leads = data.get("leads")
+        if not isinstance(leads, dict):
+            leads = {}
+        return {"leads": leads, "updated_at": data.get("updated_at")}
+    except Exception as err:
+        log(f"leads state read failed: {err}")
+        return {"leads": {}, "updated_at": None}
+
+
+def save_leads_state(state: Dict[str, Any]) -> None:
+    state["updated_at"] = int(time.time())
+    path = Path(CLARA_LEADS_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def has_activation_phrase(text: str) -> bool:
+    return ACTIVATION_PHRASE.strip().lower() in text.strip().lower()
+
+
+def is_known_lead(phone: str) -> bool:
+    state = load_leads_state()
+    return phone in (state.get("leads") or {})
+
+
+def mark_lead_active(phone: str, source: str) -> None:
+    state = load_leads_state()
+    leads = state.setdefault("leads", {})
+    entry = leads.get(phone) if isinstance(leads.get(phone), dict) else {}
+    entry.update({"active": True, "source": source, "updated_at": int(time.time())})
+    leads[phone] = entry
+    save_leads_state(state)
+
+
+def should_respond_to_lead(phone: str, text: str) -> Tuple[bool, str]:
+    if has_activation_phrase(text):
+        mark_lead_active(phone, "activation_phrase")
+        return True, "activation_phrase"
+    if is_known_lead(phone):
+        mark_lead_active(phone, "existing_lead")
+        return True, "existing_lead"
+    mark_lead_active(phone, "new_contact")
+    return True, "new_contact"
 
 
 def fanout_to_apps_script(payload: Dict[str, Any]) -> None:
@@ -176,17 +351,24 @@ def build_session_key(phone: str) -> str:
     return f"{OPENCLAW_SESSION_PREFIX}:{phone}"
 
 
+def load_clara_prompt() -> str:
+    path = Path(CLARA_SYSTEM_PROMPT_FILE)
+    try:
+        text = path.read_text(encoding="utf-8").strip()
+        if text:
+            return text
+        raise RuntimeError("empty prompt file")
+    except Exception as err:
+        raise RuntimeError(f"failed to load Clara prompt from {path}: {err}") from err
+
+
 def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
     if not OPENCLAW_GATEWAY_TOKEN:
         raise RuntimeError("OPENCLAW_GATEWAY_TOKEN is empty")
-    instructions = (
-        "This turn came from a WhatsApp bridge for Instituto Vital Slim. "
-        "Treat the contact bound to this session key as the WhatsApp user. "
-        "Reply with message text only. Do not mention internal routing, Telegram, headers, JSON, bridge internals, or session keys. "
-        "If no reply should be sent, respond with exactly NO_REPLY."
-    )
+    instructions = load_clara_prompt()
     if sender_name:
-        instructions += f" Known display name: {sender_name}."
+        instructions += f"\n\nNome do contato nesta conversa: {sender_name}."
+    instructions += "\n\nResponda apenas com o texto da mensagem. Se não houver resposta adequada, responda exatamente NO_REPLY."
     payload = {
         "model": OPENCLAW_AGENT_REF,
         "input": text,
@@ -224,6 +406,29 @@ def send_zapi_text(phone: str, message: str) -> Tuple[int, str]:
     headers = {"Client-Token": ZAPI_CLIENT_TOKEN}
     url = ZAPI_BASE_URL.rstrip("/") + ZAPI_SEND_TEXT_PATH
     return post_json(url, payload, headers=headers, timeout=30)
+
+
+def save_control_state(state: Dict[str, Any]) -> None:
+    state["updated_at"] = int(time.time())
+    path = Path(CLARA_CONTROL_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def manual_assume(phone: str, note: str = "telegram_manual") -> Dict[str, Any]:
+    state = load_control_state()
+    overrides = state.setdefault("manual_overrides", {})
+    overrides[phone] = {"note": note, "updated_at": int(time.time())}
+    save_control_state(state)
+    return state
+
+
+def manual_release(phone: str) -> Dict[str, Any]:
+    state = load_control_state()
+    overrides = state.setdefault("manual_overrides", {})
+    overrides.pop(phone, None)
+    save_control_state(state)
+    return state
 
 
 def allowed_webhook_paths() -> set[str]:
@@ -306,24 +511,39 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(200, {"ok": True, "ignored": "duplicate", "messageId": message_id})
             return
 
-        log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
-        try:
-            reply = call_clara(phone, text, sender_name=sender_name)
-            if reply.strip() == "NO_REPLY":
-                self._send_json(200, {"ok": True, "reply": "NO_REPLY", "sent": False})
-                return
-            status, body = send_zapi_text(phone, reply)
-            self._send_json(200, {
-                "ok": True,
-                "phone": phone,
-                "sent": 200 <= status < 300,
-                "zapiStatus": status,
-                "replyPreview": reply[:500],
-                "zapiBody": body[:600],
-            })
-        except Exception as err:
-            log(f"bridge error phone={phone}: {err}")
-            self._send_json(500, {"ok": False, "error": str(err)})
+        # Respond immediately to avoid webhook timeout, then process async
+        self._send_json(200, {"ok": True, "queued": True, "phone": phone})
+
+        import threading
+        def process_async():
+            log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
+            try:
+                paused, reason = should_pause_clara(phone)
+                if paused:
+                    if reason and str(reason).startswith("manual_override"):
+                        record_manual_inbound(phone, text, message_id, sender_name=sender_name)
+                        log(f"manual_inbound phone={phone} reason={reason} text={text[:180]!r}")
+                    else:
+                        log(f"blocked phone={phone} reason={reason}")
+                    return
+                if is_existing_patient(phone):
+                    log(f"blocked phone={phone} reason=existing_patient")
+                    return
+                should_reply, reason = should_respond_to_lead(phone, text)
+                if not should_reply:
+                    log(f"blocked phone={phone} reason={reason}")
+                    return
+                log(f"lead_allowed phone={phone} reason={reason}")
+                reply = call_clara(phone, text, sender_name=sender_name)
+                if reply.strip() == "NO_REPLY":
+                    log(f"reply=NO_REPLY phone={phone}")
+                    return
+                status, body = send_zapi_text(phone, reply)
+                log(f"sent phone={phone} zapiStatus={status} replyPreview={reply[:120]!r} zapiBody={body[:200]}")
+            except Exception as err:
+                log(f"bridge error phone={phone}: {err}")
+
+        threading.Thread(target=process_async, daemon=True).start()
 
 
 def main() -> int:

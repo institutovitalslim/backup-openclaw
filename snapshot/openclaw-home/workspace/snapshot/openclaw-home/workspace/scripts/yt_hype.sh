@@ -7,7 +7,7 @@ set -euo pipefail
 
 RAPIDAPI_KEY="${RAPIDAPI_KEY:-}"
 if [ -z "$RAPIDAPI_KEY" ]; then
-  echo "RAPIDAPI_KEY is not set. Export it or run 'op read' to inject it from 1Password.'" >&2
+  echo "RAPIDAPI_KEY is not set. Export it or read it via /root/.openclaw/bin/op-safe-read.sh read op://openclaw/<Item>/<field>." >&2
   exit 2
 fi
 
