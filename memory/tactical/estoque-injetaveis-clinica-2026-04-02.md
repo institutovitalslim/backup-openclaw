@@ -53,9 +53,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
-- Vitamina B6 — 6 (Biomeds)
-- Vitamina B7 — 23 (Biomeds)
-- Vitamina B9 — 13 (Biomeds)
+- Vitamina B6 — 5 (Biomeds)
+- Vitamina B7 — 22 (Biomeds)
+- Vitamina B9 — 12 (Biomeds)
 - Vitamina C 20% 1g/5mL — 19 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 10 (Stin)
 - Vitamina C 444mg — 4 (Biomeds)
@@ -95,3 +95,6 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Felipe Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM)
 - Silvana Modesto Rodrigues → Coenzima Q10 1 amp + Resveratrol 1 amp (IM)
 - Ligia Lima Fontanari Jacinto → Morusil Booster c/Cafeína 1 amp (IM)
+
+### 08/04/2026
+- Davi Carvalho Ramos Melo → Vitamina B6 1 amp + Vitamina B7 (Biotina) 1 amp + Vitamina B9 (Metilfolato) 1 amp (EV)
