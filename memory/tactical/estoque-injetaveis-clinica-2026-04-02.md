@@ -49,13 +49,13 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 9 (Biomeds)
-- Vitamina B12 — 6 (Biomeds)
+- Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
-- Vitamina B6 — 5 (Biomeds)
-- Vitamina B7 — 22 (Biomeds)
-- Vitamina B9 — 12 (Biomeds)
+- Vitamina B6 — 4 (Biomeds)
+- Vitamina B7 — 21 (Biomeds)
+- Vitamina B9 — 11 (Biomeds)
 - Vitamina C 20% 1g/5mL — 19 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 10 (Stin)
 - Vitamina C 444mg — 4 (Biomeds)
@@ -98,3 +98,4 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 08/04/2026
 - Davi Carvalho Ramos Melo → Vitamina B6 1 amp + Vitamina B7 (Biotina) 1 amp + Vitamina B9 (Metilfolato) 1 amp (EV)
+- Lorena Carvalho Ramos Melo → Vitamina B6 1 amp + Vitamina B7 (Biotina) 1 amp + Vitamina B9 (Metilfolato) 1 amp + Vitamina B12 (Metilcobalamina) 1 amp (EV)
