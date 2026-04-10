@@ -3,6 +3,7 @@ import json
 import os
 import sys
 import time
+import subprocess
 from collections import OrderedDict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Optional, Tuple
@@ -40,6 +41,7 @@ CLARA_CONTROL_FILE = os.getenv("CLARA_CONTROL_FILE", "/root/.openclaw/workspace/
 CLARA_SYSTEM_PROMPT_FILE = os.getenv("CLARA_SYSTEM_PROMPT_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_system_prompt.md")
 CLARA_LEADS_FILE = os.getenv("CLARA_LEADS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_leads_state.json")
 CLARA_MANUAL_INBOX_FILE = os.getenv("CLARA_MANUAL_INBOX_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_manual_inbox.json")
+CLARA_EXCLUSIONS_FILE = os.getenv("CLARA_EXCLUSIONS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_exclusions.json")
 ACTIVATION_PHRASE = os.getenv("CLARA_ACTIVATION_PHRASE", "Gostaria de saber mais informações sobre o Instituto Vital Slim")
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
@@ -239,7 +241,62 @@ def is_manual_override_active(phone: str) -> Tuple[bool, Optional[str]]:
     return False, None
 
 
+def load_exclusions_state() -> Dict[str, Any]:
+    path = Path(CLARA_EXCLUSIONS_FILE)
+    if not path.exists():
+        return {"phones": {}, "updated_at": None}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            return {"phones": {}, "updated_at": None}
+        phones = data.get("phones")
+        if not isinstance(phones, dict):
+            data["phones"] = {}
+        return data
+    except Exception as err:
+        log(f"exclusions state read failed: {err}")
+        return {"phones": {}, "updated_at": None}
+
+
+def get_exclusion_reason(phone: str) -> Optional[str]:
+    state = load_exclusions_state()
+    entry = (state.get("phones") or {}).get(phone)
+    if not isinstance(entry, dict):
+        return None
+    reason = entry.get("reason") or "excluded_phone"
+    return str(reason)
+
+
+def is_bridge_known_patient(phone: str) -> bool:
+    state = load_exclusions_state()
+    entry = (state.get("phones") or {}).get(phone)
+    if not isinstance(entry, dict):
+        return False
+    reason = str(entry.get("reason") or "")
+    source = str(entry.get("source") or "")
+    return reason.startswith("patient") or source == "bridge_contexto_paciente"
+
+
+def run_preflight(mode: str) -> Tuple[bool, str]:
+    script = "/root/.openclaw/workspace/ops/preflight/preflight_check.py"
+    if not Path(script).exists():
+        return False, "missing_preflight_script"
+    try:
+        proc = subprocess.run([script, mode], capture_output=True, text=True, timeout=20)
+        if proc.returncode == 0:
+            return True, proc.stdout.strip()[:300]
+        return False, (proc.stdout or proc.stderr or "preflight_failed").strip()[:300]
+    except Exception as err:
+        return False, f"preflight_exception:{err}"
+
+
 def should_pause_clara(phone: str) -> Tuple[bool, Optional[str]]:
+    ok, detail = run_preflight("bridge-followup")
+    if not ok:
+        return True, f"preflight:{detail}"
+    reason = get_exclusion_reason(phone)
+    if reason:
+        return True, f"exclusion:{reason}"
     state = load_control_state()
     if state.get("paused") is True:
         return True, "global_pause"

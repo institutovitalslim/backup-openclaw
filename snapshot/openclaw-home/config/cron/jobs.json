@@ -66,7 +66,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1775640628716,
+      "updatedAtMs": 1775727023138,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -79,13 +79,13 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775727000000,
-        "lastRunAtMs": 1775640600003,
+        "nextRunAtMs": 1775813400000,
+        "lastRunAtMs": 1775727000005,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 28713,
+        "lastDurationMs": 23133,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
+        "consecutiveErrors": 2,
         "lastError": "Outbound not configured for channel: telegram"
       }
     },
@@ -96,7 +96,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1775639274738,
+      "updatedAtMs": 1775725215119,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -109,14 +109,48 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775725200000,
-        "lastRunAtMs": 1775638800004,
+        "nextRunAtMs": 1775811600000,
+        "lastRunAtMs": 1775725200007,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 474734,
+        "lastDurationMs": 15112,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
+        "consecutiveErrors": 2,
         "lastError": "Outbound not configured for channel: telegram"
+      }
+    },
+    {
+      "id": "2ba465d4-3dd0-435b-bb12-1576ed6c0403",
+      "agentId": "main",
+      "name": "agenda-diaria-whatsapp",
+      "enabled": true,
+      "createdAtMs": 1775753319041,
+      "updatedAtMs": 1775753466201,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/Sao_Paulo",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Você é a Clara, assistente do Instituto Vital Slim. Responda em português brasileiro.\n\nTAREFA: Enviar a agenda diária de atendimentos por WhatsApp via Z-API.\n\nPASSO 1 - Consultar agenda do dia no QuarkClinic:\nExecute: python3 /root/.openclaw/workspace/skills/quarkclinic-api/scripts/quarkclinic_api.py GET /v1/agendamentos --query data_agendamento_inicio=DATA_HOJE --query data_agendamento_fim=DATA_HOJE\nSe o script não existir nesse caminho, tente: python3 /root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/quarkclinic-api/scripts/quarkclinic_api.py GET /v1/agendamentos --query data_agendamento_inicio=DATA_HOJE --query data_agendamento_fim=DATA_HOJE\n(substitua DATA_HOJE pela data de hoje no formato DD-MM-AAAA)\n\nPASSO 2 - Formatar a agenda separada por turno:\n- Manhã (antes das 12h)\n- Tarde (12h às 18h)\n- Noite (após 18h)\nCada linha: Horário - Nome do paciente - Procedimento - Convênio\nAo final: resumo com total por turno e total geral.\nComece a mensagem com \"Bom dia! Agenda de atendimentos de hoje:\"\nSe não houver atendimentos, envie \"Bom dia! Não há atendimentos agendados para hoje.\"\n\nPASSO 3 - Enviar para 3 números via Z-API usando exec com curl.\nPara CADA número, execute este comando via exec:\n\ncurl -s -X POST \"https://api.z-api.io/instances/3CF367BB00EB205F87468A74AFBCE7F1/token/C26CFC41175FD987513C3202/send-text\" -H \"Content-Type: application/json\" -H \"Client-Token: F277815dcf4e94be7bc2861e8ae9fc369S\" -d '{\"phone\": \"NUMERO\", \"message\": \"TEXTO_DA_AGENDA\"}'\n\nNúmeros corretos:\n1. 5571986968887 (Tiaro)\n2. 5571996962059 (Dra. Daniely)\n3. 5571991574827 (Liane)\n\nREGRAS:\n- Use SOMENTE curl via exec para enviar pelo Z-API. NAO use o canal whatsapp do OpenClaw.\n- Escape aspas e caracteres especiais no JSON do curl.\n- Confirme o envio verificando se o retorno do curl contém \"messageId\"."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1775811600000,
+        "lastRunAtMs": 1775753407486,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 58715,
+        "lastError": "Error: Outbound not configured for channel: telegram",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     }
   ]

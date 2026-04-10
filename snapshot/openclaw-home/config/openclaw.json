@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-06T20:50:07.607Z"
+    "lastTouchedAt": "2026-04-09T09:36:56.978Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-31T19:25:03.363Z",
@@ -48,8 +48,8 @@
       "workspace": "cerebro-vital-slim",
       "contextTokens": 160000,
       "memorySearch": {
-        "provider": "gemini",
-        "fallback": "none"
+        "provider": "openai",
+        "fallback": "local"
       },
       "compaction": {
         "mode": "default",

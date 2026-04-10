@@ -1,4 +1,15 @@
 {
-  "leads": {},
-  "updated_at": null
+  "leads": {
+    "557199543781": {
+      "active": true,
+      "source": "existing_lead",
+      "updated_at": 1775736489
+    },
+    "557182328409": {
+      "active": true,
+      "source": "new_contact",
+      "updated_at": 1775778506
+    }
+  },
+  "updated_at": 1775778506
 }

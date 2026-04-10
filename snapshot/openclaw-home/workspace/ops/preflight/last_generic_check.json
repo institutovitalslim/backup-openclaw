@@ -1,0 +1,31 @@
+{
+  "mode": "generic",
+  "ok": true,
+  "checks": [
+    {
+      "name": "exists:CONTEXT_CANON.md",
+      "ok": true,
+      "detail": "/root/cerebro-vital-slim/CONTEXT_CANON.md"
+    },
+    {
+      "name": "exists:OPERATING_RULES.md",
+      "ok": true,
+      "detail": "/root/cerebro-vital-slim/OPERATING_RULES.md"
+    },
+    {
+      "name": "exists:EXECUTION_CHECKLIST.md",
+      "ok": true,
+      "detail": "/root/cerebro-vital-slim/EXECUTION_CHECKLIST.md"
+    },
+    {
+      "name": "exists:PREFLIGHT.md",
+      "ok": true,
+      "detail": "/root/cerebro-vital-slim/PREFLIGHT.md"
+    },
+    {
+      "name": "llm_audit_forbidden_zero",
+      "ok": true,
+      "detail": "forbidden=0"
+    }
+  ]
+}

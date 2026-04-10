@@ -1,0 +1,721 @@
+{
+  "preferred_model": "openai/gpt-5.4",
+  "bad_hints": [
+    "anthropic/claude-sonnet-4-6"
+  ],
+  "findings": [
+    {
+      "path": "/root/.openclaw/workspace/memory/2026-04-02.md",
+      "line": 3,
+      "model": "openai/gpt-5.4`. O falso sintoma de",
+      "severity": "ok",
+      "text": "- Na investigação da bridge Z-API -> Clara, ficou validado que o caminho confiável de invocação é o OpenClaw Gateway HTTP (`/v1/responses` ou `/v1/chat/completions`) com `x-openclaw-session-key` estável por telefone e `x-openclaw-model: openai/gpt-5.4`. O falso sintoma de \"prompt contaminado\" vinha do fallback automático de modelo: sem forçar um modelo disponível, o runtime injetava `Continue where you left off...`. Foi criado o esqueleto operacional em `ops/zapi_bridge/zapi_clara_bridge.py` e documentado em `ops/zapi_bridge/README.md`, preservando fan-out opcional para o Apps Script e resposta de volta via Z-API."
+    },
+    {
+      "path": "/root/.openclaw/workspace/memory/2026-04-02.md",
+      "line": 3,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- Na investigação da bridge Z-API -> Clara, ficou validado que o caminho confiável de invocação é o OpenClaw Gateway HTTP (`/v1/responses` ou `/v1/chat/completions`) com `x-openclaw-session-key` estável por telefone e `x-openclaw-model: openai/gpt-5.4`. O falso sintoma de \"prompt contaminado\" vinha do fallback automático de modelo: sem forçar um modelo disponível, o runtime injetava `Continue where you left off...`. Foi criado o esqueleto operacional em `ops/zapi_bridge/zapi_clara_bridge.py` e documentado em `ops/zapi_bridge/README.md`, preservando fan-out opcional para o Apps Script e resposta de volta via Z-API."
+    },
+    {
+      "path": "/root/.openclaw/workspace/skills/superpowers/RELEASE-NOTES.md",
+      "line": 264,
+      "model": "cheap",
+      "severity": "ok",
+      "text": "- **Model selection** — Guidance for choosing model capability by task type: cheap models for mechanical implementation, standard for integration, capable for architecture and review"
+    },
+    {
+      "path": "/root/.openclaw/workspace/skills/superpowers/RELEASE-NOTES.md",
+      "line": 485,
+      "model": "true",
+      "severity": "ok",
+      "text": "Added `disable-model-invocation: true` to all three slash commands (`/brainstorm`, `/execute-plan`, `/write-plan`). Claude can no longer invoke these commands via the Skill tool—they're restricted to manual user invocation only."
+    },
+    {
+      "path": "/root/.openclaw/workspace/skills/superpowers/agents/code-reviewer.md",
+      "line": 5,
+      "model": "inherit",
+      "severity": "ok",
+      "text": "model: inherit"
+    },
+    {
+      "path": "/root/.openclaw/workspace/skills/superpowers/docs/plans/2025-11-28-skills-improvements-from-user-feedback.md",
+      "line": 34,
+      "model": "claude-sonnet-4-20250514",
+      "severity": "ok",
+      "text": "- **BUT** response contained `\"model\": \"claude-sonnet-4-20250514\"` - was actually using Anthropic"
+    },
+    {
+      "path": "/root/.openclaw/workspace/memory/projects/zapi-bridge.md",
+      "line": 13,
+      "model": "openai/gpt-5.4`",
+      "severity": "ok",
+      "text": "- o header obrigatorio para a bridge e `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/memory/projects/zapi-bridge.md",
+      "line": 13,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- o header obrigatorio para a bridge e `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/agent-config.yaml",
+      "line": 3,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/2026-04-02.md",
+      "line": 3,
+      "model": "openai/gpt-5.4`. O falso sintoma de",
+      "severity": "ok",
+      "text": "- Na investigação da bridge Z-API -> Clara, ficou validado que o caminho confiável de invocação é o OpenClaw Gateway HTTP (`/v1/responses` ou `/v1/chat/completions`) com `x-openclaw-session-key` estável por telefone e `x-openclaw-model: openai/gpt-5.4`. O falso sintoma de \"prompt contaminado\" vinha do fallback automático de modelo: sem forçar um modelo disponível, o runtime injetava `Continue where you left off...`. Foi criado o esqueleto operacional em `ops/zapi_bridge/zapi_clara_bridge.py` e documentado em `ops/zapi_bridge/README.md`, preservando fan-out opcional para o Apps Script e resposta de volta via Z-API."
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/2026-04-02.md",
+      "line": 3,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- Na investigação da bridge Z-API -> Clara, ficou validado que o caminho confiável de invocação é o OpenClaw Gateway HTTP (`/v1/responses` ou `/v1/chat/completions`) com `x-openclaw-session-key` estável por telefone e `x-openclaw-model: openai/gpt-5.4`. O falso sintoma de \"prompt contaminado\" vinha do fallback automático de modelo: sem forçar um modelo disponível, o runtime injetava `Continue where you left off...`. Foi criado o esqueleto operacional em `ops/zapi_bridge/zapi_clara_bridge.py` e documentado em `ops/zapi_bridge/README.md`, preservando fan-out opcional para o Apps Script e resposta de volta via Z-API."
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/superpowers/RELEASE-NOTES.md",
+      "line": 264,
+      "model": "cheap",
+      "severity": "ok",
+      "text": "- **Model selection** — Guidance for choosing model capability by task type: cheap models for mechanical implementation, standard for integration, capable for architecture and review"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/superpowers/RELEASE-NOTES.md",
+      "line": 485,
+      "model": "true",
+      "severity": "ok",
+      "text": "Added `disable-model-invocation: true` to all three slash commands (`/brainstorm`, `/execute-plan`, `/write-plan`). Claude can no longer invoke these commands via the Skill tool—they're restricted to manual user invocation only."
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/summarize/SKILL.md",
+      "line": 44,
+      "model": "openai/gpt-5.2",
+      "severity": "review",
+      "text": "{ \"model\": \"openai/gpt-5.2\" }"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/endogin-transcription/scripts/transcribe_captured_clip.py",
+      "line": 26,
+      "model": "gpt-4o-mini-transcribe",
+      "severity": "ok",
+      "text": "model=\"gpt-4o-mini-transcribe\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 156,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "p.add_argument(\"--model\", default=\"gpt-image-1.5\")"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 187,
+      "model": "args.model",
+      "severity": "ok",
+      "text": "\"model\": args.model,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 213,
+      "model": "args.model",
+      "severity": "ok",
+      "text": "\"model\": args.model,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/superpowers/agents/code-reviewer.md",
+      "line": 5,
+      "model": "inherit",
+      "severity": "ok",
+      "text": "model: inherit"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/superpowers/docs/plans/2025-11-28-skills-improvements-from-user-feedback.md",
+      "line": 34,
+      "model": "claude-sonnet-4-20250514",
+      "severity": "ok",
+      "text": "- **BUT** response contained `\"model\": \"claude-sonnet-4-20250514\"` - was actually using Anthropic"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/playbooks/openclaw-gateway-restart.md",
+      "line": 22,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "- Logs do gateway mostraram `agent model: anthropic/claude-sonnet-4-6` apos o restart."
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/projects/zapi-bridge.md",
+      "line": 13,
+      "model": "openai/gpt-5.4`",
+      "severity": "ok",
+      "text": "- o header obrigatorio para a bridge e `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/projects/zapi-bridge.md",
+      "line": 13,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- o header obrigatorio para a bridge e `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/memory/sessions/2026-03-20.md",
+      "line": 39,
+      "model": "pplx-embed-v1-4b",
+      "severity": "ok",
+      "text": "model: pplx-embed-v1-4b"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/agent-config.yaml",
+      "line": 3,
+      "model": "openai/gpt-5-mini",
+      "severity": "review",
+      "text": "model: openai/gpt-5-mini"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/skills/summarize/SKILL.md",
+      "line": 44,
+      "model": "openai/gpt-5.2",
+      "severity": "review",
+      "text": "{ \"model\": \"openai/gpt-5.2\" }"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 156,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "p.add_argument(\"--model\", default=\"gpt-image-1.5\")"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 187,
+      "model": "args.model",
+      "severity": "ok",
+      "text": "\"model\": args.model,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/skills/openai-image-gen/scripts/gen.py",
+      "line": 213,
+      "model": "args.model",
+      "severity": "ok",
+      "text": "\"model\": args.model,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/memory/sessions/2026-03-20.md",
+      "line": 39,
+      "model": "pplx-embed-v1-4b",
+      "severity": "ok",
+      "text": "model: pplx-embed-v1-4b"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 15,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 31,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 47,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 63,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 71,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "1. **Sempre** usar `model: \"anthropic/claude-sonnet-4-5\"` (nome completo, não alias)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 15,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 31,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 47,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 63,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 71,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "1. **Sempre** usar `model: \"anthropic/claude-sonnet-4-5\"` (nome completo, não alias)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 79,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 195,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 206,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5  # Mais barato"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 217,
+      "model": "anthropic/claude-opus-4-6",
+      "severity": "review",
+      "text": "model: anthropic/claude-opus-4-6  # Mais poderoso"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 297,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 308,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 539,
+      "model": "anthropic/claude-opus-4-6",
+      "severity": "review",
+      "text": "model: anthropic/claude-opus-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 698,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 711,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 723,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/aula-n4-lentidao-telegram.md",
+      "line": 143,
+      "model": "claude-sonnet-4-6",
+      "severity": "ok",
+      "text": "\"model\": \"claude-sonnet-4-6\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/prds/aula-n4-lentidao-telegram.md",
+      "line": 280,
+      "model": "claude-haiku-4-5",
+      "severity": "ok",
+      "text": "\"model\": \"claude-haiku-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/use-cases/productivity/daily-briefing.md",
+      "line": 38,
+      "model": "Sonnet",
+      "severity": "ok",
+      "text": "- model: Sonnet (não precisa de Opus pra isso)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json",
+      "line": 5,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json",
+      "line": 12,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json",
+      "line": 19,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json",
+      "line": 26,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-v2/prompts.json",
+      "line": 33,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-alt/prompts.json",
+      "line": 5,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/deliverables/glynac-gemini-alt/prompts.json",
+      "line": 12,
+      "model": "gpt-image-1.5",
+      "severity": "ok",
+      "text": "\"model\": \"gpt-image-1.5\","
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 15,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 31,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 47,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 63,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/openclaw-course/aula-05-integracoes/configs/cron-examples.md",
+      "line": 71,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "1. **Sempre** usar `model: \"anthropic/claude-sonnet-4-5\"` (nome completo, não alias)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/README.md",
+      "line": 16,
+      "model": "openai/gpt-5.4`",
+      "severity": "ok",
+      "text": "- `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/README.md",
+      "line": 16,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_bridge.env",
+      "line": 8,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "OPENCLAW_MODEL_OVERRIDE=anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 19,
+      "model": "os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")",
+      "severity": "ok",
+      "text": "OPENCLAW_MODEL_OVERRIDE = os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 191,
+      "model": "OPENCLAW_AGENT_REF",
+      "severity": "ok",
+      "text": "\"model\": OPENCLAW_AGENT_REF,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 200,
+      "model": "OPENCLAW_MODEL_OVERRIDE,",
+      "severity": "ok",
+      "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 200,
+      "model": "OPENCLAW_MODEL_OVERRIDE",
+      "severity": "ok",
+      "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 15,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 31,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 47,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 63,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "\"model\": \"anthropic/claude-sonnet-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/configs/cron-examples.md",
+      "line": 71,
+      "model": "anthropic/claude-sonnet-4-5",
+      "severity": "review",
+      "text": "1. **Sempre** usar `model: \"anthropic/claude-sonnet-4-5\"` (nome completo, não alias)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 79,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 195,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 206,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5  # Mais barato"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 217,
+      "model": "anthropic/claude-opus-4-6",
+      "severity": "review",
+      "text": "model: anthropic/claude-opus-4-6  # Mais poderoso"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 297,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 308,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 539,
+      "model": "anthropic/claude-opus-4-6",
+      "severity": "review",
+      "text": "model: anthropic/claude-opus-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 698,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 711,
+      "model": "anthropic/claude-sonnet-4-6",
+      "severity": "warn",
+      "text": "model: anthropic/claude-sonnet-4-6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/topicos-telegram-arquitetura.md",
+      "line": 723,
+      "model": "anthropic/claude-haiku-4-5",
+      "severity": "review",
+      "text": "model: anthropic/claude-haiku-4-5"
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/aula-n4-lentidao-telegram.md",
+      "line": 143,
+      "model": "claude-sonnet-4-6",
+      "severity": "ok",
+      "text": "\"model\": \"claude-sonnet-4-6\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/prds/aula-n4-lentidao-telegram.md",
+      "line": 280,
+      "model": "claude-haiku-4-5",
+      "severity": "ok",
+      "text": "\"model\": \"claude-haiku-4-5\""
+    },
+    {
+      "path": "/root/.openclaw/workspace/openclaw-BrunoOkamoto/use-cases/productivity/daily-briefing.md",
+      "line": 38,
+      "model": "Sonnet",
+      "severity": "ok",
+      "text": "- model: Sonnet (não precisa de Opus pra isso)"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/README.md",
+      "line": 16,
+      "model": "openai/gpt-5.4`",
+      "severity": "ok",
+      "text": "- `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/README.md",
+      "line": 16,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "- `x-openclaw-model: openai/gpt-5.4`"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_bridge.env",
+      "line": 8,
+      "model": "openai/gpt-5.4",
+      "severity": "ok",
+      "text": "OPENCLAW_MODEL_OVERRIDE=openai/gpt-5.4"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 24,
+      "model": "os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")",
+      "severity": "ok",
+      "text": "OPENCLAW_MODEL_OVERRIDE = os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 413,
+      "model": "OPENCLAW_AGENT_REF",
+      "severity": "ok",
+      "text": "\"model\": OPENCLAW_AGENT_REF,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 422,
+      "model": "OPENCLAW_MODEL_OVERRIDE,",
+      "severity": "ok",
+      "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 422,
+      "model": "OPENCLAW_MODEL_OVERRIDE",
+      "severity": "ok",
+      "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/llm-audit/audit_llm_overrides.py",
+      "line": 14,
+      "model": "=]\\s*[",
+      "severity": "ok",
+      "text": "re.compile(r'x-openclaw-model[^\\n]*?[:=]\\s*[\"\\']?([^\"\\'\\n]+)'),"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/llm-audit/audit_llm_overrides.py",
+      "line": 15,
+      "model": "-",
+      "severity": "ok",
+      "text": "re.compile(r'\\b(model|model_override)\\b[^\\n]{0,80}?[:=]\\s*[\"\\']?([A-Za-z0-9_./:-]+)'),"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/llm-audit/audit_llm_overrides.py",
+      "line": 48,
+      "model": "model",
+      "severity": "ok",
+      "text": "rows.append({'path': str(p), 'line': i, 'model': model, 'severity': severity, 'text': line.strip()})"
+    },
+    {
+      "path": "/root/cerebro-vital-slim/memory/2026-04-09.md",
+      "line": 24,
+      "model": "anthropic/claude-sonnet-4-6`, gerando erro de limite de uso do Claude. Corrigido para `OPENCLAW_MODEL_OVERRIDE=openai/gpt-5.4` e serviço reiniciado.",
+      "severity": "warn",
+      "text": "- Caso concreto aprendido: a bridge Z-API da Clara parou de responder pacientes porque `zapi_bridge.env` estava com `OPENCLAW_MODEL_OVERRIDE=anthropic/claude-sonnet-4-6`, gerando erro de limite de uso do Claude. Corrigido para `OPENCLAW_MODEL_OVERRIDE=openai/gpt-5.4` e serviço reiniciado."
+    }
+  ],
+  "summary": {
+    "total": 101,
+    "warn": 14,
+    "review": 33,
+    "ok": 54
+  }
+}
