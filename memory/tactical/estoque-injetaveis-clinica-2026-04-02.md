@@ -49,6 +49,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 9 (Biomeds)
+- Tirzepatida — 175 UI
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -102,3 +103,13 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 09/04/2026
 - Larissa Correia de Souza → Morusil Booster c/Cafeína 1 amp (IM)
+- Silvana → Tirzepatida 35 UI
+- Larissa → Tirzepatida 30 UI
+
+### 10/04/2026
+- Cintia → Tirzepatida 5 UI
+- Tainara → Tirzepatida 30 UI
+- Taina → Tirzepatida 40 UI
+- Darilene → Tirzepatida 5 UI
+- Gleice → Tirzepatida 20 UI
+- Lorena → Tirzepatida 20 UI
