@@ -49,7 +49,8 @@
       "contextTokens": 160000,
       "memorySearch": {
         "provider": "openai",
-        "fallback": "local"
+        "fallback": "none",
+        "model": "text-embedding-3-small"
       },
       "compaction": {
         "mode": "default",

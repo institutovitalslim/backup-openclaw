@@ -36,7 +36,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Lidocaína s/vaso 2% 2mL — 17 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
-- Morusil Booster c/Cafeína — 8 (Victa)
+- Morusil Booster c/Cafeína — 7 (Victa)
 - Morusil Puro — 19 (Biomeds)
 - NAC — 1 (Biomeds)
 - NADH — 29 (Victa)
@@ -49,6 +49,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 9 (Biomeds)
+- Tirzepatida — 175 UI
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -99,3 +100,16 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 08/04/2026
 - Davi Carvalho Ramos Melo → Vitamina B6 1 amp + Vitamina B7 (Biotina) 1 amp + Vitamina B9 (Metilfolato) 1 amp (EV)
 - Lorena Carvalho Ramos Melo → Vitamina B6 1 amp + Vitamina B7 (Biotina) 1 amp + Vitamina B9 (Metilfolato) 1 amp + Vitamina B12 (Metilcobalamina) 1 amp (EV)
+
+### 09/04/2026
+- Larissa Correia de Souza → Morusil Booster c/Cafeína 1 amp (IM)
+- Silvana → Tirzepatida 35 UI
+- Larissa → Tirzepatida 30 UI
+
+### 10/04/2026
+- Cintia → Tirzepatida 5 UI
+- Tainara → Tirzepatida 30 UI
+- Taina → Tirzepatida 40 UI
+- Darilene → Tirzepatida 5 UI
+- Gleice → Tirzepatida 20 UI
+- Lorena → Tirzepatida 20 UI

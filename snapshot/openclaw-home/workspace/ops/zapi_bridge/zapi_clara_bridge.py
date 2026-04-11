@@ -595,6 +595,38 @@ class Handler(BaseHTTPRequestHandler):
                 if reply.strip() == "NO_REPLY":
                     log(f"reply=NO_REPLY phone={phone}")
                     return
+                # TOXIC MESSAGE FILTER - block responses that indicate lost context
+                toxic_patterns = [
+                    "não consegui recuperar",
+                    "nao consegui recuperar",
+                    "me reenvia",
+                    "me reenviar",
+                    "reenvia a última",
+                    "reenvia a ultima",
+                    "trecho anterior",
+                    "ponto exato",
+                    "execução anterior",
+                    "execucao anterior",
+                    "tentativa anterior",
+                    "o que ficou pendente",
+                    "já te enviei",
+                    "já enviei",
+                    "continuar dali",
+                    "continuo daqui",
+                    "continuo imediatamente",
+                    "de forma confiável",
+                ]
+                reply_lower = reply.lower()
+                has_toxic = any(p in reply_lower for p in toxic_patterns)
+                if has_toxic:
+                    log(f"BLOCKED TOXIC reply phone={phone} preview={reply[:120]!r}")
+                    # Notify Tiaro on Telegram instead of sending toxic reply to lead
+                    try:
+                        notification = f"⚠️ Mensagem tóxica bloqueada para {phone}. Lead disse: {text[:200]!r}. Clara tentou responder: {reply[:200]!r}. Por favor, atenda manualmente."
+                        send_zapi_text("5571986968887", notification)
+                    except Exception as e:
+                        log(f"failed to notify Tiaro: {e}")
+                    return
                 status, body = send_zapi_text(phone, reply)
                 log(f"sent phone={phone} zapiStatus={status} replyPreview={reply[:120]!r} zapiBody={body[:200]}")
             except Exception as err:

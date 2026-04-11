@@ -5,6 +5,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.gitattributes
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.gitignore
+/root/backup-openclaw/snapshot/openclaw-home/workspace/.hermes.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.learnings
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.learnings/ERRORS.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.learnings/LEARNINGS.md
@@ -3524,6 +3525,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.venv/share/zsh
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.venv/share/zsh/site-functions
 /root/backup-openclaw/snapshot/openclaw-home/workspace/.venv/share/zsh/site-functions/_yt-dlp
+/root/backup-openclaw/snapshot/openclaw-home/workspace/CLAUDE.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/README.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-energetico
@@ -3802,6 +3804,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_control.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_control_state.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_exclusions.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_exclusions.json.bak
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_leads_state.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_learning_log.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/clara_manual.py
@@ -3836,6 +3839,12 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/agenda-diaria-whatsapp
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/agenda-diaria-whatsapp/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable/references
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable/references/workflow.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/canva-recreate-editable/scripts/make_editable_sign_html.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator/references
@@ -3859,6 +3868,10 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator/references/starter-files/concierge_system_prompt.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/concierge-creator/scripts/new_concierge.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/historico-conversas
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/historico-conversas/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/historico-conversas/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/historico-conversas/scripts/consultar_historico.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos
