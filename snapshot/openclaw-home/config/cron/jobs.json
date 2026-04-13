@@ -66,7 +66,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1775899805805,
+      "updatedAtMs": 1775986205500,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -79,13 +79,14 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775986200000,
-        "lastRunAtMs": 1775899800005,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 5800,
+        "nextRunAtMs": 1776072600000,
+        "lastRunAtMs": 1775986200005,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5495,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "Outbound not configured for channel: telegram"
       }
     },
     {
@@ -95,7 +96,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1775898013366,
+      "updatedAtMs": 1775984404934,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -108,13 +109,14 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775984400000,
-        "lastRunAtMs": 1775898000007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 13359,
+        "nextRunAtMs": 1776070800000,
+        "lastRunAtMs": 1775984400008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 4926,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "Outbound not configured for channel: telegram"
       }
     },
     {
@@ -123,7 +125,7 @@
       "name": "agenda-diaria-whatsapp",
       "enabled": true,
       "createdAtMs": 1775753319041,
-      "updatedAtMs": 1775898078130,
+      "updatedAtMs": 1775984453568,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -141,14 +143,48 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1775984400000,
-        "lastRunAtMs": 1775898013366,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 64764,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1776070800000,
+        "lastRunAtMs": 1775984404934,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 48634,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Error: Outbound not configured for channel: telegram"
+      }
+    },
+    {
+      "id": "18833ac7-30c8-4d56-917a-be9665993b78",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003803476669:topic:271",
+      "name": "whatsapp-confirmacoes-manha-seguinte",
+      "description": "Todos os dias às 16:00 envia confirmações por WhatsApp para pacientes agendados na manhã seguinte e registra pendências para retorno automático no Quarkclinic.",
+      "enabled": true,
+      "createdAtMs": 1776031905466,
+      "updatedAtMs": 1776031905466,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * *",
+        "tz": "America/Bahia"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "No workspace /root/cerebro-vital-slim, execute o script `python3 ops/quarkclinic_confirmations/send_next_morning_confirmations.py` e reporte quantas confirmações foram enviadas. Se houver falha, explique objetivamente o erro. Não invente envio sem `messageId` real.",
+        "timeoutSeconds": 300,
+        "toolsAllow": [
+          "exec",
+          "read"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "-1003803476669:topic:271",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1776106800000
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-09T09:36:56.978Z"
+    "lastTouchedVersion": "2026.4.11",
+    "lastTouchedAt": "2026-04-12T21:17:13.409Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-31T19:25:03.363Z",
@@ -70,8 +70,6 @@
   "channels": {
     "whatsapp": {
       "enabled": true,
-      "dmPolicy": "pairing",
-      "groupPolicy": "allowlist",
       "debounceMs": 0,
       "accounts": {
         "clinic": {
@@ -79,10 +77,23 @@
           "dmPolicy": "pairing",
           "groupPolicy": "allowlist",
           "debounceMs": 0,
-          "name": "Clinic WhatsApp"
+          "name": "Clinic WhatsApp",
+          "allowFrom": [
+            "971050173"
+          ]
+        },
+        "default": {
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "allowFrom": [
+            "971050173"
+          ]
         }
       },
-      "mediaMaxMb": 50
+      "mediaMaxMb": 50,
+      "allowFrom": [
+        "971050173"
+      ]
     },
     "telegram": {
       "enabled": true,
@@ -100,7 +111,9 @@
         "971050173"
       ],
       "groupPolicy": "allowlist",
-      "streaming": "partial",
+      "streaming": {
+        "mode": "partial"
+      },
       "mediaMaxMb": 19
     }
   },
@@ -122,13 +135,23 @@
     }
   },
   "plugins": {
-    "load": {
-      "paths": [
-        "/usr/lib/node_modules/openclaw/dist/extensions/whatsapp"
-      ]
-    },
     "entries": {
       "whatsapp": {
+        "enabled": true
+      },
+      "codex": {
+        "enabled": true
+      },
+      "openai": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      },
+      "google": {
+        "enabled": true
+      },
+      "browser": {
         "enabled": true
       }
     }

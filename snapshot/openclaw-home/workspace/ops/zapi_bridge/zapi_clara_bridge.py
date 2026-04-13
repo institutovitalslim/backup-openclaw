@@ -488,6 +488,27 @@ def manual_release(phone: str) -> Dict[str, Any]:
     return state
 
 
+def try_process_confirmation_reply(phone: str, text: str) -> tuple[bool, str]:
+    script = Path(CONFIRMATION_REPLY_SCRIPT)
+    if not script.exists():
+        return False, "script_missing"
+    try:
+        raw = subprocess.check_output(
+            ["python3", str(script), phone, text],
+            text=True,
+            timeout=60,
+        ).strip()
+        if not raw:
+            return False, "empty_output"
+        data = json.loads(raw)
+        if not data.get("matched"):
+            return False, str(data.get("reason") or "not_matched")
+        return True, str(data.get("decision") or "matched")
+    except Exception as err:
+        log(f"confirmation_reply_error phone={phone}: {err}")
+        return False, f"error:{err}"
+
+
 def allowed_webhook_paths() -> set[str]:
     base_paths = {"/webhook", "/zapi/webhook"}
     if WEBHOOK_PATH_TOKEN:
@@ -575,6 +596,10 @@ class Handler(BaseHTTPRequestHandler):
         def process_async():
             log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
             try:
+                handled_confirmation, confirmation_reason = try_process_confirmation_reply(phone, text)
+                if handled_confirmation:
+                    log(f"confirmation_handled phone={phone} decision={confirmation_reason}")
+                    return
                 paused, reason = should_pause_clara(phone)
                 if paused:
                     if reason and str(reason).startswith("manual_override"):
