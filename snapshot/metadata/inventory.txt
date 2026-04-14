@@ -4073,7 +4073,9 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/DejaVuSans-Bold.ttf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/DejaVuSans.ttf
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/simbolo_v.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_cover.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_tweet_slides.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/youtube
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/zapi-openclaw-bridge
