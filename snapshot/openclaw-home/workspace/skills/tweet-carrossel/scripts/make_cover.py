@@ -115,11 +115,17 @@ def add_gold_line(canvas):
     y = int(H * LINE_Y_RATIO)
     margin = 40
 
-    # Symbol V real da marca
-    SYMBOL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "simbolo_v.png")
+    # Symbol V real da marca - busca em múltiplos caminhos
+    SYMBOL_CANDIDATES = [
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "simbolo_v.png"),
+        "/root/.openclaw/workspace/skills/tweet-carrossel/assets/simbolo_v.png",
+        "/root/cerebro-vital-slim/cerebro/empresa/skills/tweet-carrossel/assets/simbolo_v.png",
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "simbolo_v.png"),
+    ]
+    SYMBOL_PATH = next((p for p in SYMBOL_CANDIDATES if os.path.isfile(p)), None)
     SYMBOL_SIZE = 120  # Tamanho do simbolo V
 
-    if os.path.isfile(SYMBOL_PATH):
+    if SYMBOL_PATH:
         # Load symbol
         symbol = Image.open(SYMBOL_PATH).convert("RGBA")
         symbol = symbol.resize((SYMBOL_SIZE, SYMBOL_SIZE), Image.LANCZOS)
@@ -180,22 +186,22 @@ def render_headline(draw, headline_lines, highlight_words, start_y):
     for i, line in enumerate(headline_lines):
         y = y_offset + i * line_height
 
-        # Check if any highlight word is in this line
-        line_upper = line.upper()
-        is_gold = False
-        for hw in highlight_set:
-            if hw and hw in line_upper:
-                is_gold = True
-                break
+        # Render word-by-word with individual color highlighting
+        words = line.split(" ")
 
-        color = GOLD if is_gold else WHITE
+        # Calculate total line width first (for centering)
+        total_line_width = draw.textlength(line, font=font)
+        x_cursor = (W - total_line_width) // 2
 
-        # Center horizontally
-        bbox = draw.textbbox((0, 0), line, font=font)
-        text_width = bbox[2] - bbox[0]
-        x = (W - text_width) // 2
+        for j, word in enumerate(words):
+            # Check if this specific word should be gold
+            word_clean = word.strip().upper().strip('"').strip("'").strip(",").strip(".")
+            is_gold = word_clean in highlight_set
+            color = GOLD if is_gold else WHITE
 
-        draw.text((x, y), line, fill=color, font=font)
+            draw.text((x_cursor, y), word, fill=color, font=font)
+            word_width = draw.textlength(word + " ", font=font)
+            x_cursor += word_width
 
 
 def add_footer(draw):
@@ -268,9 +274,11 @@ def build_cover(foto_path, circulo_path, headline_lines, highlight_words, output
     # Footer
     add_footer(draw)
 
-    # Save
-    canvas.save(output_path, "PNG", quality=95)
-    print(f"Cover saved: {output_path} ({W}x{H})")
+    # Save as JPEG (compressed) to stay under Claude's 20MB limit
+    if output_path.lower().endswith('.png'):
+        output_path = output_path[:-4] + '.jpg'
+    canvas.save(output_path, "JPEG", quality=85, optimize=True)
+    print(f"Cover saved: {output_path} ({W}x{H}) [JPEG]")
 
 
 def main():
@@ -279,7 +287,7 @@ def main():
     parser.add_argument("--circulo", default=None, help="Imagem para o circulo inset (canto superior direito)")
     parser.add_argument("--headline", required=True, help="Texto da headline. Separe linhas com | (pipe)")
     parser.add_argument("--destaques", default="", help="Palavras em dourado, separadas por virgula")
-    parser.add_argument("--out", default="capa.png", help="Caminho do arquivo de saida")
+    parser.add_argument("--out", default="capa.jpg", help="Caminho do arquivo de saida")
     args = parser.parse_args()
 
     headline_lines = [line.strip() for line in args.headline.split("|")]

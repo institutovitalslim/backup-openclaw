@@ -26,9 +26,9 @@ metadata:
 7. SO APOS APROVACAO da copy, seguir para etapa 2
 
 ### ETAPA 2 - IMAGENS
-1. Clara gera a capa via NanoBanana 2 + Pillow
+1. Clara gera a capa via compose_cover.py (usa foto real da Dra., NAO gera via IA)
 2. Clara gera o slide 2 (paper) via HTML + Chromium
-3. Clara gera slides 3+ via script Python (make_tweet_slides.py)
+3. Clara gera slides 3+ via gen_slides.py (saida JPEG, < 200KB por slide)
 4. Clara entrega todas as imagens
 
 **NUNCA gerar imagens antes da copy ser aprovada.**
@@ -39,7 +39,7 @@ metadata:
 
 | Slide | Tipo | Metodo de geracao |
 |-------|------|-------------------|
-| 1 | Capa (foto Dra. + headline) | NanoBanana 2 (foto) + Pillow (texto) |
+| 1 | Capa (foto Dra. + headline) | compose_cover.py (foto real + rembg + fundo + make_cover) |
 | 2 | Paper cientifico (texto tweet + PubMed) | HTML + Chromium headless |
 | 3-N | Tweet format (texto puro ou texto + imagem) | Python/Pillow (make_tweet_slides.py) |
 
@@ -226,6 +226,84 @@ python3 scripts/make_tweet_slides.py \
 
 ---
 
+
+
+## GERACAO DA CAPA — Pipeline compose_cover.py (OBRIGATORIO)
+
+### Comando unico para gerar a capa completa:
+
+```bash
+export GOOGLE_API_KEY=$GOOGLE_API_KEY
+python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/compose_cover.py   --foto <FOTO_DRA>   --tema "<DESCRICAO_FUNDO>"   --circulo <IMAGEM_CIRCULO>   --headline "<LINHA1|LINHA2|LINHA3>"   --destaques "<PALAVRA1,PALAVRA2,PALAVRA3>"   --out /root/capa_<TEMA>.jpg
+```
+
+### O pipeline faz TUDO automaticamente:
+1. Remove fundo da foto com rembg + suavizacao de bordas (sem halo)
+2. Gera fundo contextual via Gemini OU usa --skip-bg <path> para fundo manual
+3. Compoe Dra. cintura-para-cima sobre o fundo
+4. Gera capa final JPEG com make_cover.py (Montserrat Black, simbolo V, destaques dourados)
+
+### Fotos da Dra. APROVADAS (usar estas, NAO gerar novas):
+- `/root/.openclaw/workspace/fotos_dra/dra_seria_frontal.png` — pose frontal, bracos cruzados
+- `/root/.openclaw/workspace/fotos_dra/dra_seria_lateral.png` — pose lateralizada
+
+### REGRAS CRITICAS DA CAPA:
+- **NUNCA** gerar foto da Dra. via IA — usar APENAS as fotos reais aprovadas
+- **NUNCA** jaleco — blazer escuro
+- **NUNCA** sorriso exagerado — semblante serio
+- **NUNCA** corpo inteiro — cintura para cima
+- **NUNCA** fundo que pareca loja de bebidas
+- Usar fotos DIFERENTES para carrosseis diferentes (frontal vs lateral)
+- Fundo contextual via Unsplash: buscar, escurecer (brightness 0.35), blur (radius 8)
+- Se Gemini quota excedida: buscar imagem no Unsplash e usar --skip-bg
+- Saida SEMPRE em JPEG (limite 20MB do Claude)
+
+### Para buscar fundo no Unsplash (fallback sem Gemini):
+```python
+import requests
+from io import BytesIO
+from PIL import Image, ImageFilter, ImageEnhance
+
+url = "https://unsplash.com/napi/search/photos?query=BUSCA&per_page=10&orientation=landscape"
+resp = requests.get(url, timeout=15)
+results = resp.json().get("results", [])
+# Baixar, escurecer e desfocar:
+img = Image.open(BytesIO(requests.get(results[0]["urls"]["regular"]).content)).convert("RGB")
+img = img.resize((1080, 743), Image.LANCZOS)
+img = img.filter(ImageFilter.GaussianBlur(radius=8))
+img = ImageEnhance.Brightness(img).enhance(0.35)
+img.save("/root/bg_tema.png")
+```
+
+### Exemplos de temas de fundo aprovados:
+- Magnesio: "blood test tubes rack laboratory" (tubos de sangue)
+- Creatina: "supplement store shelves dark" (loja de suplementos escura)
+- Generico saude: "medical clinic dark moody" (clinica medica)
+
+### Para gerar imagem do circulo (canto superior direito):
+Usar ferramenta image_tool com provider google (NanoBanana 2):
+- Prompt: imagem contextual ao tema (capsulas, alimentos, etc.)
+- Aspect ratio: 1:1
+- Fundo transparente ou escuro
+
+## CAPAS JA APROVADAS (referencias)
+
+### Magnesio
+- Headline: SEU MAGNESIO ESTA "NORMAL" MAS SEU CORPO DISCORDA.
+- Destaques dourados: MAGNESIO, NORMAL, CORPO, DISCORDA
+- Foto: dra_seria_frontal.png
+- Fundo: tubos de sangue laboratoriais (Unsplash: blood test tubes rack laboratory)
+- Circulo: capsulas douradas de magnesio
+
+### Creatina
+- Headline: UM DOS SUPLEMENTOS MAIS SUBESTIMADOS PARA O CEREBRO
+- Destaques dourados: SUPLEMENTOS, SUBESTIMADOS, CEREBRO
+- Foto: dra_seria_lateral.png
+- Fundo: loja de suplementos escura (Unsplash: supplement store shelves dark)
+- Circulo: po de creatina
+
+---
+
 ## CHECKLIST DE QUALIDADE (OBRIGATORIO antes de entregar)
 
 ### Copy (etapa 1)
@@ -252,9 +330,10 @@ python3 scripts/make_tweet_slides.py \
 
 ## TROUBLESHOOTING
 
-- Imagem inconsistente na capa: verificar se usa NanoBanana 2 em auth-profiles.json
-- Rosto diferente da Dra.: enviar 3-6 fotos de referencia junto com o prompt
+- Imagem inconsistente na capa: usar compose_cover.py com foto real (NUNCA gerar foto via IA)
+- Rosto diferente da Dra.: usar APENAS fotos reais em /root/.openclaw/workspace/fotos_dra/
 - Texto cortado: verificar margens e tamanho da fonte
 - PubMed bloqueando: user-agent Safari, URL direta do artigo
 - Espaco vazio: centralizar (tipo B) ou adicionar imagem (tipo A)
 - API key Gemini invalida: verificar 1Password item "Gemini API Key"
+- Request too large (20MB): todas as imagens DEVEM ser JPEG quality=85 (slides e capa)

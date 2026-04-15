@@ -3543,6 +3543,75 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-energetico/slide_04.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-energetico/slide_05.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/deliverables/daniely-energetico/slide_06.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 1046 (1).png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 11.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 12.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 15.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 17.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 19.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 2.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 20.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 21.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 235.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 24.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 25.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 27.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 28.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 29.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 3.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 457.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 5.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 654.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 7.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 8.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 8354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 9354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/dra_seria_frontal.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/dra_seria_lateral.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 1046 (1).png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 1046.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 11.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 1165.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 12.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 124.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 13.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 14.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 15.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 17.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 18.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 19.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 2.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 20.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 21.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 22.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 23.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 235.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 24.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 25.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 26.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 27.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 28.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 29.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 3.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 3354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 4.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 457.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 5.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 5694.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 654.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 7.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 7354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 8.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 8354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG 9354.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/Imagem PNG.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_bracos_cruzados.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_lateral.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_lateralizada.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-02.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-08.md
@@ -4075,6 +4144,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/DejaVuSans.ttf
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/simbolo_v.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/compose_cover.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_cover.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_tweet_slides.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/youtube
