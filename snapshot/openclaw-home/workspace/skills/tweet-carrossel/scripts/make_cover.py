@@ -30,12 +30,12 @@ GOLD_LINE = (159, 136, 68, 180)
 GRAY_TEXT = (180, 180, 180)
 
 # Layout proportions
-PHOTO_HEIGHT_RATIO = 0.55  # Photo occupies top 55%
-TEXT_AREA_START = 0.58     # Text area starts at 58%
+PHOTO_HEIGHT_RATIO = 0.58  # Photo occupies top 58%
+TEXT_AREA_START = 0.62     # Text area starts at 62% (menos espaço vazio)
 CIRCLE_SIZE = 120          # Circle inset size
 CIRCLE_MARGIN = 30         # Margin from top-right
 CIRCLE_BORDER = 4          # Gold border width
-LINE_Y_RATIO = 0.56        # Gold divider line position
+LINE_Y_RATIO = 0.59        # Gold divider line position (mais próximo do texto)
 V_SIZE = 20                # V symbol size
 
 # Font paths (try multiple locations)
@@ -158,28 +158,28 @@ def render_headline(draw, headline_lines, highlight_words, start_y):
     else:
         font_path = find_font(FONT_PATHS)
 
-    # Calculate font size to fit
+    # Calculate font size to fit - prefer larger text to fill space
     num_lines = len(headline_lines)
-    max_font_size = min(72, int((H - start_y - 80) / (num_lines * 1.25)))
+    max_font_size = min(160, int((H - start_y - 20) / (num_lines * 1.05)))
 
     # Try to find the best font size
     font_size = max_font_size
     while font_size > 30:
         font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default()
         max_width = max(draw.textlength(line, font=font) for line in headline_lines)
-        if max_width <= W - 100:
+        if max_width <= W - 30:  # margem mínima 15px cada lado
             break
         font_size -= 2
 
     font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default()
-    line_height = int(font_size * 1.2)
+    line_height = int(font_size * 1.05)  # bem tight pra ocupar mais texto
 
     # Calculate total text block height
     total_height = num_lines * line_height
 
-    # Center vertically in remaining space
-    available_space = H - start_y - 60  # 60px for footer
-    y_offset = start_y + (available_space - total_height) // 2
+    # Alinhar texto próximo ao topo da área (logo após a linha dourada)
+    # para eliminar espaço vazio entre linha e texto
+    y_offset = start_y + 10
 
     highlight_set = set(w.strip().upper() for w in highlight_words)
 

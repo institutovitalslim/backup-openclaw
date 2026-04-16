@@ -29,7 +29,22 @@ metadata:
 1. Clara gera a capa via compose_cover.py (usa foto real da Dra., NAO gera via IA)
 2. Clara gera o slide 2 (paper) via HTML + Chromium
 3. Clara gera slides 3+ via gen_slides.py (saida JPEG, < 200KB por slide)
-4. Clara entrega todas as imagens
+4. Clara entrega todas as imagens **VIA TELEGRAM** (OBRIGATORIO — nao basta salvar na VPS)
+
+### ETAPA 3 - ENTREGA VIA TELEGRAM (OBRIGATORIA)
+
+Apos gerar todos os slides, SEMPRE enviar via Telegram usando send_to_telegram.py:
+
+```bash
+export TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN
+python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/send_to_telegram.py   --chat-id <CHAT_ID>   --thread-id <THREAD_ID>   --dir <DIRETORIO_DOS_SLIDES>   --caption "<TITULO_DO_CARROSSEL>"
+```
+
+**Chat/thread padrao do grupo AI Vital Slim (Tiaro):**
+- chat_id: -1003803476669
+- thread_id: pegar da URL do topico (ex: t.me/c/3803476669/4 -> thread 4)
+
+**NUNCA** apenas salvar arquivos na VPS e dizer "feito" — o usuario precisa receber os JPEGs pelo Telegram.
 
 **NUNCA gerar imagens antes da copy ser aprovada.**
 
@@ -87,8 +102,38 @@ metadata:
 - Avatar + nome + handle no topo (mesmo padrao dos slides tweet)
 - Texto em cor unica #c8c8c8
 - Screenshot do PubMed centralizado no espaco abaixo do texto
-- Screenshot deve incluir: header NIH, PubMed logo, titulo completo do paper
+- Screenshot deve incluir: header NIH azul, PubMed logo, titulo completo do paper, autores, PMID, DOI
 - Imagem respeita margens laterais, com border-radius
+
+### CAPTURA DO PUBMED — VALIDACAO OBRIGATORIA
+
+**NUNCA** aceitar screenshot do PubMed sem validar. Usar SEMPRE o script:
+
+```bash
+python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/capture_pubmed.py   --pmid <PMID>   --out /root/pubmed_<PMID>.png
+```
+
+O script tem CASCATA de 5 estrategias - NUNCA FALHA:
+1. PubMed direto com 6 user-agents (Safari Mac, Chrome Win/Linux, Firefox, iPhone, Googlebot) + incognito + anti-bot flags + perfil limpo por tentativa
+2. Fallback: Archive.org Wayback Machine
+3. Fallback: PubMed Central (PMC) se disponivel
+4. Fallback: gera imagem sintetica com metadados reais via eutils API (cor NIH, titulo, autores, PMID, DOI)
+5. Ultimo recurso: placeholder com link
+
+Validacao automatica:
+- Arquivo > 50KB
+- Header contem pixels azul NIH (RGB 32,84,147) >= 15%
+- Pagina nao eh > 85% branca (detecta captcha)
+
+**A CLARA DEVE CONTINUAR ATE CONSEGUIR**. O script NUNCA para - roda ate ter uma imagem valida do paper, seja do PubMed, PMC, Archive ou sintetica.
+
+**Checklist visual do slide 2 antes de entregar**:
+- [ ] Header azul "NIH National Library of Medicine" visivel
+- [ ] Logo PubMed visivel
+- [ ] Titulo do paper completo
+- [ ] Autores listados
+- [ ] PMID e DOI aparecem
+- [ ] NAO ha texto "403 Forbidden" na imagem
 
 ---
 

@@ -29,7 +29,7 @@
     },
     {
       "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
-      "line": 439,
+      "line": 440,
       "model": "OPENCLAW_MODEL_OVERRIDE,",
       "severity": "review",
       "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"

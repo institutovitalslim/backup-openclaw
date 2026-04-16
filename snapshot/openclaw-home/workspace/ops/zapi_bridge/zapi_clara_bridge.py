@@ -43,6 +43,7 @@ CLARA_LEADS_FILE = os.getenv("CLARA_LEADS_FILE", "/root/.openclaw/workspace/ops/
 CLARA_MANUAL_INBOX_FILE = os.getenv("CLARA_MANUAL_INBOX_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_manual_inbox.json")
 CLARA_EXCLUSIONS_FILE = os.getenv("CLARA_EXCLUSIONS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_exclusions.json")
 ACTIVATION_PHRASE = os.getenv("CLARA_ACTIVATION_PHRASE", "Gostaria de saber mais informações sobre o Instituto Vital Slim")
+CONFIRMATION_REPLY_SCRIPT = os.getenv("CONFIRMATION_REPLY_SCRIPT", "/root/cerebro-vital-slim/ops/quarkclinic_confirmations/process_reply.py")
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
 
