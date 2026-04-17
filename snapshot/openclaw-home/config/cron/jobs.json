@@ -35,7 +35,7 @@
       "name": "biweekly-memory-review",
       "enabled": true,
       "createdAtMs": 1774297657925,
-      "updatedAtMs": 1776169173412,
+      "updatedAtMs": 1776322812335,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 1,16 * *",
@@ -48,11 +48,11 @@
         "text": "Revisao quinzenal de memoria: 1) primeiro gere um snapshot da memoria curada com `bash /root/.openclaw/workspace/scripts/snapshot_memory_state.sh /root/.openclaw/workspace` e registre o caminho gerado em `memory_backups/`. 2) Leia as notas diarias recentes em `memory/sessions/`. 3) Identifique licoes e decisoes que ainda nao foram consolidadas. 4) Atualize `memory/context/lessons.md`, `memory/context/decisions.md`, `memory/context/pending.md`, `memory/projects/*`, `memory/integrations/*` e `memory/MEMORY.md` com o que vale manter. 5) Revise `memory/feedback_loops/`. 6) Rode prune conservador em dry-run com `python3 /root/.openclaw/workspace/scripts/prune_memory_notes.py --memory-root /root/.openclaw/workspace/memory --days 30`; aplique apenas se houver candidatos explicitamente taticos. 7) Rode `openclaw memory index --force`. 8) Registre um resumo curto da revisao no arquivo diario correspondente em `memory/sessions/<data>.md`."
       },
       "state": {
-        "nextRunAtMs": 1776322800000,
-        "lastRunAtMs": 1776169147272,
+        "nextRunAtMs": 1777618800000,
+        "lastRunAtMs": 1776322800009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 26140,
+        "lastDurationMs": 12326,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -64,7 +64,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1776245409254,
+      "updatedAtMs": 1776331807566,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -77,11 +77,11 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1776331800000,
-        "lastRunAtMs": 1776245400004,
+        "nextRunAtMs": 1776418200000,
+        "lastRunAtMs": 1776331800005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9250,
+        "lastDurationMs": 7561,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -93,7 +93,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1776243611063,
+      "updatedAtMs": 1776330026721,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -106,11 +106,11 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1776330000000,
-        "lastRunAtMs": 1776243600010,
+        "nextRunAtMs": 1776416400000,
+        "lastRunAtMs": 1776330000009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11053,
+        "lastDurationMs": 26712,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -121,7 +121,7 @@
       "name": "agenda-diaria-whatsapp",
       "enabled": true,
       "createdAtMs": 1775753319041,
-      "updatedAtMs": 1776243671159,
+      "updatedAtMs": 1776330090018,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -139,11 +139,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776330000000,
-        "lastRunAtMs": 1776243611063,
+        "nextRunAtMs": 1776416400000,
+        "lastRunAtMs": 1776330026721,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 60096,
+        "lastDurationMs": 63297,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -157,7 +157,7 @@
       "description": "Todos os dias às 16:00 envia confirmações por WhatsApp para pacientes agendados na manhã seguinte e registra pendências para retorno automático no Quarkclinic.",
       "enabled": true,
       "createdAtMs": 1776031905466,
-      "updatedAtMs": 1776279675475,
+      "updatedAtMs": 1776366033190,
       "schedule": {
         "kind": "cron",
         "expr": "0 16 * * *",
@@ -180,11 +180,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1776366000000,
-        "lastRunAtMs": 1776279600012,
+        "nextRunAtMs": 1776452400000,
+        "lastRunAtMs": 1776366000005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 75463,
+        "lastDurationMs": 33185,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -198,7 +198,7 @@
       "description": "Todos os dias às 07:30 envia confirmações por WhatsApp para pacientes agendados na tarde do mesmo dia e registra pendências para retorno automático no Quarkclinic.",
       "enabled": true,
       "createdAtMs": 1776119322503,
-      "updatedAtMs": 1776249027077,
+      "updatedAtMs": 1776335431458,
       "schedule": {
         "kind": "cron",
         "expr": "30 7 * * *",
@@ -221,11 +221,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1776335400000,
-        "lastRunAtMs": 1776249000011,
+        "nextRunAtMs": 1776421800000,
+        "lastRunAtMs": 1776335400004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27066,
+        "lastDurationMs": 31454,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
