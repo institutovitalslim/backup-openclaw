@@ -3569,6 +3569,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 8354.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG 9354.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/avatares/Imagem PNG.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/catalog.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/dra_seria_frontal.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/dra_seria_lateral.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais
@@ -3612,6 +3613,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_bracos_cruzados.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_lateral.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/originais/seria_lateralizada.png
+/root/backup-openclaw/snapshot/openclaw-home/workspace/fotos_dra/usage.json
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-02.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/memory/2026-04-08.md
@@ -3891,6 +3893,7 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_bridge.env
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_bridge.env.example
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/zapi_bridge/zapi_clara_bridge.py.bak_chunking
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/backup-codex-windows.ps1
 /root/backup-openclaw/snapshot/openclaw-home/workspace/scripts/backup-openclaw-linux.sh
@@ -3943,10 +3946,24 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/historico-conversas/scripts/consultar_historico.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/llm-council/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica/scripts/ingest_content.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica/scripts/memory_search.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/memoria-cientifica/scripts/memory_store.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/SKILL.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/omie-boletos/scripts/omie_boletos.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/SKILL.md
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts/add_overlay.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts/build_prompt.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts/clara_create_image.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts/generate_image.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/prompt-imagens/scripts/generate_with_reference.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.claude-plugin
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/superpowers/.claude-plugin/marketplace.json
@@ -4145,9 +4162,14 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/assets/simbolo_v.png
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/capture_pubmed.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/catalog_photos.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/compose_cover.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/compose_cover_auto.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/gen_slides_full.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/generate_variation.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_cover.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_tweet_slides.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/photo_selector.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/send_to_telegram.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/youtube
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/zapi-openclaw-bridge

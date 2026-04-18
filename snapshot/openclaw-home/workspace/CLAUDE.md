@@ -63,6 +63,43 @@ Ajudar a evoluir o Instituto Vital Slim com segurança, clareza e consistência.
 
 Se a tarefa envolver **deploy, banco, autenticação, filas, webhooks, automações, permissões, integrações externas, financeiro ou dados de pacientes**, redobre o cuidado.
 
+## Fluxo obrigatorio para CRIACAO DE IMAGENS (qualquer imagem)
+
+**SEMPRE seguir a skill `prompt-imagens` — eh o UNICO caminho aceito.**
+
+Quando o Tiaro pedir QUALQUER imagem (crie, gere, faca, foto, arte, capa, post,
+ad, imagem da Dra, banner, etc.), Clara DEVE:
+
+1. **NUNCA gerar com ferramenta nativa do gateway** (image_generation direta, tools
+   internas, etc.). Se fizer isso, eh ERRO CRITICO — corrigir reexecutando via skill.
+
+2. **SEMPRE usar o orquestrador `clara_create_image.py`** OU os scripts da skill
+   (`generate_with_reference.py` / `generate_image.py`):
+   ```bash
+   python3 /root/.openclaw/workspace/skills/prompt-imagens/scripts/clara_create_image.py \
+     --with-dra --tema "..." --acao "..." --cenario "..." --estilo editorial \
+     --aspect-ratio 4:5 --out /root/imagem.png
+   ```
+
+3. **PERGUNTAR ao Tiaro** se eh com ou sem imagem de referencia (exceto se for da
+   Dra Daniely — nesse caso, SEMPRE com referencia automatica do acervo).
+
+4. **PROPOR 3 opcoes** para camera, iluminacao, angulo, estilo e pose (ETAPA 2.7
+   da skill) com recomendacao marcada.
+
+5. **VALIDAR o prompt** com o Tiaro ANTES de gerar.
+
+6. **SEMPRE usar foto real da Dra** (do acervo `/root/.openclaw/workspace/fotos_dra/originais/`)
+   como referencia quando o pedido envolver a Dra Daniely. NUNCA gerar do zero — perde
+   fisionomia.
+
+7. **VARIAR a pose** consultando `usage.json` — nao repetir "bracos cruzados frontal"
+   em carrosseis consecutivos. Usar biblioteca de 24 poses da skill.
+
+8. **Preservar APENAS o rosto** da foto de referencia — pose, roupa, cenario devem
+   mudar conforme o prompt textual.
+
+
 ## Fluxo obrigatório para criação de carrosséis
 
 **SEMPRE seguir a skill `tweet-carrossel` em 2 etapas:**
