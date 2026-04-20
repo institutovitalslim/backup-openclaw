@@ -64,7 +64,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1776504612558,
+      "updatedAtMs": 1776591009448,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -77,11 +77,11 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1776591000000,
-        "lastRunAtMs": 1776504600003,
+        "nextRunAtMs": 1776677400000,
+        "lastRunAtMs": 1776591000005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12555,
+        "lastDurationMs": 9443,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -93,7 +93,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1776502814742,
+      "updatedAtMs": 1776589211751,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -106,11 +106,11 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1776589200000,
-        "lastRunAtMs": 1776502800007,
+        "nextRunAtMs": 1776675600000,
+        "lastRunAtMs": 1776589200005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 14735,
+        "lastDurationMs": 11746,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -121,7 +121,7 @@
       "name": "agenda-diaria-whatsapp",
       "enabled": true,
       "createdAtMs": 1775753319041,
-      "updatedAtMs": 1776502851894,
+      "updatedAtMs": 1776589258329,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -139,11 +139,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776589200000,
-        "lastRunAtMs": 1776502814742,
+        "nextRunAtMs": 1776675600000,
+        "lastRunAtMs": 1776589211751,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 37152,
+        "lastDurationMs": 46578,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -157,7 +157,7 @@
       "description": "Todos os dias às 16:00 envia confirmações por WhatsApp para pacientes agendados na manhã seguinte e registra pendências para retorno automático no Quarkclinic.",
       "enabled": true,
       "createdAtMs": 1776031905466,
-      "updatedAtMs": 1776538845135,
+      "updatedAtMs": 1776625253478,
       "schedule": {
         "kind": "cron",
         "expr": "0 16 * * *",
@@ -180,11 +180,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1776625200000,
-        "lastRunAtMs": 1776538800007,
+        "nextRunAtMs": 1776711600000,
+        "lastRunAtMs": 1776625200006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 45128,
+        "lastDurationMs": 53472,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -198,7 +198,7 @@
       "description": "Todos os dias às 07:30 envia confirmações por WhatsApp para pacientes agendados na tarde do mesmo dia e registra pendências para retorno automático no Quarkclinic.",
       "enabled": true,
       "createdAtMs": 1776119322503,
-      "updatedAtMs": 1776508239245,
+      "updatedAtMs": 1776594631661,
       "schedule": {
         "kind": "cron",
         "expr": "30 7 * * *",
@@ -221,11 +221,11 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1776594600000,
-        "lastRunAtMs": 1776508200010,
+        "nextRunAtMs": 1776681000000,
+        "lastRunAtMs": 1776594600003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39235,
+        "lastDurationMs": 31658,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
