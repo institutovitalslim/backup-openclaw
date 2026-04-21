@@ -127,7 +127,41 @@ def generate_background(tema, output_path):
             print(f"  {model} erro: {e}")
             continue
 
-    print("  AVISO: Nenhum modelo funcionou, usando fundo preto")
+    print("  Gemini falhou - fallback Unsplash...")
+    try:
+        import requests
+        from io import BytesIO
+        from PIL import ImageFilter, ImageEnhance
+        url = f"https://unsplash.com/napi/search/photos?query={tema.replace( , +)}&per_page=5&orientation=landscape"
+        r = requests.get(url, timeout=15).json()
+        for item in r.get("results", [])[:5]:
+            try:
+                img_resp = requests.get(item["urls"]["regular"], timeout=15)
+                img = Image.open(BytesIO(img_resp.content)).convert("RGB")
+                H_PHOTO = int(H * PHOTO_HEIGHT_RATIO)
+                w, h = img.size
+                target_ratio = W / H_PHOTO
+                current_ratio = w / h
+                if current_ratio < target_ratio:
+                    new_h = int(w / target_ratio)
+                    top = (h - new_h) // 2
+                    img = img.crop((0, top, w, top + new_h))
+                else:
+                    new_w = int(h * target_ratio)
+                    left = (w - new_w) // 2
+                    img = img.crop((left, 0, left + new_w, h))
+                img = img.resize((W, H_PHOTO), Image.LANCZOS)
+                img = img.filter(ImageFilter.GaussianBlur(radius=8))
+                img = ImageEnhance.Brightness(img).enhance(0.40)
+                img.save(output_path)
+                print(f"  Fundo Unsplash: {item.get(chr(97)+chr(108)+chr(116)+chr(95)+chr(100)+chr(101)+chr(115)+chr(99)+chr(114)+chr(105)+chr(112)+chr(116)+chr(105)+chr(111)+chr(110), )[:60]}")
+                return output_path
+            except Exception as e:
+                continue
+    except Exception as e:
+        print(f"  Unsplash tambem falhou: {e}")
+
+    print("  AVISO FINAL: usando fundo preto (ambos Gemini e Unsplash falharam)")
     bg = Image.new("RGB", (W, int(H * PHOTO_HEIGHT_RATIO)), (20, 20, 20))
     bg.save(output_path)
     return output_path

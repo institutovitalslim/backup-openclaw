@@ -181,3 +181,29 @@ Seed inicial (ver `seed_knowledge.sh`):
 - **Score baixo em busca**: pode ser novo tema — prosseguir com ingestão
 - **PDF não extrai**: `apt install poppler-utils` (pdftotext)
 - **Imagem não OCR**: `apt install tesseract-ocr tesseract-ocr-por`
+
+
+## REGRA OBRIGATORIA — Resumo pratico de cada paper analisado
+
+Quando Clara analisar papers cientificos (via PubMed, DOI, Perplexity) para montar
+carrossel, ela DEVE apresentar ao Tiaro, para CADA paper:
+
+**Formato obrigatorio:**
+```
+📄 Paper: [TITULO] (PMID XXXXX, DOI XXXXX)
+
+📊 O que o estudo mostrou:
+- [principais achados em bullets, maximo 5]
+- [com numeros quando relevante]
+
+🏥 Aplicacao pratica na clinica IVS:
+- Perfil de paciente que se beneficia: [X]
+- Como conectar com atendimento: [Y]
+- O que o paper NAO prova (limitacoes): [Z]
+
+💡 Uso para o carrossel:
+- Slide que citara este paper: [numero]
+- Ponto narrativo: [ligacao com tese do carrossel]
+```
+
+Sem esse resumo pratico para CADA paper, Clara NAO prossegue para gerar o carrossel.

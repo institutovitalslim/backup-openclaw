@@ -15,6 +15,32 @@ metadata:
 
 # Tweet Carrossel v4 - Geracao Completa de Carrosseis Instagram
 
+## 🚨 ORQUESTRADOR UNICO — Use isto quando Tiaro enviar URL/link
+
+Quando Tiaro enviar URL de post/artigo cientifico pedindo carrossel, Clara DEVE
+rodar UM unico comando que faz toda a cadeia:
+
+```bash
+python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/clara_create_carrossel_from_post.py \
+  --url "<URL>" \
+  --topic "<topico>" \
+  --slug "<slug>" \
+  --thread-id 4
+```
+
+Faz automaticamente:
+1. memory_search (verifica se ja pesquisou o tema)
+2. ingest_content (se novo: Perplexity + aplicacao clinica + armazena)
+3. Apresenta resumo ao Tiaro e pausa
+4. Apos --approve: gera copy + capa + slide 2 PubMed + slides tweet
+5. Valida JPEGs existem
+6. send_to_telegram entrega os 10 slides
+
+NAO inventar fluxo proprio. NAO entregar copy em texto. UM comando, carrossel
+completo.
+
+---
+
 ## FLUXO DE TRABALHO OBRIGATORIO (4 ETAPAS)
 
 ### ETAPA 0 - PRE-REQUISITO: MEMORIA CIENTIFICA (OBRIGATORIA)
@@ -407,3 +433,25 @@ p { font-size: 50px; line-height: 1.28; color: #c8c8c8; margin-bottom: 36px; fon
 - **v3.0.0** (2026-04-14): compose_cover.py + capture_pubmed.py validando
 - **v2.0.0** (2026-04-09): HTML templates para slides
 - **v1.0.0**: Geracao basica via Pillow
+
+
+## BUSCA DE POSTS DO INSTAGRAM (quando Tiaro envia URL)
+
+Quando Tiaro enviar URL do Instagram pedindo carrossel, Clara DEVE usar o
+fetch_instagram.py para extrair a caption REAL (Instagram nao e extraivel via
+simple HTTP fetch):
+
+```bash
+python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/fetch_instagram.py   --url "<URL_INSTAGRAM>"   --out /tmp/post_caption.txt
+```
+
+O script usa RapidAPI (key salva em /root/cerebro-vital-slim/cerebro/areas/marketing/skills/instagram-api/SKILL.md):
+- Primeira tentativa: instagram-scraper-stable-api (rapido, por URL)
+- Fallback: instagram120 (pagina posts do perfil @institutovitalslim)
+
+Apos obter a caption, Clara usa ela como input para ingest_content.py:
+
+```bash
+python3 /root/cerebro-vital-slim/cerebro/empresa/skills/memoria-cientifica/scripts/ingest_content.py   --file /tmp/post_caption.txt --topic "<topico>" --slug "<slug>"
+```
+

@@ -195,7 +195,7 @@ def render_headline(draw, headline_lines, highlight_words, start_y):
 
         for j, word in enumerate(words):
             # Check if this specific word should be gold
-            word_clean = word.strip().upper().strip('"').strip("'").strip(",").strip(".")
+            word_clean = word.strip().upper().strip(chr(34)).strip(chr(39)).strip(chr(44)).strip(chr(46)).strip(chr(63)).strip(chr(33))
             is_gold = word_clean in highlight_set
             color = GOLD if is_gold else WHITE
 
