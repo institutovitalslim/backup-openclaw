@@ -1,0 +1,22 @@
+[
+  {
+    "nome": "Maria Silva",
+    "phone": "5571999999999",
+    "source": "google_ads",
+    "created_at": "2026-04-22T10:00:00",
+    "last_contact": "2026-04-22T10:00:00",
+    "scheduled": false,
+    "responded": false,
+    "sent_messages": []
+  },
+  {
+    "nome": "Ana Paula",
+    "phone": "5571988888888",
+    "source": "instagram",
+    "created_at": "2026-04-21T15:30:00",
+    "last_contact": "2026-04-21T15:30:00",
+    "scheduled": false,
+    "responded": true,
+    "sent_messages": ["msg_1"]
+  }
+]

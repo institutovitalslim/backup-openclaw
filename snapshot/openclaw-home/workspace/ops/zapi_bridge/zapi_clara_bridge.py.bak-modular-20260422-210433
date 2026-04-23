@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import json
 import os
-import re
 import sys
 import time
 import subprocess
@@ -450,47 +449,7 @@ def build_session_key(phone: str) -> str:
     return f"{OPENCLAW_SESSION_PREFIX}:{phone}"
 
 
-# Regex triggers for loading deep knowledge module.
-# If the current user message OR any past message in the phone's history matches,
-# append clara_knowledge_deep.md to the system prompt.
-DEEP_TRIGGERS_RX = re.compile(
-    r"\b("
-    r"valor|pre[cç]o|custa|investimento|quanto|orçamento|orcamento|parcel|cart[aã]o|cashback|desconto"
-    r"|caro|salgado|cabe no bolso"
-    r"|vou pensar|vou conversar|te aviso|depois eu|depois te|por enquanto|agora n[aã]o|mais pra frente|pensando"
-    r"|conv[eê]nio|plano|reembolso|bradesco|amil|sulam[eé]rica|unimed|notredame|hapvida"
-    r"|j[aá] tentei|j[aá] fiz|outro m[eé]dico|outra cl[ií]nica|nutricionista|academia|dieta"
-    r"|compuls[aã]o|ansiedade|sanfona|efeito sanfona"
-    r"|menopausa|libido|queda de cabelo|tpm|insônia|insonia|hormonal"
-    r"|minha filha|meu filho|minha m[aã]e|meu marido|minha esposa|meu pai"
-    r"|mounjaro|ozempic|tirzepatida|semaglutida"
-    r"|agendar|marcar|hor[aá]rio|disponibilidade"
-    r")\b",
-    re.I,
-)
-
-
-def _context_needs_deep(phone: Optional[str], current_text: str) -> bool:
-    """Decide if the conversation context warrants loading the deep-knowledge module."""
-    # Rule 1: if the current message hits any trigger, load deep
-    if DEEP_TRIGGERS_RX.search(current_text or ""):
-        return True
-    # Rule 2: if the phone has 3+ inbound messages in its history, load deep (high engagement)
-    if phone and phone in OPENROUTER_HISTORY:
-        history = OPENROUTER_HISTORY[phone]
-        inbound_count = sum(1 for msg in history if msg.get("role") == "user")
-        if inbound_count >= 3:
-            return True
-    return False
-
-
-def load_clara_prompt(phone: Optional[str] = None, current_text: str = "") -> str:
-    """Load the Clara system prompt with modular deep-knowledge loading.
-
-    - Always loads the base prompt (CLARA_SYSTEM_PROMPT_FILE)
-    - Always appends the rolling learnings buffer (if present)
-    - Conditionally appends clara_knowledge_deep.md if the context triggers it
-    """
+def load_clara_prompt() -> str:
     path = Path(CLARA_SYSTEM_PROMPT_FILE)
     try:
         text = path.read_text(encoding="utf-8").strip()
@@ -498,20 +457,6 @@ def load_clara_prompt(phone: Optional[str] = None, current_text: str = "") -> st
             raise RuntimeError("empty prompt file")
     except Exception as err:
         raise RuntimeError(f"failed to load Clara prompt from {path}: {err}") from err
-
-    # Conditionally append deep-knowledge module
-    if _context_needs_deep(phone, current_text):
-        deep_path = Path("/root/.openclaw/workspace/ops/zapi_bridge/clara_knowledge_deep.md")
-        try:
-            if deep_path.exists():
-                deep = deep_path.read_text(encoding="utf-8").strip()
-                if deep:
-                    text = text + "\n\n---\n\n" + deep
-                    log(f"deep knowledge loaded for phone={phone}")
-        except Exception as err:
-            log(f"deep knowledge load failed (non-fatal): {err}")
-
-    # Always append rolling learnings
     rolling_path = Path("/root/.openclaw/workspace/ops/zapi_bridge/clara_learnings_rolling.md")
     try:
         if rolling_path.exists():
@@ -606,7 +551,7 @@ def _call_openclaw_gateway(phone: str, text: str, instructions: str) -> str:
 
 
 def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
-    instructions = load_clara_prompt(phone=phone, current_text=text)
+    instructions = load_clara_prompt()
     if sender_name:
         instructions += f"\n\nNome do contato nesta conversa: {sender_name}."
     instructions += "\n\nResponda apenas com o texto da mensagem. Se nao houver resposta adequada, responda exatamente NO_REPLY."

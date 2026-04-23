@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import json
 import os
-import re
 import sys
 import time
 import subprocess
@@ -25,17 +24,6 @@ OPENCLAW_GATEWAY_TOKEN = os.getenv("OPENCLAW_GATEWAY_TOKEN", "")
 OPENCLAW_AGENT_REF = os.getenv("OPENCLAW_AGENT_REF", "openclaw/main")
 OPENCLAW_MODEL_OVERRIDE = os.getenv("OPENCLAW_MODEL_OVERRIDE", "openai/gpt-5.4")
 OPENCLAW_SESSION_PREFIX = os.getenv("OPENCLAW_SESSION_PREFIX", "bridge:zapi")
-
-# OpenRouter direct path (primary for Kimi K2.6 etc, bypasses OpenClaw catalog)
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "").strip()
-OPENROUTER_URL = os.getenv("OPENROUTER_URL", "https://openrouter.ai/api/v1/chat/completions").strip()
-OPENROUTER_HISTORY_TURNS = int(os.getenv("OPENROUTER_HISTORY_TURNS", "12"))
-OPENROUTER_REFERRER = os.getenv("OPENROUTER_REFERRER", "https://institutovitalslim.com.br")
-OPENROUTER_TITLE = os.getenv("OPENROUTER_TITLE", "Clara - Instituto Vital Slim")
-
-OPENROUTER_HISTORY: "OrderedDict[str, list]" = OrderedDict()
-OPENROUTER_HISTORY_MAX_PHONES = int(os.getenv("OPENROUTER_HISTORY_MAX_PHONES", "500"))
 APPS_SCRIPT_FANOUT_URL = os.getenv("APPS_SCRIPT_FANOUT_URL", "")
 ZAPI_INSTANCE_ID = os.getenv("ZAPI_INSTANCE_ID", "")
 ZAPI_TOKEN = os.getenv("ZAPI_TOKEN", "")
@@ -44,22 +32,11 @@ ZAPI_BASE_URL = os.getenv("ZAPI_BASE_URL", "").strip() or (
     f"https://api.z-api.io/instances/{ZAPI_INSTANCE_ID}/token/{ZAPI_TOKEN}" if ZAPI_INSTANCE_ID and ZAPI_TOKEN else ""
 )
 ZAPI_SEND_TEXT_PATH = os.getenv("ZAPI_SEND_TEXT_PATH", "/send-text")
-ZAPI_SEND_AUDIO_PATH = os.getenv("ZAPI_SEND_AUDIO_PATH", "/send-audio")
 CLARA_NOTIFY_PHONE = os.getenv("CLARA_NOTIFY_PHONE", "5571986968887")  # Tiaro
 BRIDGE_SHARED_SECRET = os.getenv("BRIDGE_SHARED_SECRET", "")
 WEBHOOK_PATH_TOKEN = os.getenv("WEBHOOK_PATH_TOKEN", "")
 DEDUP_TTL_SECONDS = int(os.getenv("DEDUP_TTL_SECONDS", "600"))
 HTTP_TIMEOUT_SECONDS = int(os.getenv("HTTP_TIMEOUT_SECONDS", "90"))
-
-# ElevenLabs TTS
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "")
-ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "EXAVITQu4vr4xnSDxMaL")  # Default: Rachel
-ELEVENLABS_MODEL = os.getenv("ELEVENLABS_MODEL", "eleven_multilingual_v2")
-ELEVENLABS_URL = "https://api.elevenlabs.io/v1/text-to-speech"
-
-# OpenAI Whisper (for audio transcription)
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-WHISPER_MODEL = os.getenv("WHISPER_MODEL", "whisper-1")
 CLARA_CONTROL_FILE = os.getenv("CLARA_CONTROL_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_control_state.json")
 CLARA_SYSTEM_PROMPT_FILE = os.getenv("CLARA_SYSTEM_PROMPT_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_system_prompt.md")
 CLARA_LEADS_FILE = os.getenv("CLARA_LEADS_FILE", "/root/.openclaw/workspace/ops/zapi_bridge/clara_leads_state.json")
@@ -450,133 +427,24 @@ def build_session_key(phone: str) -> str:
     return f"{OPENCLAW_SESSION_PREFIX}:{phone}"
 
 
-# Regex triggers for loading deep knowledge module.
-# If the current user message OR any past message in the phone's history matches,
-# append clara_knowledge_deep.md to the system prompt.
-DEEP_TRIGGERS_RX = re.compile(
-    r"\b("
-    r"valor|pre[cç]o|custa|investimento|quanto|orçamento|orcamento|parcel|cart[aã]o|cashback|desconto"
-    r"|caro|salgado|cabe no bolso"
-    r"|vou pensar|vou conversar|te aviso|depois eu|depois te|por enquanto|agora n[aã]o|mais pra frente|pensando"
-    r"|conv[eê]nio|plano|reembolso|bradesco|amil|sulam[eé]rica|unimed|notredame|hapvida"
-    r"|j[aá] tentei|j[aá] fiz|outro m[eé]dico|outra cl[ií]nica|nutricionista|academia|dieta"
-    r"|compuls[aã]o|ansiedade|sanfona|efeito sanfona"
-    r"|menopausa|libido|queda de cabelo|tpm|insônia|insonia|hormonal"
-    r"|minha filha|meu filho|minha m[aã]e|meu marido|minha esposa|meu pai"
-    r"|mounjaro|ozempic|tirzepatida|semaglutida"
-    r"|agendar|marcar|hor[aá]rio|disponibilidade"
-    r")\b",
-    re.I,
-)
-
-
-def _context_needs_deep(phone: Optional[str], current_text: str) -> bool:
-    """Decide if the conversation context warrants loading the deep-knowledge module."""
-    # Rule 1: if the current message hits any trigger, load deep
-    if DEEP_TRIGGERS_RX.search(current_text or ""):
-        return True
-    # Rule 2: if the phone has 3+ inbound messages in its history, load deep (high engagement)
-    if phone and phone in OPENROUTER_HISTORY:
-        history = OPENROUTER_HISTORY[phone]
-        inbound_count = sum(1 for msg in history if msg.get("role") == "user")
-        if inbound_count >= 3:
-            return True
-    return False
-
-
-def load_clara_prompt(phone: Optional[str] = None, current_text: str = "") -> str:
-    """Load the Clara system prompt with modular deep-knowledge loading.
-
-    - Always loads the base prompt (CLARA_SYSTEM_PROMPT_FILE)
-    - Always appends the rolling learnings buffer (if present)
-    - Conditionally appends clara_knowledge_deep.md if the context triggers it
-    """
+def load_clara_prompt() -> str:
     path = Path(CLARA_SYSTEM_PROMPT_FILE)
     try:
         text = path.read_text(encoding="utf-8").strip()
-        if not text:
-            raise RuntimeError("empty prompt file")
+        if text:
+            return text
+        raise RuntimeError("empty prompt file")
     except Exception as err:
         raise RuntimeError(f"failed to load Clara prompt from {path}: {err}") from err
 
-    # Conditionally append deep-knowledge module
-    if _context_needs_deep(phone, current_text):
-        deep_path = Path("/root/.openclaw/workspace/ops/zapi_bridge/clara_knowledge_deep.md")
-        try:
-            if deep_path.exists():
-                deep = deep_path.read_text(encoding="utf-8").strip()
-                if deep:
-                    text = text + "\n\n---\n\n" + deep
-                    log(f"deep knowledge loaded for phone={phone}")
-        except Exception as err:
-            log(f"deep knowledge load failed (non-fatal): {err}")
 
-    # Always append rolling learnings
-    rolling_path = Path("/root/.openclaw/workspace/ops/zapi_bridge/clara_learnings_rolling.md")
-    try:
-        if rolling_path.exists():
-            rolling = rolling_path.read_text(encoding="utf-8").strip()
-            if rolling:
-                text = text + "\n\n---\n\n" + rolling
-    except Exception as err:
-        log(f"rolling learnings load failed (non-fatal): {err}")
-    return text
-
-
-def _openrouter_history_get(phone: str) -> list:
-    h = OPENROUTER_HISTORY.get(phone)
-    return list(h) if h else []
-
-
-def _openrouter_history_push(phone: str, user_text: str, assistant_text: str) -> None:
-    h = OPENROUTER_HISTORY.get(phone) or []
-    h.append({"role": "user", "content": user_text})
-    h.append({"role": "assistant", "content": assistant_text})
-    max_msgs = OPENROUTER_HISTORY_TURNS * 2
-    if len(h) > max_msgs:
-        h = h[-max_msgs:]
-    OPENROUTER_HISTORY[phone] = h
-    OPENROUTER_HISTORY.move_to_end(phone)
-    while len(OPENROUTER_HISTORY) > OPENROUTER_HISTORY_MAX_PHONES:
-        OPENROUTER_HISTORY.popitem(last=False)
-
-
-def call_openrouter(phone: str, text: str, instructions: str) -> str:
-    """Call OpenRouter chat completions directly. Primary path.
-    OpenRouter is stateless, so we maintain per-phone history here."""
-    if not OPENROUTER_API_KEY or not OPENROUTER_MODEL:
-        raise RuntimeError("openrouter not configured")
-    messages = [{"role": "system", "content": instructions}]
-    messages.extend(_openrouter_history_get(phone))
-    messages.append({"role": "user", "content": text})
-    payload = {"model": OPENROUTER_MODEL, "messages": messages}
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": OPENROUTER_REFERRER,
-        "X-Title": OPENROUTER_TITLE,
-    }
-    status, body = post_json(OPENROUTER_URL, payload, headers=headers)
-    if status < 200 or status >= 300:
-        raise RuntimeError(f"openrouter error status={status} body={body[:400]}")
-    data = json.loads(body)
-    choices = data.get("choices") or []
-    if not choices:
-        raise RuntimeError(f"openrouter empty choices body={body[:400]}")
-    msg = choices[0].get("message") or {}
-    content = msg.get("content")
-    if isinstance(content, list):
-        content = "".join(p.get("text", "") for p in content if isinstance(p, dict))
-    if not isinstance(content, str) or not content.strip():
-        raise RuntimeError("openrouter empty content")
-    reply = content.strip()
-    _openrouter_history_push(phone, text, reply)
-    return reply
-
-
-def _call_openclaw_gateway(phone: str, text: str, instructions: str) -> str:
-    """Original OpenClaw gateway path. Fallback."""
+def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
     if not OPENCLAW_GATEWAY_TOKEN:
         raise RuntimeError("OPENCLAW_GATEWAY_TOKEN is empty")
+    instructions = load_clara_prompt()
+    if sender_name:
+        instructions += f"\n\nNome do contato nesta conversa: {sender_name}."
+    instructions += "\n\nResponda apenas com o texto da mensagem. Se não houver resposta adequada, responda exatamente NO_REPLY."
     payload = {
         "model": OPENCLAW_AGENT_REF,
         "input": text,
@@ -603,26 +471,6 @@ def _call_openclaw_gateway(phone: str, text: str, instructions: str) -> str:
                 texts.append(part["text"])
     reply = "\n\n".join(part.strip() for part in texts if part and part.strip()).strip()
     return reply or "NO_REPLY"
-
-
-def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
-    instructions = load_clara_prompt(phone=phone, current_text=text)
-    if sender_name:
-        instructions += f"\n\nNome do contato nesta conversa: {sender_name}."
-    instructions += "\n\nResponda apenas com o texto da mensagem. Se nao houver resposta adequada, responda exatamente NO_REPLY."
-
-    # Primary: OpenRouter direct (Kimi K2.6). Fallback: OpenClaw gateway.
-    if OPENROUTER_API_KEY and OPENROUTER_MODEL:
-        try:
-            reply = call_openrouter(phone, text, instructions)
-            log(f"reply_via=openrouter model={OPENROUTER_MODEL} phone={phone}")
-            return reply or "NO_REPLY"
-        except Exception as err:
-            log(f"openrouter failed, falling back to openclaw: {err}")
-
-    reply = _call_openclaw_gateway(phone, text, instructions)
-    log(f"reply_via=openclaw model={OPENCLAW_MODEL_OVERRIDE} phone={phone}")
-    return reply
 
 
 ZAPI_MAX_CHUNK = int(os.getenv("ZAPI_MAX_CHUNK", "3500"))
@@ -655,113 +503,6 @@ def _split_message_for_zapi(message: str, max_len: int = None) -> list:
     if remaining:
         chunks.append(remaining)
     return chunks
-
-
-def extract_audio_url(payload: Dict[str, Any]) -> Optional[str]:
-    """Extract audio URL from Z-API webhook payload."""
-    candidates = [
-        deep_get(payload, "audio", "audioUrl"),
-        deep_get(payload, "audio", "url"),
-        deep_get(payload, "message", "audioMessage", "url"),
-        deep_get(payload, "message", "audio", "url"),
-        deep_get(payload, "message", "mediaUrl"),
-        deep_get(payload, "mediaUrl"),
-        deep_get(payload, "audioUrl"),
-        deep_get(payload, "url"),
-    ]
-    for candidate in candidates:
-        if isinstance(candidate, str) and candidate.strip():
-            return candidate.strip()
-    return None
-
-
-def is_audio_message(payload: Dict[str, Any]) -> bool:
-    """Check if payload is an audio message."""
-    if extract_audio_url(payload):
-        return True
-    types = [
-        payload.get("type"),
-        deep_get(payload, "message", "type"),
-        deep_get(payload, "messageType"),
-    ]
-    return any(str(t).lower() in ("audio", "ptt", "voice") for t in types if t)
-
-
-def download_audio(url: str, timeout: int = 30) -> bytes:
-    """Download audio file from URL."""
-    req = Request(url, method="GET")
-    with urlopen(req, timeout=timeout) as resp:
-        return resp.read()
-
-
-def transcribe_audio(audio_bytes: bytes, filename: str = "audio.ogg") -> str:
-    """Transcribe audio using OpenAI Whisper."""
-    if not OPENAI_API_KEY:
-        raise RuntimeError("OPENAI_API_KEY not configured for Whisper")
-    import ssl
-    boundary = "----WebKitFormBoundary7MA4YWxkTrZu0gW"
-    body = (
-        f"--{boundary}\r\n"
-        f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
-        f"Content-Type: audio/ogg\r\n\r\n"
-    ).encode("utf-8") + audio_bytes + f"\r\n--{boundary}\r\nContent-Disposition: form-data; name=\"model\"\r\n\r\n{WHISPER_MODEL}\r\n--{boundary}--\r\n".encode("utf-8")
-    req = Request(
-        "https://api.openai.com/v1/audio/transcriptions",
-        data=body,
-        headers={
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
-            "Content-Type": f"multipart/form-data; boundary={boundary}",
-        },
-        method="POST",
-    )
-    try:
-        with urlopen(req, timeout=60) as resp:
-            data = json.loads(resp.read().decode())
-            return data.get("text", "").strip()
-    except HTTPError as err:
-        error_body = err.read().decode()
-        raise RuntimeError(f"Whisper error {err.code}: {error_body[:400]}") from err
-
-
-def generate_elevenlabs_tts(text: str) -> bytes:
-    """Generate audio from text using ElevenLabs TTS."""
-    if not ELEVENLABS_API_KEY:
-        raise RuntimeError("ELEVENLABS_API_KEY not configured")
-    url = f"{ELEVENLABS_URL}/{ELEVENLABS_VOICE_ID}"
-    payload = {
-        "text": text,
-        "model_id": ELEVENLABS_MODEL,
-        "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
-        },
-    }
-    headers = {
-        "xi-api-key": ELEVENLABS_API_KEY,
-        "Content-Type": "application/json",
-    }
-    req = Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-    try:
-        with urlopen(req, timeout=60) as resp:
-            return resp.read()
-    except HTTPError as err:
-        error_body = err.read().decode()
-        raise RuntimeError(f"ElevenLabs error {err.code}: {error_body[:400]}") from err
-
-
-def send_zapi_audio(phone: str, audio_bytes: bytes) -> Tuple[int, str]:
-    """Send audio message via Z-API."""
-    if not ZAPI_BASE_URL:
-        raise RuntimeError("ZAPI_BASE_URL is empty")
-    if not ZAPI_CLIENT_TOKEN:
-        raise RuntimeError("ZAPI_CLIENT_TOKEN is empty")
-    headers = {"Client-Token": ZAPI_CLIENT_TOKEN}
-    url = ZAPI_BASE_URL.rstrip("/") + ZAPI_SEND_AUDIO_PATH
-    import base64
-    audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
-    payload = {"phone": phone, "audioBase64": audio_b64}
-    status, body = post_json(url, payload, headers=headers, timeout=60)
-    return status, body
 
 
 def send_zapi_text(phone: str, message: str) -> Tuple[int, str]:
@@ -898,13 +639,11 @@ class Handler(BaseHTTPRequestHandler):
         text = extract_text(payload)
         sender_name = extract_sender_name(payload)
         message_id = extract_message_id(payload) or f"anon:{phone}:{hash(raw)}"
-        audio_url = extract_audio_url(payload)
-        is_audio = is_audio_message(payload)
 
         if not phone:
             self._send_json(200, {"ok": True, "ignored": "missing_phone"})
             return
-        if not text and not is_audio:
+        if not text:
             self._send_json(200, {"ok": True, "ignored": "non_text_or_empty"})
             return
         if not remember_message(message_id):
@@ -916,53 +655,29 @@ class Handler(BaseHTTPRequestHandler):
 
         import threading
         def process_async():
-            processed_text = text or ""
-            # If audio message, transcribe it first
-            if is_audio and audio_url:
-                try:
-                    log(f"transcribing audio phone={phone} url={audio_url[:100]!r}")
-                    audio_bytes = download_audio(audio_url)
-                    processed_text = transcribe_audio(audio_bytes)
-                    log(f"transcribed phone={phone} text={processed_text[:180]!r}")
-                except Exception as err:
-                    log(f"transcription failed phone={phone}: {err}")
-                    # Fallback: notify that we received audio but couldn't transcribe
-                    try:
-                        send_zapi_text(phone, "Oi! Recebi seu áudio, mas não consegui entender o conteúdo. Pode enviar por texto? Fica mais fácil para te ajudar com precisão. 😊")
-                    except Exception as e:
-                        log(f"failed to send fallback text phone={phone}: {e}")
-                    return
-            elif is_audio and not audio_url:
-                log(f"audio message without url phone={phone}")
-                try:
-                    send_zapi_text(phone, "Oi! Recebi seu áudio, mas não consegui processá-lo. Pode enviar por texto? Fica mais fácil para te ajudar com precisão. 😊")
-                except Exception as e:
-                    log(f"failed to send fallback text phone={phone}: {e}")
-                return
-
-            log(f"processing phone={phone} message_id={message_id} text={processed_text[:180]!r}")
+            log(f"processing phone={phone} message_id={message_id} text={text[:180]!r}")
             try:
-                handled_confirmation, confirmation_reason = try_process_confirmation_reply(phone, processed_text)
+                handled_confirmation, confirmation_reason = try_process_confirmation_reply(phone, text)
                 if handled_confirmation:
                     log(f"confirmation_handled phone={phone} decision={confirmation_reason}")
                     return
                 paused, reason = should_pause_clara(phone)
                 if paused:
                     if reason and str(reason).startswith("manual_override"):
-                        record_manual_inbound(phone, processed_text, message_id, sender_name=sender_name)
-                        log(f"manual_inbound phone={phone} reason={reason} text={processed_text[:180]!r}")
+                        record_manual_inbound(phone, text, message_id, sender_name=sender_name)
+                        log(f"manual_inbound phone={phone} reason={reason} text={text[:180]!r}")
                     else:
                         log(f"blocked phone={phone} reason={reason}")
                     return
                 if is_existing_patient(phone):
                     log(f"blocked phone={phone} reason=existing_patient")
                     return
-                should_reply, reason = should_respond_to_lead(phone, processed_text)
+                should_reply, reason = should_respond_to_lead(phone, text)
                 if not should_reply:
                     log(f"blocked phone={phone} reason={reason}")
                     return
                 log(f"lead_allowed phone={phone} reason={reason}")
-                reply = call_clara(phone, processed_text, sender_name=sender_name)
+                reply = call_clara(phone, text, sender_name=sender_name)
                 if reply.strip() == "NO_REPLY":
                     log(f"reply=NO_REPLY phone={phone}")
                     return
@@ -993,26 +708,13 @@ class Handler(BaseHTTPRequestHandler):
                     log(f"BLOCKED TOXIC reply phone={phone} preview={reply[:120]!r}")
                     # Notify Tiaro on Telegram instead of sending toxic reply to lead
                     try:
-                        notification = f"⚠️ Mensagem tóxica bloqueada para {phone}. Lead disse: {processed_text[:200]!r}. Clara tentou responder: {reply[:200]!r}. Por favor, atenda manualmente."
+                        notification = f"⚠️ Mensagem tóxica bloqueada para {phone}. Lead disse: {text[:200]!r}. Clara tentou responder: {reply[:200]!r}. Por favor, atenda manualmente."
                         send_zapi_text("5571986968887", notification)
                     except Exception as e:
                         log(f"failed to notify Tiaro: {e}")
                     return
-
-                # If original message was audio, reply with audio via ElevenLabs TTS
-                if is_audio and ELEVENLABS_API_KEY:
-                    try:
-                        log(f"generating TTS phone={phone} reply={reply[:120]!r}")
-                        audio_reply = generate_elevenlabs_tts(reply)
-                        status, body = send_zapi_audio(phone, audio_reply)
-                        log(f"sent audio phone={phone} zapiStatus={status} audioSize={len(audio_reply)} zapiBody={body[:200]}")
-                    except Exception as err:
-                        log(f"TTS failed phone={phone}: {err}, falling back to text")
-                        status, body = send_zapi_text(phone, reply)
-                        log(f"sent text fallback phone={phone} zapiStatus={status} replyPreview={reply[:120]!r}")
-                else:
-                    status, body = send_zapi_text(phone, reply)
-                    log(f"sent phone={phone} zapiStatus={status} replyPreview={reply[:120]!r} zapiBody={body[:200]}")
+                status, body = send_zapi_text(phone, reply)
+                log(f"sent phone={phone} zapiStatus={status} replyPreview={reply[:120]!r} zapiBody={body[:200]}")
             except Exception as err:
                 log(f"bridge error phone={phone}: {err}")
 

@@ -1,0 +1,62 @@
+{
+  "clinic": {
+    "name": "Instituto Vital Slim",
+    "doctor": "Dra. Daniely Freitas",
+    "phone": "+55 71 3838-8708",
+    "website": "www.institutovitalslim.com.br"
+  },
+  "business_hours": {
+    "start": 8,
+    "end": 20,
+    "timezone": "America/Bahia"
+  },
+  "sequences": {
+    "lead_no_schedule": {
+      "name": "Lead que não agendou",
+      "description": "Enviado para leads que entraram em contato mas não agendaram consulta",
+      "messages": [
+        {
+          "id": "msg_1",
+          "delay_hours": 24,
+          "subject": "Reengajar com valor",
+          "text": "{nome}, sei que a correria do dia a dia às vezes não deixa espaço pra gente. 😊\n\nSó queria te enviar algo que pode te ajudar: a Dra. Daniely gravou um vídeo de 2 minutos explicando como funciona a primeira consulta e o que você pode esperar.\n\nQuer que eu te mande o link?"
+        },
+        {
+          "id": "msg_2",
+          "delay_hours": 48,
+          "subject": "Dica de valor",
+          "text": "{nome}, deixa eu te contar uma coisa que a maioria das nossas pacientes não sabia antes de começar:\n\n👉 O excesso de peso muitas vezes NÃO é falta de força de vontade. Pode ser desequilíbrio hormonal, intestino inflamado ou sono ruim.\n\nÉ por isso que a Dra. Daniely sempre pede exames na 1ª consulta. O tratamento só funciona quando a gente entende a RAIZ do problema.\n\nSe quiser saber mais sobre como a gente trabalha, estou por aqui. 💚"
+        },
+        {
+          "id": "msg_3",
+          "delay_hours": 72,
+          "subject": "Social proof",
+          "text": "{nome}, queria te mostrar o que aconteceu com a Ana (nome fictício), uma paciente que chegou aqui com um histórico bem parecido com o seu:\n\n\"Já tinha feito de tudo: dieta da moda, remédio emagrecedor, academia... nada funcionava. Na 1ª consulta com a Dra. Daniely, descobri que meu problema era hormonal. Em 3 meses, me senti outra pessoa.\"\n\nClaro, cada caso é diferente. Mas se você ainda estiver buscando uma solução que realmente funcione, a gente pode conversar. 💚"
+        },
+        {
+          "id": "msg_4",
+          "delay_hours": 120,
+          "subject": "Urgência sutil",
+          "text": "{nome}, uma informação importante: a Dra. Daniely só atende com hora marcada e as vagas para esta semana já estão quase todas preenchidas.\n\nSe você quer começar ainda este mês, posso tentar encaixar um horário para você. Tem algum dia da semana que funciona melhor?\n\nSem compromisso — a consulta é para você conhecer nossa abordagem e tirar todas as dúvidas. 💚"
+        },
+        {
+          "id": "msg_5",
+          "delay_hours": 168,
+          "subject": "Última tentativa",
+          "text": "{nome}, vou ser bem direta com você: 😊\n\nAcho que talvez o momento não seja o ideal — e está TUDO BEM. A gente sabe que cada pessoa tem seu timing.\n\nSó queria deixar uma coisa clara: quando você se sentir pronta pra cuidar de você, a gente vai estar aqui. Sem pressão, sem julgamento.\n\nSe quiser voltar a conversar daqui um tempo, é só mandar uma mensagem. Vou guardar seu contato com carinho. 💚\n\n— Clara, Instituto Vital Slim"
+        },
+        {
+          "id": "msg_6",
+          "delay_hours": 720,
+          "subject": "Reativação",
+          "text": "Oi {nome}! 💚 Passando pra desejar um excelente mês!\n\nSe você ainda estiver pensando em cuidar da sua saúde, queria contar uma novidade: temos uma nova abordagem para avaliação metabólica que tem dado resultados incríveis.\n\nSe quiser saber mais, estou por aqui. Se não, sem problemas! Desejo muita saúde e bem-estar para você. 🌟"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "objection_price": "Entendo perfeitamente, {nome}! 💚\n\nO investimento é definido pela Dra. Daniely junto com você durante a consulta, porque cada paciente precisa de um protocolo diferente.\n\nO que posso te adiantar:\n• A consulta inicial é R$ 1.000 e já inclui bioimpedância + plano nutricional\n• O programa de acompanhamento é personalizado para suas necessidades específicas\n• Temos opções de parcelamento\n\nA melhor forma de saber exatamente qual seria seu investimento é conversando com a Dra. Quer que eu veja uma vaga esta semana?",
+    "objection_time": "Completamente entendo, {nome}! 😊 A maioria das nossas pacientes também trabalha, tem filhos, casa...\n\nPor isso a gente tem horários flexíveis:\n• Atendemos de segunda a sexta (8h-18h)\n• E aos sábados de manhã (8h-12h)\n• Algumas consultas de retorno podem ser online\n\nE olha só: o tempo que você investe em 1 consulta por mês pode te poupar ANOS de frustração com métodos que não funcionam.\n\nTem algum horário que funcionaria melhor para você?",
+    "objection_distrust": "{nome}, se eu tivesse 1 real pra cada vez que ouvi isso... 😊\n\nE sabe o que acontece? Quase todas as nossas pacientes chegam aqui com esse mesmo sentimento.\n\nA diferença do Instituto Vital Slim é que a gente não oferece \"receita pronta\". A Dra. Daniely investiga a RAIZ do problema com exames, entende seu metabolismo e monta um protocolo EXCLUSIVO para você.\n\nNão é dieta da moda. Não é remédio milagroso. É medicina personalizada.\n\nSe você quiser, posso marcar uma consulta para você conhecer nossa abordagem. Sem compromisso — é só para conversar. 💚"
+  }
+}
