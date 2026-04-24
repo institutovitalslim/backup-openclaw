@@ -16,9 +16,9 @@
     {
       "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_bridge.env",
       "line": 8,
-      "model": "openrouter/moonshotai/kimi-k2.5",
+      "model": "openrouter/moonshotai/kimi-k2.6",
       "severity": "review",
-      "text": "OPENCLAW_MODEL_OVERRIDE=openrouter/moonshotai/kimi-k2.5"
+      "text": "OPENCLAW_MODEL_OVERRIDE=openrouter/moonshotai/kimi-k2.6"
     },
     {
       "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",

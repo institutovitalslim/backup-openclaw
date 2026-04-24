@@ -3853,6 +3853,16 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/use-cases/support
 /root/backup-openclaw/snapshot/openclaw-home/workspace/openclaw-BrunoOkamoto/use-cases/support/analise-suporte.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/connect-data
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/conteudo
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/feedback.log
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/index.html
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/profile_analyzer.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/queue
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/queue/content-queue.json
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/server.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/ops/content-preview/server.py.bak-pre-cso-20260423-214126
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/llm-audit
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/llm-audit/audit_llm_overrides.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/ops/llm-audit/audit_llm_overrides_v2.py
@@ -4202,6 +4212,10 @@
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/glycine_carrossel_copy_v2.md
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_cover.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/make_tweet_slides.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/md_to_html.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/md_to_html.py.bak-pre-a11y-20260423-210729
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/md_to_production_html.py
+/root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/md_to_production_html.py.bak-pre-designreview-20260423-205034
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/photo_selector.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/tweet-carrossel/scripts/send_to_telegram.py
 /root/backup-openclaw/snapshot/openclaw-home/workspace/skills/validacao-qa

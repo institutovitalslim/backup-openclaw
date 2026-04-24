@@ -32,8 +32,9 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "openrouter/moonshotai/kimi-k2.6",
+        "primary": "openai-codex/gpt-5.5",
         "fallbacks": [
+          "openrouter/moonshotai/kimi-k2.6",
           "openai-codex/gpt-5.4",
           "openai/gpt-5.4"
         ]
@@ -44,6 +45,9 @@
         },
         "google/gemini-3.1-flash-lite-preview": {
           "alias": "NanoBanana2"
+        },
+        "openai-codex/gpt-5.5": {
+          "alias": "GPT 5.5 (Codex)"
         },
         "openai-codex/gpt-5.4": {
           "alias": "GPT (Codex)"
