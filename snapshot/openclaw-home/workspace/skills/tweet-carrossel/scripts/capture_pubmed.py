@@ -210,12 +210,12 @@ def capture(pmid, out_path):
                 if valid:
                     return True
 
-    # Estrategia 4: sintetica (validacao relaxada — sintetica eh branca por definicao)
+    # Estrategia 4: sintetica
     if meta:
         render_synthetic(pmid, meta, out_path)
-        # Sintetica so precisa existir e ter > 5KB
-        if os.path.exists(out_path) and os.path.getsize(out_path) > 5000:
-            print(f"    Sintetico: OK ({os.path.getsize(out_path)//1024}KB) - aceita por ser renderizada", flush=True)
+        valid, msg = is_valid_screenshot(out_path, min_size=10_000)
+        print(f"    Sintetico: {msg}", flush=True)
+        if valid:
             return True
 
     # Estrategia 5: placeholder

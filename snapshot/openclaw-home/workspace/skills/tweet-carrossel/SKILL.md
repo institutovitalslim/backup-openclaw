@@ -111,6 +111,9 @@ python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/send_to_telegra
 
 ## SLIDE 1 - CAPA
 
+**Fundo: PRETO #000000** — A capa mantém fundo preto com foto da Dra. e headline em branco/dourado.
+**Slides 2+ (tweet): fundo BRANCO #FFFFFF** com texto preto.
+
 ### Pipeline OBRIGATORIO: compose_cover.py
 
 ```bash
@@ -178,7 +181,9 @@ O seletor:
   ```bash
   python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/generate_variation.py     --base "<foto_base_do_top1>"     --variation "<descricao_do_cenario_ideal_para_o_tema>"     --out "/root/dra_variation_<tema>.png"
   ```
-- A variacao preserva identidade facial (rosto, cabelo) mas altera cenario/iluminacao
+- A variacao preserva identidade facial (rosto, cabelo) mas altera cenario/iluminacao/roupas
+- Incluir no prompt a instrucao canônica de consistencia facial estrita:
+  `Enable strict facial consistency mode. Prioritize the facial features from the provided reference image for all subsequent generations. Maintain the subject's identity accurately while only adapting the pose, lighting, and background. Do not alter the core facial structure.`
 - Variacao criada fica disponivel para futuro uso (adicionada ao catalogo via nova rodada de catalog_photos.py)
 
 **Regras gerais da foto:**
@@ -200,12 +205,13 @@ O seletor:
 **Regras da headline:**
 - Fonte Montserrat Black (instalada em /usr/local/share/fonts/)
 - Cores: branco + dourado #9F8844
-- Cap 150px, linha por linha cabe em W-30 (1050px)
+- Cap max 150px, mas o script calcula automaticamente para caber na safe area
 - Line-height 1.05 (tight)
 - Alinhamento: TOPO da area de texto (NAO centrado) para eliminar espaco vazio
-- TEXT_AREA_START: 0.62 (logo apos linha dourada)
-- PHOTO_HEIGHT_RATIO: 0.58
-- LINE_Y_RATIO: 0.59
+- TEXT_AREA_START: 0.58 (logo apos linha dourada) — **elevado para safe area do feed**
+- PHOTO_HEIGHT_RATIO: 0.54 — **reduzido para dar mais espaco ao texto**
+- LINE_Y_RATIO: 0.56 — **acompanha TEXT_AREA_START**
+- **Safe area para feed (1:1):** O Instagram corta ~135px do topo e da base da capa 4:5. A headline deve caber inteiramente dentro da area segura central. O script `make_cover.py` calcula o tamanho da fonte automaticamente para garantir isso.
 
 **Regras de destaques:**
 - Palavras em dourado separadas por virgula
@@ -245,9 +251,9 @@ python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/capture_pubmed.
 **A CLARA DEVE CONTINUAR ATE CONSEGUIR**. O script NUNCA para - roda ate ter uma imagem valida do paper, seja do PubMed, PMC, Archive ou sintetica.
 
 ### Formato do slide 2:
-- Fundo preto #000
+- Fundo branco #FFFFFF
 - Avatar + nome + handle no topo (mesmo padrao dos slides tweet)
-- Texto em cor unica #c8c8c8
+- Texto em cor unica #000000
 - Screenshot do PubMed centralizado no espaco abaixo do texto
 - Screenshot deve incluir: header NIH azul, PubMed logo, titulo completo, autores, PMID, DOI
 - Imagem respeita margens laterais, com border-radius
@@ -279,14 +285,14 @@ python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/capture_pubmed.
 .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .user-info { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
 .name-row { display: flex; align-items: center; line-height: 1.15; }
-.name { font-weight: 700; font-size: 48px; color: #fff; line-height: 1.15; }
+.name { font-weight: 700; font-size: 58px; color: #000000; line-height: 1.15; }
 .verified { 
   display: inline-block; width: 38px; height: 38px; 
   background: #1d9bf0; border-radius: 50%; 
   text-align: center; line-height: 38px; font-size: 20px;
   color: #fff; margin-left: 12px; font-weight: 700; 
 }
-.handle { color: #71767b; font-size: 34px; line-height: 1.15; }
+.handle { color: #71767b; font-size: 41px; line-height: 1.15; }
 ```
 
 **CRITICAL:** Avatar = 96px (altura que casa com nome+handle ~90px, evita desalinhamento visual)
@@ -297,7 +303,7 @@ python3 /root/.openclaw/workspace/skills/tweet-carrossel/scripts/capture_pubmed.
 body { padding: 60px 64px; display: flex; flex-direction: column; }
 .centered { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .content { flex-shrink: 0; }
-p { font-size: 50px; line-height: 1.28; color: #c8c8c8; margin-bottom: 36px; font-weight: 400; }
+p { font-size: 60px; line-height: 1.28; color: #000000; margin-bottom: 36px; font-weight: 400; }
 ```
 
 ### ESPECIFICACOES FINAIS DOS SLIDES
@@ -305,27 +311,80 @@ p { font-size: 50px; line-height: 1.28; color: #c8c8c8; margin-bottom: 36px; fon
 | Elemento | Valor |
 |----------|-------|
 | Tamanho | 1080 x 1350 px (4:5) |
-| Fundo | preto #000000 |
+| Fundo | branco #FFFFFF |
 | Padding | 60px 64px |
 | Avatar | 96px circular |
-| Nome | bold, branco #fff, 48px, line-height 1.15 |
-| Selo verificado | circulo azul #1D9BF0, 38px |
-| Handle | regular, cinza #71767B, 34px, line-height 1.15 |
+| Nome | bold, preto #000000, 58px, line-height 1.15 |
+| Selo verificado | circulo azul #1D9BF0, ~46px |
+| Handle | regular, cinza #71767B, 41px, line-height 1.15 |
 | Gap avatar-texto | 28px |
-| Texto corpo | regular, cinza #c8c8c8, 50px, line-height 1.28 |
+| Texto corpo | regular, preto #000000, 60px, line-height 1.28 |
 | Gap entre paragrafos | 36px margin-bottom |
-| Cor do texto | UMA COR SO (#c8c8c8) - sem bold, sem destaques |
+| Cor do texto | UMA COR SO (#000000) - sem bold, sem destaques |
 | Saida | JPEG quality=85, ~50-120KB por slide |
 
-### REGRAS DE CONTEUDO
+### ESTRUTURA DE CONTEUDO (10 SLIDES — Viral Content Strategy)
+
+Cada carrossel deve contar uma historia, nao apenas transmitir informacao. Usar gaps de curiosidade, gatilhos emocionais e open loops para manter o leitor deslizando.
+
+**Slide 1 – HOOK (Pattern Interrupt):**
+- Headline ousada, controversa ou que desperta curiosidade
+- Fazer o leitor pensar: "Espera... o que?"
+- Usar tensao, surpresa ou afirmacao forte
+- Maximo 5-10 palavras
+
+**Slide 2 – REHOOK (Open Loop):**
+- Aumentar a intriga sem dar a resposta
+- Preparar o resultado, construir gap de curiosidade
+- Fazer com que PRECISEM do proximo slide
+
+**Slide 3 – RELATABLE PAIN / INICIO DA HISTORIA:**
+- Comecar uma historia curta ou situacao identificavel
+- "A maioria das pessoas pensa que..."
+- "Eu costumava..."
+- "Todo mundo faz isso errado..."
+
+**Slides 4-7 – VALOR (Historia + Insights):**
+- Entregar o conteudo principal atraves de um fluxo narrativo
+- Quebrar expectativas
+- Revelar insights passo a passo
+- Cada slide = 1 ideia-chave
+- Frases curtas e impactantes
+- Misturar storytelling + valor acionavel
+
+**Slide 8 – TURNING POINT (Momento AHA):**
+- Revelar o insight-chave ou mudanca de perspectiva
+- Deve parecer uma realizacao
+- Este e o momento "salvavel"
+
+**Slide 9 – ACTIONABLE TAKEAWAY:**
+- Dar passos claros e praticos
+- Facil de aplicar imediatamente
+
+**Slide 10 – CTA (Engagement Trigger):**
+- Call-to-action direto no texto
+- Ex: "Comenta 'QUERO' que eu te envio"
+- Ex: "Me segue para mais"
+- Ex: "Salva isso antes que suma"
+
+### REGRAS DE ESCRITA
 
 1. Texto CONVERSACIONAL, nao tecnico
 2. Frases CURTAS e impactantes
-3. CADA slide termina com frase de gancho para o proximo (ex: "E nao e so isso...", "->")
+3. CADA slide termina com frase de gancho para o proximo
 4. UM conceito por slide
 5. Apos ponto, SEMPRE letra maiuscula
-6. Ultimo slide: CTA claro
+6. Escrever como se estivesse falando com uma pessoa so
+7. Cada linha deve criar momentum
 
+### GATILHOS PSICOLOGICOS A USAR
+
+- Gap de curiosidade (curiosity gap)
+- Pattern interrupt (quebrar padroes)
+- Tom de prova social (social proof tone)
+- Medo de perder algo (FOMO)
+- Ideias contrarianas
+- Recompensas rapidas (quick wins)
 ---
 
 ## PERFIL CONFIGURADO
@@ -387,7 +446,7 @@ p { font-size: 50px; line-height: 1.28; color: #c8c8c8; margin-bottom: 36px; fon
 - [ ] Gancho no final de cada slide
 - [ ] Um conceito por slide
 - [ ] Apos ponto, letra maiuscula
-- [ ] CTA no ultimo slide
+
 
 ### Imagens (etapa 2)
 - [ ] Proporcao 4:5 (1080x1350) em TODOS os slides
@@ -400,7 +459,7 @@ p { font-size: 50px; line-height: 1.28; color: #c8c8c8; margin-bottom: 36px; fon
 - [ ] Slide 2: screenshot PubMed validado (header NIH azul, titulo, autores, PMID, DOI)
 - [ ] Slide 2: SEM captcha "Select all images" ou "403 Forbidden"
 - [ ] Slides tweet: avatar 96px (alinhado com nome 48px + handle 34px)
-- [ ] Slides tweet: texto de cor unica #c8c8c8, 50px
+- [ ] Slides tweet: texto de cor unica #000000, 60px
 - [ ] Slides tweet: avatar = "Foto Perfil Daniely.png" (com frame dourado, fundo transparente)
 - [ ] Todos os slides: JPEG quality=85, < 200KB
 

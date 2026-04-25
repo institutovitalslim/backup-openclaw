@@ -279,7 +279,10 @@ def main():
 
     # Le arquivos se for path
     def read_or_text(v):
-        return Path(v).read_text(encoding="utf-8") if Path(v).is_file() else v
+        try:
+            return Path(v).read_text(encoding="utf-8") if Path(v).is_file() else v
+        except (OSError, ValueError):
+            return v
 
     rid, path = store_research(
         slug=args.slug,

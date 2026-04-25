@@ -30,14 +30,13 @@ GOLD_LINE = (159, 136, 68, 180)
 GRAY_TEXT = (180, 180, 180)
 
 # Layout proportions
-PHOTO_HEIGHT_RATIO = 0.54  # Photo occupies top 54% (reduzido para dar espaço ao texto)
-TEXT_AREA_START = 0.58     # Text area starts at 58% (mais alto, para safe area do feed)
+PHOTO_HEIGHT_RATIO = 0.58  # Photo occupies top 58%
+TEXT_AREA_START = 0.62     # Text area starts at 62% (menos espaço vazio)
 CIRCLE_SIZE = 120          # Circle inset size
 CIRCLE_MARGIN = 30         # Margin from top-right
 CIRCLE_BORDER = 4          # Gold border width
-LINE_Y_RATIO = 0.56        # Gold divider line position (acompanha TEXT_AREA_START)
+LINE_Y_RATIO = 0.59        # Gold divider line position (mais próximo do texto)
 V_SIZE = 20                # V symbol size
-SAFE_AREA_MARGIN = 135     # Instagram feed crops ~135px from top and bottom for 1:1
 
 # Font paths (try multiple locations)
 FONT_PATHS = [
@@ -159,19 +158,16 @@ def render_headline(draw, headline_lines, highlight_words, start_y):
     else:
         font_path = find_font(FONT_PATHS)
 
-    # Calculate font size to fit within Instagram feed safe area
-    # Feed crops ~135px from top and bottom, so text must fit in (H - 2*SAFE_AREA_MARGIN)
+    # Calculate font size to fit - prefer larger text to fill space
     num_lines = len(headline_lines)
-    safe_area_bottom = H - SAFE_AREA_MARGIN
-    available_height = safe_area_bottom - start_y - 20  # 20px margin from safe area bottom
-    max_font_size = min(160, int(available_height / (num_lines * 1.05)))
+    max_font_size = min(160, int((H - start_y - 20) / (num_lines * 1.05)))
 
     # Try to find the best font size
     font_size = max_font_size
     while font_size > 30:
         font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default()
         max_width = max(draw.textlength(line, font=font) for line in headline_lines)
-        if max_width <= W - 120:  # margem lateral de 60px cada lado (mais respiro)
+        if max_width <= W - 30:  # margem mínima 15px cada lado
             break
         font_size -= 2
 
@@ -199,7 +195,7 @@ def render_headline(draw, headline_lines, highlight_words, start_y):
 
         for j, word in enumerate(words):
             # Check if this specific word should be gold
-            word_clean = word.strip().upper().strip(chr(34)).strip(chr(39)).strip(chr(44)).strip(chr(46)).strip(chr(63)).strip(chr(33))
+            word_clean = word.strip().upper().strip('"').strip("'").strip(",").strip(".")
             is_gold = word_clean in highlight_set
             color = GOLD if is_gold else WHITE
 
