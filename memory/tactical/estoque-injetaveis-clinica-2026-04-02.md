@@ -37,7 +37,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Lidocaína 1% 20mg/2mL — 30
 - Lidocaína s/vaso 2% 2mL — 9 (Stin)
 - Minoxidil — 20 (Biomeds)
-- Morusil Booster c/Teacrina — 21 (Biomeds)
+- Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
 - Morusil Puro — 19 (Biomeds)
 - NAC — 10 (Biomeds, Victa)
@@ -137,6 +137,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 20/04/2026
 - Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
+- Ana Clara Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM) + Tirzepatida 20 UI (SC) + 2 seringas de 20 UI entregues para aplicação em casa (23/04, 24/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 60 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
