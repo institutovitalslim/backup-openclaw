@@ -12,7 +12,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
-- Coenzima Q10 100mg/2mL — 16 (Stin)
+- Coenzima Q10 100mg/2mL — 15 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 23 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 13 (Stin)
+- Lidocaína s/vaso 2% 2mL — 12 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -47,11 +47,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 14 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 12 (Biomeds, Health Tech)
+- Resveratrol — 11 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 40 UI (nova ampola aberta em 14/04/2026)
+- Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA: registro indica 60 UI usadas em 15/04 (Maria Cedraz), mas estoque mostrava apenas 40 UI. Verificar se houve reposição não registrada ou erro de contagem.
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -66,6 +66,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
+- Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA — verificar reposição
 - Vitamina B6 — 4 (Biomeds)
 - Vitamina B12 — 5 (Biomeds)
 
@@ -122,6 +123,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Ivana Souza Lopes → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM) + Tirzepatida 50 UI (SC)
 - Felipe Cedraz de Alencar → Tirzepatida 40 UI (SC) + Resveratrol 1 amp (IM) + 3 seringas de 40 UI entregues para aplicação em casa (17/04, 19/04, 22/04)
 - Ana Clara Cedraz de Alencar → Tirzepatida 20 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 20 UI entregue para aplicação em casa (18/04)
+- Maria Cedraz de Alencar → Tirzepatida 30 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 30 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: necessário 60 UI, disponível 40 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
