@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 17 (Stin)
+- Lidocaína s/vaso 2% 2mL — 16 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -47,7 +47,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 14 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 15 (Biomeds, Health Tech)
+- Resveratrol — 14 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
@@ -113,6 +113,6 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Taina → Tirzepatida 40 UI
 - Darilene → Tirzepatida 5 UI + Vitamina C 5g/25mL 1 amp + Sulfato de Zinco 20mg/2mL 1 amp (EV)
 - Gleice → Tirzepatida 20 UI
-- Lorena → Tirzepatida 20 UI
+- Lorena → Tirzepatida 20 UI (SC) + Resveratrol 1 amp + Lidocaína 2% 2mL 1 amp (IM)
 - Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC) — ⚠️ verificar se Taina (40 UI no mesmo dia) é a mesma paciente para evitar duplicar
 - Tiaro Fernandes Neves → Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Taurina 1 amp + L-Metionina 1 amp + NAC 1 amp + L-Glicina 1 amp + Vitamina C 1g/5mL 1 amp + Tirzepatida 20 UI (EV/SC)
