@@ -9,7 +9,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ADEK — 19 (Biomeds)
 - ALA / Ácido Lipóico — 33 (Biomeds, Health Tech)
 - Beta Alanina — 9 (Biomeds)
-- Chronic — 23 (Central)
+- Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
 - Coenzima Q10 100mg/2mL — 13 (Stin)
@@ -26,7 +26,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 22 (Biomeds)
 - L-Glicina — 29 (Biomeds, Stin)
 - L-Glutamina — 25 (Victa)
-- L-Glutationa — 35 (Biomeds, Victa)
+- L-Glutationa — 34 (Biomeds, Victa)
 - L-Lisina — 14 (Biomeds, Victa)
 - L-Metionina — 11 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 4 (Biomeds)
 - Vitamina B7 — 21 (Biomeds)
 - Vitamina B9 — 11 (Biomeds)
-- Vitamina C 20% 1g/5mL — 18 (Stin)
+- Vitamina C 20% 1g/5mL — 17 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -130,6 +130,10 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Silvana Modesto Rodrigues → Tirzepatida 60 UI (SC) + Coenzima Q10 1 amp + Curcumina 1 amp + Lidocaína 1 amp (IM)
 - Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC) + NADH 50mg/FR liofilizado c/ 0.6mL lidocaína (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI. NADH liofilizado não deduzido do estoque (apresentação diferente dos ampoulas injetáveis)
 - Catarina Cedraz de Alencar → Tirzepatida 25 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 25 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 50 UI necessárias, disponível 0 UI
+- Diogo de Jesus Melo → Tirzepatida 20 UI (SC) + Chronic 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
+
+### 17/04/2026
+- Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 5 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
