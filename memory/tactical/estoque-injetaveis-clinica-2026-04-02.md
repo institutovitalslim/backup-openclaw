@@ -127,6 +127,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 16/04/2026
 - Francisco de Assis de Lima → Tirzepatida 30 UI (SC) + Curcumina 1 amp + Lidocaína 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 30 UI necessárias, disponível 0 UI
+- Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC) + NADH 50mg/FR liofilizado c/ 0.6mL lidocaína (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI. NADH liofilizado não deduzido do estoque (apresentação diferente dos ampoulas injetáveis)
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
