@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 330 UI (ampola #5 aberta em 23/04/2026, 30 UI utilizadas, 330 UI restantes)
+- Tirzepatida — 290 UI (ampola #5 aberta em 23/04/2026, 70 UI utilizadas, 290 UI restantes)
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -184,6 +184,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
 - Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
 - ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
+
+### 24/04/2026
+- Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
