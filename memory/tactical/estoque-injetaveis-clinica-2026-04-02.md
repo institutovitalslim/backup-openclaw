@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 14/04)
+Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 20/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA: registro indica 60 UI usadas em 15/04 (Maria Cedraz), mas estoque mostrava apenas 40 UI. Verificar se houve reposição não registrada ou erro de contagem.
+- Tirzepatida — 85 UI (ampola aberta em 20/04/2026, 275 UI utilizadas, 85 UI restantes)
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -67,7 +67,6 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - ALA / Ácido Lipóico — 0 ⚠️ ESGOTADO
-- Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA — verificar reposição
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B12 — 3 (Biomeds)
 
@@ -127,25 +126,32 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 30 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: necessário 60 UI, disponível 40 UI
 
 ### 16/04/2026
-- Francisco de Assis de Lima → Tirzepatida 30 UI (SC) + Curcumina 1 amp + Lidocaína 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 30 UI necessárias, disponível 0 UI
+- Francisco de Assis de Lima → Tirzepatida 30 UI (SC) + Curcumina 1 amp + Lidocaína 1 amp (IM)
 - Silvana Modesto Rodrigues → Tirzepatida 60 UI (SC) + Coenzima Q10 1 amp + Curcumina 1 amp + Lidocaína 1 amp (IM)
-- Silvana Modesto Rodrigues (20/04) → Soro Cabelo, Pele e Unha EV (Biotina 1 amp + Vitamina C 1G 1 amp + L-Glutamina 1 amp + L-Carnitina 1 amp + L-Fenilalanina 1 amp + Cloreto de Cromo 1 amp + L-Prolina 1 amp + L-Teanina 1 amp + D-Ribose 1 amp + Vitamina B3 1 amp + Sulfato de Magnésio 1 amp + L-Lisina 1 amp) + Tirzepatida 60 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 60 UI necessárias, disponível 0 UI
+- Silvana Modesto Rodrigues (20/04) → Soro Cabelo, Pele e Unha EV (Biotina 1 amp + Vitamina C 1G 1 amp + L-Glutamina 1 amp + L-Carnitina 1 amp + L-Fenilalanina 1 amp + Cloreto de Cromo 1 amp + L-Prolina 1 amp + L-Teanina 1 amp + D-Ribose 1 amp + Vitamina B3 1 amp + Sulfato de Magnésio 1 amp + L-Lisina 1 amp) + Tirzepatida 60 UI (SC)
 - Lorena Carvalho Ramos Melo → Soro Cabelo, Pele e Unha EV (NAC 1 amp + Biotina 1 amp + Vitamina C 1G 1 amp + L-Glutamina 1 amp + L-Carnitina 1 amp + L-Fenilalanina 1 amp + Cloreto de Cromo 1 amp + L-Prolina 1 amp + L-Teanina 1 amp + D-Ribose 1 amp + L-Glutationa 1 amp + Vitamina B3 1 amp + Vitamina B6 1 amp + Sulfato de Magnésio 1 amp + L-Lisina 1 amp)
-- Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC) + NADH 50mg/FR liofilizado c/ 0.6mL lidocaína (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI. NADH liofilizado não deduzido do estoque (apresentação diferente dos ampoulas injetáveis)
-- Catarina Cedraz de Alencar → Tirzepatida 25 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 25 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 50 UI necessárias, disponível 0 UI
-- Diogo de Jesus Melo → Tirzepatida 20 UI (SC) + Chronic 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
+- Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC) + NADH 50mg/FR liofilizado c/ 0.6mL lidocaína (SC). NADH liofilizado não deduzido do estoque (apresentação diferente dos ampoulas injetáveis)
+- Catarina Cedraz de Alencar → Tirzepatida 25 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 25 UI entregue para aplicação em casa (18/04)
+- Diogo de Jesus Melo → Tirzepatida 20 UI (SC) + Chronic 1 amp (IM)
 
 ### 17/04/2026
-- Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 5 UI necessárias, disponível 0 UI
+- Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL)
 - Larissa Correia de Souza → Vitaminas B6 1 amp + B9 (Metilfolato) 1 amp + B12 (Metilcobalamina) 1 amp (IM profundo)
+- Roberta → Tirzepatida 20 UI (SC)
+- Cintia → Tirzepatida 5 UI (SC)
+- Tainara → Tirzepatida 40 UI (SC)
+- Tatiane → Tirzepatida 20 UI (SC)
+- Davi → Tirzepatida 10 UI (SC)
 
 ### 18/04/2026
-- Ligia Lima Fontanari Jacinto → Tirzepatida 15 UI (SC em abdômen Q1E) + Morusil Booster c/Cafeína 1 amp (IM profundo em ventroglúteo esquerdo) + Pill Food 1 amp (IM profundo em ventroglúteo direito) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 15 UI necessárias, disponível 0 UI
+- Ligia Lima Fontanari Jacinto → Tirzepatida 15 UI (SC em abdômen Q1E) + Morusil Booster c/Cafeína 1 amp (IM profundo em ventroglúteo esquerdo) + Pill Food 1 amp (IM profundo em ventroglúteo direito)
 
 ### 20/04/2026
-- Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
-- Ana Clara Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM) + Tirzepatida 20 UI (SC) + 2 seringas de 20 UI entregues para aplicação em casa (23/04, 24/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 60 UI necessárias, disponível 0 UI
-- Maria Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos essenciais 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 30 UI (SC) + 2 seringas de 30 UI entregues para aplicação em casa (24/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 90 UI necessárias, disponível 0 UI
+- ⚠️ Ampola #3 esgotada (360 UI total utilizadas). Aberta ampola #4.
+- Diogo → Tirzepatida 20 UI (SC) — última da ampola #3
+- Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC)
+- Ana Clara Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM) + Tirzepatida 20 UI (SC) + 2 seringas de 20 UI entregues para aplicação em casa (23/04, 24/04)
+- Maria Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos essenciais 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 30 UI (SC) + 2 seringas de 30 UI entregues para aplicação em casa (24/04, 29/04)
 - Catarina Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC) + 2 seringas de 25 UI entregues para aplicação em casa (25/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 75 UI necessárias, disponível 0 UI
 - Diogo de Jesus Melo → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QI E) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
 - Ana Clara Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QD) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
@@ -177,8 +183,14 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 14/04/2026
 - Francisco → Tirzepatida 30 UI (SC)
 - Silvana → Tirzepatida 50 UI (SC)
-- ⚠️ Ampola antiga esgotada (360 UI total utilizadas). Aberta nova ampola.
-- Silvana → Tirzepatida 10 UI (SC) — da nova ampola
-- Taina → Tirzepatida 40 UI (SC) — da nova ampola
+- ⚠️ Ampola #1 esgotada (360 UI total utilizadas). Aberta ampola #2.
+- Silvana → Tirzepatida 10 UI (SC) — da ampola #2
+- Taina → Tirzepatida 40 UI (SC) — da ampola #2
 - Tainá Japiassu Teles → Tirzepatida 20 UI (SC) + Coenzima Q10 1 amp + Curcumina 1 amp + Lidocaína 1 amp (IM)
 - Darilene → Pill Food 1 amp (IM)
+
+### 15/04/2026
+- ⚠️ Ampola #2 esgotada (360 UI total utilizadas). Aberta ampola #3.
+- Maria → Tirzepatida 45 UI (SC) — da ampola #3
+- Lorena → Tirzepatida 20 UI (SC) — da ampola #3
+- Larissa → Tirzepatida 30 UI (SC) — da ampola #3
