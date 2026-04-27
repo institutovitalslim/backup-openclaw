@@ -14,7 +14,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cloreto de Cromo — 30 (Biomeds)
 - Coenzima Q10 100mg/2mL — 13 (Stin)
 - Complexo B c/B1 — 24 (Victa)
-- Complexo B s/B1 — 23 (Biomeds)
+- Complexo B s/B1 — 22 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 25 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
@@ -44,22 +44,22 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
 - Pill Food — 18 (Biomeds)
-- Pool de Aminoácidos — 12 (Stin)
-- Pool de Minerais — 14 (Biomeds)
+- Pool de Aminoácidos — 11 (Stin)
+- Pool de Minerais — 13 (Biomeds)
 - PQQ — 13 (Biomeds)
 - Resveratrol — 10 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
 - Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA: registro indica 60 UI usadas em 15/04 (Maria Cedraz), mas estoque mostrava apenas 40 UI. Verificar se houve reposição não registrada ou erro de contagem.
-- Vitamina B12 — 5 (Biomeds)
+- Vitamina B12 — 4 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
 - Vitamina B6 — 4 (Biomeds)
 - Vitamina B7 — 21 (Biomeds)
 - Vitamina B9 — 11 (Biomeds)
-- Vitamina C 20% 1g/5mL — 17 (Stin)
+- Vitamina C 20% 1g/5mL — 16 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -68,7 +68,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA — verificar reposição
 - Vitamina B6 — 4 (Biomeds)
-- Vitamina B12 — 5 (Biomeds)
+- Vitamina B12 — 4 (Biomeds)
 
 ## Entradas Registradas
 - **Health Tech** — recebido em 27/04/2026 (Pedido 000062215): Resveratrol 100mg/2mL — 10 amp
@@ -134,6 +134,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 17/04/2026
 - Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 5 UI necessárias, disponível 0 UI
+
+### 20/04/2026
+- Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
