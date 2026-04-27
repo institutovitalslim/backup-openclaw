@@ -52,13 +52,13 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
 - Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA: registro indica 60 UI usadas em 15/04 (Maria Cedraz), mas estoque mostrava apenas 40 UI. Verificar se houve reposição não registrada ou erro de contagem.
-- Vitamina B12 — 4 (Biomeds)
+- Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
-- Vitamina B6 — 3 (Biomeds)
+- Vitamina B6 — 2 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
-- Vitamina B9 — 11 (Biomeds)
+- Vitamina B9 — 10 (Biomeds)
 - Vitamina C 20% 1g/5mL — 13 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
@@ -67,8 +67,8 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA — verificar reposição
-- Vitamina B6 — 3 (Biomeds)
-- Vitamina B12 — 4 (Biomeds)
+- Vitamina B6 — 2 (Biomeds)
+- Vitamina B12 — 3 (Biomeds)
 
 ## Entradas Registradas
 - **Health Tech** — recebido em 27/04/2026 (Pedido 000062215): Resveratrol 100mg/2mL — 10 amp
@@ -136,6 +136,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 17/04/2026
 - Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 5 UI necessárias, disponível 0 UI
+- Larissa Correia de Souza → Vitaminas B6 1 amp + B9 (Metilfolato) 1 amp + B12 (Metilcobalamina) 1 amp (IM profundo)
 
 ### 20/04/2026
 - Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
