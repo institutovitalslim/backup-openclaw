@@ -16,7 +16,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 22 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 24 (Victa)
+- Curcumina — 23 (Victa)
 - D-Ribose — 12 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 7 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 8 (Stin)
+- Lidocaína s/vaso 2% 2mL — 7 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
@@ -175,7 +175,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Tainara Selene Japiassu de França → Tirzepatida 40 UI (SC em abdômen Q1E) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Curcumina 1 amp com Lidocaína 1 amp (IM profunda em ventroglúteo esquerdo)
 
 ### 22/04/2026
-- Lorena → Tirzepatida 30 UI (SC)
+- Lorena Carvalho Ramos Melo → Tirzepatida 30 UI (SC em abdômen Q1D) + Curcumina 1 amp com Lidocaína 1 amp (IM profundo em ventroglúteo direito)
 - Larissa → Tirzepatida 30 UI (SC)
 
 ### 23/04/2026
