@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-08
+Última atualização: 2026-04-27
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -10,13 +10,14 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ALA / Ácido Lipóico — 37 (Biomeds, Health Tech)
 - Beta Alanina — 10 (Biomeds)
 - Chronic — 23 (Central)
+- Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
 - Coenzima Q10 100mg/2mL — 18 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 4 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 28 (Victa)
-- D-Ribose — 5 (Biomeds)
+- D-Ribose — 15 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 29 (Biomeds)
 - Inositol + L-Taurina — 8 (Biomeds)
@@ -25,9 +26,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 22 (Biomeds)
 - L-Glicina — 30 (Biomeds, Stin)
 - L-Glutamina — 25 (Victa)
-- L-Glutationa — 5 (Biomeds)
-- L-Lisina — 4 (Biomeds)
-- L-Metionina — 2 (Biomeds)
+- L-Glutationa — 35 (Biomeds, Victa)
+- L-Lisina — 14 (Biomeds, Victa)
+- L-Metionina — 12 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
 - L-Prolina — 9 (Biomeds)
 - L-Taurina — 8 (Biomeds)
@@ -38,7 +39,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
 - Morusil Puro — 19 (Biomeds)
-- NAC — 1 (Biomeds)
+- NAC — 11 (Biomeds, Victa)
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
 - Pill Food — 19 (Biomeds)
@@ -63,15 +64,15 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina D — 31 (Biomeds)
 
 ## Itens Críticos (≤ 5)
-- NAC — 1 (Biomeds) → reposto pelo pedido Biomeds
-- L-Metionina — 2 (Biomeds) → reposto pelo pedido Biomeds
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - Complexo B s/B1 — 4 (Biomeds) → reposto pelo pedido Biomeds
-- L-Lisina — 4 (Biomeds) → reposto pelo pedido Biomeds
 - Vitamina C 444mg — 4 (Biomeds) → ⚠️ sem reposição prevista
-- D-Ribose — 5 (Biomeds) → reposto pelo pedido Biomeds
 - Resveratrol — 5 (Biomeds) → reposto pelo pedido Biomeds
-- L-Glutationa — 5 (Biomeds) → ⚠️ sem reposição prevista
+- Vitamina B6 — 4 (Biomeds)
+- Vitamina B12 — 5 (Biomeds)
+
+## Entradas Registradas
+- **Victa** — recebido em 09/04/2026 (Pedido 0549139): L-Metionina 100mg/2mL — 10 amp, L-Glutationa 100mg/2mL — 30 amp, NAC 300mg/2mL — 10 amp, L-Lisina 6% 2mL — 10 amp, Cafeína 100mg/2mL — 10 amp, D-Ribose 500mg/2mL — 10 amp
 
 ## Pedidos a Caminho
 - **Biomeds** — previsão 04/05/2026 (repõe NAC, Ácido Lipóico, Complexo B s/B1, D-Ribose, L-Lisina, L-Metionina, Lidocaína, Metilcobalamina, Resveratrol, SAME, Teanina, Vitamina B6, Vitamina C 1g)
