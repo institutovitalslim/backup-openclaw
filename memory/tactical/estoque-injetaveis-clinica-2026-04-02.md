@@ -181,6 +181,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Francisco de Assis de Lima → Soro Detox Hepático EV (Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Metionina 1 amp + L-Glicina 1 amp + Vitamina C 1G 1 amp) + Tirzepatida 30 UI (SC) — da ampola #5
 - ⚠️ Ampola #4 esgotada (25 UI restantes usadas pelo Diogo).
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
+- Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
 - ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
 
 ### 11/04/2026
