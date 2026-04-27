@@ -12,11 +12,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 28 (Biomeds)
-- Coenzima Q10 100mg/2mL — 13 (Stin)
+- Coenzima Q10 100mg/2mL — 12 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 22 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 25 (Victa)
+- Curcumina — 24 (Victa)
 - D-Ribose — 12 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 7 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 9 (Stin)
+- Lidocaína s/vaso 2% 2mL — 8 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
@@ -163,6 +163,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Tainá Japiassu Teles → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
 - Marize de Jesus Carvalho → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0; Tirzepatida 25 UI necessárias, disponível 0 UI
 - Daniele Alves Freitas → ALA 2 amp (EV, infusão em SF 0,9% 250mL)
+
+### 21/04/2026
+- Tainara Selene Japiassu de França → Tirzepatida 40 UI (SC em abdômen Q1E) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Curcumina 1 amp com Lidocaína 1 amp (IM profunda em ventroglúteo esquerdo) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 40 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
