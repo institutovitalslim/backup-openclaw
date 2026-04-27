@@ -38,12 +38,12 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Lidocaína s/vaso 2% 2mL — 9 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
-- Morusil Booster c/Cafeína — 7 (Victa)
+- Morusil Booster c/Cafeína — 6 (Victa)
 - Morusil Puro — 19 (Biomeds)
 - NAC — 9 (Biomeds, Victa)
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
-- Pill Food — 18 (Biomeds)
+- Pill Food — 17 (Biomeds)
 - Pool de Aminoácidos — 10 (Stin)
 - Pool de Minerais — 13 (Biomeds)
 - PQQ — 13 (Biomeds)
@@ -138,6 +138,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 17/04/2026
 - Tayala da Silva de Carvalho → Tirzepatida 5 UI (SC) + Vitamina C 1g/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em soro fisiológico 250mL) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 5 UI necessárias, disponível 0 UI
 - Larissa Correia de Souza → Vitaminas B6 1 amp + B9 (Metilfolato) 1 amp + B12 (Metilcobalamina) 1 amp (IM profundo)
+
+### 18/04/2026
+- Ligia Lima Fontanari Jacinto → Tirzepatida 15 UI (SC em abdômen Q1E) + Morusil Booster c/Cafeína 1 amp (IM profundo em ventroglúteo esquerdo) + Pill Food 1 amp (IM profundo em ventroglúteo direito) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 15 UI necessárias, disponível 0 UI
 
 ### 20/04/2026
 - Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
