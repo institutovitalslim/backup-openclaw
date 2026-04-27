@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "skills": {
+    "biz-hospitality": {
+      "version": "1.0.0",
+      "installedAt": 1777214341321
+    },
+    "marketing-analytics": {
+      "version": "1.0.0",
+      "installedAt": 1777214535442
+    },
+    "sales-mastery": {
+      "version": "1.0.0",
+      "installedAt": 1777214537413
+    },
+    "sales-pipeline-tracker": {
+      "version": "1.0.0",
+      "installedAt": 1777214553153
+    },
+    "check-analytics": {
+      "version": "0.1.0",
+      "installedAt": 1777214553451
+    },
+    "automation-workflows": {
+      "version": "0.1.0",
+      "installedAt": 1777214903068
+    },
+    "data-analyst-pro": {
+      "version": "0.1.0",
+      "installedAt": 1777214903135
+    },
+    "in-depth-research": {
+      "version": "1.0.0",
+      "installedAt": 1777214903227
+    },
+    "social-media-scheduler": {
+      "version": "1.0.0",
+      "installedAt": 1777214936799
+    },
+    "content-marketing": {
+      "version": "1.0.0",
+      "installedAt": 1777214936816
+    },
+    "copywriting-pro": {
+      "version": "1.0.0",
+      "installedAt": 1777214937051
+    },
+    "project-planner": {
+      "version": "1.0.2",
+      "installedAt": 1777214970909
+    },
+    "communication-skill": {
+      "version": "0.1.0",
+      "installedAt": 1777214970950
+    },
+    "ai-presentation-maker": {
+      "version": "1.0.0",
+      "installedAt": 1777214971156
+    },
+    "lead-scorer": {
+      "version": "1.0.0",
+      "installedAt": 1777222064336
+    },
+    "market-research-agent": {
+      "version": "1.0.0",
+      "installedAt": 1777222079322
+    },
+    "google-sheets": {
+      "version": "1.0.6",
+      "installedAt": 1777222081464
+    },
+    "n8n-workflow-automation": {
+      "version": "1.0.0",
+      "installedAt": 1777222107138
+    },
+    "web-scraping": {
+      "version": "1.0.0",
+      "installedAt": 1777222109107
+    },
+    "porteden-email": {
+      "version": "1.0.4",
+      "installedAt": 1777222129305
+    },
+    "mini-crm": {
+      "version": "1.1.0",
+      "installedAt": 1777222200494
+    },
+    "lead-extractor": {
+      "version": "1.0.6",
+      "installedAt": 1777222211606
+    },
+    "meta-ads-analytics": {
+      "version": "1.0.0",
+      "installedAt": 1777222226474
+    },
+    "notion-skill": {
+      "version": "1.0.0",
+      "installedAt": 1777222253269
+    },
+    "n8n-monitor": {
+      "version": "1.0.1",
+      "installedAt": 1777222255234
+    },
+    "n8n-api": {
+      "version": "1.0.1",
+      "installedAt": 1777222257154
+    },
+    "whatsapp-business-api": {
+      "version": "1.0.0",
+      "installedAt": 1777222259556
+    }
+  }
+}
