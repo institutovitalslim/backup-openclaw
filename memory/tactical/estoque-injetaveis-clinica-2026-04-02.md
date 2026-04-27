@@ -7,7 +7,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Estoque Atual
 
 - ADEK — 19 (Biomeds)
-- ALA / Ácido Lipóico — 35 (Biomeds, Health Tech)
+- ALA / Ácido Lipóico — 33 (Biomeds, Health Tech)
 - Beta Alanina — 10 (Biomeds)
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 155 UI
+- Tirzepatida — 125 UI
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -114,5 +114,6 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Darilene → Tirzepatida 5 UI + Vitamina C 5g/25mL 1 amp + Sulfato de Zinco 20mg/2mL 1 amp (EV)
 - Gleice → Tirzepatida 20 UI
 - Lorena → Tirzepatida 20 UI (SC) + Resveratrol 1 amp + Lidocaína 2% 2mL 1 amp (IM)
+- Tainara Selene Japiassu de França → ALA 2 amp (EV) + Tirzepatida 30 UI (SC)
 - Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC) — ⚠️ verificar se Taina (40 UI no mesmo dia) é a mesma paciente para evitar duplicar
 - Tiaro Fernandes Neves → Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Taurina 1 amp + L-Metionina 1 amp + NAC 1 amp + L-Glicina 1 amp + Vitamina C 1g/5mL 1 amp + Tirzepatida 20 UI (EV/SC)
