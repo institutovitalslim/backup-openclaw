@@ -47,7 +47,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 15 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 5 (Biomeds)
+- Resveratrol — 15 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 9 (Biomeds)
@@ -66,11 +66,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
-- Resveratrol — 5 (Biomeds) → reposto pelo pedido Biomeds
 - Vitamina B6 — 4 (Biomeds)
 - Vitamina B12 — 5 (Biomeds)
 
 ## Entradas Registradas
+- **Health Tech** — recebido em 27/04/2026 (Pedido 000062215): Resveratrol 100mg/2mL — 10 amp
 - **Pedido recebido em 27/04/2026** — Complexo B s/B1 (B2+B3+B5+B6) 2mL — 20 amp, Vitamina C (Ácido Ascórbico) 444mg/2mL — 30 amp, Lidocaína 20mg/2mL — 30 amp
 - **Victa** — recebido em 09/04/2026 (Pedido 0549139): L-Metionina 100mg/2mL — 10 amp, L-Glutationa 100mg/2mL — 30 amp, NAC 300mg/2mL — 10 amp, L-Lisina 6% 2mL — 10 amp, Cafeína 100mg/2mL — 10 amp, D-Ribose 500mg/2mL — 10 amp
 
