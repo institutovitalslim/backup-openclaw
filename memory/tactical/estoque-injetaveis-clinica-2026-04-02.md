@@ -17,12 +17,12 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Complexo B s/B1 — 22 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 25 (Victa)
-- D-Ribose — 14 (Biomeds, Victa)
+- D-Ribose — 13 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
 - Inositol + L-Taurina — 7 (Biomeds)
 - L-Arginina — 8 (Biomeds)
-- L-Carnitina — 6 (Biomeds)
+- L-Carnitina — 5 (Biomeds)
 - L-Fenilalanina — 21 (Biomeds)
 - L-Glicina — 29 (Biomeds, Stin)
 - L-Glutamina — 24 (Victa)
@@ -44,13 +44,13 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
 - Pill Food — 18 (Biomeds)
-- Pool de Aminoácidos — 11 (Stin)
+- Pool de Aminoácidos — 10 (Stin)
 - Pool de Minerais — 13 (Biomeds)
 - PQQ — 13 (Biomeds)
 - Resveratrol — 10 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
-- Sulfato de Magnésio — 6 (Biomeds)
-- Sulfato de Zinco — 8 (Biomeds)
+- Sulfato de Magnésio — 5 (Biomeds)
+- Sulfato de Zinco — 7 (Biomeds)
 - Tirzepatida — 0 UI ⚠️ INCONSISTÊNCIA: registro indica 60 UI usadas em 15/04 (Maria Cedraz), mas estoque mostrava apenas 40 UI. Verificar se houve reposição não registrada ou erro de contagem.
 - Vitamina B12 — 4 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 3 (Biomeds)
 - Vitamina B7 — 20 (Biomeds)
 - Vitamina B9 — 11 (Biomeds)
-- Vitamina C 20% 1g/5mL — 15 (Stin)
+- Vitamina C 20% 1g/5mL — 14 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -139,6 +139,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 20/04/2026
 - Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
 - Ana Clara Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM) + Tirzepatida 20 UI (SC) + 2 seringas de 20 UI entregues para aplicação em casa (23/04, 24/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 60 UI necessárias, disponível 0 UI
+- Maria Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos essenciais 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 30 UI (SC) + 2 seringas de 30 UI entregues para aplicação em casa (24/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 90 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
