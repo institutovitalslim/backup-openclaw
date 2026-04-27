@@ -26,7 +26,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 20 (Biomeds)
 - L-Glicina — 28 (Biomeds, Stin)
 - L-Glutamina — 23 (Victa)
-- L-Glutationa — 31 (Biomeds, Victa)
+- L-Glutationa — 30 (Biomeds, Victa)
 - L-Lisina — 12 (Biomeds, Victa)
 - L-Metionina — 10 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
 - Vitamina B9 — 10 (Biomeds)
-- Vitamina C 20% 1g/5mL — 10 (Stin)
+- Vitamina C 20% 1g/5mL — 9 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -189,6 +189,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito) + 1 seringa de 30 UI entregue para aplicação em casa (30/04)
 - Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Resveratrol 1 amp (IM profundo em ventroglúteo esquerdo)
 - Diogo de Jesus Melo → Tirzepatida 25 UI (SC em abdômen QIE) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito)
+- Tayala da Silva de Carvalho → Vitamina C 1G/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em SF 0,9% 250mL)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
