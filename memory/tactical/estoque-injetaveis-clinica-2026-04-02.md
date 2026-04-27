@@ -7,7 +7,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Estoque Atual
 
 - ADEK — 19 (Biomeds)
-- ALA / Ácido Lipóico — 31 (Biomeds, Health Tech)
+- ALA / Ácido Lipóico — 29 (Biomeds, Health Tech)
 - Beta Alanina — 9 (Biomeds)
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
@@ -142,6 +142,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Tatiane Anita Almeida de Souza Leão Cruz → Soro Nutricional EV (Pool de Aminoácidos + Pool de Minerais + Complexo B s/B1 + Vitamina C 1G + Metilcobalamina B12) + Tirzepatida 20 UI (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI
 - Ana Clara Cedraz de Alencar → Morusil Booster c/Teacrina 1 amp (IM) + Tirzepatida 20 UI (SC) + 2 seringas de 20 UI entregues para aplicação em casa (23/04, 24/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 60 UI necessárias, disponível 0 UI
 - Maria Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos essenciais 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 30 UI (SC) + 2 seringas de 30 UI entregues para aplicação em casa (24/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 90 UI necessárias, disponível 0 UI
+- Catarina Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC) + 2 seringas de 25 UI entregues para aplicação em casa (25/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 75 UI necessárias, disponível 0 UI
 - Daniele Alves Freitas → ALA 2 amp (EV, infusão em SF 0,9% 250mL)
 
 ### 11/04/2026
