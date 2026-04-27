@@ -12,11 +12,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
-- Coenzima Q10 100mg/2mL — 14 (Stin)
+- Coenzima Q10 100mg/2mL — 13 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 23 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 26 (Victa)
+- Curcumina — 25 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 10 (Stin)
+- Lidocaína s/vaso 2% 2mL — 9 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -127,6 +127,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 16/04/2026
 - Francisco de Assis de Lima → Tirzepatida 30 UI (SC) + Curcumina 1 amp + Lidocaína 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 30 UI necessárias, disponível 0 UI
+- Silvana Modesto Rodrigues → Tirzepatida 60 UI (SC) + Coenzima Q10 1 amp + Curcumina 1 amp + Lidocaína 1 amp (IM)
 - Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC) + NADH 50mg/FR liofilizado c/ 0.6mL lidocaína (SC) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 20 UI necessárias, disponível 0 UI. NADH liofilizado não deduzido do estoque (apresentação diferente dos ampoulas injetáveis)
 - Catarina Cedraz de Alencar → Tirzepatida 25 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 25 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 50 UI necessárias, disponível 0 UI
 
