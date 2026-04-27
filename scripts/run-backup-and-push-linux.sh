@@ -39,7 +39,7 @@ git_push_with_1password_token() {
 }
 
 ./scripts/backup-openclaw-linux.sh "${1:-/root/.openclaw}"
-git add README.md scripts snapshot
+git add README.md scripts
 if git diff --cached --quiet; then
   echo "Sem alteracoes para publicar."
   exit 0
