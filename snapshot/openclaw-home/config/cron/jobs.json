@@ -2,42 +2,12 @@
   "version": 1,
   "jobs": [
     {
-      "id": "08bc8c07-f295-463c-868d-7b6eb4c18fef",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:971050173",
-      "name": "daily-memory-compaction",
-      "enabled": true,
-      "createdAtMs": 1774294637762,
-      "updatedAtMs": 1775531038264,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 0 * * *",
-        "tz": "America/Sao_Paulo"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Lembrete diario: antes de qualquer compactacao, 1) gerar snapshot dos arquivos `memory/MEMORY.md`, `memory/context/lessons.md`, `memory/context/decisions.md` e `memory/context/pending.md` para `memory_backups/<timestamp>`. 2) Extrair e registrar novas licoes em `memory/context/lessons.md`. 3) Registrar decisoes permanentes em `memory/context/decisions.md`. 4) Atualizar pendencias em `memory/context/pending.md`. Regra inviolavel: nao compactar sem essas etapas. Depois rodar a rotina de compactacao conforme agents.defaults.compaction."
-      },
-      "state": {
-        "lastRunAtMs": 1775530800007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 238257,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1775617200000,
-        "runningAtMs": 1775617200002
-      }
-    },
-    {
       "id": "032fd036-6a69-4088-bae2-8db5a4a31f10",
       "agentId": "main",
       "name": "monthly-feedback-consolidation",
       "enabled": true,
       "createdAtMs": 1774297484506,
-      "updatedAtMs": 1775024107689,
+      "updatedAtMs": 1776169661815,
       "schedule": {
         "kind": "cron",
         "expr": "15 3 1 * *",
@@ -51,13 +21,12 @@
       },
       "state": {
         "nextRunAtMs": 1777616100000,
-        "lastRunAtMs": 1775024100004,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 7685,
-        "lastError": "Outbound not configured for channel: telegram",
+        "lastRunAtMs": 1776169630222,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 31593,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 0
       }
     },
     {
@@ -66,7 +35,7 @@
       "name": "biweekly-memory-review",
       "enabled": true,
       "createdAtMs": 1774297657925,
-      "updatedAtMs": 1775026805893,
+      "updatedAtMs": 1776322812335,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 1,16 * *",
@@ -79,14 +48,13 @@
         "text": "Revisao quinzenal de memoria: 1) primeiro gere um snapshot da memoria curada com `bash /root/.openclaw/workspace/scripts/snapshot_memory_state.sh /root/.openclaw/workspace` e registre o caminho gerado em `memory_backups/`. 2) Leia as notas diarias recentes em `memory/sessions/`. 3) Identifique licoes e decisoes que ainda nao foram consolidadas. 4) Atualize `memory/context/lessons.md`, `memory/context/decisions.md`, `memory/context/pending.md`, `memory/projects/*`, `memory/integrations/*` e `memory/MEMORY.md` com o que vale manter. 5) Revise `memory/feedback_loops/`. 6) Rode prune conservador em dry-run com `python3 /root/.openclaw/workspace/scripts/prune_memory_notes.py --memory-root /root/.openclaw/workspace/memory --days 30`; aplique apenas se houver candidatos explicitamente taticos. 7) Rode `openclaw memory index --force`. 8) Registre um resumo curto da revisao no arquivo diario correspondente em `memory/sessions/<data>.md`."
       },
       "state": {
-        "nextRunAtMs": 1776322800000,
-        "lastRunAtMs": 1775026800003,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 5890,
+        "nextRunAtMs": 1777618800000,
+        "lastRunAtMs": 1776322800009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 12326,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "Outbound not configured for channel: telegram"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -96,7 +64,7 @@
       "name": "oracoes-reels-silvio",
       "enabled": true,
       "createdAtMs": 1774730983678,
-      "updatedAtMs": 1775554320233,
+      "updatedAtMs": 1777195844658,
       "schedule": {
         "kind": "cron",
         "expr": "30 6 * * *",
@@ -109,11 +77,11 @@
         "text": "🔔 Lembrete diário (06h30): repetir as orações do Reels “Eterno Silvio!!” do Caito Maia:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775640600000,
-        "lastRunAtMs": 1775554200006,
+        "nextRunAtMs": 1777282200000,
+        "lastRunAtMs": 1777195800005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 120227,
+        "lastDurationMs": 44653,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -125,7 +93,7 @@
       "name": "Lembrete diário de oração financeira - 06:00",
       "enabled": true,
       "createdAtMs": 1775071009787,
-      "updatedAtMs": 1775552794335,
+      "updatedAtMs": 1777194028543,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -138,12 +106,128 @@
         "text": "Lembrete diário das 06:00: faça agora sua oração financeira:\n1. Senhor todo poderoso, tu és o dono do ouro e da prata.\n2. Eu peço a tua sabedoria para viver em paz nas finanças.\n3. Te agradeço, Deus, por prover as minhas necessidades e clamo para que haja multiplicação na minha vida a partir de hoje, porque confio na tua provisão.\n4. Pai, acredito na tua força de me fazer prosperar não só na terra como também no mundo espiritual.\n5. Está selado e confinado. Amém."
       },
       "state": {
-        "nextRunAtMs": 1775638800000,
-        "lastRunAtMs": 1775552400010,
+        "nextRunAtMs": 1777280400000,
+        "lastRunAtMs": 1777194000010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 394325,
+        "lastDurationMs": 28533,
         "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2ba465d4-3dd0-435b-bb12-1576ed6c0403",
+      "agentId": "main",
+      "name": "agenda-diaria-whatsapp",
+      "enabled": true,
+      "createdAtMs": 1775753319041,
+      "updatedAtMs": 1777194077962,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "America/Sao_Paulo",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Você é a Clara, assistente do Instituto Vital Slim. Responda em português brasileiro.\n\nTAREFA: Enviar a agenda diária de atendimentos por WhatsApp via Z-API.\n\nPASSO 1 - Consultar agenda do dia no QuarkClinic:\nExecute: python3 /root/.openclaw/workspace/skills/quarkclinic-api/scripts/quarkclinic_api.py GET /v1/agendamentos --query data_agendamento_inicio=DATA_HOJE --query data_agendamento_fim=DATA_HOJE\nSe o script não existir nesse caminho, tente: python3 /root/.openclaw/workspace/snapshot/openclaw-home/workspace/skills/quarkclinic-api/scripts/quarkclinic_api.py GET /v1/agendamentos --query data_agendamento_inicio=DATA_HOJE --query data_agendamento_fim=DATA_HOJE\n(substitua DATA_HOJE pela data de hoje no formato DD-MM-AAAA)\n\nPASSO 2 - Formatar a agenda separada por turno:\n- Manhã (antes das 12h)\n- Tarde (12h às 18h)\n- Noite (após 18h)\nCada linha: Horário - Nome do paciente - Procedimento - Convênio\nAo final: resumo com total por turno e total geral.\nComece a mensagem com \"Bom dia! Agenda de atendimentos de hoje:\"\nSe não houver atendimentos, envie \"Bom dia! Não há atendimentos agendados para hoje.\"\n\nPASSO 3 - Enviar para 3 números via Z-API usando exec com curl.\nPara CADA número, execute este comando via exec:\n\ncurl -s -X POST \"https://api.z-api.io/instances/3CF367BB00EB205F87468A74AFBCE7F1/token/C26CFC41175FD987513C3202/send-text\" -H \"Content-Type: application/json\" -H \"Client-Token: F277815dcf4e94be7bc2861e8ae9fc369S\" -d '{\"phone\": \"NUMERO\", \"message\": \"TEXTO_DA_AGENDA\"}'\n\nNúmeros corretos:\n1. 5571986968887 (Tiaro)\n2. 5571996962059 (Dra. Daniely)\n3. 5571991574827 (Liane)\n\nREGRAS:\n- Use SOMENTE curl via exec para enviar pelo Z-API. NAO use o canal whatsapp do OpenClaw.\n- Escape aspas e caracteres especiais no JSON do curl.\n- Confirme o envio verificando se o retorno do curl contém \"messageId\"."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1777280400000,
+        "lastRunAtMs": 1777194028543,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 49419,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "18833ac7-30c8-4d56-917a-be9665993b78",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003803476669:topic:271",
+      "name": "whatsapp-confirmacoes-manha-seguinte",
+      "description": "Todos os dias às 16:00 envia confirmações por WhatsApp para pacientes agendados na manhã seguinte e registra pendências para retorno automático no Quarkclinic.",
+      "enabled": true,
+      "createdAtMs": 1776031905466,
+      "updatedAtMs": 1777230020999,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * *",
+        "tz": "America/Bahia"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "No workspace /root/cerebro-vital-slim, execute o script `python3 ops/quarkclinic_confirmations/send_next_morning_confirmations.py` e reporte quantas confirmações foram enviadas. Se houver falha, explique objetivamente o erro. Não invente envio sem `messageId` real.",
+        "timeoutSeconds": 300,
+        "toolsAllow": [
+          "exec",
+          "read"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "-1003803476669:topic:271",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1777316400000,
+        "lastRunAtMs": 1777230000012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 20987,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "bf264980-0e69-48aa-8c47-46c0caa4f387",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003803476669:topic:271",
+      "name": "whatsapp-confirmacoes-tarde-mesmo-dia",
+      "description": "Todos os dias às 07:30 envia confirmações por WhatsApp para pacientes agendados na tarde do mesmo dia e registra pendências para retorno automático no Quarkclinic.",
+      "enabled": true,
+      "createdAtMs": 1776119322503,
+      "updatedAtMs": 1777199418300,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "America/Bahia"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "No workspace /root/cerebro-vital-slim, execute `python3 /root/cerebro-vital-slim/ops/quarkclinic_confirmations/send_next_morning_confirmations.py --mode same-day-afternoon` e reporte quantas confirmações da tarde do mesmo dia foram enviadas. Se houver falha, explique objetivamente o erro. Não invente envio sem `messageId` real.",
+        "timeoutSeconds": 300,
+        "toolsAllow": [
+          "exec",
+          "read"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "-1003803476669:topic:271",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1777285800000,
+        "lastRunAtMs": 1777199400005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 18295,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     }

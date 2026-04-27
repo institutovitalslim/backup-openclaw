@@ -35,10 +35,10 @@ GRAY         = (140, 150, 145)
 VERIFIED_BG  = (29, 155, 240)
 MARGIN_L     = 64
 MARGIN_R     = 64
-AVATAR_SIZE  = 56
-NAME_SIZE    = 30
-HANDLE_SIZE  = 26
-BODY_SIZE    = 34
+AVATAR_SIZE  = 72
+NAME_SIZE    = 36
+HANDLE_SIZE  = 30
+BODY_SIZE    = 40
 
 SKILL_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_BOLD    = os.path.join(SKILL_DIR, "assets", "DejaVuSans-Bold.ttf")
@@ -60,7 +60,14 @@ def get_font(size, bold=False):
 
 
 def make_circular_avatar(path, size):
-    av = Image.open(path).convert("RGBA").resize((size, size), Image.LANCZOS)
+    av = Image.open(path).convert("RGBA")
+    # Center-crop to square to avoid distortion
+    w, h = av.size
+    min_dim = min(w, h)
+    left = (w - min_dim) // 2
+    top = (h - min_dim) // 2
+    av = av.crop((left, top, left + min_dim, top + min_dim))
+    av = av.resize((size, size), Image.LANCZOS)
     mask = Image.new("L", (size, size), 0)
     ImageDraw.Draw(mask).ellipse((0, 0, size, size), fill=255)
     out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
@@ -75,8 +82,36 @@ def draw_verified(draw, x, y, size=18):
     draw.line([(cx-1, cy+3), (cx+4, cy-3)], fill=WHITE, width=2)
 
 
+def sanitize_text(text):
+    """Replace characters that common fonts can't render with safe alternatives."""
+    replacements = {
+        "\u2610": "•",   # ballot box -> bullet
+        "\u2611": "✓",   # ballot box with check
+        "\u2612": "✗",   # ballot box with x
+        "\u25a1": "•",   # white square -> bullet
+        "\u25a0": "•",   # black square -> bullet
+        "\u25aa": "•",   # small black square -> bullet
+        "\u25ab": "•",   # small white square -> bullet
+        "\u25cb": "•",   # white circle -> bullet
+        "\u25cf": "•",   # black circle -> bullet
+        "\u25b6": "→",   # black right-pointing triangle
+        "\u25b8": "→",   # small black right-pointing triangle
+        "\u27a4": "→",   # heavy black right-pointing arrowhead
+        "\u279c": "→",   # heavy round-tipped rightwards arrow
+        "\u2794": "→",   # heavy wide-headed rightwards arrow
+        "\u27f6": "→",   # long rightwards arrow
+        "\u2192": "→",   # rightwards arrow
+        "\u27f9": "→",   # long rightwards double arrow
+        "\u27a1": "→",   # black rightwards arrow
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    return text
+
+
 def wrap_text(text, font, max_width):
     d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    text = sanitize_text(text)
     words = text.split(" ")
     lines, current = [], ""
     for w in words:
@@ -97,17 +132,17 @@ def measure_block(paragraphs, font_body, font_name, font_handle, max_w):
     fh_body   = d.textbbox((0, 0), "A", font=font_body)[3]
     fh_name   = d.textbbox((0, 0), "A", font=font_name)[3]
     fh_handle = d.textbbox((0, 0), "A", font=font_handle)[3]
-    lh        = int(fh_body * 1.45)
-    header_h  = max(AVATAR_SIZE, fh_name + 8 + fh_handle)
+    lh        = int(fh_body * 1.55)
+    header_h  = max(AVATAR_SIZE, fh_name + 10 + fh_handle)
     body_h    = 0
     for i, para in enumerate(paragraphs):
         if i > 0:
-            body_h += int(fh_body * 0.5) if para == "" else int(fh_body * 0.8)
+            body_h += int(fh_body * 0.6) if para == "" else int(fh_body * 0.9)
         if para == "":
-            body_h += int(fh_body * 0.5)
+            body_h += int(fh_body * 0.6)
             continue
         body_h += len(wrap_text(para, font_body, max_w)) * lh
-    return header_h + 28 + body_h, lh, fh_body, fh_name, fh_handle
+    return header_h + 36 + body_h, lh, fh_body, fh_name, fh_handle
 
 
 # ── Render ────────────────────────────────────────────────────────────────
@@ -121,11 +156,19 @@ def make_slide(paragraphs, out_path, avatar_img,
     font_body   = get_font(BODY_SIZE)
     max_text_w  = W - MARGIN_L - MARGIN_R
 
+    # Sanitize paragraphs to avoid font rendering issues
+    paragraphs = [sanitize_text(p) for p in paragraphs]
+
     total_h, lh, fh_body, fh_name, fh_handle = measure_block(
         paragraphs, font_body, font_name, font_handle, max_text_w)
 
-    # Centralizar verticalmente sempre
-    y_start = max(40, (H - total_h) // 2)
+    # Centralizar verticalmente com offset para cima, evitando espaço em branco excessivo embaixo
+    y_start = max(60, (H - total_h) // 2 - 30)
+    # Se o conteúdo for curto, subir mais ainda
+    if total_h < H * 0.6:
+        y_start = max(80, (H - total_h) // 2 - 80)
+    # Garantir que não suba demais
+    y_start = max(60, min(y_start, 250))
 
     img = Image.new("RGB", (W, H), BG)
 
@@ -141,14 +184,14 @@ def make_slide(paragraphs, out_path, avatar_img,
     draw.text((name_x, name_y), name, font=font_name, fill=WHITE)
     if show_verified:
         nb = draw.textbbox((name_x, name_y), name, font=font_name)
-        draw_verified(draw, nb[2] + 6, name_y + 6, 18)
+        draw_verified(draw, nb[2] + 12, name_y + 6, 18)
 
     # Handle
     draw.text((name_x, name_y + fh_name + 6), handle, font=font_handle, fill=GRAY)
 
     # Corpo
-    header_h = max(AVATAR_SIZE, fh_name + 8 + fh_handle)
-    ty = y_start + header_h + 28
+    header_h = max(AVATAR_SIZE, fh_name + 10 + fh_handle)
+    ty = y_start + header_h + 36
     for i, para in enumerate(paragraphs):
         if i > 0:
             if para == "":

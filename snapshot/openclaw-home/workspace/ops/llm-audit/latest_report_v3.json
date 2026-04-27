@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "total": 3,
+    "forbidden": 0,
+    "review": 3,
+    "ok": 0
+  },
+  "preferred_models": [
+    "openai-codex/gpt-5.4",
+    "openai/gpt-5.4"
+  ],
+  "forbidden_models": [
+    "anthropic/claude-sonnet-4-6"
+  ],
+  "findings": [
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_bridge.env",
+      "line": 8,
+      "model": "openrouter/moonshotai/kimi-k2.6",
+      "severity": "review",
+      "text": "OPENCLAW_MODEL_OVERRIDE=openrouter/moonshotai/kimi-k2.6"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 26,
+      "model": "os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")",
+      "severity": "review",
+      "text": "OPENCLAW_MODEL_OVERRIDE = os.getenv(\"OPENCLAW_MODEL_OVERRIDE\", \"openai/gpt-5.4\")"
+    },
+    {
+      "path": "/root/.openclaw/workspace/ops/zapi_bridge/zapi_clara_bridge.py",
+      "line": 590,
+      "model": "OPENCLAW_MODEL_OVERRIDE,",
+      "severity": "review",
+      "text": "\"x-openclaw-model\": OPENCLAW_MODEL_OVERRIDE,"
+    }
+  ]
+}

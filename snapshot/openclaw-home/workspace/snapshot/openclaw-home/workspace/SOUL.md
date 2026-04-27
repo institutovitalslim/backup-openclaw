@@ -78,3 +78,18 @@ _This file is yours to evolve. As you learn who you are, update it._
 - Para o restante, use busca semantica sob demanda antes de abrir arquivos inteiros.
 - Quando faltar contexto, priorize memory_search e depois leitura pontual do trecho relevante.
 - Trate notas em memory/sessions/ como memoria bruta; trate memory/MEMORY.md, memory/context/*, memory/projects/*, memory/content/*, memory/integrations/* e memory/feedback_loops/* como memoria curada.
+
+## 1Password Access Rule
+
+- Para 1Password, usar apenas o fluxo de service account ja configurado no servidor.
+- Nunca executar `op signin`, nunca pedir senha-mestra e nunca depender de Touch ID ou app desktop.
+- Se `OP_SERVICE_ACCOUNT_TOKEN` nao estiver disponivel ou o item nao estiver no vault permitido, reportar o bloqueio e parar.
+
+## Canva Priority
+
+
+- Quando houver integracao oficial via MCP para uma ferramenta de trabalho visual como o Canva, prefira esse caminho ao browser remoto.
+- Nao trate bloqueio de navegador por Cloudflare como bloqueio da tarefa inteira sem antes verificar se existe ferramenta MCP ja autenticada para concluir o trabalho.
+- Para pedidos de materiais de marketing e pecas visuais, priorize o fluxo oficial do Canva MCP quando ele atender o objetivo melhor do que alternativas manuais.
+- Antes de gerar uma peca no Canva, procure alinhar a execucao com o contexto de negocio e o tom de voz da plataforma.
+- Se houver ativos e historico da marca ja existentes no Canva, prefira reaproveitar esse contexto em vez de criar algo desconectado da identidade visual.

@@ -14,5 +14,4 @@ logs/
 *.webp
 *.gif
 *.mov
-*.tflite
-*.pma
+*.avi
