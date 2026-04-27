@@ -14,10 +14,10 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cloreto de Cromo — 28 (Biomeds)
 - Coenzima Q10 100mg/2mL — 9 (Stin)
 - Complexo B c/B1 — 24 (Victa)
-- Complexo B s/B1 — 21 (Biomeds)
+- Complexo B s/B1 — 20 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 21 (Victa)
-- D-Ribose — 11 (Biomeds, Victa)
+- D-Ribose — 10 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 27 (Biomeds)
 - Inositol + L-Taurina — 6 (Biomeds)
@@ -44,8 +44,8 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
 - Pill Food — 17 (Biomeds)
-- Pool de Aminoácidos — 9 (Stin)
-- Pool de Minerais — 12 (Biomeds)
+- Pool de Aminoácidos — 8 (Stin)
+- Pool de Minerais — 11 (Biomeds)
 - PQQ — 13 (Biomeds)
 - Resveratrol — 9 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
 - Vitamina B9 — 10 (Biomeds)
-- Vitamina C 20% 1g/5mL — 8 (Stin)
+- Vitamina C 20% 1g/5mL — 7 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -182,6 +182,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 23/04/2026
 - Francisco de Assis de Lima → Soro Detox Hepático EV (Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Metionina 1 amp + L-Glicina 1 amp + Vitamina C 1G 1 amp) + Tirzepatida 30 UI (SC) — da ampola #5
+- Ligia Lima Fontanari Jacinto → Soro Nutricional EV (Pool de Aminoácidos 1 amp + Pool de Minerais 1 amp + Complexo B s/B1 1 amp + Vitamina C 1G 1 amp + D-Ribose 1 amp)
 - ⚠️ Ampola #4 esgotada (25 UI restantes usadas pelo Diogo).
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
 - Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
