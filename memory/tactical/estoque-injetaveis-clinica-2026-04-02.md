@@ -7,7 +7,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Estoque Atual
 
 - ADEK — 19 (Biomeds)
-- ALA / Ácido Lipóico — 37 (Biomeds, Health Tech)
+- ALA / Ácido Lipóico — 35 (Biomeds, Health Tech)
 - Beta Alanina — 10 (Biomeds)
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
@@ -114,3 +114,4 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Darilene → Tirzepatida 5 UI
 - Gleice → Tirzepatida 20 UI
 - Lorena → Tirzepatida 20 UI
+- Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC) — ⚠️ verificar se Taina (40 UI no mesmo dia) é a mesma paciente para evitar duplicar
