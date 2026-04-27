@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-27
+Última atualização: 2026-04-27 (atualizado com entrada de 27/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -14,7 +14,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cloreto de Cromo — 30 (Biomeds)
 - Coenzima Q10 100mg/2mL — 18 (Stin)
 - Complexo B c/B1 — 24 (Victa)
-- Complexo B s/B1 — 4 (Biomeds)
+- Complexo B s/B1 — 24 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 28 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
@@ -34,6 +34,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Taurina — 8 (Biomeds)
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
+- Lidocaína 1% 20mg/2mL — 30
 - Lidocaína s/vaso 2% 2mL — 17 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
@@ -60,18 +61,17 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B9 — 11 (Biomeds)
 - Vitamina C 20% 1g/5mL — 19 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 10 (Stin)
-- Vitamina C 444mg — 4 (Biomeds)
+- Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
 
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
-- Complexo B s/B1 — 4 (Biomeds) → reposto pelo pedido Biomeds
-- Vitamina C 444mg — 4 (Biomeds) → ⚠️ sem reposição prevista
 - Resveratrol — 5 (Biomeds) → reposto pelo pedido Biomeds
 - Vitamina B6 — 4 (Biomeds)
 - Vitamina B12 — 5 (Biomeds)
 
 ## Entradas Registradas
+- **Pedido recebido em 27/04/2026** — Complexo B s/B1 (B2+B3+B5+B6) 2mL — 20 amp, Vitamina C (Ácido Ascórbico) 444mg/2mL — 30 amp, Lidocaína 20mg/2mL — 30 amp
 - **Victa** — recebido em 09/04/2026 (Pedido 0549139): L-Metionina 100mg/2mL — 10 amp, L-Glutationa 100mg/2mL — 30 amp, NAC 300mg/2mL — 10 amp, L-Lisina 6% 2mL — 10 amp, Cafeína 100mg/2mL — 10 amp, D-Ribose 500mg/2mL — 10 amp
 
 ## Pedidos a Caminho
