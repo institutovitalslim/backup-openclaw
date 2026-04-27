@@ -1,1 +1,18 @@
 logs/
+
+# Binários e mídia
+*.mp4
+*.mp3
+*.m4a
+*.zip
+*.tar.gz
+*.tar
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mov
+*.tflite
+*.pma
