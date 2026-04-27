@@ -43,7 +43,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - NAC — 10 (Biomeds, Victa)
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
-- Pill Food — 19 (Biomeds)
+- Pill Food — 18 (Biomeds)
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 14 (Biomeds)
 - PQQ — 13 (Biomeds)
@@ -134,3 +134,4 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ⚠️ Ampola antiga esgotada (360 UI total utilizadas). Aberta nova ampola.
 - Silvana → Tirzepatida 10 UI (SC) — da nova ampola
 - Taina → Tirzepatida 40 UI (SC) — da nova ampola
+- Darilene → Pill Food 1 amp (IM)
