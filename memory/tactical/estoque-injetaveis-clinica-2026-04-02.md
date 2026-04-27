@@ -12,7 +12,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 28 (Biomeds)
-- Coenzima Q10 100mg/2mL — 11 (Stin)
+- Coenzima Q10 100mg/2mL — 10 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 21 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
@@ -47,11 +47,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 10 (Stin)
 - Pool de Minerais — 12 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 10 (Biomeds, Health Tech)
+- Resveratrol — 9 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 230 UI (ampola #5 aberta em 23/04/2026, 130 UI utilizadas) + ampolas em estoque físico a confirmar
+- Tirzepatida — 210 UI (ampola #5 aberta em 23/04/2026, 150 UI utilizadas) + ampolas em estoque físico a confirmar
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -187,6 +187,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 27/04/2026
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito) + 1 seringa de 30 UI entregue para aplicação em casa (30/04)
+- Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Resveratrol 1 amp (IM profundo em ventroglúteo esquerdo)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
