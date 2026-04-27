@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 85 UI (ampola aberta em 20/04/2026, 275 UI utilizadas, 85 UI restantes)
+- Tirzepatida — 0 UI ⚠️ Ampola #4 esgotada (360 UI total utilizadas). Necessário abrir ampola #5.
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -67,6 +67,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - ALA / Ácido Lipóico — 0 ⚠️ ESGOTADO
+- Tirzepatida — 0 UI ⚠️ ESGOTADO — ampola #4 esgotada 23/04, abrir ampola #5
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B12 — 3 (Biomeds)
 
@@ -171,7 +172,15 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Daniele Alves Freitas → ALA 2 amp (EV, infusão em SF 0,9% 250mL)
 
 ### 21/04/2026
-- Tainara Selene Japiassu de França → Tirzepatida 40 UI (SC em abdômen Q1E) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Curcumina 1 amp com Lidocaína 1 amp (IM profunda em ventroglúteo esquerdo) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 40 UI necessárias, disponível 0 UI
+- Tainara Selene Japiassu de França → Tirzepatida 40 UI (SC em abdômen Q1E) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Curcumina 1 amp com Lidocaína 1 amp (IM profunda em ventroglúteo esquerdo)
+
+### 22/04/2026
+- Lorena → Tirzepatida 30 UI (SC)
+- Larissa → Tirzepatida 30 UI (SC)
+
+### 23/04/2026
+- ⚠️ Ampola #4 esgotada (360 UI total utilizadas).
+- Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
