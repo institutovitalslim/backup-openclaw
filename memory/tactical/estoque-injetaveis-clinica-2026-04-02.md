@@ -16,7 +16,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 23 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 27 (Victa)
+- Curcumina — 26 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 12 (Stin)
+- Lidocaína s/vaso 2% 2mL — 11 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -124,6 +124,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Felipe Cedraz de Alencar → Tirzepatida 40 UI (SC) + Resveratrol 1 amp (IM) + 3 seringas de 40 UI entregues para aplicação em casa (17/04, 19/04, 22/04)
 - Ana Clara Cedraz de Alencar → Tirzepatida 20 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 20 UI entregue para aplicação em casa (18/04)
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC) + Coenzima Q10 1 amp + Resveratrol 1 amp + Lidocaína 1 amp (IM) + 1 seringa de 30 UI entregue para aplicação em casa (18/04) ⚠️ ESTOQUE INSUFICIENTE: necessário 60 UI, disponível 40 UI
+
+### 16/04/2026
+- Francisco de Assis de Lima → Tirzepatida 30 UI (SC) + Curcumina 1 amp + Lidocaína 1 amp (IM) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 30 UI necessárias, disponível 0 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
