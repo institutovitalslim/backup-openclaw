@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 20/04)
+Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 27/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -12,11 +12,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 28 (Biomeds)
-- Coenzima Q10 100mg/2mL — 12 (Stin)
+- Coenzima Q10 100mg/2mL — 11 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 21 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 23 (Victa)
+- Curcumina — 22 (Victa)
 - D-Ribose — 12 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -26,7 +26,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 20 (Biomeds)
 - L-Glicina — 28 (Biomeds, Stin)
 - L-Glutamina — 23 (Victa)
-- L-Glutationa — 33 (Biomeds, Victa)
+- L-Glutationa — 32 (Biomeds, Victa)
 - L-Lisina — 12 (Biomeds, Victa)
 - L-Metionina — 10 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 7 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 7 (Stin)
+- Lidocaína s/vaso 2% 2mL — 6 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 290 UI (ampola #5 aberta em 23/04/2026, 70 UI utilizadas) + ampolas em estoque físico a confirmar
+- Tirzepatida — 230 UI (ampola #5 aberta em 23/04/2026, 130 UI utilizadas) + ampolas em estoque físico a confirmar
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -184,6 +184,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
 - Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
 - ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
+
+### 27/04/2026
+- Maria Cedraz de Alencar → Tirzepatida 30 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito) + 1 seringa de 30 UI entregue para aplicação em casa (30/04)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
