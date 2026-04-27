@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-27 (atualizado com entrada de 27/04)
+Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 14/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 125 UI
+- Tirzepatida — 310 UI (nova ampola aberta em 14/04/2026)
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -104,16 +104,30 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 09/04/2026
 - Larissa Correia de Souza → Morusil Booster c/Cafeína 1 amp (IM)
-- Silvana → Tirzepatida 35 UI
-- Larissa → Tirzepatida 30 UI
+- Silvana → Tirzepatida 30 UI (SC)
+- Larissa → Tirzepatida 30 UI (SC)
 
 ### 10/04/2026
-- Cintia → Tirzepatida 5 UI
-- Tainara → Tirzepatida 30 UI
-- Taina → Tirzepatida 40 UI
-- Darilene → Tirzepatida 5 UI + Vitamina C 5g/25mL 1 amp + Sulfato de Zinco 20mg/2mL 1 amp (EV)
-- Gleice → Tirzepatida 20 UI
+- Cintia → Tirzepatida 5 UI (SC)
+- Tainara → Tirzepatida 30 UI (SC)
+- Taina → Tirzepatida 40 UI (SC)
+- Darilene → Tirzepatida 5 UI (SC) + Vitamina C 5g/25mL 1 amp + Sulfato de Zinco 20mg/2mL 1 amp (EV)
+- Gleice → Tirzepatida 20 UI (SC)
 - Lorena → Tirzepatida 20 UI (SC) + Resveratrol 1 amp + Lidocaína 2% 2mL 1 amp (IM)
 - Tainara Selene Japiassu de França → ALA 2 amp (EV) + Tirzepatida 30 UI (SC)
 - Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC)
 - Tiaro Fernandes Neves → Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Taurina 1 amp + L-Metionina 1 amp + NAC 1 amp + L-Glicina 1 amp + Vitamina C 1g/5mL 1 amp + Tirzepatida 20 UI (EV/SC)
+
+### 11/04/2026
+- Jose Ricardo → Tirzepatida 20 UI (SC)
+- Rejane → Tirzepatida 40 UI (SC)
+
+### 13/04/2026
+- Diogo → Tirzepatida 20 UI (SC)
+
+### 14/04/2026
+- Francisco → Tirzepatida 30 UI (SC)
+- Silvana → Tirzepatida 50 UI (SC)
+- ⚠️ Ampola antiga esgotada (360 UI total utilizadas). Aberta nova ampola.
+- Silvana → Tirzepatida 10 UI (SC) — da nova ampola
+- Taina → Tirzepatida 40 UI (SC) — da nova ampola
