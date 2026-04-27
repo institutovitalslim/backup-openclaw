@@ -12,11 +12,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
-- Coenzima Q10 100mg/2mL — 18 (Stin)
+- Coenzima Q10 100mg/2mL — 17 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 23 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 28 (Victa)
+- Curcumina — 27 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 15 (Stin)
+- Lidocaína s/vaso 2% 2mL — 14 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 260 UI (nova ampola aberta em 14/04/2026)
+- Tirzepatida — 240 UI (nova ampola aberta em 14/04/2026)
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -134,4 +134,5 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ⚠️ Ampola antiga esgotada (360 UI total utilizadas). Aberta nova ampola.
 - Silvana → Tirzepatida 10 UI (SC) — da nova ampola
 - Taina → Tirzepatida 40 UI (SC) — da nova ampola
+- Tainá Japiassu Teles → Tirzepatida 20 UI (SC) + Coenzima Q10 1 amp + Curcumina 1 amp + Lidocaína 1 amp (IM)
 - Darilene → Pill Food 1 amp (IM)
