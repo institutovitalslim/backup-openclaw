@@ -115,5 +115,5 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Gleice → Tirzepatida 20 UI
 - Lorena → Tirzepatida 20 UI (SC) + Resveratrol 1 amp + Lidocaína 2% 2mL 1 amp (IM)
 - Tainara Selene Japiassu de França → ALA 2 amp (EV) + Tirzepatida 30 UI (SC)
-- Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC) — ⚠️ verificar se Taina (40 UI no mesmo dia) é a mesma paciente para evitar duplicar
+- Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC)
 - Tiaro Fernandes Neves → Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Taurina 1 amp + L-Metionina 1 amp + NAC 1 amp + L-Glicina 1 amp + Vitamina C 1g/5mL 1 amp + Tirzepatida 20 UI (EV/SC)
