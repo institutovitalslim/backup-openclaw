@@ -14,7 +14,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cloreto de Cromo — 28 (Biomeds)
 - Coenzima Q10 100mg/2mL — 12 (Stin)
 - Complexo B c/B1 — 24 (Victa)
-- Complexo B s/B1 — 22 (Biomeds)
+- Complexo B s/B1 — 21 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 23 (Victa)
 - D-Ribose — 12 (Biomeds, Victa)
@@ -24,11 +24,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Arginina — 8 (Biomeds)
 - L-Carnitina — 4 (Biomeds)
 - L-Fenilalanina — 20 (Biomeds)
-- L-Glicina — 29 (Biomeds, Stin)
+- L-Glicina — 28 (Biomeds, Stin)
 - L-Glutamina — 23 (Victa)
 - L-Glutationa — 33 (Biomeds, Victa)
 - L-Lisina — 12 (Biomeds, Victa)
-- L-Metionina — 11 (Biomeds, Victa)
+- L-Metionina — 10 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
 - L-Prolina — 7 (Biomeds)
 - L-Taurina — 7 (Biomeds)
@@ -45,13 +45,13 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - NADH IM — 10 (Central)
 - Pill Food — 17 (Biomeds)
 - Pool de Aminoácidos — 10 (Stin)
-- Pool de Minerais — 13 (Biomeds)
+- Pool de Minerais — 12 (Biomeds)
 - PQQ — 13 (Biomeds)
 - Resveratrol — 10 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 0 UI ⚠️ Ampola #4 esgotada (360 UI total utilizadas). Necessário abrir ampola #5.
+- Tirzepatida — 330 UI (ampola #5 aberta em 23/04/2026, 30 UI utilizadas, 330 UI restantes)
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
 - Vitamina B9 — 10 (Biomeds)
-- Vitamina C 20% 1g/5mL — 13 (Stin)
+- Vitamina C 20% 1g/5mL — 12 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -67,7 +67,6 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ## Itens Críticos (≤ 5)
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - ALA / Ácido Lipóico — 0 ⚠️ ESGOTADO
-- Tirzepatida — 0 UI ⚠️ ESGOTADO — ampola #4 esgotada 23/04, abrir ampola #5
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B12 — 3 (Biomeds)
 
@@ -179,8 +178,10 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Larissa → Tirzepatida 30 UI (SC)
 
 ### 23/04/2026
-- ⚠️ Ampola #4 esgotada (360 UI total utilizadas).
+- Francisco de Assis de Lima → Soro Detox Hepático EV (Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Metionina 1 amp + L-Glicina 1 amp + Vitamina C 1G 1 amp) + Tirzepatida 30 UI (SC) — da ampola #5
+- ⚠️ Ampola #4 esgotada (25 UI restantes usadas pelo Diogo).
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
+- ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
