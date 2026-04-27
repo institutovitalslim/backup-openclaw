@@ -8,7 +8,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 - ADEK — 19 (Biomeds)
 - ALA / Ácido Lipóico — 33 (Biomeds, Health Tech)
-- Beta Alanina — 10 (Biomeds)
+- Beta Alanina — 9 (Biomeds)
 - Chronic — 23 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 30 (Biomeds)
@@ -19,10 +19,10 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Curcumina — 28 (Victa)
 - D-Ribose — 15 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
-- HMB — 29 (Biomeds)
-- Inositol + L-Taurina — 8 (Biomeds)
-- L-Arginina — 9 (Biomeds)
-- L-Carnitina — 8 (Biomeds)
+- HMB — 28 (Biomeds)
+- Inositol + L-Taurina — 7 (Biomeds)
+- L-Arginina — 8 (Biomeds)
+- L-Carnitina — 7 (Biomeds)
 - L-Fenilalanina — 22 (Biomeds)
 - L-Glicina — 29 (Biomeds, Stin)
 - L-Glutamina — 25 (Victa)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 9 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 16 (Stin)
+- Lidocaína s/vaso 2% 2mL — 15 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 21 (Biomeds)
 - Morusil Booster c/Cafeína — 7 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 310 UI (nova ampola aberta em 14/04/2026)
+- Tirzepatida — 260 UI (nova ampola aberta em 14/04/2026)
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -117,6 +117,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Tainara Selene Japiassu de França → ALA 2 amp (EV) + Tirzepatida 30 UI (SC)
 - Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC)
 - Tiaro Fernandes Neves → Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Taurina 1 amp + L-Metionina 1 amp + NAC 1 amp + L-Glicina 1 amp + Vitamina C 1g/5mL 1 amp + Tirzepatida 20 UI (EV/SC)
+
+### 15/04/2026
+- Ivana Souza Lopes → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM) + Tirzepatida 50 UI (SC)
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
