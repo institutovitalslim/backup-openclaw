@@ -50,7 +50,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Resveratrol — 15 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
-- Sulfato de Zinco — 9 (Biomeds)
+- Sulfato de Zinco — 8 (Biomeds)
 - Tirzepatida — 155 UI
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
@@ -60,7 +60,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B7 — 21 (Biomeds)
 - Vitamina B9 — 11 (Biomeds)
 - Vitamina C 20% 1g/5mL — 18 (Stin)
-- Vitamina C 20% 10g/50mL frasco — 10 (Stin)
+- Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
 
@@ -111,7 +111,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cintia → Tirzepatida 5 UI
 - Tainara → Tirzepatida 30 UI
 - Taina → Tirzepatida 40 UI
-- Darilene → Tirzepatida 5 UI
+- Darilene → Tirzepatida 5 UI + Vitamina C 5g/25mL 1 amp + Sulfato de Zinco 20mg/2mL 1 amp (EV)
 - Gleice → Tirzepatida 20 UI
 - Lorena → Tirzepatida 20 UI
 - Tainá Japiassu Teles → ALA 2 amp (EV) + Tirzepatida 20 UI (SC) — ⚠️ verificar se Taina (40 UI no mesmo dia) é a mesma paciente para evitar duplicar
