@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
 - Vitamina B9 — 10 (Biomeds)
-- Vitamina C 20% 1g/5mL — 12 (Stin)
+- Vitamina C 20% 1g/5mL — 10 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -176,6 +176,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 22/04/2026
 - Lorena Carvalho Ramos Melo → Tirzepatida 30 UI (SC em abdômen Q1D) + Curcumina 1 amp com Lidocaína 1 amp (IM profundo em ventroglúteo direito)
 - Larissa → Tirzepatida 30 UI (SC)
+- Davi Carvalho Ramos Melo → Vitamina C 1G/5mL 2 amp (EV, infusão em SF 0,9% 250mL)
 
 ### 23/04/2026
 - Francisco de Assis de Lima → Soro Detox Hepático EV (Complexo B s/B1 1 amp + Pool de Minerais 1 amp + L-Metionina 1 amp + L-Glicina 1 amp + Vitamina C 1G 1 amp) + Tirzepatida 30 UI (SC) — da ampola #5
