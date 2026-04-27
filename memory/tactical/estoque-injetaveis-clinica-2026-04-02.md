@@ -47,11 +47,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 12 (Stin)
 - Pool de Minerais — 14 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 14 (Biomeds, Health Tech)
+- Resveratrol — 13 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 7 (Biomeds)
 - Sulfato de Zinco — 8 (Biomeds)
-- Tirzepatida — 240 UI (nova ampola aberta em 14/04/2026)
+- Tirzepatida — 80 UI (nova ampola aberta em 14/04/2026)
 - Vitamina B12 — 5 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 18 (Biomeds)
@@ -120,6 +120,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ### 15/04/2026
 - Ivana Souza Lopes → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM) + Tirzepatida 50 UI (SC)
+- Felipe Cedraz de Alencar → Tirzepatida 40 UI (SC) + Resveratrol 1 amp (IM) + 3 seringas de 40 UI entregues para aplicação em casa (17/04, 19/04, 22/04)
 
 ### 11/04/2026
 - Jose Ricardo → Tirzepatida 20 UI (SC)
