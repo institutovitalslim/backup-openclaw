@@ -12,11 +12,11 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
 - Cloreto de Cromo — 28 (Biomeds)
-- Coenzima Q10 100mg/2mL — 10 (Stin)
+- Coenzima Q10 100mg/2mL — 9 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 21 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
-- Curcumina — 22 (Victa)
+- Curcumina — 21 (Victa)
 - D-Ribose — 12 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
 - HMB — 28 (Biomeds)
@@ -26,7 +26,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Fenilalanina — 20 (Biomeds)
 - L-Glicina — 28 (Biomeds, Stin)
 - L-Glutamina — 23 (Victa)
-- L-Glutationa — 32 (Biomeds, Victa)
+- L-Glutationa — 31 (Biomeds, Victa)
 - L-Lisina — 12 (Biomeds, Victa)
 - L-Metionina — 10 (Biomeds, Victa)
 - L-Ornitina — 10 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 7 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 6 (Stin)
+- Lidocaína s/vaso 2% 2mL — 5 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 4 (Biomeds)
 - Sulfato de Zinco — 7 (Biomeds)
-- Tirzepatida — 210 UI (ampola #5 aberta em 23/04/2026, 150 UI utilizadas) + ampolas em estoque físico a confirmar
+- Tirzepatida — 185 UI (ampola #5 aberta em 23/04/2026, 175 UI utilizadas) + ampolas em estoque físico a confirmar
 - Vitamina B12 — 3 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -188,6 +188,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 ### 27/04/2026
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito) + 1 seringa de 30 UI entregue para aplicação em casa (30/04)
 - Tatiane Anita Almeida de Souza Leão Cruz → Tirzepatida 20 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Resveratrol 1 amp (IM profundo em ventroglúteo esquerdo)
+- Diogo de Jesus Melo → Tirzepatida 25 UI (SC em abdômen QIE) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
