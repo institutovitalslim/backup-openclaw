@@ -8,18 +8,18 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 
 - ADEK — 18 (Biomeds)
 - ALA / Ácido Lipóico — 0 (Biomeds, Health Tech) ⚠️ ESTOQUE ESGOTADO — conciliação manual em andamento; saldo teórico apontado pela Liane: 19 amp antes de novas baixas formais no arquivo
-- Beta Alanina — 8 (Biomeds)
+- Beta Alanina — 7 (Biomeds)
 - Chronic — 22 (Central)
-- Cafeína 100mg/2mL — 10 (Victa)
+- Cafeína 100mg/2mL — 9 (Victa)
 - Cloreto de Cromo — 28 (Biomeds)
 - Coenzima Q10 100mg/2mL — 9 (Stin)
 - Complexo B c/B1 — 24 (Victa)
 - Complexo B s/B1 — 20 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 21 (Victa)
-- D-Ribose — 10 (Biomeds, Victa)
+- D-Ribose — 9 (Biomeds, Victa)
 - Dutasterida — 20 (Biomeds)
-- HMB — 27 (Biomeds)
+- HMB — 26 (Biomeds)
 - Inositol + L-Taurina — 6 (Biomeds)
 - L-Arginina — 7 (Biomeds)
 - L-Carnitina — 2 (Biomeds)
@@ -35,7 +35,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Teanina — 7 (Biomeds)
 - L-Triptofano — 10 (Biomeds)
 - Lidocaína 1% 20mg/2mL — 30
-- Lidocaína s/vaso 2% 2mL — 4 (Stin)
+- Lidocaína s/vaso 2% 2mL — 3 (Stin)
 - Minoxidil — 20 (Biomeds)
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
@@ -51,7 +51,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Sulfato de Zinco — 6 (Biomeds)
-- Tirzepatida — 135 UI (ampola #5 aberta em 23/04/2026, 225 UI utilizadas) + ampolas em estoque físico a confirmar
+- Tirzepatida — 130 UI (ampola #5 aberta em 23/04/2026, 230 UI utilizadas) + ampolas em estoque físico a confirmar
 - Vitamina B12 — 2 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
@@ -68,6 +68,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds) → reposto pelo pedido Biomeds
 - ALA / Ácido Lipóico — 0 ⚠️ ESGOTADO
 - L-Carnitina — 2 (Biomeds)
+- Lidocaína s/vaso 2% 2mL — 3 (Stin)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Vitamina B6 — 2 (Biomeds)
 - Vitamina B12 — 2 (Biomeds)
@@ -187,6 +188,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Tayala da Silva de Carvalho → Vitamina C 1G/5mL 1 amp + L-Glutationa 100mg/2mL 1 amp (EV, infusão em SF 0,9% 250mL)
 - Ana Clara Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 20 UI (SC) + 1 seringa de 20 UI entregue para aplicação em casa (30/04)
 - Silvana Modesto Rodrigues → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo)
+- Ivana Souza Lopes → Hipertrofia 2 (D-Ribose 1 amp + Cafeína 1 amp + HMB 1 amp + Beta Alanina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo) + Tirzepatida 5 UI (SC em abdômen QID)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
