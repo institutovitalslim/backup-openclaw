@@ -47,12 +47,12 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Pool de Aminoácidos — 8 (Stin)
 - Pool de Minerais — 11 (Biomeds)
 - PQQ — 13 (Biomeds)
-- Resveratrol — 9 (Biomeds, Health Tech)
+- Resveratrol — 8 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Sulfato de Zinco — 6 (Biomeds)
-- Tirzepatida — 130 UI (ampola #5 aberta em 23/04/2026, 230 UI utilizadas) + ampolas em estoque físico a confirmar
-- Vitamina B12 — 2 (Biomeds)
+- Tirzepatida — 90 UI (ampola #5 aberta em 23/04/2026, 270 UI utilizadas) + ampolas em estoque físico a confirmar
+- Vitamina B12 — 1 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
@@ -71,7 +71,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Lidocaína s/vaso 2% 2mL — 3 (Stin)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Vitamina B6 — 2 (Biomeds)
-- Vitamina B12 — 2 (Biomeds)
+- Vitamina B12 — 1 (Biomeds)
 
 ## Entradas Registradas
 - **Health Tech** — recebido em 02/04/2026: Ácido Lipóico 300mg — 40 amp
@@ -189,6 +189,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Ana Clara Cedraz de Alencar → Soro Emagrecimento EV (Pool de aminoácidos 1 amp + Vitamina C 1G 1 amp + Zinco 1 amp + Magnésio 1 amp + L-Carnitina 1 amp + D-Ribose 1 amp) + Tirzepatida 20 UI (SC) + 1 seringa de 20 UI entregue para aplicação em casa (30/04)
 - Silvana Modesto Rodrigues → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo)
 - Ivana Souza Lopes → Hipertrofia 2 (D-Ribose 1 amp + Cafeína 1 amp + HMB 1 amp + Beta Alanina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo) + Tirzepatida 5 UI (SC em abdômen QID)
+- Felipe Cedraz de Alencar → Tirzepatida 40 UI (SC em abdômen QID) + Metilcobalamina 1 amp (IM profundo em ventroglúteo direito) + Resveratrol 1 amp (IM profundo em ventroglúteo esquerdo)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
