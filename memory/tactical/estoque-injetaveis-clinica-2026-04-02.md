@@ -1,13 +1,13 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-27 (atualizado com entradas de 27/04 e uso de Tirzepatida até 27/04)
+Última atualização: 2026-04-28 (atualizado com conciliação de ALA e nova prescrição de 23/04 confirmada em 28/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
 ## Estoque Atual
 
-- ADEK — 19 (Biomeds)
-- ALA / Ácido Lipóico — 0 (Biomeds, Health Tech) ⚠️ ESTOQUE ESGOTADO — múltiplas saídas não descontadas anteriormente, última prescrição Marize 22/04 deixou saldo negativo
+- ADEK — 18 (Biomeds)
+- ALA / Ácido Lipóico — 0 (Biomeds, Health Tech) ⚠️ ESTOQUE ESGOTADO — conciliação manual em andamento; saldo teórico apontado pela Liane: 19 amp antes de novas baixas formais no arquivo
 - Beta Alanina — 8 (Biomeds)
 - Chronic — 22 (Central)
 - Cafeína 100mg/2mL — 10 (Victa)
@@ -51,8 +51,8 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - SAME — 4 (Biomeds)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Sulfato de Zinco — 6 (Biomeds)
-- Tirzepatida — 145 UI (ampola #5 aberta em 23/04/2026, 215 UI utilizadas) + ampolas em estoque físico a confirmar
-- Vitamina B12 — 3 (Biomeds)
+- Tirzepatida — 135 UI (ampola #5 aberta em 23/04/2026, 225 UI utilizadas) + ampolas em estoque físico a confirmar
+- Vitamina B12 — 2 (Biomeds)
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
@@ -70,7 +70,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - L-Carnitina — 2 (Biomeds)
 - Sulfato de Magnésio — 3 (Biomeds)
 - Vitamina B6 — 2 (Biomeds)
-- Vitamina B12 — 3 (Biomeds)
+- Vitamina B12 — 2 (Biomeds)
 
 ## Entradas Registradas
 - **Health Tech** — recebido em 02/04/2026: Ácido Lipóico 300mg — 40 amp
@@ -158,20 +158,10 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Catarina Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC) + 2 seringas de 25 UI entregues para aplicação em casa (25/04, 29/04) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 75 UI necessárias, disponível 0 UI
 - Diogo de Jesus Melo → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QI E) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
 - Ana Clara Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QD) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Marize de Jesus Carvalho → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QD) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Tainá Japiassu Teles → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Tainara Selene Japiassu de França → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Diogo de Jesus Melo → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QI E) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Francisco de Assis de Lima → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QD E) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Tatiane Anita Almeida de Souza Leão Cruz → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen QI E) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Catarina Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
 - Maria Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Ana Clara Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Tainara Selene Japiassu de França → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Tainá Japiassu Teles → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: Tirzepatida 25 UI necessárias, disponível 0 UI
-- Marize de Jesus Carvalho → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Tirzepatida 25 UI (SC em abdômen) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0; Tirzepatida 25 UI necessárias, disponível 0 UI
-- Daniele Alves Freitas → ALA 2 amp (EV, infusão em SF 0,9% 250mL)
+
+### 16/04/2026
+- Daniely Alves Freitas → ALA 2 amp (EV, infusão em SF 0,9% 250mL)
 
 ### 21/04/2026
 - Tainara Selene Japiassu de França → Tirzepatida 40 UI (SC em abdômen Q1E) + Coenzima Q10 1 amp (IM profundo em ventroglúteo direito) + Curcumina 1 amp com Lidocaína 1 amp (IM profunda em ventroglúteo esquerdo)
@@ -187,6 +177,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ⚠️ Ampola #4 esgotada (25 UI restantes usadas pelo Diogo).
 - Diogo → Tirzepatida 25 UI (SC) — última da ampola #4
 - Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
+- Mario Gomes de Abreu Filho → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Metilcobalamina 1 amp (IM profundo em ventroglúteo direito) + ADEK 1 amp (IM profundo em ventroglúteo esquerdo) + Tirzepatida 10 UI (SC em abdômen QID)
 - ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
 
 ### 27/04/2026
