@@ -14,7 +14,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Cloreto de Cromo — 28 (Biomeds)
 - Coenzima Q10 100mg/2mL — 9 (Stin)
 - Complexo B c/B1 — 24 (Victa)
-- Complexo B s/B1 — 20 (Biomeds)
+- Complexo B s/B1 — 19 (Biomeds)
 - Complexo B/B1 — 10 (Biomeds)
 - Curcumina — 21 (Victa)
 - D-Ribose — 9 (Biomeds, Victa)
@@ -40,12 +40,12 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Morusil Booster c/Teacrina — 20 (Biomeds)
 - Morusil Booster c/Cafeína — 6 (Victa)
 - Morusil Puro — 19 (Biomeds)
-- NAC — 9 (Biomeds, Victa)
+- NAC — 8 (Biomeds, Victa)
 - NADH — 29 (Victa)
 - NADH IM — 10 (Central)
 - Pill Food — 17 (Biomeds)
-- Pool de Aminoácidos — 8 (Stin)
-- Pool de Minerais — 11 (Biomeds)
+- Pool de Aminoácidos — 7 (Stin)
+- Pool de Minerais — 10 (Biomeds)
 - PQQ — 13 (Biomeds)
 - Resveratrol — 8 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
@@ -59,7 +59,7 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Vitamina B6 — 1 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
 - Vitamina B9 — 9 (Biomeds)
-- Vitamina C 20% 1g/5mL — 6 (Stin)
+- Vitamina C 20% 1g/5mL — 5 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -193,6 +193,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Silvana Modesto Rodrigues → Hipertrofia 1 (HMB 1 amp + Beta Alanina 1 amp + Inositol+L-Taurina 1 amp + L-Carnitina 1 amp + L-Arginina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo)
 - Ivana Souza Lopes → Hipertrofia 2 (D-Ribose 1 amp + Cafeína 1 amp + HMB 1 amp + Beta Alanina 1 amp + Lidocaína 1 amp) (IM profundo em ventroglúteo direito e esquerdo) + Tirzepatida 5 UI (SC em abdômen QID)
 - Felipe Cedraz de Alencar → Tirzepatida 40 UI (SC em abdômen QID) + Metilcobalamina 1 amp (IM profundo em ventroglúteo direito) + Resveratrol 1 amp (IM profundo em ventroglúteo esquerdo)
+
+### 25/04/2026
+- Rozenilda Teixeira Alves Freitas → Soro Nutricional EV (Pool de Aminoácidos 1 amp + Pool de Minerais 1 amp + Complexo B s/B1 1 amp + Vitamina C 1G 1 amp + NAC 1 amp)
 
 ### 24/04/2026
 - Felipe Cedraz de Alencar → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0 + Tirzepatida 40 UI (SC em abdômen Q1D)
