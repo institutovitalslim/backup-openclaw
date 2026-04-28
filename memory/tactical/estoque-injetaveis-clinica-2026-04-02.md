@@ -1,6 +1,6 @@
 # Estoque de Injetáveis da Clínica
 
-Última atualização: 2026-04-28 (atualizado com conciliação de ALA e nova prescrição de 23/04 confirmada em 28/04)
+Última atualização: 2026-04-28 (atualizado com conciliação de ALA e prescrições até 28/04)
 Formato: ordem alfabética, fornecedor(es) entre parênteses.
 Pedido Biomeds a caminho: previsão 04/05/2026.
 
@@ -49,17 +49,17 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - PQQ — 13 (Biomeds)
 - Resveratrol — 8 (Biomeds, Health Tech)
 - SAME — 4 (Biomeds)
-- Sulfato de Magnésio — 3 (Biomeds)
+- Sulfato de Magnésio — 2 (Biomeds)
 - Sulfato de Zinco — 6 (Biomeds)
-- Tirzepatida — 90 UI (ampola #5 aberta em 23/04/2026, 270 UI utilizadas) + ampolas em estoque físico a confirmar
-- Vitamina B12 — 1 (Biomeds)
+- Tirzepatida — 60 UI (ampola #5 aberta em 23/04/2026, 300 UI utilizadas) + ampolas em estoque físico a confirmar
+- Vitamina B12 — 0 (Biomeds) ⚠️ ESTOQUE ESGOTADO
 - Vitamina B2 — 29 (Biomeds)
 - Vitamina B3 — 16 (Biomeds)
 - Vitamina B5 — 19 (Biomeds)
-- Vitamina B6 — 2 (Biomeds)
+- Vitamina B6 — 1 (Biomeds)
 - Vitamina B7 — 19 (Biomeds)
-- Vitamina B9 — 10 (Biomeds)
-- Vitamina C 20% 1g/5mL — 7 (Stin)
+- Vitamina B9 — 9 (Biomeds)
+- Vitamina C 20% 1g/5mL — 6 (Stin)
 - Vitamina C 20% 10g/50mL frasco — 9 (Stin)
 - Vitamina C 444mg — 34 (Biomeds)
 - Vitamina D — 31 (Biomeds)
@@ -69,9 +69,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - ALA / Ácido Lipóico — 0 ⚠️ ESGOTADO
 - L-Carnitina — 2 (Biomeds)
 - Lidocaína s/vaso 2% 2mL — 3 (Stin)
-- Sulfato de Magnésio — 3 (Biomeds)
-- Vitamina B6 — 2 (Biomeds)
-- Vitamina B12 — 1 (Biomeds)
+- Sulfato de Magnésio — 2 (Biomeds)
+- Vitamina B6 — 1 (Biomeds)
+- Vitamina B12 — 0 ⚠️ ESGOTADO
 
 ## Entradas Registradas
 - **Health Tech** — recebido em 02/04/2026: Ácido Lipóico 300mg — 40 amp
@@ -180,6 +180,9 @@ Pedido Biomeds a caminho: previsão 04/05/2026.
 - Silvana Modesto Rodrigues → ALA 2 amp (EV, infusão em SF 0,9% 250mL) ⚠️ ESTOQUE INSUFICIENTE: ALA 2 amp necessárias, disponível 0
 - Mario Gomes de Abreu Filho → ALA 2 amp (EV, infusão em SF 0,9% 250mL) + Metilcobalamina 1 amp (IM profundo em ventroglúteo direito) + ADEK 1 amp (IM profundo em ventroglúteo esquerdo) + Tirzepatida 10 UI (SC em abdômen QID)
 - ⚠️ Ampola #5 aberta (360 UI). Francisco usou 30 UI. Restante: 330 UI
+
+### 28/04/2026
+- Francisco de Assis de Lima → Aplicação EV (Vitamina C 1G/5mL 1 amp + Sulfato de Magnésio 1 amp + Vitamina B6 1 amp + Vitamina B9 1 amp + Vitamina B12/Metilcobalamina 1 amp) em SF 0,9% 250mL + Tirzepatida 30 UI (SC em abdômen QID)
 
 ### 27/04/2026
 - Maria Cedraz de Alencar → Tirzepatida 30 UI (SC em abdômen Q1D) + Coenzima Q10 1 amp (IM profundo em ventroglúteo esquerdo) + Curcumina 1 amp + L-Glutationa 1 amp + Lidocaína 1mL (IM profundo em ventroglúteo direito) + 1 seringa de 30 UI entregue para aplicação em casa (30/04)
