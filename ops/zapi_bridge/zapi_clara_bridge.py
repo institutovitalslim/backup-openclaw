@@ -30,7 +30,7 @@ QUARKCLINIC_API_CLIENT = os.getenv(
 OPENCLAW_GATEWAY_TOKEN = os.getenv("OPENCLAW_GATEWAY_TOKEN", "")
 OPENCLAW_AGENT_REF = os.getenv("OPENCLAW_AGENT_REF", "openclaw/main")
 OPENCLAW_MODEL_OVERRIDE = os.getenv("OPENCLAW_MODEL_OVERRIDE", "openai/gpt-5.4")
-OPENCLAW_MODEL_FALLBACKS = [m.strip() for m in os.getenv("OPENCLAW_MODEL_FALLBACKS", "openai-codex/gpt-5.5,openai-codex/gpt-5.4").split(",") if m.strip()]
+OPENCLAW_MODEL_FALLBACKS = [m.strip() for m in os.getenv("OPENCLAW_MODEL_FALLBACKS", "openai-codex/gpt-5.5,openai-codex/gpt-5.4,openrouter/moonshotai/kimi-k2.6").split(",") if m.strip()]
 OPENCLAW_SESSION_PREFIX = os.getenv("OPENCLAW_SESSION_PREFIX", "bridge:zapi")
 APPS_SCRIPT_FANOUT_URL = os.getenv("APPS_SCRIPT_FANOUT_URL", "")
 ZAPI_INSTANCE_ID = os.getenv("ZAPI_INSTANCE_ID", "")
@@ -1987,18 +1987,58 @@ def build_contextual_weight_belly_reply(inbound_text: str) -> str:
     )
 
 
-def build_text_runtime_failsafe_reply(inbound_text: str) -> str:
-    """Fail-safe textual: lead elegível nunca deve ficar sem continuidade.
+def contains_dra_daniely_specialty_question(text: str) -> bool:
+    lower = compact_text_key(text)
+    mentions_doctor = any(marker in lower for marker in ("dra daniely", "doutora daniely", "daniely", "medica"))
+    asks_specialty = any(marker in lower for marker in ("especialidade", "especialista", "endocrino", "ginecologista", "qual area"))
+    return mentions_doctor and asks_specialty
 
-    Usado apenas após exceção técnica depois de todos os gates de escopo.
-    """
+
+def build_dra_daniely_specialty_reply() -> str:
+    return (
+        "A Dra. Daniely é médica endocrinologista, com atuação em emagrecimento, "
+        "saúde metabólica e hormonal."
+    )
+
+
+def contains_general_health_category(text: str) -> bool:
+    compact = compact_text_key(text)
+    return compact in {
+        "tudo", "tudo de forma geral", "td de uma forma geral", "td de forma geral",
+        "saude", "saúde", "saude geral", "saúde geral",
+        "saude de forma geral", "saúde de forma geral",
+    }
+
+
+def build_general_health_failsafe_reply() -> str:
+    return (
+        "Entendi. Como você busca cuidar da saúde de forma geral, a avaliação com a "
+        "Dra. Daniely é o ponto de partida para analisar seu histórico, sintomas, "
+        "exames e metabolismo de maneira integrada.\n\n"
+        "Esse formato de avaliação faz sentido para o que você está buscando agora?"
+    )
+
+
+def build_text_runtime_failsafe_reply(inbound_text: str, phone: str = "") -> str:
+    """Fail-safe textual contextual e anti-loop após indisponibilidade do gateway."""
+    if contains_dra_daniely_specialty_question(inbound_text):
+        return build_dra_daniely_specialty_reply()
     if contains_evaluation_explanation_request(inbound_text):
         return build_evaluation_explanation_reply()
     if contains_menopause_weight_context(inbound_text):
         return build_contextual_menopause_weight_reply()
     if contains_weight_belly_metabolism_context(inbound_text) or contains_inbound_scheduling_intent(inbound_text):
         return build_contextual_weight_belly_reply(inbound_text)
-    return build_spin_continuation_reply()
+    if contains_general_health_category(inbound_text):
+        return build_general_health_failsafe_reply()
+    candidate = build_spin_continuation_reply()
+    if phone:
+        entry = get_lead_entry(phone) or {}
+        recent = build_recent_conversation_context(phone, limit=16)
+        previous = str(entry.get("last_reply_preview") or "")
+        if is_context_blind_generic_discovery(recent) or is_context_blind_generic_discovery(previous):
+            return build_general_health_failsafe_reply()
+    return candidate
 
 
 def enforce_no_reopening_after_context(phone: str, inbound_text: str, reply: str) -> str:
@@ -4819,7 +4859,7 @@ class Handler(BaseHTTPRequestHandler):
                         log(f"audio_failsafe_failed phone={phone}: {failsafe_err}")
                 if not is_audio:
                     try:
-                        fallback_reply = build_text_runtime_failsafe_reply(processed_text or event_text)
+                        fallback_reply = build_text_runtime_failsafe_reply(processed_text or event_text, phone=phone)
                         status, body = send_zapi_text_human_sequence(reply_target, fallback_reply, source="clara_text_failsafe")
                         log(f"text_failsafe_sent phone={phone} status={status} replyPreview={fallback_reply[:120]!r} body={body[:200]}")
                         if 200 <= int(status) < 300:
