@@ -29,7 +29,12 @@ def test_runtime_failsafe_answers_dra_daniely_specialty_directly():
         phone="5571000000000",
     )
     lower = reply.lower()
-    assert "endocrinologista" in lower, reply
+    assert "médica clínica" in lower, reply
+    assert "farmacêutica" in lower, reply
+    assert "ginecologia e obstetrícia" in lower, reply
+    assert "saúde da família" in lower, reply
+    assert "medicina preventiva" in lower, reply
+    assert "endocrinologista" not in lower, reply
     assert "o que mais está te incomodando" not in lower, reply
     assert "para eu continuar do ponto certo" not in lower, reply
 

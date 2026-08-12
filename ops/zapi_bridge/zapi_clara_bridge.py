@@ -1996,8 +1996,10 @@ def contains_dra_daniely_specialty_question(text: str) -> bool:
 
 def build_dra_daniely_specialty_reply() -> str:
     return (
-        "A Dra. Daniely é médica endocrinologista, com atuação em emagrecimento, "
-        "saúde metabólica e hormonal."
+        "A Dra. Daniely Freitas é médica clínica, farmacêutica e professora Mestre de Medicina. "
+        "Tem especialização em Ginecologia e Obstetrícia e em Saúde da Família, com atendimento "
+        "especializado em Emagrecimento Avançado, Reposição Hormonal, Longevidade e Saúde, "
+        "baseado em Medicina Preventiva."
     )
 
 
