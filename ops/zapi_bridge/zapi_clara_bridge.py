@@ -5,15 +5,20 @@ import sys
 import time
 import hashlib
 import re
+import shutil
 import subprocess
+import tempfile
 import threading
+import queue
+import unicodedata
 from collections import OrderedDict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Optional, Tuple
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, quote
 from urllib.request import Request, urlopen
+import clara_audio_learning
 
 
 BRIDGE_HOST = os.getenv("BRIDGE_HOST", "127.0.0.1")
@@ -33,6 +38,9 @@ OPENCLAW_MODEL_OVERRIDE = os.getenv("OPENCLAW_MODEL_OVERRIDE", "openai/gpt-5.4")
 OPENCLAW_MODEL_FALLBACKS = [m.strip() for m in os.getenv("OPENCLAW_MODEL_FALLBACKS", "openai-codex/gpt-5.5,openai-codex/gpt-5.4,openrouter/moonshotai/kimi-k2.6").split(",") if m.strip()]
 OPENCLAW_SESSION_PREFIX = os.getenv("OPENCLAW_SESSION_PREFIX", "bridge:zapi")
 APPS_SCRIPT_FANOUT_URL = os.getenv("APPS_SCRIPT_FANOUT_URL", "")
+APPS_SCRIPT_FANOUT_TIMEOUT_SECONDS = int(os.getenv("APPS_SCRIPT_FANOUT_TIMEOUT_SECONDS", "20"))
+APPS_SCRIPT_FANOUT_WORKERS = max(1, min(4, int(os.getenv("APPS_SCRIPT_FANOUT_WORKERS", "2"))))
+APPS_SCRIPT_FANOUT_QUEUE_SIZE = max(100, int(os.getenv("APPS_SCRIPT_FANOUT_QUEUE_SIZE", "5000")))
 ZAPI_INSTANCE_ID = os.getenv("ZAPI_INSTANCE_ID", "")
 ZAPI_TOKEN = os.getenv("ZAPI_TOKEN", "")
 ZAPI_CLIENT_TOKEN = os.getenv("ZAPI_CLIENT_TOKEN", "")
@@ -54,16 +62,36 @@ CLARA_HUMAN_CHUNK_INTER_SEND_SECONDS = float(os.getenv("CLARA_HUMAN_CHUNK_INTER_
 # Sem as chaves, o bridge mantém fallback seguro para texto.
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 WHISPER_MODEL = os.getenv("WHISPER_MODEL", "whisper-1")
+# Transcricao de audio: Whisper LOCAL e o caminho PRIMARIO (politica OAuth / zerar API key OpenAI).
+# A OpenAI fica apenas como fallback opcional, usado somente se OPENAI_API_KEY existir.
+WHISPER_LOCAL_ENABLED = os.getenv("WHISPER_LOCAL_ENABLED", "1").strip().lower() not in ("0", "false", "no", "off")
+WHISPER_LOCAL_BIN = os.getenv("WHISPER_LOCAL_BIN", "/usr/local/bin/whisper")
+WHISPER_LOCAL_MODEL = os.getenv("WHISPER_LOCAL_MODEL", "small")
+WHISPER_LOCAL_LANGUAGE = os.getenv("WHISPER_LOCAL_LANGUAGE", "pt")
+WHISPER_LOCAL_THREADS = os.getenv("WHISPER_LOCAL_THREADS", "4")
+WHISPER_LOCAL_TIMEOUT_SECONDS = int(os.getenv("WHISPER_LOCAL_TIMEOUT_SECONDS", "180"))
+FFMPEG_BIN = os.getenv("FFMPEG_BIN", "/usr/bin/ffmpeg")
+# faster-whisper: mesmo modelo, ~4x mais rapido, carregado UMA vez por processo.
+WHISPER_FAST_ENABLED = os.getenv("WHISPER_FAST_ENABLED", "1").strip().lower() not in ("0", "false", "no", "off")
+WHISPER_FAST_COMPUTE = os.getenv("WHISPER_FAST_COMPUTE", "int8")
+WHISPER_FAST_THREADS = int(os.getenv("WHISPER_FAST_THREADS", "6"))
+WHISPER_FAST_BEAM = int(os.getenv("WHISPER_FAST_BEAM", "5"))
+_FW_MODEL = None
+_FW_LOCK = threading.Lock()
 OPENAI_TTS_MODEL = os.getenv("OPENAI_TTS_MODEL", "gpt-4o-mini-tts")
 OPENAI_TTS_VOICE = os.getenv("OPENAI_TTS_VOICE", "nova")
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "")
 ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "EXAVITQu4vr4xnSDxMaL")
 ELEVENLABS_MODEL = os.getenv("ELEVENLABS_MODEL", "eleven_multilingual_v2")
 ELEVENLABS_URL = "https://api.elevenlabs.io/v1/text-to-speech"
-# Saída de áudio da Clara: ElevenLabs é a rota principal. O TTS genérico/OpenAI fica apenas como fallback
-# operacional e nunca deve passar pelo OpenRouter.
-CLARA_TTS_PRIMARY = os.getenv("CLARA_TTS_PRIMARY", "elevenlabs").strip().lower()
-CLARA_TTS_FALLBACK = os.getenv("CLARA_TTS_FALLBACK", "openai").strip().lower()
+# Saída de áudio da Clara: provedor primário configurável em português brasileiro.
+# A rota local IVS/VoxCPM pode operar sem chaves remotas; se falhar e fallback=off,
+# o atendimento cai para texto, nunca para uma voz robótica não aprovada.
+CLARA_TTS_PRIMARY = os.getenv("CLARA_TTS_PRIMARY", "supertonic").strip().lower()
+CLARA_TTS_FALLBACK = os.getenv("CLARA_TTS_FALLBACK", "off").strip().lower()
+CLARA_LOCAL_TTS_CMD = os.getenv("CLARA_LOCAL_TTS_CMD", "ivs-tts-clara-dra").strip()
+CLARA_LOCAL_TTS_VOICE = os.getenv("CLARA_LOCAL_TTS_VOICE", "dra-daniely").strip()
+CLARA_LOCAL_TTS_TIMEOUT_SECONDS = int(os.getenv("CLARA_LOCAL_TTS_TIMEOUT_SECONDS", "900"))
 CLARA_AUDIO_MIRRORING = os.getenv("CLARA_AUDIO_MIRRORING", "1").strip().lower() not in ("0", "false", "no", "off")
 CLARA_NOTIFY_PHONE = os.getenv("CLARA_NOTIFY_PHONE", "5571986968887")  # Tiaro
 CLARA_NOTIFY_PHONES = [p.strip() for p in os.getenv("CLARA_NOTIFY_PHONES", "5571986968887,5571991574827").split(",") if p.strip()]
@@ -88,21 +116,48 @@ ACTIVATION_PHRASE = os.getenv("CLARA_ACTIVATION_PHRASE", "Gostaria de saber mais
 PHONE_COOLDOWN_SECONDS = int(os.getenv("PHONE_COOLDOWN_SECONDS", "45"))
 REPEAT_TEXT_WINDOW_SECONDS = int(os.getenv("REPEAT_TEXT_WINDOW_SECONDS", "180"))
 REPEAT_REPLY_WINDOW_SECONDS = int(os.getenv("REPEAT_REPLY_WINDOW_SECONDS", "300"))
-MANUAL_TAKEOVER_WINDOW_SECONDS = int(os.getenv("MANUAL_TAKEOVER_WINDOW_SECONDS", str(6 * 60 * 60)))
-# Tiaro 2026-06-01: qualquer mensagem enviada manualmente pela equipe no WhatsApp
-# assume a conversa e pausa a Clara imediatamente. Por padrão fica indefinido
-# até liberação manual; CLARA_HUMAN_TAKEOVER_INDEFINITE=0 volta para TTL.
-CLARA_HUMAN_TAKEOVER_INDEFINITE = os.getenv("CLARA_HUMAN_TAKEOVER_INDEFINITE", "1").strip().lower() in ("1", "true", "yes", "on")
+MANUAL_TAKEOVER_WINDOW_SECONDS = int(os.getenv("MANUAL_TAKEOVER_WINDOW_SECONDS", "1800"))
+# Mensagem manual assume a conversa imediatamente, mas não pode silenciar a
+# Clara para sempre. O TTL padrão acompanha a janela de atividade humana (30 min).
+# Operação indefinida continua disponível apenas por configuração explícita.
+CLARA_HUMAN_TAKEOVER_INDEFINITE = os.getenv("CLARA_HUMAN_TAKEOVER_INDEFINITE", "0").strip().lower() in ("1", "true", "yes", "on")
 HUMAN_RECENT_MESSAGE_WINDOW_SECONDS = int(os.getenv("HUMAN_RECENT_MESSAGE_WINDOW_SECONDS", "1800"))
 CLARA_ACTIVE_LEAD_WINDOW_SECONDS = int(os.getenv("CLARA_ACTIVE_LEAD_WINDOW_SECONDS", str(14 * 24 * 60 * 60)))
 QUARK_CONFIRMATION_REPLY_SCRIPT = os.getenv(
     "QUARK_CONFIRMATION_REPLY_SCRIPT",
     "/root/cerebro-vital-slim/ops/quarkclinic_confirmations/process_reply.py",
 )
+QUARK_CONFIRMATION_STATE_FILE = os.getenv(
+    "QUARK_CONFIRMATION_STATE_FILE",
+    "/root/cerebro-vital-slim/ops/quarkclinic_confirmations/state/pending_confirmations.json",
+)
 
 SEEN: "OrderedDict[str, float]" = OrderedDict()
 PROCESSING_PHONES_LOCK = threading.Lock()
 PROCESSING_PHONES = set()
+EVENT_STATE_LOCK = threading.RLock()
+CONTROL_STATE_LOCK = threading.RLock()
+APPS_SCRIPT_QUEUE: "queue.Queue[Dict[str, Any]]" = queue.Queue(maxsize=APPS_SCRIPT_FANOUT_QUEUE_SIZE)
+APPS_SCRIPT_WORKERS_LOCK = threading.Lock()
+APPS_SCRIPT_WORKERS_STARTED = False
+
+
+def atomic_write_json(path: Path, state: Dict[str, Any]) -> None:
+    """Grava JSON no mesmo filesystem e publica com rename atômico."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(prefix=f".{path.name}.tmp-", dir=str(path.parent))
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump(state, fh, ensure_ascii=False, indent=2)
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp_name, path)
+    except Exception:
+        try:
+            os.unlink(tmp_name)
+        except FileNotFoundError:
+            pass
+        raise
 
 
 def log(msg: str) -> None:
@@ -180,6 +235,55 @@ def remember_message(message_id: str) -> bool:
     SEEN[message_id] = time.time()
     return True
 
+
+# ---- RC-83: esperar a pessoa terminar de escrever ---------------------------
+# Cada bolha do WhatsApp chega como um webhook. Responder bolha a bolha produz
+# respostas cegas entre si — foi o que fez a Clara perguntar sobre risco e, 24s
+# depois, emendar no pitch como se a pergunta tivesse sido respondida.
+CLARA_DEBOUNCE_SECONDS = float(os.getenv("CLARA_DEBOUNCE_SECONDS", "7"))
+CLARA_DEBOUNCE_MAX_SECONDS = float(os.getenv("CLARA_DEBOUNCE_MAX_SECONDS", "25"))
+PENDING_INBOUND: Dict[str, list] = {}
+PENDING_INBOUND_LOCK = threading.Lock()
+
+
+def queue_inbound_text(phone: str, texto: str) -> None:
+    """Guarda a bolha que chegou enquanto a Clara pensava, em vez de descartar."""
+    if not (texto or "").strip():
+        return
+    chave = normalize_phone(phone) or str(phone or "")
+    with PENDING_INBOUND_LOCK:
+        PENDING_INBOUND.setdefault(chave, []).append(texto.strip())
+
+
+def drain_inbound_text(phone: str) -> str:
+    chave = normalize_phone(phone) or str(phone or "")
+    with PENDING_INBOUND_LOCK:
+        partes = PENDING_INBOUND.pop(chave, [])
+    return " ".join(p for p in partes if p)
+
+
+def wait_for_message_burst(phone: str, texto: str) -> str:
+    """Espera alguns segundos e devolve tudo o que a pessoa escreveu no intervalo.
+
+    Se ela continuar escrevendo, a janela se estende — até um teto, para nunca
+    deixar alguém esperando indefinidamente.
+    """
+    if CLARA_DEBOUNCE_SECONDS <= 0:
+        return texto
+    inicio = time.time()
+    juntado = (texto or "").strip()
+    while True:
+        time.sleep(CLARA_DEBOUNCE_SECONDS)
+        novo = drain_inbound_text(phone)
+        if not novo:
+            break
+        juntado = (juntado + " " + novo).strip()
+        log(f"rc83_burst_merged phone={phone} extra={novo[:80]!r}")
+        if time.time() - inicio >= CLARA_DEBOUNCE_MAX_SECONDS:
+            break
+    return juntado
+
+
 def acquire_phone_processing(phone: str) -> bool:
     """Evita respostas concorrentes para mensagens enviadas em rajada pelo mesmo lead.
 
@@ -208,27 +312,27 @@ def sha1_text(value: str) -> str:
 
 
 def load_event_state() -> Dict[str, Any]:
-    path = Path(CLARA_EVENT_STATE_FILE)
-    if not path.exists():
-        return {"events": {}, "updated_at": None}
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        if not isinstance(data, dict):
+    with EVENT_STATE_LOCK:
+        path = Path(CLARA_EVENT_STATE_FILE)
+        if not path.exists():
             return {"events": {}, "updated_at": None}
-        events = data.get("events")
-        if not isinstance(events, dict):
-            events = {}
-        return {"events": events, "updated_at": data.get("updated_at")}
-    except Exception as err:
-        log(f"event state read failed: {err}")
-        return {"events": {}, "updated_at": None}
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict):
+                return {"events": {}, "updated_at": None}
+            events = data.get("events")
+            if not isinstance(events, dict):
+                events = {}
+            return {"events": events, "updated_at": data.get("updated_at")}
+        except Exception as err:
+            log(f"event state read failed: {err}")
+            return {"events": {}, "updated_at": None}
 
 
 def save_event_state(state: Dict[str, Any]) -> None:
-    state["updated_at"] = int(time.time())
-    path = Path(CLARA_EVENT_STATE_FILE)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+    with EVENT_STATE_LOCK:
+        state["updated_at"] = int(time.time())
+        atomic_write_json(Path(CLARA_EVENT_STATE_FILE), state)
 
 
 def get_phone_event_entry(phone: str) -> Dict[str, Any]:
@@ -241,15 +345,16 @@ def get_phone_event_entry(phone: str) -> Dict[str, Any]:
 
 
 def update_phone_event_entry(phone: str, patch: Dict[str, Any]) -> None:
-    state = load_event_state()
-    events = state.setdefault("events", {})
-    entry = events.get(phone)
-    if not isinstance(entry, dict):
-        entry = {}
-    entry.update(patch)
-    entry["updated_at"] = int(time.time())
-    events[phone] = entry
-    save_event_state(state)
+    with EVENT_STATE_LOCK:
+        state = load_event_state()
+        events = state.setdefault("events", {})
+        entry = events.get(phone)
+        if not isinstance(entry, dict):
+            entry = {}
+        entry.update(patch)
+        entry["updated_at"] = int(time.time())
+        events[phone] = entry
+        save_event_state(state)
 
 
 def get_variant_event_entry(phone: str) -> Dict[str, Any]:
@@ -274,20 +379,21 @@ def get_variant_event_entry(phone: str) -> Dict[str, Any]:
 
 def mirror_phone_event_entry(phone: str, patch: Dict[str, Any]) -> None:
     """Espelha um patch operacional em variantes BR com/sem nono dígito."""
-    state = load_event_state()
-    events = state.setdefault("events", {})
-    now = int(time.time())
-    for candidate in phone_lookup_variants(phone):
-        entry = events.get(candidate)
-        if not isinstance(entry, dict):
-            entry = {}
-        entry.update(patch)
-        entry["updated_at"] = now
-        events[candidate] = entry
-    save_event_state(state)
+    with EVENT_STATE_LOCK:
+        state = load_event_state()
+        events = state.setdefault("events", {})
+        now = int(time.time())
+        for candidate in phone_lookup_variants(phone):
+            entry = events.get(candidate)
+            if not isinstance(entry, dict):
+                entry = {}
+            entry.update(patch)
+            entry["updated_at"] = now
+            events[candidate] = entry
+        save_event_state(state)
 
 
-def should_skip_event(phone: str, message_id: str, text: str) -> Tuple[bool, str]:
+def should_skip_event(phone: str, message_id: str, text: str, *, is_audio: bool = False) -> Tuple[bool, str]:
     now = time.time()
     entry = get_phone_event_entry(phone)
     text_hash = sha1_text(text)
@@ -299,7 +405,10 @@ def should_skip_event(phone: str, message_id: str, text: str) -> Tuple[bool, str
         return True, "duplicate_message_id_persistent"
 
     try:
-        if last_text_hash == text_hash and last_inbound_at and (now - float(last_inbound_at) <= REPEAT_TEXT_WINDOW_SECONDS):
+        # RC-55: dois áudios consecutivos chegam sem texto e antes da transcrição
+        # usam o mesmo placeholder operacional ("[audio recebido]"). Não deduplicar
+        # áudio por hash de texto; áudio só deve ser deduplicado por message_id.
+        if (not is_audio) and last_text_hash == text_hash and last_inbound_at and (now - float(last_inbound_at) <= REPEAT_TEXT_WINDOW_SECONDS):
             return True, "duplicate_text_window"
     except Exception:
         pass
@@ -789,13 +898,13 @@ def default_control_state() -> Dict[str, Any]:
 
 def save_control_state(state: Dict[str, Any]) -> None:
     """Persist control state to disk. Always updates 'updated_at'."""
-    path = Path(CLARA_CONTROL_FILE)
-    state["updated_at"] = int(time.time())
-    try:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
-    except Exception as err:
-        log(f"control state write failed: {err}")
+    with CONTROL_STATE_LOCK:
+        path = Path(CLARA_CONTROL_FILE)
+        state["updated_at"] = int(time.time())
+        try:
+            atomic_write_json(path, state)
+        except Exception as err:
+            log(f"control state write failed: {err}")
 
 
 def load_exclusions_state() -> Dict[str, Any]:
@@ -812,6 +921,55 @@ def load_exclusions_state() -> Dict[str, Any]:
     except Exception as err:
         log(f"exclusions state read failed: {err}")
         return {"phones": {}, "updated_at": None}
+
+
+
+# ---- RC-81: telefone e LID são a mesma pessoa -------------------------------
+# O WhatsApp entrega mensagem ora pelo número, ora por um LID de privacidade.
+# Sem juntar os dois, a Clara guarda meia memória em cada chave e conclui que
+# nunca falou com quem está falando há vinte mensagens.
+LID_MAP_FILE = os.getenv("CLARA_LID_MAP_FILE",
+                         "/root/.openclaw/workspace/ops/zapi_bridge/lid_map.json")
+_LID_MAP_CACHE: Dict[str, Any] = {"carregado_em": 0.0, "por_lid": {}, "por_telefone": {}}
+LID_MAP_TTL_SECONDS = int(os.getenv("CLARA_LID_MAP_TTL", "900"))
+
+
+def load_lid_map() -> Dict[str, Any]:
+    """Mapa LID <-> telefone, recarregado a cada 15 min. Falha em silêncio:
+    sem o mapa a Clara volta ao comportamento antigo, nunca quebra."""
+    agora = time.time()
+    if agora - float(_LID_MAP_CACHE.get("carregado_em") or 0) < LID_MAP_TTL_SECONDS:
+        return _LID_MAP_CACHE
+    try:
+        with open(LID_MAP_FILE, encoding="utf-8") as fh:
+            dados = json.load(fh)
+        _LID_MAP_CACHE["por_lid"] = dados.get("por_lid") or {}
+        _LID_MAP_CACHE["por_telefone"] = dados.get("por_telefone") or {}
+    except Exception as err:
+        log(f"rc81_lid_map_indisponivel err={str(err)[:120]}")
+    _LID_MAP_CACHE["carregado_em"] = agora
+    return _LID_MAP_CACHE
+
+
+def lid_aliases(phone: str) -> list[str]:
+    """Todos os identificadores que apontam para a mesma pessoa."""
+    mapa = load_lid_map()
+    bruto = str(phone or "").replace("@lid", "").strip()
+    digits = "".join(ch for ch in bruto if ch.isdigit())
+    saida: list[str] = []
+
+    # veio um LID: devolve o telefone dele
+    tel = (mapa.get("por_lid") or {}).get(digits)
+    if tel:
+        saida.append(tel)
+
+    # veio um telefone: devolve os LIDs dele
+    normalized = normalize_phone(phone) or digits
+    for chave in {normalized, digits, "55" + digits if not digits.startswith("55") else digits}:
+        for lid in (mapa.get("por_telefone") or {}).get(chave, []):
+            if lid not in saida:
+                saida.append(lid)
+    return saida
 
 
 def phone_lookup_variants(phone: str) -> list[str]:
@@ -839,6 +997,14 @@ def phone_lookup_variants(phone: str) -> list[str]:
             with_ninth = digits[:4] + "9" + subscriber
             if with_ninth not in variants:
                 variants.append(with_ninth)
+    # RC-81: os LIDs da mesma pessoa entram DEPOIS das variantes de telefone,
+    # para o registro canônico continuar vencendo quando existir.
+    try:
+        for alias in lid_aliases(phone):
+            if alias and alias not in variants:
+                variants.append(alias)
+    except Exception:
+        pass
     return variants
 
 
@@ -874,21 +1040,22 @@ def get_exclusion_reason(phone: str) -> Optional[str]:
 
 
 def load_control_state() -> Dict[str, Any]:
-    path = Path(CLARA_CONTROL_FILE)
-    if not path.exists():
-        return default_control_state()
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        if not isinstance(data, dict):
+    with CONTROL_STATE_LOCK:
+        path = Path(CLARA_CONTROL_FILE)
+        if not path.exists():
             return default_control_state()
-        state = default_control_state()
-        state.update(data)
-        if not isinstance(state.get("manual_overrides"), dict):
-            state["manual_overrides"] = {}
-        return state
-    except Exception as err:
-        log(f"control state read failed: {err}")
-        return default_control_state()
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict):
+                return default_control_state()
+            state = default_control_state()
+            state.update(data)
+            if not isinstance(state.get("manual_overrides"), dict):
+                state["manual_overrides"] = {}
+            return state
+        except Exception as err:
+            log(f"control state read failed: {err}")
+            return default_control_state()
 
 
 def is_manual_override_active(phone: str) -> Tuple[bool, Optional[str]]:
@@ -1103,6 +1270,13 @@ def should_bypass_exclusion_for_lead_intent(phone: str, text: str) -> Tuple[bool
     if reason == "patient_do_not_reply" or source == "manual":
         return False, reason
 
+    # RC-12 hard gate: paciente confirmado pelo QuarkClinic nunca pode ser
+    # liberado por janela ativa de lead, frase comercial ou estado legado.
+    # A regressão diária usa este helper diretamente para garantir que a
+    # precedência clínica não dependa apenas do fluxo principal do webhook.
+    if reason == "quarkclinic_patient_rc12" or str(reason or "").startswith("quarkclinic_patient_rc12"):
+        return False, reason
+
     # Correção operacional Tiaro/Maria 2026-05-25: `patient_bridge_known` /
     # `bridge_contexto_paciente` é base auxiliar, não fonte final de paciente.
     # Ela estava derrubando leads com mensagem comercial curta (ex.: "reposição hormonal")
@@ -1182,9 +1356,27 @@ def get_lead_entry(phone: str) -> Dict[str, Any]:
     return entry
 
 
+
+def canonical_lead_key(phone: str) -> str:
+    """A chave sob a qual o lead já vive, ou a normalizada se ele é novo.
+
+    Sem isso a escrita cria um registro paralelo toda vez que o telefone chega
+    numa variante diferente da que criou o original — e o contador que o
+    `active_context` consulta nunca sai do zero.
+    """
+    try:
+        matched, _ = get_lead_lookup_entry(phone)
+        if matched:
+            return matched
+    except Exception:
+        pass
+    return normalize_phone(phone) or str(phone or "")
+
+
 def mark_lead_active(phone: str, source: str) -> None:
     state = load_leads_state()
     leads = state.setdefault("leads", {})
+    phone = canonical_lead_key(phone)
     entry = leads.get(phone) if isinstance(leads.get(phone), dict) else {}
     now = int(time.time())
     if not entry.get("first_seen_at"):
@@ -1220,6 +1412,7 @@ def mark_followup_outbound(phone: str, source: str) -> None:
 def mark_lead_replied(phone: str, reply: str) -> None:
     state = load_leads_state()
     leads = state.setdefault("leads", {})
+    phone = canonical_lead_key(phone)
     entry = leads.get(phone) if isinstance(leads.get(phone), dict) else {}
     now = int(time.time())
     entry.update({
@@ -1242,7 +1435,7 @@ def update_lead_entry(phone: str, patch: Dict[str, Any]) -> None:
     key, entry = get_lead_lookup_entry(phone)
     if not key:
         key = phone
-        entry = leads.get(phone) if isinstance(leads.get(phone), dict) else {}
+        entry = leads.get(canonical_lead_key(phone)) if isinstance(leads.get(phone), dict) else {}
     entry.update(patch or {})
     entry["updated_at"] = int(time.time())
     leads[key] = entry
@@ -1359,19 +1552,51 @@ def should_respond_to_lead(phone: str, text: str) -> Tuple[bool, str]:
     return True, "new_contact"
 
 
+def _apps_script_fanout_worker() -> None:
+    while True:
+        payload = APPS_SCRIPT_QUEUE.get()
+        try:
+            status, body = post_json(
+                APPS_SCRIPT_FANOUT_URL,
+                payload,
+                timeout=APPS_SCRIPT_FANOUT_TIMEOUT_SECONDS,
+            )
+            log(f"apps-script fanout status={status} body={redact_operational_text(body)[:300]}")
+        except Exception as err:
+            # O audit JSONL local já foi persistido antes do fanout e continua sendo
+            # a fonte de recuperação. Não há retry automático: timeout após POST é
+            # ambíguo e repetir poderia duplicar o lead no Apps Script.
+            log(f"apps-script fanout failed queue={APPS_SCRIPT_QUEUE.qsize()} error={type(err).__name__}: {err}")
+        finally:
+            APPS_SCRIPT_QUEUE.task_done()
+
+
+def _ensure_apps_script_workers() -> None:
+    global APPS_SCRIPT_WORKERS_STARTED
+    if APPS_SCRIPT_WORKERS_STARTED:
+        return
+    with APPS_SCRIPT_WORKERS_LOCK:
+        if APPS_SCRIPT_WORKERS_STARTED:
+            return
+        for idx in range(APPS_SCRIPT_FANOUT_WORKERS):
+            threading.Thread(
+                target=_apps_script_fanout_worker,
+                name=f"apps-script-fanout-{idx + 1}",
+                daemon=True,
+            ).start()
+        APPS_SCRIPT_WORKERS_STARTED = True
+        log(f"apps-script fanout workers_started={APPS_SCRIPT_FANOUT_WORKERS} queue_size={APPS_SCRIPT_FANOUT_QUEUE_SIZE}")
+
+
 def fanout_to_apps_script(payload: Dict[str, Any]) -> None:
     if not APPS_SCRIPT_FANOUT_URL:
         return
-
-    def _send() -> None:
-        try:
-            status, body = post_json(APPS_SCRIPT_FANOUT_URL, payload, timeout=8)
-            log(f"apps-script fanout status={status} body={body[:300]}")
-        except Exception as err:
-            log(f"apps-script fanout failed: {err}")
-
-    import threading
-    threading.Thread(target=_send, daemon=True).start()
+    _ensure_apps_script_workers()
+    try:
+        APPS_SCRIPT_QUEUE.put_nowait(payload)
+    except queue.Full:
+        # Não bloqueia webhook. O evento já está salvo no audit append-only local.
+        log("apps-script fanout queue_full local_audit_preserved=true")
 
 
 def build_session_key(phone: str) -> str:
@@ -1408,6 +1633,20 @@ def get_recent_lead_texts(phone: str, limit: int = 8) -> list[str]:
         return []
 
 
+def build_declared_lead_context(phone: str, inbound_text: str = "", limit: int = 16) -> str:
+    """Contexto semântico composto exclusivamente por falas do lead.
+
+    O histórico formatado contém também falas da clínica e serve para o modelo,
+    mas detectores determinísticos de dor/jornada jamais podem inferir sintomas
+    a partir do que a própria Clara escreveu.
+    """
+    texts = get_recent_lead_texts(phone, limit=limit)
+    current = (inbound_text or "").strip()
+    if current and (not texts or texts[-1].strip() != current):
+        texts.append(current)
+    return "\n".join(texts[-limit:])
+
+
 def enforce_outbound_price_safety(phone: str, message: str, inbound_text: str = "") -> str:
     """Trava final para qualquer saída, inclusive /admin/send.
 
@@ -1425,6 +1664,28 @@ def enforce_outbound_price_safety(phone: str, message: str, inbound_text: str = 
     if bool(entry.get("price_context_ready")) and (has_real_recent_context or rc68_context_ready):
         return text
     candidate = (inbound_text or "").strip() or (lead_texts[-1] if lead_texts else "")
+    # RC-68/71 + correção Tiaro 2026-07-10: quando o lead pergunta diretamente
+    # “quanto custa a consulta?”, ele já disse o que quer. Não repetir SPIN
+    # genérico. Permitir preço somente se a mensagem trouxer jornada/contexto
+    # antes do valor (não preço seco).
+    if contains_price_question(candidate) and contains_patient_journey_explanation(text):
+        return text
+    # RC-85: quando a Clara perguntou autorização para enviar a explicação
+    # ("Posso te enviar agora?") e o lead respondeu afirmativamente ("Pode sim"),
+    # o próximo bloco com jornada + valor NÃO pode ser reescrito para nova pergunta
+    # genérica de descoberta. Esse era o bug do print 2026-07-25: a Clara prometeu
+    # explicar, recebeu autorização e o transporte RC-51 trocou a explicação por
+    # "o que mais está te incomodando", repetindo SPIN e encerrando mal a conversa.
+    if contains_patient_journey_explanation(text) and recent_lead_confirmed_send_permission(phone, inbound_text):
+        update_phone_event_entry(phone, {
+            "price_context_ready": True,
+            "price_context_ready_at": time.time(),
+            "price_context_source": "rc85_yes_after_send_permission",
+            "journey_explained_before_price": True,
+            "journey_explained_at": time.time(),
+        })
+        log(f"rc85_yes_after_send_permission_price_allowed phone={phone} candidate={candidate[:80]!r}")
+        return text
     if is_bare_objective_category(candidate):
         log(f"rc51_outbound_price_safety_rewrite_category phone={phone} inbound={candidate[:80]!r} messagePreview={text[:120]!r}")
         return build_price_category_deepening_reply(candidate)
@@ -1595,9 +1856,12 @@ def call_clara_thinking_gate(phone: str, text: str, base_instructions: str, rece
 MODO INTERNO OBRIGATÓRIO — NÃO É MENSAGEM PARA O LEAD.
 Antes de qualquer resposta da Clara, gere somente um JSON compacto com:
 - intent: intenção provável do lead
+- conversation_stage: abertura, descoberta, contexto_maduro, objeção, agenda ou encerramento
+- known_context: fatos que o lead já informou e não podem ser perguntados de novo
 - risk_checks: lista curta com riscos de erro que devem ser evitados
 - must_answer: o que precisa ser respondido objetivamente
-- must_ask: uma única pergunta útil, se fizer sentido
+- must_ask: vazio ou uma única pergunta útil; nunca inventar pergunta por obrigação
+- next_microstep: menor avanço natural possível sem pular etapa
 - forbidden: frases/atalhos que não podem aparecer
 Não escreva a resposta final. Não use markdown.
 """
@@ -1609,9 +1873,35 @@ Não escreva a resposta final. Não use markdown.
         session_key=build_session_key(phone) + ":thinking",
         timeout=CLARA_THINKING_TIMEOUT_SECONDS,
     ).strip()
-    if not plan or plan == "NO_REPLY":
-        raise RuntimeError("clara_thinking_gate_empty")
-    return plan[:1800]
+    required = (
+        "intent", "conversation_stage", "known_context", "risk_checks",
+        "must_answer", "must_ask", "next_microstep", "forbidden",
+    )
+    try:
+        parsed = json.loads(plan)
+        if not isinstance(parsed, dict) or any(key not in parsed for key in required):
+            raise ValueError("missing required thinking keys")
+        if not isinstance(parsed.get("risk_checks"), list) or not isinstance(parsed.get("forbidden"), list):
+            raise ValueError("thinking list fields invalid")
+        return json.dumps({key: parsed[key] for key in required}, ensure_ascii=False)[:1800]
+    except Exception as err:
+        # Nunca injetar uma resposta final do modelo como se fosse plano interno.
+        # Se o contrato falhar, usar checklist local mínimo, observável e seguro.
+        fallback = {
+            "intent": "pergunta_objetiva" if "?" in (text or "") else "mensagem_do_lead",
+            "conversation_stage": "descoberta",
+            "known_context": (recent_context or "")[-400:],
+            "risk_checks": ["responder_a_ultima_pergunta", "nao_inventar_sintomas", "uma_pergunta_por_vez"],
+            "must_answer": (text or "").strip()[:300] or "mensagem atual",
+            "must_ask": "zero ou uma pergunta útil; nunca perguntar por obrigação",
+            "next_microstep": "responder primeiro e avançar somente uma etapa",
+            "forbidden": [
+                "inventar contexto clínico", "ignorar pergunta objetiva", "repetir jornada",
+                "não introduzir tema não perguntado", "fazer interrogatório",
+            ],
+        }
+        log(f"clara_thinking_gate_contract_invalid phone={phone} error={type(err).__name__}")
+        return json.dumps(fallback, ensure_ascii=False)
 
 
 def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
@@ -1635,7 +1925,7 @@ def call_clara(phone: str, text: str, sender_name: Optional[str] = None) -> str:
         instructions += recent_context
     if thinking_plan:
         instructions += "\n\nPlano interno obrigatório já gerado antes da resposta. Use como trava operacional, sem mencionar ao lead e sem expor JSON/checklist:\n" + thinking_plan
-    instructions += "\n\nRegra de saída: responda apenas com o texto da mensagem WhatsApp. Mensagem curta, humana, uma pergunta por vez. Termine com uma pergunta útil e específica. Só proponha agenda/horário/próximo passo quando já houver contexto mínimo do lead. Em abertura genérica, é proibido usar a frase 'Posso te orientar com o próximo passo agora?'. Se não houver resposta adequada, responda exatamente NO_REPLY."
+    instructions += "\n\nRegra de saída: responda apenas com o texto da mensagem WhatsApp. Mensagem curta e humana. Responda primeiro ao que foi perguntado e não introduza preço, reembolso, convênio, agenda ou qualquer objeção que o lead não trouxe. Faça no máximo uma pergunta, somente quando ela produzir o próximo avanço útil; não é obrigatório terminar com pergunta. SPIN é conversa adaptativa, não checklist: use o contexto já declarado, não repita descoberta e não faça perguntas administrativas junto com a dor. Só proponha agenda/horário quando já houver contexto mínimo. Em abertura genérica, é proibido usar a frase 'Posso te orientar com o próximo passo agora?'. Se não houver resposta adequada, responda exatamente NO_REPLY."
 
     reply = openclaw_response(phone, text, instructions, session_key=build_session_key(phone))
     return reply or "NO_REPLY"
@@ -1974,16 +2264,12 @@ def build_contextual_menopause_weight_reply() -> str:
 def build_contextual_weight_belly_reply(inbound_text: str) -> str:
     if contains_inbound_scheduling_intent(inbound_text):
         return (
-            "Perfeito. Pelo que você trouxe — ansiedade, dificuldade para perder peso e barriga como principal incômodo — "
-            "faz sentido começar pela avaliação com a Dra. Daniely.\n\n"
-            "Nessa consulta ela entende seu histórico, exames, composição corporal e rotina para direcionar um caminho seguro para o seu caso. "
-            "Para eu seguir com o agendamento: você prefere que eu veja horário pela manhã ou pela tarde?"
+            "Perfeito. Posso verificar a disponibilidade para uma avaliação com a Dra. Daniely.\n\n"
+            "Você prefere que eu veja horário pela manhã ou pela tarde?"
         )
     return (
-        "Entendi. Isso que você contou é uma informação importante: quando a dificuldade vem desde a infância, com sensação de metabolismo lento e barriga como principal incômodo, "
-        "não adianta olhar só como dieta.\n\n"
-        "A avaliação com a Dra. Daniely serve justamente para entender o que pode estar travando seu resultado e direcionar o melhor caminho com segurança. "
-        "Você quer que eu veja o próximo horário para essa avaliação?"
+        "Entendi. A avaliação com a Dra. Daniely serve para investigar seu histórico, exames, composição corporal e rotina sem presumir uma causa antes da consulta. "
+        "Você quer que eu explique como funciona essa primeira avaliação?"
     )
 
 
@@ -2185,7 +2471,7 @@ def build_patient_journey_explanation(context_summary: str = "") -> str:
     return (
         prefix
         + "O tratamento no Instituto Vital Slim é médico e olha o sobrepeso, obesidade, saúde hormonal e metabolismo de forma multifatorial.\n\n"
-        "Seu atendimento começa com uma consulta médica profunda com a Dra. Daniely, em torno de 60 a 90 minutos.\n\n"
+        "Seu atendimento começa com uma consulta médica profunda com a Dra. Daniely, em torno de 60 a 90 minutos, olhando histórico, rotina, sintomas, exames e objetivo.\n\n"
         "Você também passa por uma avaliação de enfermagem completa e por uma bioimpedância de última geração, para entendermos composição corporal, massa muscular, gordura visceral e hidratação celular.\n\n"
         "Depois da confirmação do agendamento, você recebe a solicitação de exames complementares, como exames de sangue, para analisar vitaminas, minerais, inflamação, hormônios e outros marcadores de saúde.\n\n"
         "Com tudo isso, a Dra. Daniely define se faz sentido um Programa de Acompanhamento personalizado para o seu objetivo, em vez de uma orientação solta ou protocolo pronto."
@@ -2213,6 +2499,60 @@ def build_weight_context_no_more_spin_reply(combined_context: str) -> str:
     return build_journey_fit_check_reply(context_summary)
 
 
+def contains_reflective_repeat_confirmation(reply: str) -> bool:
+    """Detecta confirmação espelhada que repete a dor sem avançar.
+
+    Incidente RC-86: após a Clara perguntar uma lista ampla (peso, disposição,
+    hormônios, saúde), o lead respondeu "Peso". A resposta seguinte apenas
+    espelhou/confirmou a categoria ("Então o foco principal...") e abriu espaço
+    para outra rodada repetitiva. Isso não é SPIN útil; é loop de confirmação.
+    """
+    lower = (reply or "").lower()
+    if not lower or "?" not in lower:
+        return False
+    reflective_markers = (
+        "foco principal", "então o foco", "entao o foco", "reduzir peso",
+        "desinchar", "melhorar a forma como a roupa veste", "certo?",
+    )
+    return sum(1 for marker in reflective_markers if marker in lower) >= 2
+
+
+def context_has_weight_plus_hormone(combined_context: str) -> bool:
+    lower = (combined_context or "").lower()
+    has_weight = any(marker in lower for marker in ("peso", "emagrec", "engord", "desinchar", "inchaço", "inchaco", "inchado"))
+    has_hormone = any(marker in lower for marker in ("hormônio", "hormonio", "hormônios", "hormonios", "horm", "tireoide", "tireóide", "metabó", "metabo"))
+    return has_weight and has_hormone
+
+
+def enforce_no_repetitive_discovery_after_declared_context(phone: str, inbound_text: str, reply: str) -> str:
+    """RC-86: depois de dor declarada, parar de repetir SPIN genérico.
+
+    Se o lead já declarou peso e/ou trouxe hormônios/metabolismo, a Clara não
+    deve repetir listas amplas nem confirmar a mesma categoria de novo. Ela deve
+    aprofundar de forma específica uma única vez ou avançar para jornada/fit.
+    """
+    text = (reply or "").strip()
+    if not text or text == "NO_REPLY":
+        return text or "NO_REPLY"
+    combined = build_declared_lead_context(phone, inbound_text, limit=14)
+    if is_bare_objective_category(inbound_text) and (
+        is_generic_discovery_reply(text) or contains_reflective_repeat_confirmation(text)
+    ):
+        log(f"rc86_bare_category_specific_deepening phone={phone} inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}")
+        return build_price_category_deepening_reply(inbound_text)
+    if context_has_weight_plus_hormone(combined) and (
+        is_generic_discovery_reply(text)
+        or response_is_more_discovery_question(text)
+        or contains_reflective_repeat_confirmation(text)
+    ):
+        log(f"rc86_weight_hormone_no_more_spin phone={phone} inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}")
+        return build_journey_fit_check_reply(summarize_declared_context(combined))
+    if prior_context_has_meaningful_discovery(phone, inbound_text) and is_generic_discovery_reply(text):
+        log(f"rc86_meaningful_context_no_generic_spin phone={phone} inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}")
+        return build_journey_fit_check_reply(summarize_declared_context(combined))
+    return text
+
+
 def enforce_context_continuity_before_send(phone: str, inbound_text: str, reply: str) -> str:
     """RC-64/69: impede follow-up cego quando o histórico já contém dor declarada.
 
@@ -2224,8 +2564,7 @@ def enforce_context_continuity_before_send(phone: str, inbound_text: str, reply:
         return text or "NO_REPLY"
     if not is_context_blind_generic_discovery(text):
         return text
-    ctx = build_recent_conversation_context(phone, limit=16)
-    combined = f"{ctx}\n{inbound_text or ''}"
+    combined = build_declared_lead_context(phone, inbound_text, limit=16)
     if contains_fatigue_complaint(combined):
         log(f"rc69_fatigue_generic_followup_blocked phone={phone} replyPreview={text[:140]!r}")
         return enforce_fatigue_complaint_no_repeat(phone, inbound_text, text)
@@ -2234,6 +2573,8 @@ def enforce_context_continuity_before_send(phone: str, inbound_text: str, reply:
         return build_program_value_boundary_reply()
     if contains_price_question(combined) and consultation_price_context_ready(phone, inbound_text):
         log(f"rc68_context_price_generic_followup_rewritten phone={phone} replyPreview={text[:140]!r}")
+        if recent_context_already_has_patient_journey(phone):
+            return build_consultation_price_direct_reply()
         return build_consultation_price_reply()
     if contains_menopause_weight_context(combined):
         log(f"rc64_context_blind_followup_rewritten phone={phone} replyPreview={text[:140]!r}")
@@ -2275,9 +2616,9 @@ def recent_reply_checked_journey_fit(phone: str) -> bool:
 
 
 def build_price_after_fit_reply(phone: str, inbound_text: str) -> str:
-    ctx = build_recent_conversation_context(phone, limit=18)
-    context_summary = summarize_declared_context(f"{ctx}\n{inbound_text or ''}")
-    return build_consultation_price_reply(context_summary=context_summary)
+    # Depois que a jornada/fit já foi apresentada e o lead confirma ou pede valor,
+    # não repetir a jornada. Avançar direto para preço ancorado.
+    return build_consultation_price_direct_reply()
 
 
 def enforce_mature_discovery_to_journey_fit(phone: str, inbound_text: str, reply: str) -> str:
@@ -2296,8 +2637,7 @@ def enforce_mature_discovery_to_journey_fit(phone: str, inbound_text: str, reply
             "price_context_source": "rc75_fit_confirmed",
         })
         return build_price_after_fit_reply(phone, inbound_text)
-    ctx = build_recent_conversation_context(phone, limit=20)
-    combined = f"{ctx}\n{inbound_text or ''}"
+    combined = build_declared_lead_context(phone, inbound_text, limit=20)
     if not has_mature_discovery_context(combined):
         return text
     # RC-79: se a jornada já foi enviada no WhatsApp, não forçar a mesma
@@ -2344,8 +2684,8 @@ def reply_contains_agendamento_invite(reply: str) -> bool:
 
 def build_spin_opening_reply() -> str:
     return (
-        "Oi! Que bom te receber por aqui.\n\n"
-        "Me conta um pouquinho: o que está te incomodando hoje e fez você buscar ajuda agora?"
+        "Oi! Sou a Clara, do Instituto Vital Slim.\n\n"
+        "Para eu te orientar com base no que você precisa: o que fez você buscar ajuda agora?"
     )
 
 
@@ -2381,15 +2721,13 @@ def contains_thyroid_scope_question(text: str) -> bool:
 
 
 def prior_context_has_meaningful_discovery(phone: str, inbound_text: str = "") -> bool:
-    ctx = build_recent_conversation_context(phone, limit=16)
-    combined = f"{ctx}\n{inbound_text or ''}"
+    combined = build_declared_lead_context(phone, inbound_text, limit=16)
     return has_pain_or_goal_context(combined) or has_substantive_weight_context(combined) or has_mature_discovery_context(combined)
 
 
 def build_schedule_availability_reply(phone: str, inbound_text: str = "") -> str:
     lower = (inbound_text or "").lower()
-    ctx = build_recent_conversation_context(phone, limit=18)
-    combined = f"{ctx}\n{inbound_text or ''}"
+    combined = build_declared_lead_context(phone, inbound_text, limit=18)
     if "amanhã" in lower or "amanha" in lower:
         first = "Posso verificar se ainda temos disponibilidade para amanhã."
     elif "sábado" in lower or "sabado" in lower:
@@ -2410,8 +2748,6 @@ def build_schedule_availability_reply(phone: str, inbound_text: str = "") -> str
 
 
 def build_thyroid_scope_reply(phone: str = "", inbound_text: str = "") -> str:
-    ctx = build_recent_conversation_context(phone, limit=14) if phone else ""
-    combined = f"{ctx}\n{inbound_text or ''}"
     if prior_context_has_meaningful_discovery(phone, inbound_text):
         return (
             "Sim, a Dra. Daniely também avalia a parte metabólica e hormonal, incluindo investigação relacionada à tireoide quando faz sentido para o caso."
@@ -2435,6 +2771,8 @@ def recent_context_already_has_patient_journey(phone: str) -> bool:
 
 
 def build_after_journey_continuation_reply(phone: str, inbound_text: str = "") -> str:
+    if contains_price_question(inbound_text):
+        return build_consultation_price_direct_reply()
     if contains_schedule_availability_question(inbound_text):
         return build_schedule_availability_reply(phone, inbound_text)
     lower = (inbound_text or "").lower()
@@ -2607,16 +2945,10 @@ def enforce_discovery_before_next_step(inbound_text: str, reply: str) -> str:
         has_banned_content = any(marker in text.lower() for marker in rc44_banned_before_discovery)
         discovery_only_ok = has_discovery and not has_banned_content and len(text) <= 260
         if not discovery_only_ok:
-            return (
-                "Oi! Que bom te receber por aqui.\n\n"
-                "Me conta um pouquinho: o que está te incomodando hoje e fez você buscar ajuda agora?"
-            )
+            return build_spin_opening_reply()
 
     if needs_discovery_only and has_premature_next_step and not has_discovery:
-        return (
-            "Oi! Que bom te receber por aqui.\n\n"
-            "Me conta um pouquinho: o que está te incomodando hoje e fez você buscar ajuda agora?"
-        )
+        return build_spin_opening_reply()
     if not (needs_discovery_only and has_discovery and has_premature_next_step):
         return text
 
@@ -2662,8 +2994,51 @@ def build_consultation_price_reply(context_summary: str = "") -> str:
     return (
         build_patient_journey_explanation(context_summary)
         + "\n\nSobre o valor: a consulta inicial é R$ 1.000,00.\n\n"
-        "Pode ser parcelada em até 2x sem juros, e a reserva é de R$ 300,00, abatida do valor da consulta."
+        "Fechando o agendamento agora, consigo aplicar R$ 100 de desconto, então ela fica por R$ 900,00.\n\n"
+        "A reserva é de R$ 300,00, no cartão em até 2x sem juros, e esse valor é abatido do total da consulta."
     )
+
+
+def build_consultation_price_direct_reply() -> str:
+    """Preço sem repetir jornada quando ela já foi explicada no histórico."""
+    return (
+        "Sobre o valor: a consulta inicial é R$ 1.000,00.\n\n"
+        "Fechando o agendamento agora, consigo aplicar R$ 100 de desconto, então ela fica por R$ 900,00.\n\n"
+        "A reserva é de R$ 300,00, no cartão em até 2x sem juros, e esse valor é abatido do total da consulta."
+    )
+
+
+def split_clara_whatsapp_blocks(message: str) -> list[str]:
+    """Alias histórico usado por regressões RC-61/RC-62."""
+    return split_human_conversation_chunks(message)
+
+
+def enforce_price_journey_microblocks(phone: str, inbound_text: str, reply: str) -> str:
+    """Compatibilidade RC-61/RC-62: preço autorizado só após jornada e em microblocos.
+
+    Inclui explicitamente a pré-consulta/reserva R$300, autorizada por Tiaro,
+    como valor abatido do total da consulta.
+    """
+    text = final_scrub_banned_next_step_phrase(reply or "")
+    if not text or not contains_money_value(text):
+        return text
+    blocks = split_clara_whatsapp_blocks(text)
+    first_money = next((idx for idx, block in enumerate(blocks) if contains_money_value(block)), -1)
+    pre_price = " ".join(blocks[:first_money]).lower() if first_money >= 0 else ""
+    has_value_stack_before_price = (
+        first_money >= 4
+        and "dra. daniely" in pre_price
+        and ("histórico" in pre_price or "historico" in pre_price)
+        and "exames" in pre_price
+        and ("composição corporal" in pre_price or "composicao corporal" in pre_price or "bioimpedância" in pre_price or "bioimpedancia" in pre_price)
+        and "rotina" in pre_price
+    )
+    dense_blocks = any(len(block) > 240 for block in blocks) or len(blocks) < 6
+    if has_value_stack_before_price and not dense_blocks:
+        return "\n\n".join(blocks)
+    context_summary = summarize_declared_context(f"{build_recent_conversation_context(phone)}\n{inbound_text or ''}")
+    log(f"rc61_price_journey_microblocks_rewritten phone={phone} inbound={str(inbound_text)[:80]!r} replyPreview={text[:120]!r}")
+    return build_consultation_price_reply(context_summary)
 
 
 def contains_patient_journey_explanation(text: str) -> bool:
@@ -2677,8 +3052,7 @@ def contains_patient_journey_explanation(text: str) -> bool:
 
 
 def build_evaluation_included_reply(phone: str = "", inbound_text: str = "") -> str:
-    ctx = build_recent_conversation_context(phone, limit=14) if phone else ""
-    context_summary = summarize_declared_context(f"{ctx}\n{inbound_text or ''}")
+    context_summary = summarize_declared_context(build_declared_lead_context(phone, inbound_text, limit=14))
     return (
         build_patient_journey_explanation(context_summary)
         + "\n\nNa prática, essa avaliação inicial inclui a consulta médica, enfermagem, bioimpedância e um direcionamento inicial para você entender por onde começar com segurança."
@@ -2769,7 +3143,7 @@ def is_bare_objective_category(text: str) -> bool:
     """
     compact = compact_text_key(text)
     return compact in {
-        "emagrecimento", "emagrecer", "perder peso", "hormonal", "hormonios", "hormônios",
+        "emagrecimento", "emagrecer", "perder peso", "peso", "hormonal", "hormonios", "hormônios",
         "saude hormonal", "saúde hormonal", "longevidade", "saude", "saúde",
         "saude geral", "saúde geral", "saude de forma geral", "saúde de forma geral",
         "metabolico", "metabólico", "hormonal metabolico", "hormonal metabólico",
@@ -2872,8 +3246,7 @@ def enforce_price_question_after_context(phone: str, inbound_text: str, reply: s
         log(f"rc68_program_value_question_answered phone={phone} inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}")
         return build_program_value_boundary_reply()
     if consultation_price_context_ready(phone, inbound_text) or contains_fatigue_complaint(inbound_text):
-        ctx = build_recent_conversation_context(phone, limit=14)
-        context_summary = summarize_declared_context(f"{ctx}\n{inbound_text or ''}")
+        context_summary = summarize_declared_context(build_declared_lead_context(phone, inbound_text, limit=14))
         update_phone_event_entry(phone, {
             "price_context_ready": True,
             "price_context_ready_at": time.time(),
@@ -2886,9 +3259,70 @@ def enforce_price_question_after_context(phone: str, inbound_text: str, reply: s
     return text
 
 
+def enforce_no_topic_switch_on_price_question(phone: str, inbound_text: str, reply: str) -> str:
+    """Gate terminal: pergunta de preço nunca pode voltar para plano/reembolso.
+
+    Incidente real 2026-08-23: após "Qual o valor da consulta?", a resposta
+    perguntou por operadoras e repetiu convênio/reembolso. Com contexto mínimo,
+    entrega jornada + preço; sem contexto, faz uma única pergunta SPIN útil.
+    """
+    text = (reply or "").strip()
+    if not text or text == "NO_REPLY" or not contains_price_question(inbound_text):
+        return text or "NO_REPLY"
+    if contains_program_question(inbound_text):
+        return text
+
+    lower = text.lower()
+    switched_to_plan = any(marker in lower for marker in (
+        "convênio", "convenio", "reembolso", "plano", "plano de saúde", "plano de saude",
+        "bradesco", "sulamérica", "sulamerica", "amil", "hapvida", "unimed",
+        "assefaz", "cassi", "planserv",
+    ))
+    if not switched_to_plan:
+        return text
+
+    if consultation_price_context_ready(phone, inbound_text):
+        context_summary = summarize_declared_context(
+            build_declared_lead_context(phone, inbound_text, limit=14)
+        )
+        log(
+            f"rc87_price_topic_switch_recovered phone={phone} "
+            f"inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}"
+        )
+        return build_consultation_price_reply(context_summary=context_summary)
+
+    log(
+        f"rc87_price_topic_switch_to_spin phone={phone} "
+        f"inbound={inbound_text[:80]!r} replyPreview={text[:120]!r}"
+    )
+    return (
+        "Claro, eu te informo. Para eu não te passar um valor solto: "
+        "o que fez você buscar essa avaliação agora?"
+    )
+
+
 def contains_short_affirmative(text: str) -> bool:
     compact = compact_text_key(text)
-    return compact in {"sim", "s", "quero", "pode", "claro", "isso", "ok", "ta", "tá"}
+    return compact in {"sim", "s", "quero", "pode", "podesim", "podeclaro", "claro", "comcerteza", "isso", "ok", "ta", "tá"}
+
+
+def recent_lead_confirmed_send_permission(phone: str, inbound_text: str = "") -> bool:
+    """RC-85: 'Pode sim' depois de 'Posso te enviar agora?' libera cumprir a promessa.
+
+    A confirmação pode chegar como texto curto composto ("pode sim", "com certeza")
+    e a checagem final de transporte nem sempre recebe inbound_text; por isso também
+    consultamos as últimas falas reais do lead e o último preview da Clara.
+    """
+    entry = get_lead_entry(phone) or {}
+    last_reply = str(entry.get("last_reply_preview") or "").lower()
+    asked_permission = any(marker in last_reply for marker in (
+        "posso te enviar agora", "posso enviar agora", "posso te mandar agora",
+        "quer que eu te envie", "quer que eu te mande", "te explico agora",
+    ))
+    if not asked_permission:
+        return False
+    candidates = [inbound_text] + get_recent_lead_texts(phone, limit=3)
+    return any(contains_short_affirmative(t) for t in candidates if t)
 
 
 def recent_reply_asked_to_explain_included(phone: str) -> bool:
@@ -3049,6 +3483,48 @@ def enforce_program_reasoning(inbound_text: str, reply: str) -> str:
     return text
 
 
+def is_campaign_prefilled_message(inbound_text: str, payload: Optional[dict] = None) -> bool:
+    """Detecta a primeira mensagem genérica pré-preenchida por anúncio/click-to-chat.
+
+    Metadado de anúncio é apenas sinal de origem, nunca contexto clínico. Se a
+    pessoa acrescentou dor/objetivo próprio, o fluxo normal preserva esse texto.
+    """
+    text = (inbound_text or "").strip()
+    if not text or has_price_context_text(text):
+        return False
+
+    lower = text.lower()
+    raw_payload = payload if isinstance(payload, dict) else {}
+    ad_context = raw_payload.get("adContext") or raw_payload.get("ad_context")
+    has_ad_context = isinstance(ad_context, dict) and bool(ad_context)
+    # O marcador real da campanha pode trazer um prefixo alfabético antes do ID
+    # (ex.: ``[an. g131580]``). Sem isso, o gate terminal de conexão/SPIN não
+    # reconhece o clique no anúncio e deixa o enforcer de Programa despejar pitch.
+    has_tracking_marker = bool(re.search(r"\[(?:an|ad)\.?\s*[a-z]*\d+\]", lower))
+    looks_like_prefill = any(marker in lower for marker in (
+        "vi o anúncio", "vi o anuncio", "vim pelo anúncio", "vim pelo anuncio",
+        "quero entender como funciona", "gostaria de entender como funciona",
+        "quero saber mais", "gostaria de saber mais",
+    ))
+    return has_tracking_marker or (has_ad_context and looks_like_prefill)
+
+
+def enforce_campaign_prefilled_connection(
+    inbound_text: str,
+    reply: str,
+    payload: Optional[dict] = None,
+) -> str:
+    """Gate terminal: anúncio genérico começa com conexão e SPIN, nunca pitch."""
+    text = (reply or "").strip()
+    if not text or text == "NO_REPLY" or not is_campaign_prefilled_message(inbound_text, payload):
+        return text or "NO_REPLY"
+    return (
+        "Oi! Sou a Clara, do Instituto Vital Slim.\n\n"
+        "Para eu entender o que você precisa e te explicar sem uma resposta genérica, "
+        "me conta: o que fez você buscar um acompanhamento agora?"
+    )
+
+
 def contains_plan_rejection(text: str) -> bool:
     lower = (text or "").lower()
     strong_rejection = any(token in lower for token in (
@@ -3070,41 +3546,99 @@ def contains_plan_rejection(text: str) -> bool:
 
 def contains_plan_question_direct(text: str) -> bool:
     lower = (text or "").lower()
-    return any(token in lower for token in (
+    if any(token in lower for token in (
         "aceita plano", "aceitam plano", "atende plano", "atendem plano",
         "aceita convênio", "aceita convenio", "aceitam convênio", "aceitam convenio",
         "atendimento pelo plano", "consulta pelo plano", "pelo meu plano",
-        "sulamerica", "sulamérica", "bradesco", "amil", "unimed", "mamães baianas", "mamaes baianas"
+        "reembolso", "reembolsam", "reembolsa", "reembolsar", "ressarcimento",
+        "sulamerica", "sulamérica", "bradesco", "amil", "unimed", "planserv",
+        "saúde caixa", "saude caixa", "cassi", "mamães baianas", "mamaes baianas"
+    )):
+        return True
+    # Captura variações naturais como "atende pelo convênio?" e
+    # "vocês trabalham com algum plano?", sem depender de operadora conhecida.
+    return bool(re.search(
+        r"\b(?:aceita|aceitam|atende|atendem|trabalha|trabalham|faz|fazem|tem|possuem)\b.{0,35}\b(?:plano|conv[eê]nio)\b",
+        lower,
     ))
+
+
+PLAN_CONVENIO_RESPONSE_EXACT = "Hoje, o atendimento no Instituto Vital Slim é exclusivamente particular. Não atendemos convênios e não trabalhamos com reembolso."
+PLAN_ONLY_RESPONSE_EXACT = "Hoje, o atendimento no Instituto Vital Slim é exclusivamente particular. Não atendemos convênios."
+REIMBURSEMENT_ONLY_RESPONSE_EXACT = "Hoje, o atendimento no Instituto Vital Slim é exclusivamente particular. Não trabalhamos com reembolso."
+
+
+def contains_reimbursement_question(text: str) -> bool:
+    lower = (text or "").lower()
+    return any(token in lower for token in (
+        "reembolso", "reembolsam", "reembolsa", "reembolsar", "ressarcimento",
+    ))
+
+
+def contains_plan_or_convenio_question(text: str) -> bool:
+    lower = (text or "").lower()
+    if any(token in lower for token in (
+        "plano", "convênio", "convenio", "sulamerica", "sulamérica", "bradesco",
+        "amil", "unimed", "planserv", "saúde caixa", "saude caixa", "cassi",
+        "mamães baianas", "mamaes baianas",
+    )):
+        return True
+    return bool(re.search(
+        r"\b(?:aceita|aceitam|atende|atendem|trabalha|trabalham|faz|fazem|tem|possuem)\b.{0,35}\b(?:plano|conv[eê]nio)\b",
+        lower,
+    ))
+
+
+def contains_legacy_reimbursement_offer(text: str) -> bool:
+    """Detecta a política antiga que oferecia reembolso para algumas operadoras."""
+    lower = (text or "").lower()
+    if not lower:
+        return False
+    negative_markers = (
+        "não trabalhamos com reembolso", "nao trabalhamos com reembolso",
+        "não fazemos reembolso", "nao fazemos reembolso",
+        "não possui reembolso", "nao possui reembolso", "sem reembolso",
+    )
+    if any(marker in lower for marker in negative_markers):
+        return False
+    legacy_markers = (
+        "possibilidade de reembolso", "via reembolso", "funcionamos com reembolso",
+        "trabalhamos com reembolso", "calcular o reembolso", "calcula reembolso",
+        "dar entrada no reembolso", "damos entrada no reembolso", "pedido de reembolso",
+        "quanto seu plano reembolsa", "quanto o plano reembolsa",
+    )
+    insurer_markers = (
+        "bradesco", "sulamérica", "sulamerica", "amil", "unimed", "planserv",
+        "saúde caixa", "saude caixa", "cassi", "mamães baianas", "mamaes baianas",
+    )
+    return any(marker in lower for marker in legacy_markers) or (
+        "reembolso" in lower and any(marker in lower for marker in insurer_markers)
+    )
 
 
 def enforce_plan_question_response(inbound_text: str, reply: str) -> str:
-    """Garante resposta correta para pergunta direta sobre plano/convênio antes de virar perda."""
+    """Responde somente ao tema financeiro perguntado pelo lead.
+
+    Pergunta sobre plano/convênio não autoriza introduzir reembolso; pergunta
+    sobre reembolso não precisa acrescentar convênio. A política completa só é
+    usada quando ambos foram perguntados ou para neutralizar oferta legada.
+    """
     text = (reply or "").strip()
     if not text or text == "NO_REPLY":
         return text or "NO_REPLY"
+    # Defesa final independente do prompt: qualquer oferta legada gerada pelo LLM
+    # é substituída antes do envio, mesmo se a pergunta não casou com os gatilhos.
+    if contains_legacy_reimbursement_offer(text):
+        return PLAN_CONVENIO_RESPONSE_EXACT
     if not contains_plan_question_direct(inbound_text) or contains_plan_rejection(inbound_text):
         return text
-    lower = text.lower()
-    mentions_no_direct_plan = any(marker in lower for marker in (
-        "não trabalhamos com convênio direto", "nao trabalhamos com convenio direto",
-        "não atendemos por convênio direto", "nao atendemos por convenio direto",
-        "atendimento é particular", "atendimento e particular", "consulta particular"
-    ))
-    mentions_reimbursement_when_applicable = any(marker in lower for marker in (
-        "reembolso", "bradesco", "sulamérica", "sulamerica", "amil"
-    ))
-    has_next_question = "?" in text
-    risky_price_push = any(marker in lower for marker in (
-        "valores são acessíveis", "valores sao acessiveis", "posso te passar os valores", "passar os valores"
-    ))
-    if risky_price_push or not (mentions_no_direct_plan and mentions_reimbursement_when_applicable and has_next_question):
-        return (
-            "Hoje não trabalhamos com convênio direto. Em Bradesco, SulAmérica e Amil, a equipe pode ajudar a estimar e dar entrada no reembolso da consulta inicial, sem promessa de valor específico.\n\n"
-            "A consulta aqui é uma avaliação médica integrada, com composição corporal e plano de ação individualizado — não uma consulta rápida de convênio.\n\n"
-            "O que pesa mais para você agora: conseguir reembolso ou entender se a avaliação vale o investimento particular?"
-        )
-    return text
+    asked_plan = contains_plan_or_convenio_question(inbound_text)
+    asked_reimbursement = contains_reimbursement_question(inbound_text)
+    if asked_plan and asked_reimbursement:
+        return PLAN_CONVENIO_RESPONSE_EXACT
+    if asked_reimbursement:
+        return REIMBURSEMENT_ONLY_RESPONSE_EXACT
+    return PLAN_ONLY_RESPONSE_EXACT
 
 
 def enforce_objection_handling(inbound_text: str, reply: str) -> str:
@@ -3122,15 +3656,14 @@ def enforce_objection_handling(inbound_text: str, reply: str) -> str:
         "agradeco seu contato", "entendo perfeitamente"
     ))
     has_real_objection_question = ("?" in text) and any(marker in lower for marker in (
-        "o que pesa", "custo", "vale a pena", "dúvida", "duvida", "investimento", "confiança", "confianca", "reembolso"
+        "o que pesa", "custo", "vale a pena", "dúvida", "duvida", "investimento", "confiança", "confianca",
+        "particular", "avaliação", "avaliacao"
     ))
-    if passive_close or not has_real_objection_question:
-        return (
-            "Entendo, faz sentido você considerar o plano. Só para te orientar com justiça: aqui a consulta particular não é para substituir seu plano, "
-            "e sim para fazer uma avaliação mais profunda e integrada, com olhar médico, composição corporal e plano de ação individualizado.\n\n"
-            "Se for Bradesco, SulAmérica ou Amil, a equipe ainda pode te ajudar a estimar o reembolso antes da consulta e dar entrada no pedido com você, sem promessa de valor específico.\n\n"
-            "O que pesa mais para você agora: o custo inicial ou a dúvida se vale a pena fazer uma avaliação mais completa?"
-        )
+    old_reimbursement_claim = any(marker in lower for marker in ("bradesco", "sulamérica", "sulamerica", "amil")) or (
+        "reembolso" in lower and not any(marker in lower for marker in ("não fazemos reembolso", "nao fazemos reembolso"))
+    )
+    if passive_close or old_reimbursement_claim or not has_real_objection_question:
+        return PLAN_CONVENIO_RESPONSE_EXACT
     return text
 
 
@@ -3530,7 +4063,153 @@ def download_audio(url: str, timeout: int = 30) -> bytes:
         return resp.read()
 
 
+def _whisper_local_run(src_path: str, workdir: str) -> str:
+    """Executa o whisper CLI local e devolve o texto do .txt gerado."""
+    cmd = [
+        WHISPER_LOCAL_BIN,
+        src_path,
+        "--model", WHISPER_LOCAL_MODEL,
+        "--language", WHISPER_LOCAL_LANGUAGE,
+        "--task", "transcribe",
+        "--output_format", "txt",
+        "--output_dir", workdir,
+        "--fp16", "False",
+        "--threads", str(WHISPER_LOCAL_THREADS),
+        "--verbose", "False",
+    ]
+    proc = subprocess.run(
+        cmd, capture_output=True, text=True, timeout=WHISPER_LOCAL_TIMEOUT_SECONDS
+    )
+    out_txt = Path(workdir) / (Path(src_path).stem + ".txt")
+    if not out_txt.exists():
+        tail = (proc.stderr or proc.stdout or "").strip().replace("\n", " ")[:300]
+        raise RuntimeError(f"whisper rc={proc.returncode} sem saida: {tail}")
+    return out_txt.read_text(encoding="utf-8", errors="replace").strip()
+
+
+def _fw_modelo():
+    """Carrega o modelo uma vez e mantem residente (lock: servidor e multi-thread)."""
+    global _FW_MODEL
+    if _FW_MODEL is not None:
+        return _FW_MODEL
+    with _FW_LOCK:
+        if _FW_MODEL is None:
+            from faster_whisper import WhisperModel  # import tardio: nao pesa no boot
+            t0 = time.time()
+            _FW_MODEL = WhisperModel(
+                WHISPER_LOCAL_MODEL, device="cpu",
+                compute_type=WHISPER_FAST_COMPUTE, cpu_threads=WHISPER_FAST_THREADS,
+            )
+            log(f"audio_stt_fast_model_loaded model={WHISPER_LOCAL_MODEL} secs={time.time()-t0:.1f}")
+    return _FW_MODEL
+
+
+def _fw_transcrever(path: str) -> str:
+    """Transcricao com o modelo residente. Serializada para nao estourar CPU/RAM."""
+    modelo = _fw_modelo()
+    with _FW_LOCK:
+        segmentos, _info = modelo.transcribe(
+            path, language=WHISPER_LOCAL_LANGUAGE or None, beam_size=WHISPER_FAST_BEAM,
+        )
+        return " ".join(seg.text.strip() for seg in segmentos).strip()
+
+
+def transcribe_audio_local(audio_bytes: bytes, filename: str = "audio.ogg") -> str:
+    """Transcricao 100% local via whisper CLI.
+
+    Aceita .ogg/opus (formato do WhatsApp) direto; se o whisper falhar em ler o
+    container, normaliza para wav 16k mono com ffmpeg e tenta de novo.
+    Temporarios sempre limpos; timeout defensivo.
+    """
+    if not WHISPER_LOCAL_ENABLED:
+        raise RuntimeError("whisper local desabilitado (WHISPER_LOCAL_ENABLED=0)")
+    if not Path(WHISPER_LOCAL_BIN).exists():
+        raise RuntimeError(f"whisper local ausente em {WHISPER_LOCAL_BIN}")
+    if not audio_bytes:
+        raise RuntimeError("audio vazio para transcricao local")
+
+    ext = (Path(filename or "").suffix or ".ogg").lower()
+    if not re.fullmatch(r"\.[a-z0-9]{1,5}", ext):
+        ext = ".ogg"
+
+    workdir = tempfile.mkdtemp(prefix="clara_stt_")
+    try:
+        src_path = os.path.join(workdir, "audio" + ext)
+        with open(src_path, "wb") as fh:
+            fh.write(audio_bytes)
+        if WHISPER_FAST_ENABLED:
+            try:
+                texto = _fw_transcrever(src_path)
+                if texto:
+                    return texto
+                log("audio_stt_fast_empty -> caindo para whisper CLI")
+            except Exception as err:  # noqa: BLE001 — CLI assume em qualquer falha
+                log(f"audio_stt_fast_failed error={err} -> caindo para whisper CLI")
+        try:
+            return _whisper_local_run(src_path, workdir)
+        except subprocess.TimeoutExpired:
+            raise RuntimeError(
+                f"whisper local timeout ({WHISPER_LOCAL_TIMEOUT_SECONDS}s)"
+            )
+        except RuntimeError:
+            wav_path = os.path.join(workdir, "audio_norm.wav")
+            conv = subprocess.run(
+                [FFMPEG_BIN, "-y", "-loglevel", "error", "-i", src_path,
+                 "-ac", "1", "-ar", "16000", wav_path],
+                capture_output=True, text=True, timeout=120,
+            )
+            if conv.returncode != 0 or not os.path.exists(wav_path):
+                raise RuntimeError(
+                    f"ffmpeg falhou ao normalizar audio: {(conv.stderr or '')[:200]}"
+                )
+            try:
+                return _whisper_local_run(wav_path, workdir)
+            except subprocess.TimeoutExpired:
+                raise RuntimeError(
+                    f"whisper local timeout ({WHISPER_LOCAL_TIMEOUT_SECONDS}s)"
+                )
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+
+
 def transcribe_audio(audio_bytes: bytes, filename: str = "audio.ogg") -> str:
+    """Caminho PRIMARIO = Whisper local. OpenAI so como fallback, se houver chave."""
+    errors = []
+    if WHISPER_LOCAL_ENABLED:
+        started = time.time()
+        try:
+            text = transcribe_audio_local(audio_bytes, filename)
+            elapsed = time.time() - started
+            if text:
+                log(
+                    f"audio_stt_local ok model={WHISPER_LOCAL_MODEL} "
+                    f"secs={elapsed:.1f} chars={len(text)}"
+                )
+                return text
+            errors.append("local: texto vazio")
+            log(f"audio_stt_local_empty model={WHISPER_LOCAL_MODEL} secs={elapsed:.1f}")
+        except Exception as err:
+            errors.append(f"local: {err}")
+            log(f"audio_stt_local_failed model={WHISPER_LOCAL_MODEL} error={err}")
+
+    if OPENAI_API_KEY:
+        try:
+            text = transcribe_audio_openai(audio_bytes, filename)
+            if text:
+                log(f"audio_stt_openai_fallback ok chars={len(text)}")
+                return text
+            errors.append("openai: texto vazio")
+        except Exception as err:
+            errors.append(f"openai: {err}")
+            log(f"audio_stt_openai_fallback_failed error={err}")
+    else:
+        errors.append("openai: sem OPENAI_API_KEY (fallback desativado)")
+
+    raise RuntimeError("falha na transcricao de audio -> " + " | ".join(errors))
+
+
+def transcribe_audio_openai(audio_bytes: bytes, filename: str = "audio.ogg") -> str:
+    """Fallback legado (rede). So roda se OPENAI_API_KEY estiver presente."""
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY not configured for audio transcription")
     boundary = "----OpenClawClaraAudioBoundary"
@@ -3598,45 +4277,92 @@ def generate_openai_tts(text: str) -> bytes:
         raise RuntimeError(f"OpenAI TTS error {err.code}: {error_body[:400]}") from err
 
 
+def generate_supertonic_tts(text: str) -> bytes:
+    """Gera áudio pela voz local IVS configurada para a Clara."""
+    if not CLARA_LOCAL_TTS_CMD:
+        raise RuntimeError("CLARA_LOCAL_TTS_CMD is empty")
+    safe_id = hashlib.sha1(f"{time.time()}:{text}".encode("utf-8", errors="ignore")).hexdigest()[:16]
+    out_path = Path(f"/tmp/clara-local-tts-{safe_id}.mp3")
+    cmd = [
+        CLARA_LOCAL_TTS_CMD,
+        text,
+        str(out_path),
+        "--provider", "supertonic",
+        "--voice", CLARA_LOCAL_TTS_VOICE,
+    ]
+    try:
+        proc = subprocess.run(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            timeout=CLARA_LOCAL_TTS_TIMEOUT_SECONDS,
+        )
+        if proc.returncode != 0:
+            raise RuntimeError(f"local TTS failed rc={proc.returncode}: {(proc.stdout or '')[:500]}")
+        if not out_path.exists() or out_path.stat().st_size <= 0:
+            raise RuntimeError("local TTS did not create a non-empty audio file")
+        return out_path.read_bytes()
+    finally:
+        try:
+            out_path.unlink(missing_ok=True)
+        except Exception:
+            pass
+
+
+def local_tts_provider_label() -> str:
+    cmd = (CLARA_LOCAL_TTS_CMD or "").lower()
+    voice = (CLARA_LOCAL_TTS_VOICE or "").lower()
+    if "clara-dra" in cmd or "dra" in voice or "daniely" in voice:
+        return "voxcpm_clara_dra_daniely"
+    return "supertonic_f5_local"
+
+
+def _provider_is_local_tts(provider: str) -> bool:
+    return (provider or "").strip().lower() in ("supertonic", "local", "ivs", "ivs-tts")
+
+
+def audio_reply_generation_enabled() -> bool:
+    """Indica se há ao menos uma rota TTS configurada para espelhar áudio."""
+    if not CLARA_AUDIO_MIRRORING:
+        return False
+    if _provider_is_local_tts(CLARA_TTS_PRIMARY) or _provider_is_local_tts(CLARA_TTS_FALLBACK):
+        return bool(CLARA_LOCAL_TTS_CMD)
+    return bool(ELEVENLABS_API_KEY or OPENAI_API_KEY)
+
+
 def generate_tts_audio(text: str) -> Tuple[bytes, str]:
-    """Gera áudio para espelhamento.
-
-    Ordem governada:
-    1) ElevenLabs como rota principal da voz configurada da Clara.
-    2) TTS genérico/OpenAI apenas como fallback operacional, se habilitado.
-
-    Importante: não usa OpenRouter para TTS. OpenRouter pode ser rota de LLM/texto,
-    mas não deve ser usado para síntese de voz.
-    """
-    primary = CLARA_TTS_PRIMARY or "elevenlabs"
+    """Gera a resposta falada pela ordem configurada, sem usar OpenRouter."""
+    primary = CLARA_TTS_PRIMARY or "supertonic"
     fallback = CLARA_TTS_FALLBACK or "off"
     errors = []
 
-    if primary != "elevenlabs":
-        log(f"tts_primary_forced_to_elevenlabs previous={primary!r}")
-
-    if ELEVENLABS_API_KEY:
-        try:
+    def run(provider: str) -> Tuple[bytes, str]:
+        provider = (provider or "").strip().lower()
+        if provider in ("supertonic", "local", "ivs", "ivs-tts"):
+            return generate_supertonic_tts(text), local_tts_provider_label()
+        if provider in ("openai", "tts", "generic"):
+            return generate_openai_tts(text), "openai_tts"
+        if provider == "elevenlabs":
             return generate_elevenlabs_tts(text), "elevenlabs"
-        except Exception as err:
-            errors.append(f"elevenlabs: {err}")
-            log(f"tts_primary_failed provider=elevenlabs error={err}")
-    else:
-        errors.append("elevenlabs: ELEVENLABS_API_KEY not configured")
-        log("tts_primary_unavailable provider=elevenlabs reason=missing_key")
+        raise RuntimeError(f"Unsupported TTS provider={provider!r}")
+
+    try:
+        return run(primary)
+    except Exception as err:
+        errors.append(f"{primary}: {err}")
+        log(f"tts_primary_failed provider={primary} error={err}")
 
     if fallback in ("0", "false", "no", "off", "none", "disabled"):
-        raise RuntimeError("ElevenLabs TTS failed/unavailable and TTS fallback is disabled: " + " | ".join(errors))
+        raise RuntimeError("TTS primary failed and fallback is disabled: " + " | ".join(errors))
 
-    if fallback in ("openai", "tts", "generic"):
-        try:
-            return generate_openai_tts(text), "openai_tts_fallback"
-        except Exception as err:
-            errors.append(f"openai_tts_fallback: {err}")
-            log(f"tts_fallback_failed provider=openai_tts error={err}")
-            raise RuntimeError("TTS providers failed: " + " | ".join(errors)) from err
-
-    raise RuntimeError(f"Unsupported CLARA_TTS_FALLBACK={fallback!r}; " + " | ".join(errors))
+    try:
+        audio, provider = run(fallback)
+        return audio, f"{provider}_fallback"
+    except Exception as err:
+        errors.append(f"{fallback}: {err}")
+        log(f"tts_fallback_failed provider={fallback} error={err}")
+        raise RuntimeError("TTS providers failed: " + " | ".join(errors)) from err
 
 
 def evaluate_zapi_runtime_enforcement(phone: str, message: str, source: str = "clara_reply", channel: str = "text", phase: str = "preflight", status: str = "") -> Dict[str, Any]:
@@ -3841,6 +4567,15 @@ def final_scrub_banned_next_step_phrase(message: str) -> str:
     if not text:
         return text
     original = text
+    # Voice guide: português impecável. Nunca deixar abreviações de WhatsApp
+    # como "vc/q/n/pq/p/" saírem em mensagem da Clara.
+    text = re.sub(r"(?iu)\bpq\b", "por que", text)
+    text = re.sub(r"(?iu)\bvc\b", "você", text)
+    text = re.sub(r"(?iu)\bq\b", "que", text)
+    text = re.sub(r"(?iu)\bn\b", "não", text)
+    text = re.sub(r"(?iu)\bp/\b", "para", text)
+    text = re.sub(r"(?iu)\btbm\b", "também", text)
+    text = re.sub(r"(?iu)\bobg\b", "obrigada", text)
     # RC-34 hotfix 2026-06-15: nome salvo no WhatsApp/Z-API não é nome confirmado.
     # Como o modelo pode herdar vocativos de histórico contaminado, removemos
     # vocativo nominal no início da resposta por segurança.
@@ -3943,13 +4678,104 @@ def is_generic_greeting_chunk(chunk: str) -> bool:
     }
 
 
+
+# ---- RC-80: repetição de bolha ----------------------------------------------
+# A trava de duplicidade acima compara a resposta inteira. A Clara envia em
+# bolhas, então basta um parágrafo novo na frente para o hash mudar e as bolhas
+# repetidas passarem. Aqui a comparação é por bolha, na mesma unidade do envio.
+REPEAT_CHUNK_WINDOW_SECONDS = int(os.getenv("REPEAT_CHUNK_WINDOW_SECONDS", "1800"))
+REPEAT_CHUNK_MIN_CHARS = int(os.getenv("REPEAT_CHUNK_MIN_CHARS", "80"))
+REPEAT_CHUNK_HISTORY = int(os.getenv("REPEAT_CHUNK_HISTORY", "40"))
+
+
+def strip_repeated_chunks(phone: str, reply: str) -> str:
+    """Remove da resposta as bolhas que já foram enviadas há pouco.
+
+    Só considera bolha longa (>= REPEAT_CHUNK_MIN_CHARS): repetir "Entendi." ou
+    "Certo." é fala natural; repetir um parágrafo de jornada é o defeito.
+    """
+    if not reply or not reply.strip():
+        return reply
+    try:
+        chunks = split_human_conversation_chunks(reply)
+    except Exception:
+        return reply
+    if len(chunks) <= 1:
+        return reply
+
+    now = time.time()
+    entry = get_phone_event_entry(phone)
+    historico = entry.get("recent_chunk_hashes") or []
+    recentes = {}
+    for item in historico:
+        try:
+            h, ts = item[0], float(item[1])
+        except (TypeError, ValueError, IndexError):
+            continue
+        if now - ts <= REPEAT_CHUNK_WINDOW_SECONDS:
+            recentes[h] = ts
+
+    mantidos, removidos = [], 0
+    for chunk in chunks:
+        limpo = " ".join((chunk or "").split())
+        h = sha1_text(limpo.lower())
+        if len(limpo) >= REPEAT_CHUNK_MIN_CHARS and h in recentes:
+            removidos += 1
+            continue
+        mantidos.append(chunk)
+        if len(limpo) >= REPEAT_CHUNK_MIN_CHARS:
+            recentes[h] = now
+
+    # O histórico é gravado SEMPRE, inclusive quando nada foi removido. A
+    # primeira versão retornava antes de gravar quando não havia repetição —
+    # então o primeiro envio nunca era registrado e o segundo não tinha com o
+    # que comparar. O teste pegou; em produção teria passado despercebido.
+    novo_historico = sorted(recentes.items(), key=lambda kv: kv[1], reverse=True)[:REPEAT_CHUNK_HISTORY]
+    update_phone_event_entry(phone, {"recent_chunk_hashes": [[h, ts] for h, ts in novo_historico]})
+
+    if not removidos:
+        return reply
+    if not mantidos:
+        # tudo era repetição: devolve vazio e o caminho de bloqueio existente cuida
+        log(f"rc80_all_chunks_repeated phone={phone} chunks={len(chunks)}")
+        return ""
+    log(f"rc80_repeated_chunks_removed phone={phone} removidos={removidos} restantes={len(mantidos)}")
+    return "\n\n".join(mantidos)
+
+
 def send_zapi_text_human_sequence(phone: str, message: str, source: str = "clara_reply", safety_phone: str = "") -> Tuple[int, str]:
     safety_lookup_phone = safety_phone or phone
+
+    def takeover_block() -> Optional[str]:
+        if not source.startswith("clara"):
+            return None
+        active, reason = is_manual_override_active(safety_lookup_phone)
+        if active:
+            return reason or "manual_override"
+        recent, recent_reason = has_recent_human_activity(safety_lookup_phone)
+        if recent:
+            return recent_reason or "human_recent_message"
+        return None
+
+    initial_takeover = takeover_block()
+    if initial_takeover:
+        log(f"clara_send_aborted_human_takeover phone={phone} source={source} reason={initial_takeover}")
+        return 409, json.dumps({"skipped": "human_takeover", "reason": initial_takeover}, ensure_ascii=False)
     if source in {"clara_reply", "admin_send"}:
         original_message = message
         message = enforce_outbound_price_safety(safety_lookup_phone, final_scrub_banned_next_step_phrase(message))
+        message = enforce_plan_question_response("", message)
         if message != original_message:
             log(f"rc52_transport_rewrote_commercial_output phone={phone} safety_phone={safety_lookup_phone} source={source} originalPreview={original_message[:120]!r} newPreview={message[:120]!r}")
+    # RC-80: a trava de repetição mora aqui, no transporte, porque é o funil por
+    # onde passam resposta normal, failsafe de áudio, failsafe de texto, envio
+    # manual e o cron de follow-up. Antes ela cobria só a resposta normal.
+    if source.startswith("clara") or source == "admin_send":
+        antes = message
+        message = strip_repeated_chunks(safety_lookup_phone or phone, message)
+        if not (message or "").strip():
+            log(f"rc80_send_blocked_all_repeated phone={phone} source={source} preview={antes[:100]!r}")
+            return 200, '{"skipped":"all_chunks_repeated"}'
     chunks = split_human_conversation_chunks(message)
     if len(chunks) > 1:
         original_count = len(chunks)
@@ -3957,6 +4783,10 @@ def send_zapi_text_human_sequence(phone: str, message: str, source: str = "clara
         if len(chunks) != original_count:
             log(f"rc72_generic_greeting_chunk_removed phone={phone} source={source} before={original_count} after={len(chunks)}")
     if not CLARA_HUMAN_CHUNKING_ENABLED or not (source.startswith("clara") or source == "admin_send") or len(chunks) <= 1:
+        current_takeover = takeover_block()
+        if current_takeover:
+            log(f"clara_send_aborted_human_takeover phone={phone} source={source} reason={current_takeover}")
+            return 409, json.dumps({"skipped": "human_takeover", "reason": current_takeover}, ensure_ascii=False)
         return send_zapi_text(phone, message, source=source, skip_transport_safety=True, safety_phone=safety_lookup_phone)
     results = []
     last_status = 0
@@ -3965,12 +4795,32 @@ def send_zapi_text_human_sequence(phone: str, message: str, source: str = "clara
     for idx, chunk in enumerate(chunks, start=1):
         if idx > 1 and CLARA_HUMAN_CHUNK_INTER_SEND_SECONDS > 0:
             time.sleep(CLARA_HUMAN_CHUNK_INTER_SEND_SECONDS)
+        current_takeover = takeover_block()
+        if current_takeover:
+            log(f"clara_chunking_aborted_human_takeover phone={phone} source={source} idx={idx} reason={current_takeover}")
+            return 409, json.dumps({"skipped": "human_takeover", "reason": current_takeover, "sent_chunks": len(results)}, ensure_ascii=False)
         status, body = send_zapi_text(phone, chunk, source=source, skip_transport_safety=True)
         last_status, last_body = status, body
         results.append({"idx": idx, "status": status, "preview": chunk[:80], "body": body[:200]})
         if not (200 <= int(status) < 300):
             break
     return last_status, json.dumps({"chunked": True, "chunks": len(chunks), "results": results, "last_body": last_body[:500]}, ensure_ascii=False)
+
+
+def send_zapi_text_sequence(phone: str, message: str, source: str = "clara_reply", safety_phone: str = "") -> Tuple[int, str]:
+    """Alias histórico usado por regressões antigas."""
+    safety_lookup_phone = safety_phone or phone
+    if source in {"clara_reply", "admin_send"}:
+        message = enforce_price_journey_microblocks(safety_lookup_phone, "", message)
+        message = final_scrub_banned_next_step_phrase(message)
+    chunks = split_human_conversation_chunks(message)
+    last_status = 200
+    last_body = "{}"
+    for chunk in chunks or [message]:
+        last_status, last_body = send_zapi_text(phone, chunk, source=source)
+        if not (200 <= int(last_status) < 300):
+            break
+    return last_status, last_body
 
 
 def send_zapi_text(phone: str, message: str, source: str = "clara_reply", skip_transport_safety: bool = False, safety_phone: str = "") -> Tuple[int, str]:
@@ -3982,6 +4832,7 @@ def send_zapi_text(phone: str, message: str, source: str = "clara_reply", skip_t
         original_message = message
         safety_lookup_phone = safety_phone or phone
         message = enforce_outbound_price_safety(safety_lookup_phone, final_scrub_banned_next_step_phrase(message))
+        message = enforce_plan_question_response("", message)
         if message != original_message:
             log(f"rc52_transport_rewrote_commercial_output phone={phone} safety_phone={safety_lookup_phone} source={source} originalPreview={original_message[:120]!r} newPreview={message[:120]!r}")
     guard = evaluate_zapi_runtime_enforcement(phone, message, source=source, channel="text", phase="preflight")
@@ -4012,6 +4863,24 @@ def zapi_get(path: str, timeout: int = 30) -> Tuple[int, str]:
     headers = {"Client-Token": ZAPI_CLIENT_TOKEN}
     url = ZAPI_BASE_URL.rstrip("/") + path
     return get_json(url, headers=headers, timeout=timeout)
+
+
+def zapi_put(path: str, timeout: int = 30) -> Tuple[int, str]:
+    """PUT idempotente da Z-API usado somente para organização por etiquetas."""
+    if not ZAPI_BASE_URL:
+        raise RuntimeError("ZAPI_BASE_URL is empty")
+    if not ZAPI_CLIENT_TOKEN:
+        raise RuntimeError("ZAPI_CLIENT_TOKEN is empty")
+    headers = {"Client-Token": ZAPI_CLIENT_TOKEN}
+    url = ZAPI_BASE_URL.rstrip("/") + path
+    req = Request(url, data=b"", headers=headers, method="PUT")
+    try:
+        with urlopen(req, timeout=timeout) as resp:
+            return resp.status, resp.read().decode("utf-8", errors="replace")
+    except HTTPError as exc:
+        return exc.code, exc.read().decode("utf-8", errors="replace")
+    except URLError as exc:
+        return 599, str(exc)
 
 
 def fetch_zapi_tags_catalog() -> Tuple[int, str, Any]:
@@ -4266,6 +5135,251 @@ def extract_payload_contact_ids(payload: Dict[str, Any], phone: Optional[str] = 
     return ids
 
 
+COMMERCIAL_STAGE_TAGS = {"lead", "lead quente", "nao qualificado"}
+COMMERCIAL_NQ_REASON_TAGS = {
+    "sem condicoes financeiras", "perdeu por convenio", "perdeu por distancia",
+    "curioso/frio", "atendimento diferente",
+}
+COMMERCIAL_SCOPE_GUARD_TAGS = {
+    "paciente", "programa", "vip", "agendou", "compareceu", "fechou",
+}
+
+
+def normalize_commercial_label(value: Any) -> str:
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    text = "".join(ch for ch in text if not unicodedata.combining(ch)).lower()
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def detect_non_qualified_reason(text: str) -> Optional[str]:
+    """Classifica apenas recusas explícitas; dúvida isolada nunca vira NQ."""
+    raw = str(text or "").strip().lower()
+    compact = normalize_commercial_label(raw)
+    if contains_financial_no_fit_decline(text):
+        return "Sem condições financeiras"
+    if contains_distance_final_decline(text):
+        return "Perdeu por Distância"
+
+    convenio_final = (
+        re.search(r"\bnao (?:quero|posso|consigo|vou fazer) (?:no |de forma )?particular\b", compact)
+        or re.search(r"\b(?:so|somente|apenas) (?:consigo|quero|posso|faco|vou) .*\bconvenio\b", compact)
+        or re.search(r"\bvou procurar .*\b(?:plano|convenio)\b", compact)
+        or re.search(r"\bsem convenio (?:nao|nem) (?:da|rola|consigo|vou)\b", compact)
+    )
+    if convenio_final:
+        return "Perdeu por Convênio"
+
+    service_mismatch = (
+        re.search(r"\b(?:so|somente|apenas) (?:quero|preciso de) (?:uma )?(?:receita|prescricao|renovacao de receita)\b", compact)
+        or re.search(r"\b(?:quero|procuro|preciso de) (?:so |apenas )?(?:massagem|drenagem linfatica)\b", compact)
+        or re.search(r"\b(?:tem|possui|faz) (?:pediatra|cirurgia bariatrica)\b", compact)
+        or re.search(r"\b(?:crianca|menor) (?:de |com )?(?:[0-9]|1[0-3]) anos\b", compact)
+    )
+    if service_mismatch:
+        return "Atendimento diferente"
+
+    curious_or_cold = (
+        re.search(r"\b(?:so|somente|apenas) (?:por curiosidade|queria saber|estou pesquisando|pesquisando)\b", compact)
+        or re.search(r"\bnao tenho interesse\b", compact)
+        or re.search(r"\bnao quero (?:consulta|atendimento|tratamento|agendar|marcar)\b", compact)
+        or contains_hard_final_decline(text)
+    )
+    if curious_or_cold:
+        return "Curioso/Frio"
+    return None
+
+
+def contains_hot_lead_signal(text: str) -> bool:
+    """Interesse de avanço concreto; pergunta genérica/preço isolado permanece Lead."""
+    compact = normalize_commercial_label(text)
+    patterns = (
+        r"\b(?:quero|gostaria de|vamos|pode|podemos) (?:agendar|marcar|reservar|fechar)\b",
+        r"\b(?:como|quando) (?:faco|posso fazer) (?:para )?(?:agendar|marcar|pagar)\b",
+        r"\b(?:tem|ha) (?:vaga|horario|data)\b",
+        r"\b(?:quais|qual) (?:os )?(?:horarios|datas|dias) (?:disponiveis|tem|disponivel)\b",
+        r"\b(?:manda|envia|pode enviar|pode me enviar|me passe|passa) (?:o )?link\b",
+        r"\b(?:quero|vou) (?:pagar|comecar|iniciar|fazer a consulta|fazer a avaliacao)\b",
+        r"\bpode reservar\b",
+        r"\bpre consulta\b",
+    )
+    return any(re.search(pattern, compact) for pattern in patterns)
+
+
+def classify_inbound_lead_stage(phone: str, text: str) -> Tuple[str, Optional[str]]:
+    nq_reason = detect_non_qualified_reason(text)
+    if nq_reason:
+        return "Não Qualificado", nq_reason
+    if contains_hot_lead_signal(text):
+        return "Lead Quente", None
+    compact = normalize_commercial_label(text)
+    if compact in {"sim", "quero", "pode ser", "vamos", "ok quero", "tenho interesse"}:
+        recent = "\n".join(get_recent_lead_texts(phone, limit=8))
+        if contains_hot_lead_signal(recent):
+            return "Lead Quente", None
+    return "Lead", None
+
+
+def _commercial_tags_snapshot(target: str) -> Tuple[bool, set[str], set[str]]:
+    payload = build_chat_tags_payload(target)
+    if not payload.get("ok"):
+        return False, set(), set()
+    ids: set[str] = set()
+    names: set[str] = set()
+    for item in payload.get("tags") or []:
+        if not isinstance(item, dict):
+            continue
+        if item.get("id") is not None:
+            ids.add(str(item.get("id")))
+        if item.get("name") is not None:
+            names.add(normalize_commercial_label(item.get("name")))
+    return True, ids, names
+
+
+def _commercial_tag_catalog() -> Dict[str, str]:
+    status, _body, payload = fetch_zapi_tags_catalog()
+    if not (200 <= int(status) < 300) or not isinstance(payload, list):
+        return {}
+    out: Dict[str, str] = {}
+    for item in payload:
+        if isinstance(item, dict) and item.get("id") is not None and item.get("name"):
+            out[normalize_commercial_label(item.get("name"))] = str(item.get("id"))
+    return out
+
+
+def _commercial_tag_operation(target: str, tag_id: str, action: str) -> Tuple[bool, int]:
+    path = f"/chats/{quote(str(target), safe='')}/tags/{quote(str(tag_id), safe='')}/{action}"
+    status, _body = zapi_put(path, timeout=30)
+    return 200 <= int(status) < 300, int(status)
+
+
+def sync_inbound_commercial_tags(phone: str, payload: Dict[str, Any], text: str) -> Dict[str, Any]:
+    """Mantém Lead -> Lead Quente -> NQ sem enviar nenhuma mensagem.
+
+    Paciente/Agendou/Programa/VIP não são rebaixados. NQ anterior também não é
+    reaberto automaticamente: inbound pode ser respondido pela RC-85, mas follow-up
+    continua bloqueado até curadoria humana.
+    """
+    decision, reason = classify_inbound_lead_stage(phone, text)
+    result: Dict[str, Any] = {"decision": decision, "reason": reason, "applied": False, "changed": False, "ok": False}
+    targets = extract_payload_contact_ids(payload, phone)
+    targets = list(dict.fromkeys(targets or [phone]))
+    targets = sorted(
+        targets,
+        key=lambda x: (
+            0 if str(x).endswith("@lid") else (1 if str(x) == str(phone) else 2),
+            targets.index(x),
+        ),
+    )
+
+    current_ok = False
+    current_ids: set[str] = set()
+    current_names: set[str] = set()
+    read_target = phone
+    for target in targets:
+        ok, ids, names = _commercial_tags_snapshot(target)
+        if ok:
+            current_ok, current_ids, current_names, read_target = True, ids, names, target
+            break
+    if not current_ok:
+        result["error"] = "tag_snapshot_unavailable"
+        log(f"commercial_tag_sync concern phone={phone} decision={decision} reason=tag_snapshot_unavailable")
+        return result
+
+    if current_names.intersection(COMMERCIAL_SCOPE_GUARD_TAGS):
+        result.update({"ok": True, "skipped": "non_lead_scope_guard"})
+        return result
+    if decision != "Não Qualificado" and current_names.intersection({"nao qualificado", *COMMERCIAL_NQ_REASON_TAGS}):
+        result.update({"ok": True, "skipped": "existing_nq_preserved"})
+        return result
+    if decision == "Lead" and "lead quente" in current_names:
+        result.update({"ok": True, "skipped": "hot_lead_not_downgraded"})
+        return result
+
+    catalog = _commercial_tag_catalog()
+    desired_names: set[str]
+    remove_names: set[str]
+    if decision == "Não Qualificado":
+        desired_names = {"nao qualificado", normalize_commercial_label(reason)}
+        remove_names = {"lead", "lead quente"}
+    elif decision == "Lead Quente":
+        desired_names = {"lead quente"}
+        remove_names = {"lead"}
+    else:
+        desired_names = {"lead"}
+        remove_names = set()
+
+    missing_catalog = sorted(name for name in desired_names.union(remove_names) if name not in catalog)
+    if missing_catalog:
+        result["error"] = "missing_catalog_tags=" + ",".join(missing_catalog)
+        log(f"commercial_tag_sync concern phone={phone} decision={decision} error={result['error']}")
+        return result
+
+    operations: list[Tuple[str, str]] = []
+    for name in sorted(remove_names):
+        if name in current_names:
+            operations.append(("remove", catalog[name]))
+    for name in sorted(desired_names):
+        if name not in current_names:
+            operations.append(("add", catalog[name]))
+
+    op_failures = []
+    for action, tag_id in operations:
+        op_ok = False
+        statuses = []
+        for target in targets:
+            transport_ok, status = _commercial_tag_operation(target, tag_id, action)
+            statuses.append(status)
+            if not transport_ok:
+                continue
+            for _attempt in range(3):
+                verified, ids, _names = _commercial_tags_snapshot(target)
+                expected = tag_id in ids if action == "add" else tag_id not in ids
+                if verified and expected:
+                    op_ok = True
+                    read_target = target
+                    break
+                time.sleep(0.4)
+            if op_ok:
+                break
+        if not op_ok:
+            op_failures.append({"action": action, "tag_id": tag_id, "statuses": statuses})
+
+    final_ok, final_ids, final_names = _commercial_tags_snapshot(read_target)
+    desired_ok = final_ok and desired_names.issubset(final_names) and not remove_names.intersection(final_names)
+    result.update({
+        "ok": bool(desired_ok and not op_failures),
+        "applied": True,
+        "changed": bool(operations),
+        "operation_count": len(operations),
+        "failure_count": len(op_failures),
+    })
+
+    now = int(time.time())
+    if decision == "Não Qualificado":
+        add_exclusion_alias(phone, "Lead não qualificado", "not_qualified_do_not_followup", normalize_commercial_label(reason))
+        update_lead_entry(phone, {
+            "active": True,
+            "followup_blocked": True,
+            "not_qualified": True,
+            "status": "NQ",
+            "not_qualified_reason": normalize_commercial_label(reason),
+            "not_qualified_at": now,
+            "commercial_stage": decision,
+            "commercial_stage_updated_at": now,
+        })
+    else:
+        mark_lead_active(phone, "commercial_tag_pipeline")
+        update_lead_entry(phone, {
+            "commercial_stage": decision,
+            "commercial_stage_updated_at": now,
+        })
+    log(
+        f"commercial_tag_sync phone={phone} decision={decision} reason={normalize_commercial_label(reason)} "
+        f"changed={result['changed']} operations={result['operation_count']} ok={result['ok']}"
+    )
+    return result
+
+
 def chat_name_has_patient_marker(payload: Dict[str, Any]) -> bool:
     """Detecta marcador operacional de paciente no nome salvo do WhatsApp.
 
@@ -4314,7 +5428,7 @@ def add_exclusion_alias(phone: str, name: str, reason: str, source: str) -> None
         log(f"exclusion_alias_write_failed phone={phone}: {err}")
 
 
-def get_payload_exclusion_reason(phone: str, payload: Dict[str, Any]) -> Optional[str]:
+def get_payload_exclusion_reason(phone: str, payload: Dict[str, Any], inbound_text: str = "") -> Optional[str]:
     # 1) bloqueio por telefone/LID/aliases já conhecidos.
     for candidate in extract_payload_contact_ids(payload, phone):
         reason = get_exclusion_reason(candidate)
@@ -4329,18 +5443,48 @@ def get_payload_exclusion_reason(phone: str, payload: Dict[str, Any]) -> Optiona
         add_exclusion_alias(phone, str(payload.get("chatName") or payload.get("senderName") or "Paciente"), "patient_chat_name_marker", "zapi_chat_name_patient_marker")
         return "patient_chat_name_marker"
 
-    # 3) tags Z-API de paciente/programa/VIP/agendou também bloqueiam Clara comercial.
+    # 3) tags/listas Z-API de paciente/programa/VIP/agendou bloqueiam Clara comercial.
+    # Nuance Tiaro 2026-07-17: tag/lista NQ bloqueia follow-up ativo, mas NÃO
+    # pode calar inbound novo com intenção clara (ex.: "qual o valor da consulta").
     ok_tags, tag_names, tag_ids = get_zapi_contact_tag_names_safe(phone)
     if ok_tags:
         non_lead_reason = non_lead_tag_reason(tag_names)
         if non_lead_reason:
             add_exclusion_alias(phone, str(payload.get("chatName") or payload.get("senderName") or "Lead não qualificado"), "not_qualified_do_not_followup", non_lead_reason)
+            current_text = inbound_text or extract_text(payload) or ""
+            if has_clear_lead_intent(current_text):
+                update_lead_entry(phone, {
+                    "active": True,
+                    "followup_blocked": True,
+                    "not_qualified": True,
+                    "status": "NQ",
+                    "not_qualified_reason": non_lead_reason,
+                    "inbound_nq_reply_allowed": True,
+                    "last_inbound_at": int(time.time()),
+                    "active_until": int(time.time()) + CLARA_ACTIVE_LEAD_WINDOW_SECONDS,
+                })
+                log(f"nq_tag_followup_only_inbound_allowed phone={phone} reason={non_lead_reason} tags={','.join(tag_names or tag_ids or [])}")
+                return None
             return non_lead_reason
         tag_set = {str(t or "").strip().lower() for t in tag_names}
         if tag_set.intersection({"paciente", "programa", "vip", "agendou", "compareceu", "fechou"}):
             add_exclusion_alias(phone, str(payload.get("chatName") or payload.get("senderName") or "Paciente"), "zapi_non_lead_tag", "zapi_tag_scope_guard")
             return "zapi_non_lead_tag=" + ",".join(sorted(tag_set))
     return None
+
+
+def has_pending_quarkclinic_confirmation(phone: str) -> bool:
+    """Confere somente o estado local para fail-closed do roteamento comercial."""
+    try:
+        state = json.loads(Path(QUARK_CONFIRMATION_STATE_FILE).read_text(encoding="utf-8"))
+        variants = set(phone_lookup_variants(phone))
+        for item in state.get("items") or []:
+            item_phone = normalize_phone(item.get("phone")) or ""
+            if item.get("status") == "sent" and item_phone in variants:
+                return True
+    except Exception as err:
+        log(f"confirmation_pending_state_read_failed error={type(err).__name__}")
+    return False
 
 
 def process_quarkclinic_confirmation_reply(phone: str, text: str) -> bool:
@@ -4352,18 +5496,29 @@ def process_quarkclinic_confirmation_reply(phone: str, text: str) -> bool:
     script = Path(QUARK_CONFIRMATION_REPLY_SCRIPT)
     if not script.exists():
         log(f"confirmation_reply_bridge script_missing path={script}")
-        return False
+        return has_pending_quarkclinic_confirmation(phone)
     try:
-        raw = subprocess.check_output(
+        completed = subprocess.run(
             [sys.executable or "python3", str(script), phone, text],
             text=True,
-            stderr=subprocess.STDOUT,
+            capture_output=True,
             timeout=45,
+            check=False,
         )
-        result = json.loads(raw.strip().splitlines()[-1]) if raw.strip() else {}
+        combined_output = "\n".join(part for part in (completed.stdout, completed.stderr) if part).strip()
+        if completed.returncode != 0:
+            diagnostic = redact_operational_text(combined_output)[:700]
+            pending = has_pending_quarkclinic_confirmation(phone)
+            log(
+                f"confirmation_reply_bridge failed phone={phone} returncode={completed.returncode} "
+                f"pending={pending} output={diagnostic!r}"
+            )
+            return pending
+        result = json.loads(completed.stdout.strip().splitlines()[-1]) if completed.stdout.strip() else {}
     except Exception as err:
-        log(f"confirmation_reply_bridge error phone={phone}: {err}")
-        return False
+        pending = has_pending_quarkclinic_confirmation(phone)
+        log(f"confirmation_reply_bridge error phone={phone} pending={pending} error={type(err).__name__}: {err}")
+        return pending
 
     if not result.get("matched"):
         return False
@@ -4575,6 +5730,7 @@ class Handler(BaseHTTPRequestHandler):
                     return
 
             message = enforce_outbound_price_safety(phone, final_scrub_banned_next_step_phrase(message))
+            message = enforce_plan_question_response("", message)
 
             if dry_run:
                 preview = message
@@ -4680,7 +5836,7 @@ class Handler(BaseHTTPRequestHandler):
             log(f"ignored phone={phone} message_id={message_id} reason=duplicate")
             self._send_json(200, {"ok": True, "ignored": "duplicate", "messageId": message_id})
             return
-        skip_event, skip_reason = should_skip_event(phone, message_id, event_text)
+        skip_event, skip_reason = should_skip_event(phone, message_id, event_text, is_audio=is_audio)
         if skip_event:
             self._send_json(200, {"ok": True, "ignored": skip_reason, "messageId": message_id, "phone": phone})
             log(f"ignored phone={phone} message_id={message_id} reason={skip_reason} text={event_text[:120]!r}")
@@ -4691,10 +5847,15 @@ class Handler(BaseHTTPRequestHandler):
 
         def process_async():
             if not acquire_phone_processing(phone):
-                log(f"ignored phone={phone} message_id={message_id} reason=concurrent_phone_processing text={event_text[:120]!r}")
+                # RC-83: em vez de descartar, guarda para a leitura em curso.
+                # Descartar deixava a segunda frase da paciente sem resposta.
+                queue_inbound_text(phone, text or "")
+                log(f"queued phone={phone} message_id={message_id} reason=concurrent_phone_processing text={event_text[:120]!r}")
                 return
             processed_text = text or ""
-            log(f"processing phone={phone} message_id={message_id} is_audio={is_audio} text={event_text[:180]!r}")
+            if not is_audio:
+                processed_text = wait_for_message_burst(phone, processed_text)
+            log(f"processing phone={phone} message_id={message_id} is_audio={is_audio} text={processed_text[:180]!r}")
             try:
                 if is_audio:
                     if not audio_url:
@@ -4703,6 +5864,17 @@ class Handler(BaseHTTPRequestHandler):
                     processed_text = transcribe_audio(audio_bytes)
                     if not processed_text:
                         raise RuntimeError("audio transcription returned empty text")
+                    try:
+                        learning_event = clara_audio_learning.append_audio_learning_event(
+                            phone=phone,
+                            message_id=message_id,
+                            transcript=processed_text,
+                            received_at_ms=int(time.time() * 1000),
+                        )
+                        log(f"audio_learning_saved event_key={learning_event['event_key']} chars={len(processed_text)}")
+                    except Exception as learning_err:
+                        # Aprendizado é secundário: falha no spool não interrompe atendimento.
+                        log(f"audio_learning_save_failed: {learning_err}")
                     log(f"audio_transcribed phone={phone} chars={len(processed_text)}")
                 if process_quarkclinic_confirmation_reply(phone, processed_text):
                     return
@@ -4721,14 +5893,29 @@ class Handler(BaseHTTPRequestHandler):
                     log(f"patient_detected phone={phone} source=quarkclinic blocked=RC12")
                     return
 
+                # Organização comercial silenciosa e independente da resposta. Mesmo
+                # com a Clara globalmente pausada, todo novo lead elegível entra em
+                # Lead, progride para Lead Quente ou recebe NQ + motivo objetivo.
+                commercial_tag_result = sync_inbound_commercial_tags(phone, payload, processed_text)
+
                 bypass_exclusion, bypass_reason = should_bypass_exclusion_for_lead_intent(phone, processed_text)
-                exclusion_reason = get_payload_exclusion_reason(phone, payload)
+                exclusion_reason = get_payload_exclusion_reason(phone, payload, processed_text)
+                # A própria mensagem que acabou de produzir a classificação NQ pode
+                # receber um único fechamento respeitoso. A etiqueta bloqueia as
+                # próximas cadências, não apaga a resposta ao inbound atual.
+                if (
+                    commercial_tag_result.get("decision") == "Não Qualificado"
+                    and commercial_tag_result.get("applied")
+                    and exclusion_reason
+                ):
+                    bypass_exclusion = True
+                    bypass_reason = "new_nq_current_inbound_close_allowed"
                 # RC-55: se o QuarkClinic confirmou que NÃO é paciente, uma marca antiga
                 # patient_bridge_known/bridge_contexto_paciente não pode silenciar lead ativo.
                 # Mantém bloqueio de paciente real quando QuarkClinic sinaliza patient_flag acima.
-                if exclusion_reason in ("patient_bridge_known", "bridge_contexto_paciente") and quark_ok and not patient_flag:
+                if exclusion_reason in ("patient_bridge_known", "bridge_contexto_paciente", "quarkclinic_patient_rc12") and quark_ok and not patient_flag:
                     bypass_exclusion = True
-                    bypass_reason = "quarkclinic_no_match_overrides_stale_patient_bridge_exclusion"
+                    bypass_reason = "quarkclinic_no_match_overrides_stale_patient_exclusion"
                 if exclusion_reason and not bypass_exclusion:
                     log(f"blocked phone={phone} reason=exclusion:{exclusion_reason}")
                     return
@@ -4743,6 +5930,13 @@ class Handler(BaseHTTPRequestHandler):
                     log(f"blocked phone={phone} reason={reason}")
                     return
                 should_reply, reason = should_respond_to_lead(phone, processed_text)
+                if (
+                    not should_reply
+                    and commercial_tag_result.get("decision") == "Não Qualificado"
+                    and commercial_tag_result.get("applied")
+                ):
+                    should_reply = True
+                    reason = "new_nq_current_inbound_close_allowed"
                 if not should_reply:
                     log(f"blocked phone={phone} reason={reason}")
                     return
@@ -4767,6 +5961,7 @@ class Handler(BaseHTTPRequestHandler):
                 reply = enforce_direct_objective_question_recovery(phone, processed_text, reply)
                 reply = enforce_discovery_before_next_step(processed_text, reply)
                 reply = enforce_spin_before_agendamento(phone, processed_text, reply)
+                reply = enforce_no_repetitive_discovery_after_declared_context(phone, processed_text, reply)
                 reply = enforce_no_reopening_after_context(phone, processed_text, reply)
                 reply = enforce_direct_objective_question_recovery(phone, processed_text, reply)
                 reply = enforce_context_continuity_before_send(phone, processed_text, reply)
@@ -4787,6 +5982,7 @@ class Handler(BaseHTTPRequestHandler):
                 reply = enforce_agendamento_reply_quality(reply)
                 reply = final_scrub_banned_next_step_phrase(reply)
                 reply = enforce_direct_objective_question_recovery(phone, processed_text, reply)
+                reply = enforce_no_repetitive_discovery_after_declared_context(phone, processed_text, reply)
                 reply = enforce_no_reopening_after_context(phone, processed_text, reply)
                 reply = enforce_direct_objective_question_recovery(phone, processed_text, reply)
                 reply = enforce_context_continuity_before_send(phone, processed_text, reply)
@@ -4797,15 +5993,29 @@ class Handler(BaseHTTPRequestHandler):
                 reply = enforce_money_after_journey(phone, processed_text, reply)
                 reply = enforce_fatigue_complaint_no_repeat(phone, processed_text, reply)
                 reply = enforce_outbound_price_safety(phone, reply, processed_text)
+                reply = enforce_plan_question_response(processed_text, reply)
+                # Guarda terminal: nenhuma regra posterior pode voltar a ignorar
+                # uma pergunta objetiva de agenda/escopo ou inventar contexto.
+                reply = enforce_direct_objective_question_recovery(phone, processed_text, reply)
+                # RC-87 terminal: pergunta de valor não pode ser desviada para
+                # plano, operadora ou reembolso.
+                reply = enforce_no_topic_switch_on_price_question(phone, processed_text, reply)
+                # Gate terminal de anúncio: metadado/copy pré-preenchida nunca substituem
+                # conexão humana e a primeira pergunta SPIN do lead.
+                reply = enforce_campaign_prefilled_connection(processed_text, reply, payload=payload)
                 block_reply, block_reason = should_block_reply(phone, reply)
                 if block_reply:
                     log(f"blocked_reply phone={phone} reason={block_reason} replyPreview={reply[:120]!r}")
                     notify_internal_clara_failure(phone, sender_name, processed_text, "blocked_reply", block_reason or "resposta bloqueada por segurança")
                     return
                 sent_as_audio = False
-                if is_audio and CLARA_AUDIO_MIRRORING and (ELEVENLABS_API_KEY or OPENAI_API_KEY):
+                if is_audio and audio_reply_generation_enabled():
                     try:
                         audio_reply, tts_provider = generate_tts_audio(reply)
+                        takeover_during_generation = get_payload_manual_override_reason(phone, payload)
+                        if takeover_during_generation:
+                            log(f"audio_reply_aborted_human_takeover phone={phone} reason={takeover_during_generation}")
+                            return
                         status, body = send_zapi_audio(reply_target, audio_reply, source="clara_reply")
                         sent_as_audio = 200 <= int(status) < 300
                         if sent_as_audio:
@@ -4843,7 +6053,7 @@ class Handler(BaseHTTPRequestHandler):
                         sent_as_audio = False
                         status = 0
                         body = ""
-                        if CLARA_AUDIO_MIRRORING and (ELEVENLABS_API_KEY or OPENAI_API_KEY):
+                        if CLARA_AUDIO_MIRRORING and audio_reply_generation_enabled():
                             try:
                                 audio_reply, tts_provider = generate_tts_audio(fallback_reply)
                                 status, body = send_zapi_audio(reply_target, audio_reply, source="clara_audio_failsafe")
@@ -4891,6 +6101,14 @@ def main() -> int:
     server = ThreadingHTTPServer((BRIDGE_HOST, BRIDGE_PORT), Handler)
     webhook_suffix = f"/webhook/{WEBHOOK_PATH_TOKEN}" if WEBHOOK_PATH_TOKEN else "/webhook"
     log(f"listening on http://{BRIDGE_HOST}:{BRIDGE_PORT} webhook={webhook_suffix} health=/healthz")
+    # aquece o modelo de transcricao em 2o plano: o 1o audio do dia nao paga a carga
+    if WHISPER_LOCAL_ENABLED and WHISPER_FAST_ENABLED:
+        def _fw_aquecer():
+            try:
+                _fw_modelo()
+            except Exception as err:  # noqa: BLE001 — aquecimento nunca derruba o bridge
+                log(f"audio_stt_fast_warmup_failed error={err}")
+        threading.Thread(target=_fw_aquecer, name="fw-warmup", daemon=True).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
